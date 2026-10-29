@@ -1,0 +1,179 @@
+{
+  "status": "PASS",
+  "scope": "Kraken addition model execution on the Lean host; no ARM hardware execution; separate universal proofs required",
+  "positive_cases": 3232,
+  "program_allocations": 5,
+  "incoming_flag_patterns": 16,
+  "register_coverage": {
+    "x19_written": {
+      "positive_cases": 32,
+      "incoming_flag_patterns": 16,
+      "fields": [
+        "pallasBase",
+        "vestaBase"
+      ],
+      "flag_patterns_by_field": {
+        "pallasBase": 16,
+        "vestaBase": 16
+      }
+    },
+    "x19_shared_readonly": {
+      "positive_cases": 32,
+      "incoming_flag_patterns": 16,
+      "fields": [
+        "pallasBase",
+        "vestaBase"
+      ],
+      "flag_patterns_by_field": {
+        "pallasBase": 16,
+        "vestaBase": 16
+      }
+    }
+  },
+  "protected_register_policy": "every register outside the written allocation, including x19 when not written",
+  "operand_roles_from_mir": {
+    "0": [
+      "lhs",
+      0
+    ],
+    "1": [
+      "lhs",
+      1
+    ],
+    "2": [
+      "lhs",
+      2
+    ],
+    "3": [
+      "lhs",
+      3
+    ],
+    "4": [
+      "rhs",
+      0
+    ],
+    "5": [
+      "rhs",
+      1
+    ],
+    "6": [
+      "rhs",
+      2
+    ],
+    "7": [
+      "rhs",
+      3
+    ],
+    "8": [
+      "modulus",
+      0
+    ],
+    "9": [
+      "modulus",
+      1
+    ],
+    "10": [
+      "modulus",
+      3
+    ]
+  },
+  "output_operand_indices_from_mir": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "field_constants": "read from retained upstream Fields.lean",
+  "artifact_sha256": "2bea8d7ce1f1ff4374d6670cd8a33d5b661c48220f982cb1bc4a474c21820887",
+  "negative_semantic_checks": {
+    "broken-carry": {
+      "status": "PASS: semantic mismatch detected",
+      "mismatches": 32,
+      "counterexample": {
+        "field": "pallasBase",
+        "lhs": 18446744073709551615,
+        "rhs": 1,
+        "flags": {
+          "n": false,
+          "z": false,
+          "c": false,
+          "v": false
+        },
+        "expected": 18446744073709551616,
+        "actual": 0,
+        "frame_preserved": true
+      }
+    },
+    "wrong-operand-binding": {
+      "status": "PASS: semantic mismatch detected",
+      "mismatches": 32,
+      "counterexample": {
+        "field": "pallasBase",
+        "lhs": 18446744073709551615,
+        "rhs": 1,
+        "flags": {
+          "n": false,
+          "z": false,
+          "c": false,
+          "v": false
+        },
+        "expected": 18446744073709551616,
+        "actual": 36893488147419103231,
+        "frame_preserved": true
+      }
+    }
+  },
+  "commands": [
+    [
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+      "--run",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge\\KrakenRun.lean",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\positive-0.S",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\positive-0.json"
+    ],
+    [
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+      "--run",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge\\KrakenRun.lean",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\positive-1.S",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\positive-1.json"
+    ],
+    [
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+      "--run",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge\\KrakenRun.lean",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\positive-2.S",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\positive-2.json"
+    ],
+    [
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+      "--run",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge\\KrakenRun.lean",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\positive-3.S",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\positive-3.json"
+    ],
+    [
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+      "--run",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge\\KrakenRun.lean",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\positive-4.S",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\positive-4.json"
+    ],
+    [
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+      "--run",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge\\KrakenRun.lean",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\broken-carry.S",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\broken-carry.json"
+    ],
+    [
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+      "--run",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge\\KrakenRun.lean",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\wrong-operand-binding.S",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\runtime-checks\\wrong-operand-binding.json"
+    ]
+  ],
+  "memory_test": "one nonempty sentinel memory; no universal memory claim",
+  "multiplication": "separate target and executable harness"
+}

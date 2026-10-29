@@ -1,0 +1,12 @@
+{
+  "command": [
+    "work/toolchains/lean-4.31.0-windows/bin/lean.exe",
+    "outputs/pasta-assembly-verification-bridge/proofs/AdditionMachine.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of",
+  "exit_code": 1,
+  "wall_seconds": 50.840397,
+  "peak_rss_bytes": 122478592,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionmachine-prefix.log"
+}

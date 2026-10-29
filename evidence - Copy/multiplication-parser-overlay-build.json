@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lake.exe",
+    "build",
+    "Kraken.AArch64.Parser",
+    "Kraken.AArch64.Semantics"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\kraken-compat",
+  "exit_code": 0,
+  "wall_seconds": 21.52221,
+  "peak_rss_bytes": 54849536,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\multiplication-parser-overlay-build.log"
+}

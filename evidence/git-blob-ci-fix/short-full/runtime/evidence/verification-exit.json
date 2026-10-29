@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "scripts/verify.py",
+    "--clean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+  "exit_code": 0,
+  "wall_seconds": 1641.189238,
+  "peak_rss_bytes": 22958080,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\logs\\verify-clean.log",
+  "observed_utc": "2026-10-29T17:52:34.471792+00:00",
+  "method": "Actual measured subprocess return code; no shell status mapping"
+}

@@ -1,0 +1,8 @@
+{
+  "run_id": "40908170419",
+  "run_attempt": "1",
+  "commit": "225d6a7ee9ad8e6e4b3f92155f4df6a18a172a08",
+  "event": "workflow_dispatch",
+  "image": "win25-vs2026",
+  "image_version": "20261021.278.1"
+}

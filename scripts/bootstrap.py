@@ -27,11 +27,12 @@ def run(args: list[str], cwd: Path | None = None) -> None:
         log.flush()
         proc = subprocess.Popen(args, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         assert proc.stdout is not None
-        for line in iter(proc.stdout.readline, b""):
-            log.write(line)
-            log.flush()
-            sys.stdout.buffer.write(line)
-            sys.stdout.buffer.flush()
+        with proc.stdout:
+            for line in iter(proc.stdout.readline, b""):
+                log.write(line)
+                log.flush()
+                sys.stdout.buffer.write(line)
+                sys.stdout.buffer.flush()
         status = proc.wait()
         if status:
             raise subprocess.CalledProcessError(status, args)
@@ -44,7 +45,7 @@ def output(args: list[str], cwd: Path) -> str:
 def checkout(work: Path, name: str, pin: dict) -> Path:
     path = work / name
     if not path.exists():
-        run(["git", "-c", "core.autocrlf=false", "clone", "--no-checkout",
+        run(["git", "clone", "--config", "core.autocrlf=false", "--config", "core.eol=lf", "--no-checkout",
              pin["repository"], str(path)])
         run(["git", "checkout", "--detach", pin["revision"]], cwd=path)
     actual = output(["git", "rev-parse", "HEAD"], path)

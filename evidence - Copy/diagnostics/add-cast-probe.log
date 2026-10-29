@@ -1,0 +1,9 @@
+AddCastProbe.lean:14:13: warning: This simp argument is unused:
+  Width.instCoeBoolType
+
+Hint: Omit it from the simp argument list.
+  simp only [W̵i̵d̵t̵h̵.̵i̵n̵s̵t̵C̵o̵e̵B̵o̵o̵l̵T̵y̵p̵e̵,̵ ̵KrakenWord.add_value]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+@[implicit_reducible] def Width.instCoeBoolType : {w : Width} → Coe Bool w.type :=
+fun {w} => { coe := fun b => BitVec.ofNat w.bits b.toNat }

@@ -1,0 +1,2 @@
+# Preserve recorded byte hashes, including artifacts with deliberate line endings.
+* -text

@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "observed_utc": "2026-10-23T17:15:47.616688+00:00",
+  "theorem": "PastaBridge.AdditionCorrectness.addition_correct",
+  "axiom_census": {
+    "PastaBridge.AdditionCorrectness.addition_correct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "components": [
+    {
+      "path": "evidence/addition-gate-prerequisites.json",
+      "sha256": "55993c2e77cb7e1c83afb9d0ff93bdb046d5541c99be14a619281d402cd123ed"
+    },
+    {
+      "path": "evidence/addition-correctness.json",
+      "sha256": "8b2738491566cc764266f606f20ea0f88ae9a4b4ce3fafb9e783e2fffb66bbc7"
+    },
+    {
+      "path": "evidence/addition-exact-type-audit.json",
+      "sha256": "6546916ed2427bfae98445b72e6fc7ca97554ac2b4908d38b02986d2f74e8a3f"
+    },
+    {
+      "path": "evidence/formal-addition-negatives/report.json",
+      "sha256": "4702025a86296dceddcc58b836afb3bc655dfc4f7cbbac38cd68aec440c7fcc4"
+    },
+    {
+      "path": "evidence/addition-gate-prerequisite-build.json",
+      "sha256": "064f3dffbc7ce20fa99166c81b011a6080013af86240e664342c2ed06ed78b5c",
+      "scope": "earlier clean prerequisite rebuild, before final target closure"
+    }
+  ],
+  "proof_source_sha256": {
+    "AdditionCorrectness.lean": "2de301a5ccc7777efa9df733e5d3c2e09af2a833b01ef899632baf8c541b8a8c",
+    "AdditionMachine.lean": "07656eb9b3974fa2d0e7b72bf3585a20098c5a3e21a4c60069bc89eb62dbc401",
+    "AdditionNat.lean": "7501b1b0fee0006272f263e4ba1a3bca9d230ee47a083fc69717207afcf42746",
+    "AdditionNatData.lean": "1ef8c87e11af89d91aa2e6a5918eb1da6c768b378a1023b436ad48a61229ee26",
+    "AdditionNatDataModel.lean": "1fbdf106149ab769efb26d6f5ea909a813f83f44f839a722872a0947f8332918",
+    "AdditionNatLift.lean": "9b2b224e42c4ffe7f7d02d93cbb1f5b2b7434594d06d234916fa823ded614706",
+    "AdditionNatLiftBase.lean": "8b1c3642e8d692c03188788726748ae5dd9f3c24290904b9e5fba0e20a8bef04",
+    "AdditionNatModel.lean": "4aa183d6e238871a3da32631806b8e7dc31f36ffb19fdbf2a5f4f7d25053952a",
+    "AdditionNatObservation.lean": "96af8ddd3ef80acf40872f6f4ae08922d84c00fa779a151ae04a7f8f8720ecb5",
+    "AdditionNatSequence.lean": "0c625fc044cad7aabc23e9ef7bde16fb3075a6c8c77e355eb160fc44ca71cca8",
+    "AdditionParametricBase.lean": "33957f09eb078f1da626a83eb00f8e373837b55806a107a9a81cc1c3c5e02516",
+    "AdditionParametricModel.lean": "38110fe975b4be3267325d586f2cdb48f4cebab2724b6b2a7a5131aad19765bd",
+    "AdditionStep.lean": "adc859371acdc8ba9eaad4c0b1e06e7b2d4ee9bb59d519d763c2377c197e1892",
+    "ArithmeticAudit.lean": "6697fdb69088e258b85f79ed177fcc4b6841e8ea6c64672a96d82b41246f0c5a",
+    "Audit.lean": "1bc25fec8510ae692052e96c52265a1e045e5c9c6f9e5fbdab21b87005257e0b",
+    "BindingArtifact.lean": "2455f50f4478753cfd02e60239ccc5efac43193f778d9a4ddad1bad3a8cd1618",
+    "FormalAdditionNegatives.lean": "a1ce4ae9acf0993d2b0c3d785bb286fa6b00eba00e1082f13b13916ed89a8341",
+    "KrakenBinding.lean": "715f3008bc36384c61a26144eee50093232f04b3f093f7b6c2d0ade52d7b4742",
+    "KrakenWord.lean": "ac773af52d02a78bb68c11ff5ebee723a8d12f84d9f7da864857157fdb87329c",
+    "WordCorrespondence.lean": "fd1d7173e2aabd97f8e9062fe778dbf5180dae7df4c7c95d10f806b349cabc31"
+  },
+  "pins_sha256": "67eab730b17fba6c8d9a20e825b41b7a25826c382f7b49900b340c624d1016c4",
+  "artifact_sha256": "d5681b42cd2d5d1e33a3a8d53c381cb6cafce6728e58ad0303c38898f047ff9f",
+  "scope": "Addition phase gate using actual component checks and earlier clean prerequisites; final combined clean rebuild pending. Multiplication has not been verified.",
+  "pin_context": {
+    "path": "evidence/addition-gate-pins.json",
+    "sha256": "67eab730b17fba6c8d9a20e825b41b7a25826c382f7b49900b340c624d1016c4",
+    "note": "Exact earlier pin bytes recovered after the multiplication parser patches were added; accepted only on equality with the pre-existing phase-gate SHA-256."
+  }
+}

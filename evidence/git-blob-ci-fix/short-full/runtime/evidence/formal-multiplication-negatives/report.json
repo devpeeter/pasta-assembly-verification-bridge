@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "stages": [
+    {
+      "name": "kernel-counterexample-certificates",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\formal-mul-negative-build\\FormalMulNegatives.olean",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs\\FormalMulNegatives.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 18.282859,
+      "peak_rss_bytes": 1573408768,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\formal-multiplication-negatives\\counterexamples.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.FormalMulNegatives.witness_words_bounded": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalMulNegatives.witness_field_inputs": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalMulNegatives.witness_input_values": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalMulNegatives.unmodified_models": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalMulNegatives.expected_values": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalMulNegatives.broken_carry_value": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalMulNegatives.broken_binding_value": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalMulNegatives.broken_carry_is_semantically_wrong": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalMulNegatives.broken_binding_is_semantically_wrong": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "strict_axiom_census_passed": true,
+      "source_sha256": "80fdf28afa9e584913f6ae42d6150c7fe08fddae33ed790f4a43197576bec39b"
+    },
+    {
+      "name": "broken-carry",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\formal-mul-negative-sources\\broken-carry.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 1,
+      "wall_seconds": 14.885224,
+      "peak_rss_bytes": 1436000256,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\formal-multiplication-negatives\\broken-carry.log",
+      "status": "PASS",
+      "expected_failure": true,
+      "intended_false_equality": "carryResult = carryExpected",
+      "semantic_rejection_confirmed": true,
+      "source_sha256": "cab0e90b2c726c8821bf876648a2c6e2b458b08c134d9648d67246f03fa1edbd"
+    },
+    {
+      "name": "wrong-binding",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\formal-mul-negative-sources\\wrong-binding.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 1,
+      "wall_seconds": 15.675613,
+      "peak_rss_bytes": 1435549696,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\formal-multiplication-negatives\\wrong-binding.log",
+      "status": "PASS",
+      "expected_failure": true,
+      "intended_false_equality": "bindingResult = bindingExpected",
+      "semantic_rejection_confirmed": true,
+      "source_sha256": "9cdc3e19754b94b8281de6956eb4e3a220f11f8bb49c09bf7211e3972211ccb4"
+    }
+  ],
+  "scope": "Kernel semantic counterexamples for algorithmic mutations of the actual decoded multiplication program; exact rejection of original false output equalities."
+}

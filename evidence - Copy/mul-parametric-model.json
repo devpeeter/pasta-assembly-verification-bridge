@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\nat-proof-build\\MulParametricModel.olean",
+    "MulParametricModel.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work",
+  "exit_code": 0,
+  "wall_seconds": 227.049348,
+  "peak_rss_bytes": 957423616,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "evidence/mul-parametric-model.log",
+  "source": "proofs/MulParametricModel.lean",
+  "source_sha256": "1c817e7d42403585aa2b4beca344fd795eee28bd8d91d07717bd6c351416dcc6"
+}

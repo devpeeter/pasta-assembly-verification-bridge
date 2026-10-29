@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\NewOwner\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 968, in rglob
+    for p in selector.select_from(self):
+  File "C:\Users\NewOwner\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 408, in _select_from
+    for p in successor_select(starting_point, is_dir, exists, scandir):
+  File "C:\Users\NewOwner\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 355, in _select_from
+    with scandir(parent_path) as scandir_it:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\NewOwner\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 938, in _scandir
+    return os.scandir(self)
+           ^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\git-blob-ci\\full-attempt\\workspace\\work\\rustup-home\\toolchains\\nightly-2026-09-17-x86_64-pc-windows-msvc\\lib\\rustlib\\rustc-src\\rust\\compiler\\rustc_ast_lowering\\src\\delegation'

@@ -1,0 +1,61 @@
+   Compiling radium v0.7.0
+   Compiling tap v1.0.1
+   Compiling rand_core v0.10.1
+   Compiling funty v2.0.0
+   Compiling subtle v2.6.1
+   Compiling spin v0.9.9
+   Compiling arrayvec v0.7.8
+   Compiling constant_time_eq v0.4.2
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+   Compiling wyz v0.5.1
+   Compiling rand v0.10.2
+   Compiling lazy_static v1.5.0
+   Compiling static_assertions v1.1.0
+   Compiling blake2b_simd v1.0.5
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+   Compiling bitvec v1.1.1
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+   Compiling ff v0.14.0
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+   Compiling group v0.14.0
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+   Compiling pasta_curves v0.6.1 (C:\Users\NewOwner\Documents\Codex\pavb-ci-1029\workspace\work\pasta_curves)
+warning: `cargo miri setup` failed for target `aarch64-unknown-linux-gnu`; falling back to rustc's default sysroot: error: 'cargo-miri.exe' is not installed for the toolchain 'nightly-2026-09-17-x86_64-pc-windows-msvc'.
+help: run `rustup component add miri` to install it
+warning: unused import: `unroll`
+  --> src\limbs.rs:16:16
+   |
+16 | pub(crate) use unroll;
+   |                ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `pasta_curves` (lib) generated 1 warning (run `cargo fix --lib -p pasta_curves` to apply 1 suggestion)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 22.81s

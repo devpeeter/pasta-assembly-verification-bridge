@@ -8,6 +8,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import re
 
 PASTA_COMMIT = "e3c0f0246f56d351f1a94ff0a74c8d201dbf87d9"
 KRAKEN_COMMIT = "811ff7ce1dae0b9cae761585d33959f5302a2cc1"
@@ -19,6 +20,12 @@ class IntegrityError(ValueError):
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def git_blob_id(data: bytes) -> str:
+    """Git SHA-1 object identity of these exact bytes, including line endings."""
+    header = b"blob " + str(len(data)).encode("ascii") + b"\0"
+    return hashlib.sha1(header + data).hexdigest()
 
 
 def contained(root: Path, relative: str) -> Path:
@@ -37,12 +44,18 @@ def check_pasta_snapshot(root: Path) -> dict:
     files = manifest.get("files")
     if not isinstance(files, dict) or not files:
         raise IntegrityError("empty source snapshot")
+    blobs = manifest.get("git_blobs")
+    if not isinstance(blobs, dict) or set(blobs) != set(files):
+        raise IntegrityError("upstream Git blob identities are missing or incomplete")
     for relative, expected in files.items():
         path = contained(root, relative)
         if not path.is_file():
             raise IntegrityError(f"missing upstream source: {relative}")
         if sha256(path) != expected:
             raise IntegrityError(f"changed upstream source: {relative}")
+        if (not isinstance(blobs[relative], str) or not re.fullmatch(r"[0-9a-f]{40}", blobs[relative]) or
+                git_blob_id(path.read_bytes()) != blobs[relative]):
+            raise IntegrityError(f"upstream Git blob mismatch: {relative}")
     return {"status": "PASS", "checked_files": len(files), "commit": PASTA_COMMIT}
 
 
@@ -55,10 +68,16 @@ def check_kraken_snapshot(root: Path) -> dict:
     files = manifest.get("files")
     if not isinstance(files, dict) or not files:
         raise IntegrityError("empty Kraken snapshot")
+    blobs = manifest.get("git_blobs")
+    if not isinstance(blobs, dict) or set(blobs) != set(files):
+        raise IntegrityError("Kraken Git blob identities are missing or incomplete")
     for relative, expected in files.items():
         path = contained(root, relative)
         if not path.is_file() or sha256(path) != expected:
             raise IntegrityError(f"changed or missing Kraken source: {relative}")
+        if (not isinstance(blobs[relative], str) or not re.fullmatch(r"[0-9a-f]{40}", blobs[relative]) or
+                git_blob_id(path.read_bytes()) != blobs[relative]):
+            raise IntegrityError(f"Kraken Git blob mismatch: {relative}")
     return {"status": "PASS", "checked_files": len(files), "commit": KRAKEN_COMMIT}
 
 

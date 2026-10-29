@@ -1,0 +1,30 @@
+import MulMetadata
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+
+namespace PastaBridge
+
+theorem multiplication_template_matches_retained_assembly :
+    MultiplicationArtifact.renderValue MultiplicationArtifact.canonicalBinding
+      retainedMultiplicationArtifactValue = .ok retainedMultiplicationAssembly := by
+  rw [MultiplicationArtifact.renderValue, multiplication_pieces_match_retained_value]
+  decide +kernel
+
+theorem multiplication_program_serializes_to_retained_assembly :
+    MultiplicationArtifact.serializeProgram retainedMultiplicationProgram =
+      .ok retainedMultiplicationAssembly := by
+  decide +kernel
+
+theorem multiplication_artifact_matches_retained_program :
+    MultiplicationArtifact.renderValue MultiplicationArtifact.canonicalBinding
+      retainedMultiplicationArtifactValue =
+      MultiplicationArtifact.serializeProgram retainedMultiplicationProgram := by
+  rw [multiplication_template_matches_retained_assembly,
+    multiplication_program_serializes_to_retained_assembly]
+
+#print axioms multiplication_template_matches_retained_assembly
+#print axioms multiplication_program_serializes_to_retained_assembly
+#print axioms multiplication_artifact_matches_retained_program
+
+end PastaBridge

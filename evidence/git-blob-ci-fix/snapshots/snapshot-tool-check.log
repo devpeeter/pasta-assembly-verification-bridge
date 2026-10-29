@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "snapshots": [
+    {
+      "status": "PASS",
+      "revision": "e3c0f0246f56d351f1a94ff0a74c8d201dbf87d9",
+      "source": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\pasta_curves",
+      "snapshot": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta",
+      "checked_files": 16,
+      "replaced_files": [],
+      "mode": "checked",
+      "byte_source": "git cat-file blob at the immutable revision; no text decoding or newline conversion"
+    },
+    {
+      "status": "PASS",
+      "revision": "811ff7ce1dae0b9cae761585d33959f5302a2cc1",
+      "source": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\kraken",
+      "snapshot": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\kraken",
+      "checked_files": 112,
+      "replaced_files": [],
+      "mode": "checked",
+      "byte_source": "git cat-file blob at the immutable revision; no text decoding or newline conversion"
+    }
+  ]
+}

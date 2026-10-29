@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\nat-proof-build\\MulRetainedBytes.olean",
+    "MulRetainedBytes.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work",
+  "exit_code": 4294967295,
+  "wall_seconds": 92.09687,
+  "peak_rss_bytes": 2699108352,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "evidence/diagnostics/mul-string-byte-expansion-interrupted.log",
+  "status": "INTERRUPTED",
+  "note": "Isolated large String literal expansion. No successful readback claimed; direct raw-file byte inclusion replaced this path.",
+  "source": "evidence/diagnostics/mul-string-byte-expansion-interrupted.lean.txt",
+  "source_sha256": "043d877d70a4fcc316dca4d4e69e69a833d4dabc51155873571b702b131cde67"
+}

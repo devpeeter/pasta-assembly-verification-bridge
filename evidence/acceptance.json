@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "status": "NOT_RUN",
-  "status_scope": "Full automated verification for the current revision",
+  "status": "PASS",
+  "status_scope": "Current corrected technical inputs: completed local automated verification; GitHub reruns are NOT RUN",
   "acceptance_criteria": {
     "command": "python scripts/verify.py --clean",
     "ci_entrypoint": "python scripts/ci_full.py --output <new-external-directory>",
@@ -17,15 +17,16 @@
   },
   "local_validation": {
     "status": "PASS",
-    "record": "evidence/windows-path-ci-fix/summary.json",
-    "python_tests": 97,
+    "record": "evidence/git-blob-ci-fix/summary.json",
+    "python_tests": 108,
+    "python_skips": 0,
     "unit_integrity_stages": 5
   },
-  "current_revision_full_clean_run": "NOT_RUN",
+  "current_revision_full_clean_run": "PASS",
   "github_workflows": {
     "unit_integrity": "NOT_RUN",
     "full_verification": "NOT_RUN",
-    "scope": "Corrected local revision; prior hosted attempts failed the path-alias unit test and are recorded separately."
+    "scope": "Git-blob-corrected local source; connected GitHub integration permits pull but not push. No corrected revision was pushed or dispatched."
   },
   "historical_implementer_run": {
     "date": "2026-10-23",
@@ -55,5 +56,81 @@
       "proof_execution": "NOT_RUN",
       "url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40815070636"
     }
-  }
+  },
+  "prior_local_validation": {
+    "status": "PASS",
+    "record": "evidence/windows-path-ci-fix/summary.json",
+    "python_tests": 97,
+    "unit_integrity_stages": 5
+  },
+  "current_revision_full_verification": {
+    "status": "PASS",
+    "actual_verify_exit_code": 0,
+    "actual_ci_full_exit_code": 0,
+    "verification_stages": 67,
+    "ci_stages": 6,
+    "target_gates": {
+      "addition-target-correctness": {
+        "name": "addition-target-correctness",
+        "status": "PASS",
+        "missing_checks": [],
+        "theorem": "PastaBridge.AdditionCorrectness.addition_correct"
+      },
+      "multiplication-target-correctness": {
+        "name": "multiplication-target-correctness",
+        "status": "PASS",
+        "missing_checks": [],
+        "theorem": "PastaBridge.MulCorrectness.multiplication_correct",
+        "reason": null
+      }
+    },
+    "verification_report": "evidence/git-blob-ci-fix/short-full/runtime/evidence/verification.json",
+    "ci_report": "evidence/git-blob-ci-fix/short-full/runner/ci-full.json",
+    "measurements": "evidence/git-blob-ci-fix/short-full/runner/measurements.json",
+    "strict_validation": "evidence/git-blob-ci-fix/final-full-validation.json",
+    "source_seals": {
+      "verification_input_seal": {
+        "status": "PASS",
+        "changed_inputs": [],
+        "actual_exit_code": 0,
+        "checked_files": 265
+      },
+      "verification_map_rechecked": true,
+      "verification_sealed_input_files": 265,
+      "original_checkout_unchanged_during_run": true,
+      "original_source_map_files": 777,
+      "original_source_manifest_sha256": "16177a3e5f593c7a8ba5861c3ebbab74859b7e4b30928d1ae9c25efaf49a5bbe"
+    },
+    "axioms": {
+      "PastaBridge.AdditionCorrectness.addition_correct": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "addition_target_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PastaBridge.MulCorrectness.multiplication_correct": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "multiplication_target_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  },
+  "subsequent_hosted_attempt": {
+    "source_commit": "225d6a7ee9ad8e6e4b3f92155f4df6a18a172a08",
+    "status": "FAIL",
+    "stage": "used-kraken-source",
+    "proof_execution": "NOT_RUN",
+    "url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40908170419",
+    "record": "evidence/git-blob-ci-fix/hosted/ci-full.json"
+  },
+  "finalization_policy": "Docs, live acceptance and new evidence are updated after the successful sealed run. Tested production/proof inputs are unchanged."
 }

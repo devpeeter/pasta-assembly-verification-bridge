@@ -1,0 +1,8 @@
+'PastaBridge.AdditionNat.words_update' does not depend on any axioms
+'PastaBridge.AdditionNat.carry_update' does not depend on any axioms
+'PastaBridge.AdditionNat.words_transition' does not depend on any axioms
+'PastaBridge.AdditionNat.carry_transition' does not depend on any axioms
+'PastaBridge.AdditionNatData.words_sequence_nil' does not depend on any axioms
+'PastaBridge.AdditionNatData.words_sequence_cons' does not depend on any axioms
+'PastaBridge.AdditionNatData.carry_sequence_nil' does not depend on any axioms
+'PastaBridge.AdditionNatData.carry_sequence_cons' does not depend on any axioms

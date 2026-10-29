@@ -1,0 +1,7 @@
+{
+  "process_id": 41180,
+  "command": "python scripts/verify.py --clean",
+  "exit_code": 1,
+  "observed_utc": "2026-10-23T00:50:02.515475+00:00",
+  "method": "Windows OpenProcess + WaitForSingleObject + GetExitCodeProcess"
+}

@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "stages": [
+    {
+      "name": "kernel-counterexample-certificates",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\formal-addition-negative-build\\FormalAdditionNegatives.olean",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs\\FormalAdditionNegatives.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 14.581169,
+      "peak_rss_bytes": 1468624896,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\formal-addition-negatives\\counterexamples.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.FormalAdditionNegatives.unmodified_model": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalAdditionNegatives.witness_words_bounded": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalAdditionNegatives.witness_field_inputs": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalAdditionNegatives.expected_value": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalAdditionNegatives.broken_carry_value": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalAdditionNegatives.broken_binding_value": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalAdditionNegatives.broken_carry_is_semantically_wrong": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PastaBridge.FormalAdditionNegatives.broken_binding_is_semantically_wrong": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "strict_axiom_census_passed": true,
+      "source_sha256": "a1ce4ae9acf0993d2b0c3d785bb286fa6b00eba00e1082f13b13916ed89a8341"
+    },
+    {
+      "name": "broken-carry",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\formal-addition-negative-sources\\broken-carry.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 1,
+      "wall_seconds": 20.55314,
+      "peak_rss_bytes": 1378844672,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\formal-addition-negatives\\broken-carry.log",
+      "status": "PASS",
+      "expected_failure": true,
+      "intended_false_equality": "carryResult = expected",
+      "semantic_rejection_confirmed": true,
+      "source_sha256": "c2cc5e0d7f5ccb32425c59e58f70a858781c1701e1e5645e13b90d3998fc7d46"
+    },
+    {
+      "name": "wrong-binding",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\formal-addition-negative-sources\\wrong-binding.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 1,
+      "wall_seconds": 45.357432,
+      "peak_rss_bytes": 1397743616,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\formal-addition-negatives\\wrong-binding.log",
+      "status": "PASS",
+      "expected_failure": true,
+      "intended_false_equality": "bindingResult = expected",
+      "semantic_rejection_confirmed": true,
+      "source_sha256": "3d1989b82cc8716058653fcf16f893f399ec82e286bd82d2ed03e1ae75d620b3"
+    }
+  ],
+  "scope": "Closed kernel semantic counterexamples and exact rejection of their false equalities; instruction lists are traversed algorithmically."
+}

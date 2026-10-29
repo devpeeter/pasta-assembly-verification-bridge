@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-DautoImplicit=false",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\endpoint-deps\\MulMachine.olean",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\MulMachine.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of",
+  "exit_code": 0,
+  "wall_seconds": 70.344862,
+  "peak_rss_bytes": 938283008,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\mul-machine.log"
+}

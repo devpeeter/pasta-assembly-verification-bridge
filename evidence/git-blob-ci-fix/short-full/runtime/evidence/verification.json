@@ -1,0 +1,1634 @@
+{
+  "started_utc": "2026-10-29T17:25:13.846592+00:00",
+  "status": "PASS",
+  "stages": [
+    {
+      "name": "upstream-snapshot",
+      "status": "PASS",
+      "checked_files": 16,
+      "commit": "e3c0f0246f56d351f1a94ff0a74c8d201dbf87d9"
+    },
+    {
+      "name": "kraken-snapshot",
+      "status": "PASS",
+      "checked_files": 112,
+      "commit": "811ff7ce1dae0b9cae761585d33959f5302a2cc1"
+    },
+    {
+      "name": "fresh-extraction",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\scripts\\extract.py",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 28.117764,
+      "peak_rss_bytes": 32817152,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\fresh-extraction.log",
+      "status": "PASS"
+    },
+    {
+      "name": "generated-current",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge\\kraken_adapter.py",
+        "--artifact",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\artifacts\\charon-asm.json",
+        "--output",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\generated",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 0.380627,
+      "peak_rss_bytes": 20713472,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\generated-current.log",
+      "status": "PASS"
+    },
+    {
+      "name": "negative-policy-tests",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 63.514921,
+      "peak_rss_bytes": 37769216,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\negative-policy-tests.log",
+      "status": "PASS"
+    },
+    {
+      "name": "proof-dependencies",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\scripts\\check_proof_dependencies.py"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 4.759129,
+      "peak_rss_bytes": 17465344,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\proof-dependencies.log",
+      "status": "PASS"
+    },
+    {
+      "name": "used-kraken-source",
+      "status": "PASS",
+      "revision": "811ff7ce1dae0b9cae761585d33959f5302a2cc1"
+    },
+    {
+      "name": "kraken-compatibility-overlay",
+      "status": "PASS",
+      "path": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\kraken-compat",
+      "patch_sha256": "11f8b62f5baadc185ca2223448def6843027641a4178c466ae973f53e41d41b2",
+      "immediate_shift_patch_sha256": "d96e3395b5911a52482a7f3e8b791d7facc65ae9cf19d8e7e261a73ff5b30241",
+      "zero_destination_patch_sha256": "f7b5dc938df9ec81d14aab8ebfe151968c62ef1e450dbfc0661b234e59e0eb7d"
+    },
+    {
+      "name": "kraken-build",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lake.exe",
+        "build",
+        "Kraken.AArch64.Parser",
+        "Kraken.AArch64.Semantics"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\kraken-compat",
+      "exit_code": 0,
+      "wall_seconds": 137.280066,
+      "peak_rss_bytes": 59277312,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\kraken-build.log",
+      "status": "PASS"
+    },
+    {
+      "name": "kraken-word",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\KrakenWord.olean",
+        "KrakenWord.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 10.025233,
+      "peak_rss_bytes": 914784256,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\kraken-word.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.KrakenWord.sub_value": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.sub_carry": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.subs_carry": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.adds_carry": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.add_value": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.add_carry": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.csel_cs_value": []
+      }
+    },
+    {
+      "name": "kraken-binding",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\KrakenBinding.olean",
+        "KrakenBinding.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 10.387028,
+      "peak_rss_bytes": 920297472,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\kraken-binding.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.KrakenBinding.get_set_binding": [
+          "propext"
+        ],
+        "PastaBridge.KrakenBinding.get_set": [],
+        "PastaBridge.KrakenBinding.set_sp": [],
+        "PastaBridge.KrakenBinding.shared_input_values": [],
+        "PastaBridge.KrakenBinding.readonly_sharing_admissible": []
+      }
+    },
+    {
+      "name": "kerneljson",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\KernelJson.olean",
+        "KernelJson.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 5.398333,
+      "peak_rss_bytes": 878583808,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\kerneljson.log",
+      "status": "PASS",
+      "axiom_census": {}
+    },
+    {
+      "name": "artifact",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\Artifact.olean",
+        "Artifact.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 3.924731,
+      "peak_rss_bytes": 886771712,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\artifact.log",
+      "status": "PASS",
+      "axiom_census": {}
+    },
+    {
+      "name": "retained",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\Retained.olean",
+        "Retained.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 6.89434,
+      "peak_rss_bytes": 908324864,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\retained.log",
+      "status": "PASS",
+      "axiom_census": {}
+    },
+    {
+      "name": "krakenrun",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\KrakenRun.olean",
+        "KrakenRun.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 4.638737,
+      "peak_rss_bytes": 874811392,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\krakenrun.log",
+      "status": "PASS",
+      "axiom_census": {}
+    },
+    {
+      "name": "artifact-link",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\CheckAddition.olean",
+        "CheckAddition.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 13.64978,
+      "peak_rss_bytes": 1363111936,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\artifact-link.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.addition_template_matches_retained_assembly": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.addition_program_serializes_to_retained_assembly": [
+          "propext"
+        ],
+        "PastaBridge.addition_artifact_matches_retained_program": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.addition_operand_metadata_matches": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.retained_artifact_chars_readback": []
+      }
+    },
+    {
+      "name": "addition-semantics",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\scripts\\runtime_checks.py",
+        "--lean",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "--lake",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lake.exe",
+        "--kraken",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\kraken-compat"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 64.225087,
+      "peak_rss_bytes": 53407744,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\addition-semantics.log",
+      "status": "PASS"
+    },
+    {
+      "name": "arithmetic-build",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs\\build_arithmetic.py",
+        "--lean-bin",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 498.059196,
+      "peak_rss_bytes": 18223104,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-build.log",
+      "status": "PASS"
+    },
+    {
+      "name": "arithmetic-proof",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "ArithmeticAudit.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 15.599345,
+      "peak_rss_bytes": 1206603776,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-proof.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaAssemblyBridge.Arithmetic.addition": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaAssemblyBridge.Arithmetic.multiplication": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "wordcorrespondence",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\WordCorrespondence.olean",
+        "WordCorrespondence.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 11.231221,
+      "peak_rss_bytes": 904413184,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\wordcorrespondence.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.WordCorrespondence.addc": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.WordCorrespondence.subc": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.WordCorrespondence.cselCs": []
+      }
+    },
+    {
+      "name": "additionstep",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionStep.olean",
+        "AdditionStep.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 8.013359,
+      "peak_rss_bytes": 941092864,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionstep.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionStep.adds_initial": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.preserve": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.memory_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.stack_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.register_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.readonly_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.related_results_exist": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.interp_of_step": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "additionmachine",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionMachine.olean",
+        "AdditionMachine.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 7.435602,
+      "peak_rss_bytes": 918605824,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionmachine.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionMachine.instantiation_certificate": [
+          "propext"
+        ],
+        "PastaBridge.AdditionMachine.canonical_identity": [
+          "propext"
+        ],
+        "PastaBridge.AdditionMachine.canonical_inverse": [
+          "propext"
+        ],
+        "PastaBridge.AdditionMachine.canonical_separated": [
+          "propext"
+        ],
+        "PastaBridge.AdditionMachine.binding_memory_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionMachine.written_matches_checked_modes": [
+          "propext"
+        ],
+        "PastaBridge.AdditionMachine.retained_written_mask": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.decoding_certificate": [
+          "propext"
+        ],
+        "PastaBridge.AdditionLift.encoding_certificate": [
+          "propext"
+        ],
+        "PastaBridge.AdditionLift.full_run_is_sequence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.sequence_preserves": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.initial_relation": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.all_bindings_simulation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.sequence_observation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.binding_stack_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.binding_register_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.binding_readonly_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "additionnat",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionNat.olean",
+        "AdditionNat.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 9.494694,
+      "peak_rss_bytes": 931614720,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionnat.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionNat.step_project": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "additionnatsequence",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionNatSequence.olean",
+        "AdditionNatSequence.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 8.131067,
+      "peak_rss_bytes": 915742720,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionnatsequence.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionNat.sequence_project": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "additionnatdata",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionNatData.olean",
+        "AdditionNatData.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 11.699179,
+      "peak_rss_bytes": 930250752,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionnatdata.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionNatData.retained_data_readback": [
+          "propext"
+        ]
+      }
+    },
+    {
+      "name": "additionnatobservation",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionNatObservation.olean",
+        "AdditionNatObservation.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 22.368759,
+      "peak_rss_bytes": 911650816,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionnatobservation.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionNat.words_transition": [],
+        "PastaBridge.AdditionNatData.words_sequence_cons": []
+      }
+    },
+    {
+      "name": "additionparametricbase",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionParametricBase.olean",
+        "AdditionParametricBase.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 8.127782,
+      "peak_rss_bytes": 926924800,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionparametricbase.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionParametric.model_specializes": [],
+        "PastaBridge.AdditionParametric.sequence_specializes": [],
+        "PastaBridge.AdditionParametric.transition_specializes": []
+      }
+    },
+    {
+      "name": "additionparametricmodel",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionParametricModel.olean",
+        "AdditionParametricModel.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 8.584137,
+      "peak_rss_bytes": 922759168,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionparametricmodel.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionParametric.generic_model": [
+          "propext"
+        ],
+        "PastaBridge.AdditionParametric.retained_data_model": [
+          "propext"
+        ]
+      }
+    },
+    {
+      "name": "additionnatdatamodel",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionNatDataModel.olean",
+        "AdditionNatDataModel.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 8.065332,
+      "peak_rss_bytes": 911024128,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionnatdatamodel.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionNatData.retained_data_model": [
+          "propext"
+        ]
+      }
+    },
+    {
+      "name": "additionnatliftbase",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionNatLiftBase.olean",
+        "AdditionNatLiftBase.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 6.844881,
+      "peak_rss_bytes": 913924096,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionnatliftbase.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionNat.all_bindings_model_of": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionNat.map_comp": []
+      }
+    },
+    {
+      "name": "additionnatmodel",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionNatModel.olean",
+        "AdditionNatModel.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 6.614083,
+      "peak_rss_bytes": 907059200,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionnatmodel.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionNat.decoded_program_model": [
+          "propext"
+        ]
+      }
+    },
+    {
+      "name": "additionnatlift",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionNatLift.olean",
+        "AdditionNatLift.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 7.452077,
+      "peak_rss_bytes": 905932800,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additionnatlift.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionNat.all_bindings_model": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "bindingartifact",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\BindingArtifact.olean",
+        "BindingArtifact.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 9.325347,
+      "peak_rss_bytes": 1071378432,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\bindingartifact.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.BindingArtifact.bound_program_matches_template": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "additioncorrectness",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\AdditionCorrectness.olean",
+        "AdditionCorrectness.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 22.319538,
+      "peak_rss_bytes": 1468153856,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\additioncorrectness.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionCorrectness.addition_correct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "proof-inventory",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "Audit.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 14.963021,
+      "peak_rss_bytes": 1411674112,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\proof-inventory.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.AdditionCorrectness.addition_correct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionNat.all_bindings_model": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.BindingArtifact.bound_program_matches_template": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "addition_target_type": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "addition-formal-negatives",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\scripts\\check_formal_negatives.py",
+        "--lean-bin",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 84.946563,
+      "peak_rss_bytes": 20185088,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\addition-formal-negatives.log",
+      "status": "PASS"
+    },
+    {
+      "name": "addition-target-correctness",
+      "status": "PASS",
+      "missing_checks": [],
+      "theorem": "PastaBridge.AdditionCorrectness.addition_correct"
+    },
+    {
+      "name": "parser-boundaries",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\scripts\\parser_checks.py",
+        "--lean-bin",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 5.441402,
+      "peak_rss_bytes": 20631552,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\parser-boundaries.log",
+      "status": "PASS"
+    },
+    {
+      "name": "multiplication-parser",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\scripts\\probe_multiplication.py",
+        "--lean-bin",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 6.241038,
+      "peak_rss_bytes": 21032960,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\multiplication-parser.log",
+      "status": "PASS"
+    },
+    {
+      "name": "mul-json-certificate-current",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\scripts\\generate_mul_json_certificate.py",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 0.177554,
+      "peak_rss_bytes": 16818176,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mul-json-certificate-current.log",
+      "status": "PASS"
+    },
+    {
+      "name": "stringbytes",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\StringBytes.olean",
+        "StringBytes.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 1.118136,
+      "peak_rss_bytes": 287584256,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\stringbytes.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.StringBytes.append": [
+          "propext"
+        ],
+        "PastaBridge.StringBytes.injective": [
+          "propext"
+        ],
+        "PastaBridge.StringBytes.intercalate": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulartifact",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulArtifact.olean",
+        "MulArtifact.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 4.49302,
+      "peak_rss_bytes": 891031552,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulartifact.log",
+      "status": "PASS",
+      "axiom_census": {}
+    },
+    {
+      "name": "mulretained",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulRetained.olean",
+        "MulRetained.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 33.651547,
+      "peak_rss_bytes": 1345540096,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulretained.log",
+      "status": "PASS",
+      "axiom_census": {}
+    },
+    {
+      "name": "mulmetadata",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulMetadata.olean",
+        "MulMetadata.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 5.547634,
+      "peak_rss_bytes": 944672768,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulmetadata.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.multiplication_operand_metadata_matches": [
+          "propext"
+        ],
+        "PastaBridge.multiplication_pieces_match_retained_value": [
+          "propext"
+        ]
+      }
+    },
+    {
+      "name": "muljsontextdagbase",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulJsonTextDagBase.olean",
+        "MulJsonTextDagBase.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 50.208543,
+      "peak_rss_bytes": 1824243712,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\muljsontextdagbase.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulJsonTextDag.encoded_124": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "muljsontextdagfinal",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulJsonTextDagFinal.olean",
+        "MulJsonTextDagFinal.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 23.891959,
+      "peak_rss_bytes": 1824825344,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\muljsontextdagfinal.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulJsonTextDag.retained_bytes_readback": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulJsonTextDag.retained_encoding": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulJsonTextDag.retained_value_readback": []
+      }
+    },
+    {
+      "name": "muljsoncertificate",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulJsonCertificate.olean",
+        "MulJsonCertificate.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 4.782263,
+      "peak_rss_bytes": 860561408,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\muljsoncertificate.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.multiplication_artifact_chars_readback": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.multiplication_value_encodes_retained_artifact": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulword",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulWord.olean",
+        "MulWord.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 11.415095,
+      "peak_rss_bytes": 910385152,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulword.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulWord.mul_value": [
+          "propext"
+        ],
+        "PastaBridge.MulWord.umulh_value": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulWord.lsl_value": [
+          "propext"
+        ],
+        "PastaBridge.MulWord.lsr_value": [
+          "propext"
+        ],
+        "PastaBridge.MulWord.shift_amount": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulWord.mask_value": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulWord.csel_lo_value": []
+      }
+    },
+    {
+      "name": "mulstep",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulStep.olean",
+        "MulStep.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 8.544067,
+      "peak_rss_bytes": 945692672,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulstep.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulStep.memory_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulStep.stack_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulStep.register_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulStep.readonly_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulStep.interp_of_step": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulmachine",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulMachine.olean",
+        "MulMachine.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 9.136283,
+      "peak_rss_bytes": 969187328,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulmachine.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulMachine.decoding_certificate": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.instantiation_certificate": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.canonical_identity": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.valid_certificate": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.decoded_valid": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.full_run_is_sequence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.binding_memory_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.binding_stack_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.binding_register_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.binding_readonly_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulprogramdata",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulProgramData.olean",
+        "MulProgramData.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 9.729717,
+      "peak_rss_bytes": 894058496,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulprogramdata.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulProgramData.retained_instructions_readback": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulsequenceframe",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulSequenceFrame.olean",
+        "MulSequenceFrame.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 5.816485,
+      "peak_rss_bytes": 864788480,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulsequenceframe.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulSequenceFrame.readonly": []
+      }
+    },
+    {
+      "name": "mulnat",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulNat.olean",
+        "MulNat.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 8.818113,
+      "peak_rss_bytes": 951169024,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulnat.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulNat.step_project": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulnatsequence",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulNatSequence.olean",
+        "MulNatSequence.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 8.818299,
+      "peak_rss_bytes": 921513984,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulnatsequence.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulNat.sequence_project": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulparametricbase",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulParametricBase.olean",
+        "MulParametricBase.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 9.185491,
+      "peak_rss_bytes": 957968384,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulparametricbase.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulParametric.carry_transition": [
+          "propext"
+        ],
+        "PastaBridge.MulParametric.program_partition": [
+          "propext"
+        ],
+        "PastaBridge.MulParametric.transition_specializes": [],
+        "PastaBridge.MulParametric.round_specializes": [],
+        "PastaBridge.MulParametric.model_specializes": [],
+        "PastaBridge.MulParametric.sequence_specializes": [],
+        "PastaBridge.MulParametric.words_transition": [],
+        "PastaBridge.MulParametric.sequence_readonly": [],
+        "PastaBridge.MulParametric.sequence_append": []
+      }
+    },
+    {
+      "name": "mulparametricrounds",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulParametricRounds.olean",
+        "MulParametricRounds.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 11.377523,
+      "peak_rss_bytes": 978403328,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulparametricrounds.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulParametric.firstRound_model": [
+          "propext"
+        ],
+        "PastaBridge.MulParametric.secondRound_model": [
+          "propext"
+        ],
+        "PastaBridge.MulParametric.thirdRound_model": [
+          "propext"
+        ]
+      }
+    },
+    {
+      "name": "mulparametricmodel",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulParametricModel.olean",
+        "MulParametricModel.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 97.920412,
+      "peak_rss_bytes": 1648762880,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulparametricmodel.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulParametric.retained_data_model": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulnatlift",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulNatLift.olean",
+        "MulNatLift.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 10.248844,
+      "peak_rss_bytes": 919441408,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulnatlift.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulNat.all_bindings_model": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulformatting",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulFormatting.olean",
+        "MulFormatting.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 7.501966,
+      "peak_rss_bytes": 940498944,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulformatting.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulFormatting.serialize_instruction": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulFormatting.serialize_program": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulpieceformatting",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulPieceFormatting.olean",
+        "MulPieceFormatting.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 6.321397,
+      "peak_rss_bytes": 893906944,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulpieceformatting.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulPieceFormatting.render_normalize": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulPieceFormatting.render_program": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulbindingartifact",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulBindingArtifact.olean",
+        "MulBindingArtifact.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 7.275306,
+      "peak_rss_bytes": 956854272,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulbindingartifact.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulBindingArtifact.bound_program_matches_template": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulcertificate",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulCertificate.olean",
+        "MulCertificate.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 6.611094,
+      "peak_rss_bytes": 882692096,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulcertificate.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.multiplication_artifact_matches_retained_program": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.multiplication_retained_representation_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mulcorrectness",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulCorrectness.olean",
+        "MulCorrectness.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 22.865632,
+      "peak_rss_bytes": 1470087168,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mulcorrectness.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulCorrectness.multiplication_correct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "multiplication-semantics",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\scripts\\multiplication_runtime_checks.py",
+        "--lean",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "--lake",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lake.exe",
+        "--kraken",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\kraken-compat"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 51.749998,
+      "peak_rss_bytes": 59396096,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\multiplication-semantics.log",
+      "status": "PASS"
+    },
+    {
+      "name": "mul-proof-inventory",
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "MulAudit.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 25.438468,
+      "peak_rss_bytes": 1417261056,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mul-proof-inventory.log",
+      "status": "PASS",
+      "axiom_census": {
+        "PastaBridge.MulCorrectness.multiplication_correct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "multiplication_target_type": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "name": "mul-formal-negatives",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\scripts\\check_mul_formal_negatives.py",
+        "--lean-bin",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 54.068622,
+      "peak_rss_bytes": 19910656,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\mul-formal-negatives.log",
+      "status": "PASS"
+    },
+    {
+      "name": "multiplication-target-correctness",
+      "status": "PASS",
+      "missing_checks": [],
+      "theorem": "PastaBridge.MulCorrectness.multiplication_correct",
+      "reason": null
+    }
+  ],
+  "unresolved": [],
+  "wall_seconds": 1640.6108,
+  "lean_version": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+  "checks_failed": false
+}

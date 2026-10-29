@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "scope": "Read-only hosted failure evidence and exact Git-blob audit. No repository mutation, push or workflow dispatch performed.",
+  "repository": "devpeeter/pasta-assembly-verification-bridge",
+  "head_branch": "main",
+  "head_sha": "225d6a7ee9ad8e6e4b3f92155f4df6a18a172a08",
+  "run": {
+    "id": 40908170419,
+    "url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40908170419",
+    "job_id": 123568546194,
+    "job_url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40908170419/job/123568546194",
+    "conclusion": "failure"
+  },
+  "artifact": {
+    "id": 12912787632,
+    "name": "full-verification-40908170419-1",
+    "bytes": 644966,
+    "sha256": "25df814dd7f350e1af35a783ee0fc9ca412697bb225a0c6e77f8015182357134"
+  },
+  "permissions": {
+    "admin": false,
+    "maintain": false,
+    "pull": true,
+    "push": false,
+    "triage": false
+  },
+  "initial_unit_gate": "PASS",
+  "bootstrap_stages": "Pinned Charon/Rust build, Lean installation, locked proof dependency bootstrap, genuine extraction and adapter generation all passed.",
+  "verification": {
+    "actual_exit_code": 1,
+    "status": "BLOCKED",
+    "failure_stage": "used-kraken-source",
+    "exact_reason": "Kraken build source differs from snapshot: .github/workflows/lean_action_ci.yml",
+    "preceding_checks": "fresh-extraction, generated-current, negative-policy-tests and proof-dependencies passed",
+    "addition_target": "INCOMPLETE; proof/execution stages did not run",
+    "multiplication_target": "INCOMPLETE; deferred by addition gate"
+  },
+  "extraction_comparison": {
+    "status": "PASS",
+    "complete_templates_operands_options_unchanged": true,
+    "compact_projections_and_assembly_bytes_unchanged": true
+  },
+  "snapshot_audit": {
+    "path": "../snapshot-audit/git-blob-comparison.json",
+    "mechanism": "Binary git cat-file --batch at immutable commits, compared to stable pre-rewrite snapshots",
+    "kraken_files": 112,
+    "pasta_files": 16,
+    "exact_matches": 0,
+    "crlf_snapshot_vs_lf_git_only": 128,
+    "other_byte_differences": 0,
+    "limitation": "The fresh CI clone's entire worktree was excluded from artifact upload. The hosted first-file failure and exact local pinned Git blobs are retained separately; this does not claim that every fresh hosted clone file was directly downloaded."
+  },
+  "tree_sha": "fed6d81957efe4e31c076009b5dfbe36bbe5ad08"
+}

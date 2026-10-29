@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+    "scripts/verify.py",
+    "--clean"
+  ],
+  "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+  "exit_code": 1,
+  "wall_seconds": 16.219564,
+  "peak_rss_bytes": 20520960,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\verify-clean.log",
+  "observed_utc": "2026-10-29T16:11:58.218455+00:00",
+  "method": "Actual measured subprocess return code; no shell status mapping"
+}

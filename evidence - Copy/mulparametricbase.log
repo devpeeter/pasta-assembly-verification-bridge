@@ -1,0 +1,9 @@
+'PastaBridge.MulParametric.transition_specializes' does not depend on any axioms
+'PastaBridge.MulParametric.round_specializes' does not depend on any axioms
+'PastaBridge.MulParametric.model_specializes' does not depend on any axioms
+'PastaBridge.MulParametric.sequence_specializes' does not depend on any axioms
+'PastaBridge.MulParametric.words_transition' does not depend on any axioms
+'PastaBridge.MulParametric.carry_transition' depends on axioms: [propext]
+'PastaBridge.MulParametric.program_partition' depends on axioms: [propext]
+'PastaBridge.MulParametric.sequence_readonly' does not depend on any axioms
+'PastaBridge.MulParametric.sequence_append' does not depend on any axioms

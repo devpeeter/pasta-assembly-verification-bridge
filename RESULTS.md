@@ -1,22 +1,22 @@
 # Verification results
 
 <!-- verification-status:start -->
-**Historical full automated verification: PASS (2026-10-23). Current revision full verification: NOT RUN.**
-Acceptance follows the required automated technical checks in
-[ACCEPTANCE.md](ACCEPTANCE.md). GitHub Actions runs for this corrected local
-revision remain **NOT RUN**. The preceding hosted failure is recorded below.
+**Current local full automated verification: PASS (2026-10-29).**
+The fresh isolated Windows runner completed all six runner stages and all 67
+verification stages with actual exit 0, both target gates complete and no
+unresolved verification checks. All 108 Python tests and all five unit-CI stages
+also passed. Current records are under [evidence/git-blob-ci-fix/](evidence/git-blob-ci-fix/).
 
-The Windows run on 2026-10-23 completed all 67 automated stages with exit code 0.
-That result covers the assembly blocks from their register-entry states under
-the documented contracts. It does not prove Rust wrapper argument loading or
-result storage, and its vectors do not execute assembly on ARM hardware.
-CLI and CI follow-ups have separate local evidence; the historical full run
-does not certify changed script bytes.
+Acceptance follows the automated technical criteria in
+[ACCEPTANCE.md](ACCEPTANCE.md). Corrected-revision GitHub Actions unit and full
+runs remain **NOT RUN**; repository access reports `push: false`.
+The proofs cover the assembly blocks from register entry under their documented
+contracts. Rust wrapper operand loading/result storage and ARM hardware execution
+are outside this result.
 
-Historical records are `evidence/verification.json`, `evidence/verification-exit.json`
-and `evidence/final-clean-input-seal.json`. Their timestamps, source hashes and
-results remain unchanged. Current automated acceptance criteria and execution
-status are recorded separately in `evidence/acceptance.json`.
+Historical records, including the 2026-10-23 full run, preceding hosted failures
+and earlier local checks, retain their original timestamps, hashes and results.
+The active execution status is recorded separately in `evidence/acceptance.json`.
 <!-- verification-status:end -->
 
 ## Scope, immutable tools and source
@@ -42,13 +42,16 @@ download contents. The Aeneas context predates Charon's structured assembly AST;
 the bridge consumes the new LLBC directly and reuses existing proofs unchanged.
 It does not claim new-LLBC compatibility with that older Aeneas executable.
 
-Kraken's upstream snapshot is unchanged. Three exact build-overlay patches fix
+Retained Pasta and Kraken sources use exact bytes from their pinned Git blobs;
+their manifests record SHA-256 and Git blob IDs. Three exact build-overlay patches fix
 the `List.allSome` namespace collision, parse bounded immediate LSL/LSR as
 existing shifted ORR nodes, and allow destination XZR through the existing
 immediate-arithmetic branch. Their SHA-256 values are
-`7808946aee8db4c743b0af1e4904fbf942363a0305a27e003c6140306a400f4a`,
-`9d21eea5b9768404e3faa91938c3e8ba613654ba93f055bb268f9393cf228f3a`, and
-`19baac52a9fc44440c29a29c235dca3035233253c3b9c7bca4aa80c149e4cb59`.
+`11f8b62f5baadc185ca2223448def6843027641a4178c466ae973f53e41d41b2`,
+`d96e3395b5911a52482a7f3e8b791d7facc65ae9cf19d8e7e261a73ff5b30241`, and
+`f7b5dc938df9ec81d14aab8ebfe151968c62ef1e450dbfc0661b234e59e0eb7d`.
+These are the regenerated LF patch-byte hashes. Their normalized edits are
+unchanged. Earlier patch hashes remain only in dated historical records.
 Instruction-semantic bodies remain byte-identical to upstream. Selected modules
 use Lean 4.31.0 despite the upstream nightly declaration.
 
@@ -205,16 +208,109 @@ result is delivered as an updated source ZIP; no remote fix or successful hosted
 rerun is claimed.
 <!-- windows-path-ci-fix:end -->
 
-The connected GitHub integration reports read access and `push: false` for the
-repository. No push or workflow dispatch was attempted. The corrected source ZIP
-is supplied for upload. Previous dated evidence and all production verification,
-proof, pin and workflow sources are preserved.
+At that path-fix phase, the connected integration reported read access and
+`push: false`, so no push or workflow dispatch was attempted. Dated evidence and
+production verification/proof/pin/workflow bytes were preserved in that phase.
+The subsequent snapshot and patch-byte corrections are recorded separately below.
+
+## Exact Git-blob snapshot correction (2026-10-29)
+
+The [subsequent hosted full run](https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40908170419)
+used source commit `225d6a7ee9ad8e6e4b3f92155f4df6a18a172a08`.
+Its initial 97-test unit gate, pinned Rust/Charon build, Lean installation,
+locked proof-dependency bootstrap, genuine extraction and adapter generation
+passed. The ordinary clean verifier then failed `used-kraken-source` with
+`Kraken build source differs from snapshot: .github/workflows/lean_action_ci.yml`.
+Both target gates remained incomplete; no Kraken/proof compilation followed.
+The extraction comparison passed with complete templates, operands, options,
+compact projections and assembly bytes unchanged.
+
+Binary `git cat-file` comparisons at the immutable revisions found that all
+112 retained Kraken files and all 16 retained Pasta files were CRLF copies of
+LF Git blobs. There were no other byte differences in any of the 128 files.
+The snapshots were rebuilt from those binary objects, and every rebuilt file's
+raw SHA-256 and Git blob ID were checked against the pinned tree. Verification
+does not normalize line endings to pass a mismatch.
+
+The three compatibility patches were regenerated against the canonical LF
+source bytes. Their exact patch-byte hashes above changed; their normalized
+edits did not. Source revisions and tool versions remain unchanged. New source
+clones persist `core.autocrlf=false` and `core.eol=lf`; proof-dependency
+repositories set those local settings when initialized. Fresh isolated output
+directories avoid inheriting older worktree policies.
+
+<!-- git-blob-ci-results:start -->
+**Current local checks and full verification: PASS (2026-10-29, America/Toronto).**
+All 108 Python tests passed with no omissions in 37.536038 s. The actual
+unit/integrity runner passed all five stages, including its own complete
+108-test run, in 36.076793 s. Commands, actual exits and logs are in
+[local-checks/](evidence/git-blob-ci-fix/local-checks/) and its
+[unit report](evidence/git-blob-ci-fix/local-checks/unit/report.json).
+
+The first isolated full attempt failed during the native Charon build: MSVC
+could not open a Rust sysroot library at a 264-character absolute path. The file
+existed through the extended-path spelling. `verify.py --clean` was not invoked
+in that attempt. A new short output root reduced the corresponding library path
+to 203 characters. The existing full runner then passed with unchanged runner
+code, source revisions and tool pins. Both attempts and their path diagnostics
+are retained in [first-full/](evidence/git-blob-ci-fix/first-full/) and
+[attempt-controls/](evidence/git-blob-ci-fix/attempt-controls/).
+
+The successful run started at 2026-10-29 16:52:09 UTC and finished at 17:52:42 UTC.
+All six runner stages passed: Rust/Charon bootstrap, Lean installation, locked
+proof-dependency bootstrap, fresh binary extraction, adapter regeneration, and
+clean verification. The measured outer process exited 0 in 3,638.4434 s. The
+actual verification subprocess took 1,641.189238 s; its report records
+1,640.6108 s for 67/67 PASS stages, both target gates PASS and `unresolved: []`.
+The 265-file verification input seal passed with no changed inputs, and the
+original checkout was unchanged. See the [runner report](evidence/git-blob-ci-fix/short-full/runner/ci-full.json),
+[verification report](evidence/git-blob-ci-fix/short-full/runtime/evidence/verification.json),
+[input seal](evidence/git-blob-ci-fix/short-full/runner/verification-input-seal.json)
+and [source checks](evidence/git-blob-ci-fix/source-checks/).
+
+| Fresh direct Lean check | Wall time (s) | Peak memory (bytes) |
+| --- | ---: | ---: |
+| Addition field endpoint | 22.319538 | 1,468,153,856 |
+| Addition exact-type/axiom audit | 14.963021 | 1,411,674,112 |
+| Multiplication field endpoint | 22.865632 | 1,470,087,168 |
+| Multiplication exact-type/axiom audit | 25.438468 | 1,417,261,056 |
+
+Measured direct Lean checks totalled 1,247.484909 s. The maximum individual
+Lean child peak was 1,824,825,344 bytes at `muljsontextdagfinal` (23.891959 s),
+not a process-tree memory total. The [measurement report](evidence/git-blob-ci-fix/short-full/runner/measurements.json)
+records this scope. Both public targets and their exact-type guards have exactly
+`propext`, `Classical.choice`, and `Quot.sound` in their axiom censuses, with no
+extra model-correspondence premise. All 13 arithmetic source modules were checked.
+
+Kraken model execution vectors passed 3,232 addition cases and 4,064
+multiplication cases, using five allocations and all 16 incoming flag patterns,
+including X19-written and shared-read-only cases in both fields. Carry/binding
+mutants produced 32/32 addition mismatches and 192/928 multiplication mismatches.
+Both formal-negative reports passed their exact intended false-equality
+rejections. Actual audits, model-vector reports and formal-negative logs are
+retained in [runtime/evidence/](evidence/git-blob-ci-fix/short-full/runtime/evidence/).
+These are Lean-host Kraken model executions, not ARM hardware tests.
+
+Corrected-revision GitHub unit and full workflow runs remain **NOT RUN**.
+The connected integration reports `pull: true`, `push: false`; no corrected
+push or workflow dispatch was attempted. The preceding hosted failure remains
+separately recorded in [hosted/](evidence/git-blob-ci-fix/hosted/).
+Dated historical results below and above are unchanged.
+<!-- git-blob-ci-results:end -->
+
+Check the rebuilt snapshots with `python scripts/snapshot_sources.py --check`
+after obtaining the pinned source checkouts. `--write` intentionally reconstructs
+only the manifest-selected paths from those pinned Git objects and updates
+SHA-256/blob metadata; it is not blind newline conversion or acceptance of a
+modified worktree. Refresh packaging metadata with
+`python scripts/source_manifest.py --write` after an intentional update.
 
 ## Acceptance and wrapper scope
 
 Acceptance is determined by the recorded automated technical checks in
-[ACCEPTANCE.md](ACCEPTANCE.md). The current revision's full run and both hosted
-workflows remain **NOT RUN**; local checks and historical results are listed
+[ACCEPTANCE.md](ACCEPTANCE.md). The current revision's isolated local full run
+passed on 2026-10-29. Corrected-revision hosted unit and full workflows remain
+**NOT RUN**. Local current checks and dated historical results are listed
 separately above.
 
 Both theorems take `MachineData` at the assembly block's register-entry state.

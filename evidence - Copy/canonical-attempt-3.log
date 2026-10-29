@@ -1,0 +1,124 @@
+AdditionCanonical.lean:35:3: error: unknown tactic
+AdditionCanonical.lean:26:68: error: unsolved goals
+s : MachineData
+⊢ Except.ok
+      {
+        l0 :=
+          BitVec.toNat
+            (if
+                CondCode.CS.interp
+                    (StatusFlags.from_result
+                      (BitVec.extractLsb' 0 64
+                            (BitVec.extractLsb' 0 64 s.regs.X3.toBitVec + BitVec.extractLsb' 0 64 s.regs.X7.toBitVec +
+                              BitVec.ofNat 64
+                                (StatusFlags.from_result
+                                      (BitVec.extractLsb' 0 64 s.regs.X2.toBitVec +
+                                          BitVec.extractLsb' 0 64 s.regs.X6.toBitVec +
+                                        BitVec.ofNat 64
+                                          (StatusFlags.from_result
+                                                (BitVec.extractLsb' 0 64 s.regs.X1.toBitVec +
+                                                    BitVec.extractLsb' 0 64 s.regs.X5.toBitVec +
+                                                  BitVec.ofNat 64
+                                                    (StatusFlags.adds
+                                                          (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec +
+                                                            BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                              (Int64.toInt 0).toNat)
+                                                          (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec)
+                                                          (BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                            (Int64.toInt 0).toNat)).c.toNat)
+                                                {
+                                                  c :=
+                                                    BitVec.unsigned
+                                                        (BitVec.extractLsb' 0 64 s.regs.X1.toBitVec +
+                                                            BitVec.extractLsb' 0 64 s.regs.X5.toBitVec +
+                                                          BitVec.ofNat 64
+                                                            (StatusFlags.adds
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec +
+                                                                    BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                                      (Int64.toInt 0).toNat)
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec)
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                                    (Int64.toInt 0).toNat)).c.toNat) !=
+                                                      (BitVec.extractLsb' 0 64 s.regs.X1.toBitVec).unsigned +
+                                                          (BitVec.extractLsb' 0 64 s.regs.X5.toBitVec).unsigned +
+                                                        if
+                                                            (StatusFlags.adds
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec +
+                                                                    BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                                      (Int64.toInt 0).toNat)
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec)
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                                    (Int64.toInt 0).toNat)).c =
+                                                              true then
+                                                          1
+                                                        else 0,
+                                                  v :=
+                                                    BitVec.signed
+                                                        (BitVec.extractLsb' 0 64 s.regs.X1.toBitVec +
+                                                            BitVec.extractLsb' 0 64 s.regs.X5.toBitVec +
+                                                          BitVec.ofNat 64
+                                                            (StatusFlags.adds
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec +
+                                                                    BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                                      (Int64.toInt 0).toNat)
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec)
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                                    (Int64.toInt 0).toNat)).c.toNat) !=
+                                                      (BitVec.extractLsb' 0 64 s.regs.X1.toBitVec).signed +
+                                                          (BitVec.extractLsb' 0 64 s.regs.X5.toBitVec).signed +
+                                                        if
+                                                            (StatusFlags.adds
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec +
+                                                                    BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                                      (Int64.toInt 0).toNat)
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec)
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                                    (Int64.toInt 0).toNat)).c =
+                                                              true then
+                                                          1
+                                                        else 0 }).c.toNat)
+                                      {
+                                        c :=
+                                          BitVec.unsigned
+                                              (BitVec.extractLsb' 0 64 s.regs.X2.toBitVec +
+                                                  BitVec.extractLsb' 0 64 s.regs.X6.toBitVec +
+                                                BitVec.ofNat 64
+                                                  (StatusFlags.from_result
+                                                        (BitVec.extractLsb' 0 64 s.regs.X1.toBitVec +
+                                                            BitVec.extractLsb' 0 64 s.regs.X5.toBitVec +
+                                                          BitVec.ofNat 64
+                                                            (StatusFlags.adds
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec +
+                                                                    BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                                      (Int64.toInt 0).toNat)
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec)
+                                                                  (BitVec.extractLsb' 0 64 s.regs.X4.toBitVec <<<
+                                                                    (Int64.toInt 0).toNat)).c.toNat)
+                                                        {
+                                                          c :=
+                                                            BitVec.unsigned
+                                                                (BitVec.extractLsb' 0 64 s.regs.X1.toBitVec +
+                                                                    BitVec.extractLsb' 0 64 s.regs.X5.toBitVec +
+                                                                  BitVec.ofNat 64
+                                                                    (StatusFlags.adds
+                                                                          (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec +
+                                                                            BitVec.extractLsb' 0 64
+                                                                                s.regs.X4.toBitVec <<<
+                                                                              (Int64.toInt 0).toNat)
+                                                                          (BitVec.extractLsb' 0 64 s.regs.X0.toBitVec)
+                                                                          (BitVec.extractLsb' 0 64
+                                                                              s.regs.X4.toBitVec <<<
+                                                                            ⋯.toNat)).c.toNat) !=
+                                                              ⋯,
+                                                          v := ⋯ }).c.toNat) !=
+                                            ⋯,
+                                        v := ⋯ }).c.toNat) -
+                          ⋯ -
+                        ⋯)
+                      ⋯) =
+                  ⋯ then
+              ⋯
+            else ⋯),
+        l1 := ⋯, l2 := ⋯, l3 := ⋯ } =
+    ⋯
+'PastaBridge.addition_canonical_model' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

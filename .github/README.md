@@ -18,6 +18,12 @@ The source archive's outer directory layout and the GitHub repository layout
 therefore differ intentionally. Byte conversion is disabled before checkout;
 `.gitattributes` preserves the recorded file bytes.
 
+Both retained upstream snapshots contain exact binary Git-blob bytes, with
+SHA-256 and Git blob IDs in `UPSTREAM.json`. New bootstrap source clones persist
+`core.autocrlf=false` and `core.eol=lf` before checkout; proof-dependency
+repositories set those local settings on initialization. Verification compares
+exact bytes and does not normalize CRLF/LF differences to make a check pass.
+
 ## Unit and integrity checks
 
 The Windows job uses Python 3.11.9 and runs:
@@ -44,6 +50,12 @@ The manual/release job first runs the same unit/integrity command, then:
 ```console
 python scripts/ci_full.py --output <new-directory-outside-the-project>
 ```
+
+On Windows, choose a short absolute output path. The first local attempt failed
+at an MSVC Rust sysroot library path of 264 characters, before verification ran.
+The unchanged runner and pins passed with a fresh short output root that reduced
+the corresponding path to 203 characters. Both attempts are documented in
+[RESULTS.md](../RESULTS.md).
 
 The full runner copies source into an isolated runtime workspace, omitting
 historical evidence, logs and build caches. It retains baseline artifacts and
@@ -87,8 +99,13 @@ All third-party actions use full commit SHA references listed in
 `actions.lock.json`. The `windows-2025` hosted image is not immutable; each run
 records its image version and environment. Pinned downloads, source selection,
 file inclusion, Lean/Mathlib caches and Kraken semantics remain disclosed trust
-boundaries. The first real hosted run must establish resource/download viability;
-local orchestration tests are not a hosted run.
+boundaries. The preceding hosted full attempt passed tool bootstrap and
+extraction, then stopped at a snapshot byte mismatch before proof compilation.
+The current correction rebuilds all 128 selected source files from pinned Git
+objects and regenerates the three LF patches with unchanged normalized edits.
+The corrected isolated full runner passed locally on Windows on 2026-10-29,
+including all 67 verification stages. That establishes a local current run;
+proof-stage resource viability on the hosted image is still unmeasured.
 
 ## Editing and acceptance
 
@@ -104,13 +121,31 @@ Refreshing hashes is packaging maintenance. The integrity and full verification
 checks determine automated technical acceptance. Ordinary CI never refreshes
 a stale submitted manifest silently.
 
+With the pinned source checkouts present, the snapshot check verifies the selected
+upstream bytes and blob metadata:
+
+```console
+python scripts/snapshot_sources.py --check
+```
+
+An intentional `python scripts/snapshot_sources.py --write`
+reconstructs those selected snapshots from the immutable Git objects;
+it is not a general newline-normalization or edited-source acceptance command.
+Any resulting packaging changes require the manifest refresh above, and stale
+compatibility patches or changed verification inputs still fail.
+
 Current execution results and dates are in [RESULTS.md](../RESULTS.md). A green
 full job means complete automated technical verification of the assembly blocks
 from their register-entry state. Rust wrapper operand loads/result stores are
 unproved. Kraken model execution vectors run through Lean on the host, not ARM
 hardware. Acceptance follows the automated technical criteria in
-[ACCEPTANCE.md](../ACCEPTANCE.md). Hosted unit and full workflow execution and
-a fresh full check of the current revision remain **NOT RUN** as of 2026-10-28.
+[ACCEPTANCE.md](../ACCEPTANCE.md). The current local Windows full run passed on
+2026-10-29 with actual exit 0, six runner stages and 67 verification stages;
+the separate 108-test suite and all five unit-CI stages also passed. Corrected
+hosted workflows remain **NOT RUN**, and connected repository access reports
+`push: false`. No hosted success or corrected remote push is claimed. Actual
+reports, measurements and preceding failures are linked from
+[RESULTS.md](../RESULTS.md).
 
 GitHub's primary documentation describes
 [manual/release triggers](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)

@@ -1,0 +1,2 @@
++ C:\Users\NewOwner\Documents\Codex\2026-10-22\build-a-working-technical-mvp-of\work\charon\charon\target\release\charon.exe cargo --no-dedup-serialized-ast --start-from crate::asm::aarch64::add --start-from crate::asm::aarch64::mul --dest-file C:\Users\NewOwner\Documents\Codex\2026-10-22\build-a-working-technical-mvp-of\work\charon-extract-87jbdxvo\pasta_curves.llbc -- --lib --locked --target aarch64-unknown-linux-gnu --features asm
+PASS: fresh Charon extraction matches retained complete add/mul templates and structured operands (13.354s)

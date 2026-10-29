@@ -1,0 +1,22 @@
+{
+  "charon_revision": "53388d8887d106e46b4b1a24abe23498a38613e1",
+  "rustc": "rustc 1.100.0-nightly (923c95cdf 2026-09-16)\nbinary: rustc\ncommit-hash: 923c95cdf5ba65cea505aa2ea829f578e1506ed8\ncommit-date: 2026-09-16\nhost: x86_64-pc-windows-msvc\nrelease: 1.100.0-nightly\nLLVM version: 23.1.1",
+  "binaries": {
+    "charon": "bc53d58b1608095deae631aa0f599b36cc0609091cc629aeafc16949651640d2",
+    "charon-driver": "152a404a8b7ae3b63c629835c7bb34c5f9ec4a7caa4fe80e2f97734dbbd1f02c"
+  },
+  "build_command": [
+    "cargo",
+    "+nightly-2026-09-17",
+    "build",
+    "--locked",
+    "--release",
+    "--no-default-features",
+    "--features",
+    "rustc",
+    "--bin",
+    "charon",
+    "--bin",
+    "charon-driver"
+  ]
+}

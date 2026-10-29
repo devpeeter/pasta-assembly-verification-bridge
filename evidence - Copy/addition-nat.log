@@ -1,0 +1,3 @@
+'PastaBridge.AdditionNat.read_project' depends on axioms: [propext, Quot.sound]
+'PastaBridge.AdditionNat.store_project' depends on axioms: [propext, Quot.sound]
+'PastaBridge.AdditionNat.step_project' depends on axioms: [propext, Classical.choice, Quot.sound]

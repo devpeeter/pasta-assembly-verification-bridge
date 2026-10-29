@@ -3,16 +3,20 @@
 This implements an extraction and verification bridge for the AArch64 `add` and `mul` blocks in Pasta at `e3c0f0246f56d351f1a94ff0a74c8d201dbf87d9`.
 
 <!-- verification-status:start -->
-**Historical full automated verification: PASS (2026-10-23). Current revision full verification: NOT RUN.**
-The recorded Windows clean run checked the assembly blocks from their register-entry
-states for both Pasta fields. It does not prove the surrounding Rust wrapper's
-operand loads or result stores. CLI and CI implementation checks have separate
-local results; the historical full-run record does not certify revised scripts.
-GitHub Actions runs for this corrected local revision are **NOT RUN**.
-The preceding hosted attempt failed a Windows path-alias test before proofs;
-the confirmed failure and local fix results are recorded in [RESULTS.md](RESULTS.md).
+**Current local full automated verification: PASS (2026-10-29).**
+The isolated Windows full runner completed all six runner stages and all 67
+verification stages with actual exit 0. Both Pasta fields' assembly-block targets,
+exact-type and standard-axiom audits, formal negatives and Kraken model execution
+vectors passed. The local Python suite passed all 108 tests; unit CI passed all
+five stages.
+The theorems begin at assembly register entry and do not prove the surrounding
+Rust wrapper's operand loads or result stores. Model vectors run Kraken through
+Lean on the host, not ARM hardware.
+Corrected-revision GitHub Actions unit and full runs remain **NOT RUN**; the
+connected repository permission is read-only (`push: false`). The preceding
+hosted source-byte failure, first local long-path failure, successful short-path
+retry and dated historical records are retained in [RESULTS.md](RESULTS.md).
 Acceptance follows the automated technical criteria in [ACCEPTANCE.md](ACCEPTANCE.md).
-See [RESULTS.md](RESULTS.md) for dated results, assumptions and measurements.
 <!-- verification-status:end -->
 
 See [RESULTS.md](RESULTS.md) for exact statements, assumptions, evidence and measurements. Exit code 0 records completion of all required automated checks for both assembly targets under the documented contracts and trust boundary.
@@ -107,7 +111,13 @@ checkout recreates the documented `outputs/` layout internally. With workflows
 on the default branch, open **Actions → Full verification → Run workflow**.
 Publishing a release also triggers that workflow. Full instructions, artifact
 paths and automated acceptance criteria are in [.github/README.md](.github/README.md).
-No GitHub Actions execution is claimed by the presence of these workflow files.
+The same full runner passed locally on Windows on 2026-10-29; this is not a
+GitHub Actions run. Use a short absolute output directory when invoking
+`python scripts/ci_full.py --output <new-directory-outside-the-project>` on
+Windows. An initial attempt reached an MSVC linker failure at a 264-character
+private Rust sysroot path before verification. A fresh output root with the
+corresponding path shortened to 203 characters passed with unchanged runner
+code and pins. See [RESULTS.md](RESULTS.md) for both attempts.
 
 After intentional source or documentation edits, explicitly update and check the
 manifest before committing:
@@ -124,7 +134,23 @@ checks a submitted manifest without silently refreshing it.
 
 `pins.json` fixes Pasta, the extraction Charon revision and Rust compiler commit, the upstream Aeneas library context, Kraken, Lean, and Mathlib. `proofs/lake-manifest.json` fixes transitive Lean packages. `lean-release.lock.json` fixes official Lean archive contents. No floating branch is the source of a verified result.
 
-The target's existing Aeneas pin predates Charon's structured assembly AST. The new LLBC is consumed by this bridge rather than being passed to that older Aeneas executable. Existing arithmetic proofs are reused unchanged. The selected Kraken source originally requested a Lean nightly; the actual selected-module compatibility check uses Lean 4.31.0. The retained upstream Kraken snapshot is unchanged. Three separately hashed patches form the build overlay: the `List.allSome` namespace fix, bounded 64-bit `#decimal` LSL/LSR aliases using existing shifted ORR nodes, and one parser guard allowing XZR destinations in the existing immediate arithmetic branch. Every instruction-semantic body remains unchanged. `scripts/kraken_compat.py` checks exact patch bytes, hashes, source patterns and overlay contents.
+The target's existing Aeneas pin predates Charon's structured assembly AST. The new LLBC is consumed by this bridge rather than being passed to that older Aeneas executable. Existing arithmetic proofs are reused unchanged. The selected Kraken source originally requested a Lean nightly; the actual selected-module compatibility check uses Lean 4.31.0. Retained Pasta and Kraken source files now contain the exact bytes of the pinned Git blobs, with SHA-256 and Git blob IDs in each `UPSTREAM.json`. Three separately hashed LF patches form the build overlay: the `List.allSome` namespace fix, bounded 64-bit `#decimal` LSL/LSR aliases using existing shifted ORR nodes, and one parser guard allowing XZR destinations in the existing immediate arithmetic branch. Their normalized edits are unchanged; current byte hashes are in `pins.json`. Instruction-semantic bodies match the pinned upstream bytes. `scripts/kraken_compat.py` checks exact patch bytes, hashes, source patterns and overlay contents.
+
+The original 112 Kraken and 16 Pasta snapshot files were CRLF worktree copies
+of LF Git blobs. All 128 differences were line endings only. They were rebuilt
+with binary Git object reads, rather than normalized during verification.
+`python scripts/snapshot_sources.py --check` checks the selected bytes and
+metadata against local object stores at the immutable pins. An intentional
+`--write` rebuilds those selected snapshots from the pinned blobs; it is not a
+command to accept arbitrary edited files. Refresh `SOURCE-MANIFEST.json` with
+`python scripts/source_manifest.py --write` after an intentional source or
+metadata update, then run the checks again.
+
+New bootstrap clones persist `core.autocrlf=false` and `core.eol=lf` before
+checkout. Proof-dependency repositories set the same local policy at creation.
+Existing checkouts are not silently rewritten; use a fresh isolated full-CI
+output directory to reproduce this corrected source-byte policy. Verification
+still compares exact bytes and rejects a line-ending mismatch.
 
 `--clean` removes the local Lean build outputs and then recompiles the delivered checks; extraction always uses a fresh Cargo target directory. Fresh extraction compares the complete structured assembly subtrees. Retained raw hashes, JSON-pointer links and every generated byte/file are checked separately; artifacts are not silently replaced. Existing checked release archives and Mathlib caches may be reused in a normal clean check; their role is documented in `RESULTS.md`.
 
@@ -132,6 +158,7 @@ For a fresh Windows workspace, preserve the archive's `outputs/pasta-assembly-ve
 
 ```console
 python scripts/bootstrap.py
+python scripts/snapshot_sources.py --check
 python scripts/install_lean.py
 python proofs/bootstrap.py --lean-bin ../../work/toolchains/lean-4.31.0-windows/bin
 python scripts/extract.py

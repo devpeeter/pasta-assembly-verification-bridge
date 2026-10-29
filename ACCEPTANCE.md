@@ -1,11 +1,18 @@
 # Automated technical acceptance
 
 Acceptance is determined by the recorded automated checks, exact theorem
-contracts and disclosed trust boundary. The historical Windows clean run
-passed on 2026-10-23. A full check of the current CLI/CI revision and both
-GitHub Actions workflows remain **NOT RUN** as of 2026-10-28.
-Local CLI and workflow/orchestration results are recorded separately in
-[RESULTS.md](RESULTS.md).
+contracts and disclosed trust boundary. The current snapshot-corrected revision
+passed a fresh isolated local Windows full run on 2026-10-29 with actual exit 0:
+all six runner stages and all 67 verification stages passed, including both
+target gates and exact-type/standard-axiom audits. All 108 Python tests and all
+five unit-CI stages also passed. The recorded verification time was 1,640.6108 s;
+maximum individual direct Lean child peak memory was 1,824,825,344 bytes.
+
+Corrected-revision GitHub Actions unit and full runs remain **NOT RUN**;
+repository permission reports `push: false`. The preceding hosted run stopped
+at the source-byte gate before proof compilation. Current local reports and
+all dated historical attempts are distinguished in [RESULTS.md](RESULTS.md)
+and retained in [evidence/git-blob-ci-fix/](evidence/git-blob-ci-fix/).
 
 ## Automated CI acceptance criteria
 
@@ -65,6 +72,40 @@ the pinned source/tool revisions, complete templates, structured operands and
 their raw-artifact links must agree. Do not edit instruction lists, add
 assumptions, change pins or weaken negative checks to make a run pass. Imported
 dependency caches remain part of the disclosed trust boundary.
+
+## Exact source-byte boundary
+
+The retained 112 Kraken and 16 Pasta source files are exact pinned Git blobs.
+Their manifests contain both raw SHA-256 values and Git blob IDs. The earlier
+snapshots differed only by CRLF versus LF; rebuilding from binary Git objects
+corrected their byte identities without changing normalized source contents.
+The three regenerated LF compatibility patches retain the same normalized edits
+and have new exact byte hashes in `pins.json`; source/tool revisions are unchanged.
+
+After obtaining the pinned checkouts, run:
+
+```console
+python scripts/snapshot_sources.py --check
+```
+
+An explicit `python scripts/snapshot_sources.py --write` reconstructs the
+manifest-selected files from the immutable Git objects. It does not approve
+edited files or normalize input during verification. Intentional source or
+metadata updates also require `python scripts/source_manifest.py --write`,
+followed by the ordinary integrity and full checks.
+
+New source clones persist `core.autocrlf=false` and `core.eol=lf` before checkout;
+proof dependencies set the same local policy on initialization. Existing
+worktrees are not silently converted. Exact-byte checks, all proof obligations
+and every rejection requirement remain in force.
+
+The successful fresh isolated run used a short Windows output root. An earlier
+attempt failed in the Charon native link at a 264-character private sysroot
+library path before invoking verification. With the corresponding path shortened
+to 203 characters, the unchanged full runner and pins completed successfully.
+Use a short absolute directory outside the project for `ci_full.py --output`.
+Both attempts, fresh checkout byte comparisons and input seals are retained
+under [evidence/git-blob-ci-fix/](evidence/git-blob-ci-fix/).
 
 ## Proof obligations and automated audits
 

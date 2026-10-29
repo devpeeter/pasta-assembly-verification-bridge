@@ -1,0 +1,31 @@
+test_arbitrary_incoming_flags_and_scratch_not_read (test_adapter.AdapterPolicyTests.test_arbitrary_incoming_flags_and_scratch_not_read) ... ok
+test_contradictory_values_for_same_expression_rejected (test_adapter.AdapterPolicyTests.test_contradictory_values_for_same_expression_rejected) ... ok
+test_early_output_overlap_rejected_even_when_values_equal (test_adapter.AdapterPolicyTests.test_early_output_overlap_rejected_even_when_values_equal) ... ok
+test_equal_read_only_sharing_accepted_unequal_rejected (test_adapter.AdapterPolicyTests.test_equal_read_only_sharing_accepted_unequal_rejected) ... ok
+test_literal_register_is_rejected (test_adapter.AdapterPolicyTests.test_literal_register_is_rejected) ... ok
+test_naked_assembly_options_and_directives_rejected (test_adapter.AdapterPolicyTests.test_naked_assembly_options_and_directives_rejected) ... ok
+test_reserved_and_incomplete_bindings_rejected (test_adapter.AdapterPolicyTests.test_reserved_and_incomplete_bindings_rejected) ... ok
+test_supported_subset (test_adapter.AdapterPolicyTests.test_supported_subset) ... ok
+test_unsupported_operand_forms_and_modifiers_rejected (test_adapter.AdapterPolicyTests.test_unsupported_operand_forms_and_modifiers_rejected) ... ok
+test_complete_subtrees_match_raw_artifact (test_adapter.RetainedArtifactTests.test_complete_subtrees_match_raw_artifact) ... ok
+test_raw_or_operand_tampering_rejected (test_adapter.RetainedArtifactTests.test_raw_or_operand_tampering_rejected) ... ok
+test_real_generated_file_staleness_rejected (test_adapter.RetainedArtifactTests.test_real_generated_file_staleness_rejected) ... ok
+test_correctness_axiom_rejected (test_axiom_audit.AxiomAuditTests.test_correctness_axiom_rejected) ... ok
+test_missing_or_truncated_target_census_rejected (test_axiom_audit.AxiomAuditTests.test_missing_or_truncated_target_census_rejected) ... ok
+test_native_proof_trust_rejected (test_axiom_audit.AxiomAuditTests.test_native_proof_trust_rejected) ... ok
+test_requested_target_census_checked (test_axiom_audit.AxiomAuditTests.test_requested_target_census_checked) ... ok
+test_sorry_rejected (test_axiom_audit.AxiomAuditTests.test_sorry_rejected) ... ok
+test_standard_and_empty_censuses (test_axiom_audit.AxiomAuditTests.test_standard_and_empty_censuses) ... ok
+test_manifest_path_escape_rejected (test_integrity.IntegrityTests.test_manifest_path_escape_rejected) ... ok
+test_pin_change_rejected (test_integrity.IntegrityTests.test_pin_change_rejected) ... ok
+test_stale_and_extra_generated_files_rejected (test_integrity.IntegrityTests.test_stale_and_extra_generated_files_rejected) ... ok
+test_upstream_snapshot_and_changed_proof_rejected (test_integrity.IntegrityTests.test_upstream_snapshot_and_changed_proof_rejected) ... ok
+test_overlay_changes_only_two_identifier_occurrences_and_preserves_snapshot (test_kraken_compat.KrakenCompatibilityTests.test_overlay_changes_only_two_identifier_occurrences_and_preserves_snapshot) ... ok
+test_tampered_pinned_patch_hash_rejected (test_kraken_compat.KrakenCompatibilityTests.test_tampered_pinned_patch_hash_rejected) ... ok
+test_tampered_retained_patch_rejected (test_kraken_compat.KrakenCompatibilityTests.test_tampered_retained_patch_rejected) ... ok
+test_unexpected_source_pattern_rejected (test_kraken_compat.KrakenCompatibilityTests.test_unexpected_source_pattern_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 52.722s
+
+OK

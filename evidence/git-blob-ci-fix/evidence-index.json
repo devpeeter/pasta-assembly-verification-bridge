@@ -1,0 +1,3237 @@
+{
+  "format": 1,
+  "scope": "Collected actual diagnostics and results; statuses below are retained verbatim from source reports",
+  "collected_utc": "2026-10-29T17:57:49.495484+00:00",
+  "status": "PASS",
+  "source_statuses": {
+    "hosted-full": {
+      "status": "FAIL",
+      "technical_status": "FAIL",
+      "acceptance_status": "FAIL",
+      "started_utc": "2026-10-29T16:06:14.642681+00:00",
+      "finished_utc": "2026-10-29T16:11:58.639647+00:00",
+      "reason": "complete verification did not PASS with actual exit 0",
+      "original_checkout_unchanged": true,
+      "verification_invocation": "INVOKED",
+      "verification_stage_exit_codes": [
+        1
+      ],
+      "source_baseline_record": {
+        "status": "NOT_PRESENT_IN_SELECTED_DIAGNOSTICS"
+      }
+    },
+    "hosted-verification": {
+      "status": "BLOCKED",
+      "started_utc": "2026-10-29T16:11:42.049940+00:00"
+    },
+    "hosted-unit": {
+      "status": "PASS",
+      "started_utc": "2026-10-29T16:06:05.162181+00:00",
+      "finished_utc": "2026-10-29T16:06:13.840763+00:00"
+    },
+    "local-unit": {
+      "status": "PASS",
+      "started_utc": "2026-10-29T16:43:31.269824+00:00",
+      "finished_utc": "2026-10-29T16:44:07.122718+00:00"
+    },
+    "first-full": {
+      "status": "FAIL",
+      "technical_status": "FAIL",
+      "acceptance_status": "FAIL",
+      "started_utc": "2026-10-29T16:45:08.906066+00:00",
+      "finished_utc": "2026-10-29T16:49:25.110916+00:00",
+      "reason": "bootstrap-extraction failed; see its retained command log",
+      "original_checkout_unchanged": true,
+      "verification_invocation": "NOT_INVOKED",
+      "verification_stage_exit_codes": [],
+      "source_baseline_record": {
+        "path": "work/git-blob-ci/full-attempt/source-inputs.json",
+        "sha256": "adeb9faa6899774c1fb01337962ce52363972bcee776d1ed7d041073a25d4429"
+      }
+    },
+    "short-full": {
+      "status": "PASS",
+      "technical_status": "PASS",
+      "acceptance_status": "PASS",
+      "started_utc": "2026-10-29T16:52:09.068658+00:00",
+      "finished_utc": "2026-10-29T17:52:42.412256+00:00",
+      "original_checkout_unchanged": true,
+      "verification_invocation": "INVOKED",
+      "verification_stage_exit_codes": [
+        0
+      ],
+      "source_baseline_record": {
+        "path": "../../pavb-ci-1029/source-inputs.json",
+        "sha256": "adeb9faa6899774c1fb01337962ce52363972bcee776d1ed7d041073a25d4429"
+      }
+    }
+  },
+  "source_changes_during_copy": [],
+  "allowed_suffixes": [
+    ".after",
+    ".before",
+    ".json",
+    ".lean",
+    ".llbc",
+    ".log",
+    ".md",
+    ".patch",
+    ".s",
+    ".sha256",
+    ".txt"
+  ],
+  "unknown_suffix_exclusions": [],
+  "file_count": 209,
+  "total_retained_bytes": 3794179,
+  "files": [
+    {
+      "path": "attempt-controls/full-attempt-console.log",
+      "bytes": 3218,
+      "sha256": "ef13da7529d97693b0fc13b2b4fdec99823e1278126c5af891ad8e05850dcd92",
+      "source": "work/git-blob-ci/full-attempt-console.log",
+      "source_sha256": "ef13da7529d97693b0fc13b2b4fdec99823e1278126c5af891ad8e05850dcd92",
+      "source_bytes": 3218,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "attempt-controls",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "attempt-controls/full-attempt-path-check.json",
+      "bytes": 1328,
+      "sha256": "8d9dca40a4fda017d9158c44b994108cce86a8d88d7937932703f4ace843b77c",
+      "source": "work/git-blob-ci/full-attempt-path-check.json",
+      "source_sha256": "8d9dca40a4fda017d9158c44b994108cce86a8d88d7937932703f4ace843b77c",
+      "source_bytes": 1328,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "attempt-controls",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "attempt-controls/full-attempt-path-check.log",
+      "bytes": 1113,
+      "sha256": "60e4f85527caf7c1b8c28e3f760d567862367b9a599e1f008eda514c9d95e938",
+      "source": "work/git-blob-ci/full-attempt-path-check.log",
+      "source_sha256": "60e4f85527caf7c1b8c28e3f760d567862367b9a599e1f008eda514c9d95e938",
+      "source_bytes": 1113,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "attempt-controls",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "attempt-controls/full-attempt-process.json",
+      "bytes": 638,
+      "sha256": "b7d14d2306773c156e7d8b2dd65a51302aa206096b0bb4104e9cb189e1aa2ab5",
+      "source": "work/git-blob-ci/full-attempt-process.json",
+      "source_sha256": "b7d14d2306773c156e7d8b2dd65a51302aa206096b0bb4104e9cb189e1aa2ab5",
+      "source_bytes": 638,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "attempt-controls",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "attempt-controls/full-attempt-short-path-check.json",
+      "bytes": 1333,
+      "sha256": "67b6d1391ce589e9514a58329d3976406ff577f3eaaa0a885947007fd6c2e8fb",
+      "source": "work/git-blob-ci/full-attempt-short-path-check.json",
+      "source_sha256": "67b6d1391ce589e9514a58329d3976406ff577f3eaaa0a885947007fd6c2e8fb",
+      "source_bytes": 1333,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "attempt-controls",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "attempt-controls/full-attempt-short-path-check.log",
+      "bytes": 512,
+      "sha256": "546c477a0c998889e02afa4ce85989933facb407a737d289a9b0c31558b6d84f",
+      "source": "work/git-blob-ci/full-attempt-short-path-check.log",
+      "source_sha256": "546c477a0c998889e02afa4ce85989933facb407a737d289a9b0c31558b6d84f",
+      "source_bytes": 512,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "attempt-controls",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "attempt-controls/short-attempt-console.log",
+      "bytes": 6900,
+      "sha256": "c79573d99e1afcfbf3a34ef84de302a066a5ac71656dd1db286b949081ba237e",
+      "source": "work/git-blob-ci/short-attempt-console.log",
+      "source_sha256": "c79573d99e1afcfbf3a34ef84de302a066a5ac71656dd1db286b949081ba237e",
+      "source_bytes": 6900,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "attempt-controls",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "attempt-controls/short-attempt-process.json",
+      "bytes": 577,
+      "sha256": "7287f68c2b2d23eef6fe91612c38471f842e7c6e5eb8335518e00d91f164d4a2",
+      "source": "work/git-blob-ci/short-attempt-process.json",
+      "source_sha256": "7287f68c2b2d23eef6fe91612c38471f842e7c6e5eb8335518e00d91f164d4a2",
+      "source_bytes": 577,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "attempt-controls",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "compatibility/comparison.json",
+      "bytes": 1853,
+      "sha256": "1eda5ce5492aff37e49428c08ab060857a18e6edc6c24cb6a60722d34ad7695f",
+      "source": "work/git-blob-ci/compatibility-patch-audit/comparison.json",
+      "source_sha256": "1eda5ce5492aff37e49428c08ab060857a18e6edc6c24cb6a60722d34ad7695f",
+      "source_bytes": 1853,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "compatibility",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "compatibility/kraken-immediate-shifts.patch.after",
+      "bytes": 1627,
+      "sha256": "d96e3395b5911a52482a7f3e8b791d7facc65ae9cf19d8e7e261a73ff5b30241",
+      "source": "work/git-blob-ci/compatibility-patch-audit/kraken-immediate-shifts.patch.after",
+      "source_sha256": "d96e3395b5911a52482a7f3e8b791d7facc65ae9cf19d8e7e261a73ff5b30241",
+      "source_bytes": 1627,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "compatibility",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "compatibility/kraken-immediate-shifts.patch.before",
+      "bytes": 1666,
+      "sha256": "9d21eea5b9768404e3faa91938c3e8ba613654ba93f055bb268f9393cf228f3a",
+      "source": "work/git-blob-ci/compatibility-patch-audit/kraken-immediate-shifts.patch.before",
+      "source_sha256": "9d21eea5b9768404e3faa91938c3e8ba613654ba93f055bb268f9393cf228f3a",
+      "source_bytes": 1666,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "compatibility",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "compatibility/kraken-list-name.patch.after",
+      "bytes": 649,
+      "sha256": "11f8b62f5baadc185ca2223448def6843027641a4178c466ae973f53e41d41b2",
+      "source": "work/git-blob-ci/compatibility-patch-audit/kraken-list-name.patch.after",
+      "source_sha256": "11f8b62f5baadc185ca2223448def6843027641a4178c466ae973f53e41d41b2",
+      "source_bytes": 649,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "compatibility",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "compatibility/kraken-list-name.patch.before",
+      "bytes": 663,
+      "sha256": "7808946aee8db4c743b0af1e4904fbf942363a0305a27e003c6140306a400f4a",
+      "source": "work/git-blob-ci/compatibility-patch-audit/kraken-list-name.patch.before",
+      "source_sha256": "7808946aee8db4c743b0af1e4904fbf942363a0305a27e003c6140306a400f4a",
+      "source_bytes": 663,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "compatibility",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "compatibility/kraken-zero-destination.patch.after",
+      "bytes": 375,
+      "sha256": "f7b5dc938df9ec81d14aab8ebfe151968c62ef1e450dbfc0661b234e59e0eb7d",
+      "source": "work/git-blob-ci/compatibility-patch-audit/kraken-zero-destination.patch.after",
+      "source_sha256": "f7b5dc938df9ec81d14aab8ebfe151968c62ef1e450dbfc0661b234e59e0eb7d",
+      "source_bytes": 375,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "compatibility",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "compatibility/kraken-zero-destination.patch.before",
+      "bytes": 383,
+      "sha256": "19baac52a9fc44440c29a29c235dca3035233253c3b9c7bca4aa80c149e4cb59",
+      "source": "work/git-blob-ci/compatibility-patch-audit/kraken-zero-destination.patch.before",
+      "source_sha256": "19baac52a9fc44440c29a29c235dca3035233253c3b9c7bca4aa80c149e4cb59",
+      "source_bytes": 383,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "compatibility",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "final-full-validation.json",
+      "bytes": 25344,
+      "sha256": "781c03f834f9884abf322e7463706d600b49dce4db4906283c91378a85a8d5b1",
+      "source": "work/git-blob-ci/final-full-validation.json",
+      "source_sha256": "781c03f834f9884abf322e7463706d600b49dce4db4906283c91378a85a8d5b1",
+      "source_bytes": 25344,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "final-validation",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/baseline/artifacts/charon-asm.json",
+      "bytes": 260759,
+      "sha256": "d5681b42cd2d5d1e33a3a8d53c381cb6cafce6728e58ad0303c38898f047ff9f",
+      "source": "work/git-blob-ci/full-attempt/baseline/artifacts/charon-asm.json",
+      "source_sha256": "d5681b42cd2d5d1e33a3a8d53c381cb6cafce6728e58ad0303c38898f047ff9f",
+      "source_bytes": 260759,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/baseline/artifacts/extraction-provenance.json",
+      "bytes": 2624,
+      "sha256": "bec63d9a0d53d81b4a47b3123887cfbb812005c6a1697118c2687179f5d8704f",
+      "source": "work/git-blob-ci/full-attempt/baseline/artifacts/extraction-provenance.json",
+      "source_sha256": "bec63d9a0d53d81b4a47b3123887cfbb812005c6a1697118c2687179f5d8704f",
+      "source_bytes": 2624,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/baseline/artifacts/pasta_curves.llbc",
+      "bytes": 375876,
+      "sha256": "35fb92a65645e1159f70b8dff3e50c5b6ab05e1e805e06dbd2c33d6b0829d027",
+      "source": "work/git-blob-ci/full-attempt/baseline/artifacts/pasta_curves.llbc",
+      "source_sha256": "35fb92a65645e1159f70b8dff3e50c5b6ab05e1e805e06dbd2c33d6b0829d027",
+      "source_bytes": 375876,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/baseline/generated/add-asm.json",
+      "bytes": 9344,
+      "sha256": "81ab7aae5bc73080f351d601ea405971113ad3485d49d109f5dc10cc42c1b5d9",
+      "source": "work/git-blob-ci/full-attempt/baseline/generated/add-asm.json",
+      "source_sha256": "81ab7aae5bc73080f351d601ea405971113ad3485d49d109f5dc10cc42c1b5d9",
+      "source_bytes": 9344,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/baseline/generated/add-check.json",
+      "bytes": 3298,
+      "sha256": "4389fca255150d32c77f222337687cb9df52b97e6a1842725f8432e2d219d9d0",
+      "source": "work/git-blob-ci/full-attempt/baseline/generated/add-check.json",
+      "source_sha256": "4389fca255150d32c77f222337687cb9df52b97e6a1842725f8432e2d219d9d0",
+      "source_bytes": 3298,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/baseline/generated/add.S",
+      "bytes": 216,
+      "sha256": "572c85fdb4c6a8feceb74827b9b3bf2fa4787b97e149ce3483ca64bdcece96bf",
+      "source": "work/git-blob-ci/full-attempt/baseline/generated/add.S",
+      "source_sha256": "572c85fdb4c6a8feceb74827b9b3bf2fa4787b97e149ce3483ca64bdcece96bf",
+      "source_bytes": 216,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/baseline/generated/manifest.json",
+      "bytes": 1645,
+      "sha256": "f13ee460fe9c08c4bdaa2ab7aa117760cb46e94f7d1239c95fd0788904898bee",
+      "source": "work/git-blob-ci/full-attempt/baseline/generated/manifest.json",
+      "source_sha256": "f13ee460fe9c08c4bdaa2ab7aa117760cb46e94f7d1239c95fd0788904898bee",
+      "source_bytes": 1645,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/baseline/generated/mul-check.json",
+      "bytes": 27152,
+      "sha256": "7c2fc8d913bc6907637c09b38777f2fc6c7ac9033ad6e976fde472c5117a8b65",
+      "source": "work/git-blob-ci/full-attempt/baseline/generated/mul-check.json",
+      "source_sha256": "7c2fc8d913bc6907637c09b38777f2fc6c7ac9033ad6e976fde472c5117a8b65",
+      "source_bytes": 27152,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/baseline/generated/mul.S",
+      "bytes": 2482,
+      "sha256": "3fb0498c1cf0e2c852f3391422d41d6f6430956f700e6ca413103ee09b7b8f84",
+      "source": "work/git-blob-ci/full-attempt/baseline/generated/mul.S",
+      "source_sha256": "3fb0498c1cf0e2c852f3391422d41d6f6430956f700e6ca413103ee09b7b8f84",
+      "source_bytes": 2482,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/build-provenance/kraken-compat/COMPATIBILITY.json",
+      "bytes": 12939,
+      "sha256": "ce242a7c7e959c6677c8be4bcd46a390fd26b1cf98b2bfc485fa877d2d95430f",
+      "source": "work/git-blob-ci/full-attempt/workspace/work/kraken-compat/COMPATIBILITY.json",
+      "source_sha256": "ce242a7c7e959c6677c8be4bcd46a390fd26b1cf98b2bfc485fa877d2d95430f",
+      "source_bytes": 12939,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/logs/bootstrap-extraction.log",
+      "bytes": 21607,
+      "sha256": "fb4817c40784dfe72aaabd6c2c3e638d73e27fe7a0c3fdc397032764c516ef32",
+      "source": "work/git-blob-ci/full-attempt/logs/bootstrap-extraction.log",
+      "source_sha256": "fb4817c40784dfe72aaabd6c2c3e638d73e27fe7a0c3fdc397032764c516ef32",
+      "source_bytes": 21607,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runner/ci-full.json",
+      "bytes": 3184,
+      "sha256": "8bac597f14aecc088899c99ab4636db97acbab234924fa5858a5d9380dad5af4",
+      "source": "work/git-blob-ci/full-attempt/ci-full.json",
+      "source_sha256": "8bac597f14aecc088899c99ab4636db97acbab234924fa5858a5d9380dad5af4",
+      "source_bytes": 3184,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runner/source-inputs.json",
+      "bytes": 92770,
+      "sha256": "adeb9faa6899774c1fb01337962ce52363972bcee776d1ed7d041073a25d4429",
+      "source": "work/git-blob-ci/full-attempt/source-inputs.json",
+      "source_sha256": "adeb9faa6899774c1fb01337962ce52363972bcee776d1ed7d041073a25d4429",
+      "source_bytes": 92770,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runtime/artifacts/charon-asm.json",
+      "bytes": 260759,
+      "sha256": "d5681b42cd2d5d1e33a3a8d53c381cb6cafce6728e58ad0303c38898f047ff9f",
+      "source": "work/git-blob-ci/full-attempt/workspace/outputs/pasta-assembly-verification-bridge/artifacts/charon-asm.json",
+      "source_sha256": "d5681b42cd2d5d1e33a3a8d53c381cb6cafce6728e58ad0303c38898f047ff9f",
+      "source_bytes": 260759,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runtime/artifacts/extraction-provenance.json",
+      "bytes": 2624,
+      "sha256": "bec63d9a0d53d81b4a47b3123887cfbb812005c6a1697118c2687179f5d8704f",
+      "source": "work/git-blob-ci/full-attempt/workspace/outputs/pasta-assembly-verification-bridge/artifacts/extraction-provenance.json",
+      "source_sha256": "bec63d9a0d53d81b4a47b3123887cfbb812005c6a1697118c2687179f5d8704f",
+      "source_bytes": 2624,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runtime/artifacts/pasta_curves.llbc",
+      "bytes": 375876,
+      "sha256": "35fb92a65645e1159f70b8dff3e50c5b6ab05e1e805e06dbd2c33d6b0829d027",
+      "source": "work/git-blob-ci/full-attempt/workspace/outputs/pasta-assembly-verification-bridge/artifacts/pasta_curves.llbc",
+      "source_sha256": "35fb92a65645e1159f70b8dff3e50c5b6ab05e1e805e06dbd2c33d6b0829d027",
+      "source_bytes": 375876,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runtime/generated/add-asm.json",
+      "bytes": 9344,
+      "sha256": "81ab7aae5bc73080f351d601ea405971113ad3485d49d109f5dc10cc42c1b5d9",
+      "source": "work/git-blob-ci/full-attempt/workspace/outputs/pasta-assembly-verification-bridge/generated/add-asm.json",
+      "source_sha256": "81ab7aae5bc73080f351d601ea405971113ad3485d49d109f5dc10cc42c1b5d9",
+      "source_bytes": 9344,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runtime/generated/add-check.json",
+      "bytes": 3298,
+      "sha256": "4389fca255150d32c77f222337687cb9df52b97e6a1842725f8432e2d219d9d0",
+      "source": "work/git-blob-ci/full-attempt/workspace/outputs/pasta-assembly-verification-bridge/generated/add-check.json",
+      "source_sha256": "4389fca255150d32c77f222337687cb9df52b97e6a1842725f8432e2d219d9d0",
+      "source_bytes": 3298,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runtime/generated/add.S",
+      "bytes": 216,
+      "sha256": "572c85fdb4c6a8feceb74827b9b3bf2fa4787b97e149ce3483ca64bdcece96bf",
+      "source": "work/git-blob-ci/full-attempt/workspace/outputs/pasta-assembly-verification-bridge/generated/add.S",
+      "source_sha256": "572c85fdb4c6a8feceb74827b9b3bf2fa4787b97e149ce3483ca64bdcece96bf",
+      "source_bytes": 216,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runtime/generated/manifest.json",
+      "bytes": 1645,
+      "sha256": "f13ee460fe9c08c4bdaa2ab7aa117760cb46e94f7d1239c95fd0788904898bee",
+      "source": "work/git-blob-ci/full-attempt/workspace/outputs/pasta-assembly-verification-bridge/generated/manifest.json",
+      "source_sha256": "f13ee460fe9c08c4bdaa2ab7aa117760cb46e94f7d1239c95fd0788904898bee",
+      "source_bytes": 1645,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runtime/generated/mul-check.json",
+      "bytes": 27152,
+      "sha256": "7c2fc8d913bc6907637c09b38777f2fc6c7ac9033ad6e976fde472c5117a8b65",
+      "source": "work/git-blob-ci/full-attempt/workspace/outputs/pasta-assembly-verification-bridge/generated/mul-check.json",
+      "source_sha256": "7c2fc8d913bc6907637c09b38777f2fc6c7ac9033ad6e976fde472c5117a8b65",
+      "source_bytes": 27152,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runtime/generated/mul.S",
+      "bytes": 2482,
+      "sha256": "3fb0498c1cf0e2c852f3391422d41d6f6430956f700e6ca413103ee09b7b8f84",
+      "source": "work/git-blob-ci/full-attempt/workspace/outputs/pasta-assembly-verification-bridge/generated/mul.S",
+      "source_sha256": "3fb0498c1cf0e2c852f3391422d41d6f6430956f700e6ca413103ee09b7b8f84",
+      "source_bytes": 2482,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "first-full/runtime/logs/bootstrap.log",
+      "bytes": 21373,
+      "sha256": "e6e484d5448f99a38631a8ffcfdb7a2eec664e31eb6fc791f262f21a049c4bd8",
+      "source": "work/git-blob-ci/full-attempt/workspace/outputs/pasta-assembly-verification-bridge/logs/bootstrap.log",
+      "source_sha256": "e6e484d5448f99a38631a8ffcfdb7a2eec664e31eb6fc791f262f21a049c4bd8",
+      "source_bytes": 21373,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "first-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/FILES.json",
+      "bytes": 2066,
+      "sha256": "eadddeb26b2a133b207370c1a3885b3467b6f6c3b21525fb4242c6c091c39858",
+      "source": "work/git-blob-ci/hosted/FILES.json",
+      "source_sha256": "eadddeb26b2a133b207370c1a3885b3467b6f6c3b21525fb4242c6c091c39858",
+      "source_bytes": 2066,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/artifact-files.json",
+      "bytes": 40026,
+      "sha256": "48fb19bc198a8d5219480d32d44fd318115e59c9b597d4725c2dc0f0387fb671",
+      "source": "work/git-blob-ci/hosted/artifact-files.json",
+      "source_sha256": "48fb19bc198a8d5219480d32d44fd318115e59c9b597d4725c2dc0f0387fb671",
+      "source_bytes": 40026,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/ci-full.json",
+      "bytes": 6651,
+      "sha256": "b9f4930d8f91ce67b0a3583c6175f4c31b1ab2b2041a60e0fc6abf610a29f710",
+      "source": "work/git-blob-ci/hosted/ci-full.json",
+      "source_sha256": "b9f4930d8f91ce67b0a3583c6175f4c31b1ab2b2041a60e0fc6abf610a29f710",
+      "source_bytes": 6651,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/extraction-provenance-comparison.json",
+      "bytes": 4922,
+      "sha256": "a83b6e6728cc5e36759ca392661985c8cb6b2a7a48e99163ba48d2e8cba824df",
+      "source": "work/git-blob-ci/hosted/extraction-provenance-comparison.json",
+      "source_sha256": "a83b6e6728cc5e36759ca392661985c8cb6b2a7a48e99163ba48d2e8cba824df",
+      "source_bytes": 4922,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/full-job.log",
+      "bytes": 36140,
+      "sha256": "d12fee3e80a7a5af0ac813fce944f924904b545f8e7d9f0e03a1980d316f60cf",
+      "source": "work/git-blob-ci/hosted/full-job.log",
+      "source_sha256": "d12fee3e80a7a5af0ac813fce944f924904b545f8e7d9f0e03a1980d316f60cf",
+      "source_bytes": 36140,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/initial-unit-report.json",
+      "bytes": 5881,
+      "sha256": "f4dca59ba69cb3c1dd8a696d6d37a463d0f96e922a7b9545a5e63414d7b49a3e",
+      "source": "work/git-blob-ci/hosted/initial-unit-report.json",
+      "source_sha256": "f4dca59ba69cb3c1dd8a696d6d37a463d0f96e922a7b9545a5e63414d7b49a3e",
+      "source_bytes": 5881,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/metadata.json",
+      "bytes": 2454,
+      "sha256": "9529d911918ce15dfd1eb213e4e6668002fd587b3ef074cd135cd4c78b3d438c",
+      "source": "work/git-blob-ci/hosted/metadata.json",
+      "source_sha256": "9529d911918ce15dfd1eb213e4e6668002fd587b3ef074cd135cd4c78b3d438c",
+      "source_bytes": 2454,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/runner-context.json",
+      "bytes": 212,
+      "sha256": "6f52f3e4d393f0512ab3b1cb4873b9b461674de2b61a72956599c406236e0d20",
+      "source": "work/git-blob-ci/hosted/runner-context.json",
+      "source_sha256": "6f52f3e4d393f0512ab3b1cb4873b9b461674de2b61a72956599c406236e0d20",
+      "source_bytes": 212,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/runtime-kraken-UPSTREAM.json",
+      "bytes": 12327,
+      "sha256": "826ac09d20ed58b2bd7197178c2a95886b3a171d5e22c7b7c67ae1d017cb1cb6",
+      "source": "work/git-blob-ci/hosted/runtime-kraken-UPSTREAM.json",
+      "source_sha256": "826ac09d20ed58b2bd7197178c2a95886b3a171d5e22c7b7c67ae1d017cb1cb6",
+      "source_bytes": 12327,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/runtime-pasta-UPSTREAM.json",
+      "bytes": 1837,
+      "sha256": "8ab7fe6a81ab0de505cb6c99d7224df8dc5e2c461f4a4105a8867b0620fd0bd3",
+      "source": "work/git-blob-ci/hosted/runtime-pasta-UPSTREAM.json",
+      "source_sha256": "8ab7fe6a81ab0de505cb6c99d7224df8dc5e2c461f4a4105a8867b0620fd0bd3",
+      "source_bytes": 1837,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/tool-identities.json",
+      "bytes": 942,
+      "sha256": "88b87b047f0b48ddb98ef4e02ecce792f7564ba9ef857acd19d8a77ad10f11c3",
+      "source": "work/git-blob-ci/hosted/tool-identities.json",
+      "source_sha256": "88b87b047f0b48ddb98ef4e02ecce792f7564ba9ef857acd19d8a77ad10f11c3",
+      "source_bytes": 942,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/verification-exit.json",
+      "bytes": 619,
+      "sha256": "4b17ce7a1225506f4a913437c461ca7fdfcb549e8793ccff1737e565ef14f098",
+      "source": "work/git-blob-ci/hosted/verification-exit.json",
+      "source_sha256": "4b17ce7a1225506f4a913437c461ca7fdfcb549e8793ccff1737e565ef14f098",
+      "source_bytes": 619,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/verification-input-seal.json",
+      "bytes": 102,
+      "sha256": "ef15aaaa41e63d4a83246fd3bca13622265e737d4c4317d166d3e2b746e296ec",
+      "source": "work/git-blob-ci/hosted/verification-input-seal.json",
+      "source_sha256": "ef15aaaa41e63d4a83246fd3bca13622265e737d4c4317d166d3e2b746e296ec",
+      "source_bytes": 102,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/verification.json",
+      "bytes": 6524,
+      "sha256": "08a9ba10fed8847d874738b9a9219143ed447b20019dd50b71542be46b63cb07",
+      "source": "work/git-blob-ci/hosted/verification.json",
+      "source_sha256": "08a9ba10fed8847d874738b9a9219143ed447b20019dd50b71542be46b63cb07",
+      "source_bytes": 6524,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "hosted/verify-clean.log",
+      "bytes": 349,
+      "sha256": "d5830931c6f63684cb6d1acb615d4641d17b7f2c1a8db2227a05c0647f387238",
+      "source": "work/git-blob-ci/hosted/verify-clean.log",
+      "source_sha256": "d5830931c6f63684cb6d1acb615d4641d17b7f2c1a8db2227a05c0647f387238",
+      "source_bytes": 349,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "hosted",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "local-checks/python-suite.json",
+      "bytes": 564,
+      "sha256": "93eb930a333b8b03f5de94c084c1b6fb51a750688b0578eea0e05b5cf556ff42",
+      "source": "work/git-blob-ci/local-checks/python-suite.json",
+      "source_sha256": "93eb930a333b8b03f5de94c084c1b6fb51a750688b0578eea0e05b5cf556ff42",
+      "source_bytes": 564,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "local-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "local-checks/python-suite.log",
+      "bytes": 19307,
+      "sha256": "0873c484c8d259aab36ddc4e650f581133bb088a92a727439a804923ba8b67ce",
+      "source": "work/git-blob-ci/local-checks/python-suite.log",
+      "source_sha256": "0873c484c8d259aab36ddc4e650f581133bb088a92a727439a804923ba8b67ce",
+      "source_bytes": 19307,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "local-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "local-checks/unit-ci-process.json",
+      "bytes": 651,
+      "sha256": "f5b6ddde15bdc3ff329807a9ef9706357474b43115ee82355408f172892ba313",
+      "source": "work/git-blob-ci/local-checks/unit-ci-process.json",
+      "source_sha256": "f5b6ddde15bdc3ff329807a9ef9706357474b43115ee82355408f172892ba313",
+      "source_bytes": 651,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "local-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "local-checks/unit-ci-process.log",
+      "bytes": 283,
+      "sha256": "ac0f8d15c45f316313aebda06ddf268660aaaaa19bf3d65377ce40534ed19f56",
+      "source": "work/git-blob-ci/local-checks/unit-ci-process.log",
+      "source_sha256": "ac0f8d15c45f316313aebda06ddf268660aaaaa19bf3d65377ce40534ed19f56",
+      "source_bytes": 283,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "local-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "local-checks/unit/generated-current.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "work/git-blob-ci/local-checks/unit/generated-current.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "local-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "local-checks/unit/mul-json-certificate-current.log",
+      "bytes": 61,
+      "sha256": "7028816dabdb4508fcbcc6c80c1421ff4e6ff5ad7f49eb07d3bebdff4b950ac7",
+      "source": "work/git-blob-ci/local-checks/unit/mul-json-certificate-current.log",
+      "source_sha256": "7028816dabdb4508fcbcc6c80c1421ff4e6ff5ad7f49eb07d3bebdff4b950ac7",
+      "source_bytes": 61,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "local-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "local-checks/unit/report.json",
+      "bytes": 5977,
+      "sha256": "123f4719819831f323810aa68aaec72242449e9d615d0ea5a4350be079256ba7",
+      "source": "work/git-blob-ci/local-checks/unit/report.json",
+      "source_sha256": "123f4719819831f323810aa68aaec72242449e9d615d0ea5a4350be079256ba7",
+      "source_bytes": 5977,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "local-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "local-checks/unit/source-integrity.log",
+      "bytes": 2349,
+      "sha256": "19de554d1c47784e7dcdfadff08cb30ef231c934bf3b06c45e8e6ae7df762583",
+      "source": "work/git-blob-ci/local-checks/unit/source-integrity.log",
+      "source_sha256": "19de554d1c47784e7dcdfadff08cb30ef231c934bf3b06c45e8e6ae7df762583",
+      "source_bytes": 2349,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "local-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "local-checks/unit/source-manifest.log",
+      "bytes": 120,
+      "sha256": "7ff61900708ef63c57ecb0664a715bdd865fbaf031de6348be75f92f165e91d5",
+      "source": "work/git-blob-ci/local-checks/unit/source-manifest.log",
+      "source_sha256": "7ff61900708ef63c57ecb0664a715bdd865fbaf031de6348be75f92f165e91d5",
+      "source_bytes": 120,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "local-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "local-checks/unit/unit-tests.log",
+      "bytes": 19307,
+      "sha256": "332d7d256c5c59a3d0d54bb20e68c24a8c264567d17254c546daa9f1928f4d43",
+      "source": "work/git-blob-ci/local-checks/unit/unit-tests.log",
+      "source_sha256": "332d7d256c5c59a3d0d54bb20e68c24a8c264567d17254c546daa9f1928f4d43",
+      "source_bytes": 19307,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "local-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/audit-sources/ArithmeticAudit.lean",
+      "bytes": 1666,
+      "sha256": "6697fdb69088e258b85f79ed177fcc4b6841e8ea6c64672a96d82b41246f0c5a",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/proofs/ArithmeticAudit.lean",
+      "source_sha256": "6697fdb69088e258b85f79ed177fcc4b6841e8ea6c64672a96d82b41246f0c5a",
+      "source_bytes": 1666,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "positive-audit-sources",
+      "source_scope": "Actual passed audit source copy; not imported from evidence"
+    },
+    {
+      "path": "short-full/audit-sources/Audit.lean",
+      "bytes": 2870,
+      "sha256": "1bc25fec8510ae692052e96c52265a1e045e5c9c6f9e5fbdab21b87005257e0b",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/proofs/Audit.lean",
+      "source_sha256": "1bc25fec8510ae692052e96c52265a1e045e5c9c6f9e5fbdab21b87005257e0b",
+      "source_bytes": 2870,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "positive-audit-sources",
+      "source_scope": "Actual passed audit source copy; not imported from evidence"
+    },
+    {
+      "path": "short-full/audit-sources/FormalAdditionNegatives.lean",
+      "bytes": 2998,
+      "sha256": "a1ce4ae9acf0993d2b0c3d785bb286fa6b00eba00e1082f13b13916ed89a8341",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/proofs/FormalAdditionNegatives.lean",
+      "source_sha256": "a1ce4ae9acf0993d2b0c3d785bb286fa6b00eba00e1082f13b13916ed89a8341",
+      "source_bytes": 2998,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "positive-audit-sources",
+      "source_scope": "Actual passed audit source copy; not imported from evidence"
+    },
+    {
+      "path": "short-full/audit-sources/FormalMulNegatives.lean",
+      "bytes": 4619,
+      "sha256": "80fdf28afa9e584913f6ae42d6150c7fe08fddae33ed790f4a43197576bec39b",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/proofs/FormalMulNegatives.lean",
+      "source_sha256": "80fdf28afa9e584913f6ae42d6150c7fe08fddae33ed790f4a43197576bec39b",
+      "source_bytes": 4619,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "positive-audit-sources",
+      "source_scope": "Actual passed audit source copy; not imported from evidence"
+    },
+    {
+      "path": "short-full/audit-sources/MulAudit.lean",
+      "bytes": 1012,
+      "sha256": "2d6fd873489d7ab40a0d789c95d219e8e2dd491c788834504e948e5f9015fd9f",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulAudit.lean",
+      "source_sha256": "2d6fd873489d7ab40a0d789c95d219e8e2dd491c788834504e948e5f9015fd9f",
+      "source_bytes": 1012,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "positive-audit-sources",
+      "source_scope": "Actual passed audit source copy; not imported from evidence"
+    },
+    {
+      "path": "short-full/baseline/artifacts/charon-asm.json",
+      "bytes": 260759,
+      "sha256": "d5681b42cd2d5d1e33a3a8d53c381cb6cafce6728e58ad0303c38898f047ff9f",
+      "source": "../../pavb-ci-1029/baseline/artifacts/charon-asm.json",
+      "source_sha256": "d5681b42cd2d5d1e33a3a8d53c381cb6cafce6728e58ad0303c38898f047ff9f",
+      "source_bytes": 260759,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/baseline/artifacts/extraction-provenance.json",
+      "bytes": 2624,
+      "sha256": "bec63d9a0d53d81b4a47b3123887cfbb812005c6a1697118c2687179f5d8704f",
+      "source": "../../pavb-ci-1029/baseline/artifacts/extraction-provenance.json",
+      "source_sha256": "bec63d9a0d53d81b4a47b3123887cfbb812005c6a1697118c2687179f5d8704f",
+      "source_bytes": 2624,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/baseline/artifacts/pasta_curves.llbc",
+      "bytes": 375876,
+      "sha256": "35fb92a65645e1159f70b8dff3e50c5b6ab05e1e805e06dbd2c33d6b0829d027",
+      "source": "../../pavb-ci-1029/baseline/artifacts/pasta_curves.llbc",
+      "source_sha256": "35fb92a65645e1159f70b8dff3e50c5b6ab05e1e805e06dbd2c33d6b0829d027",
+      "source_bytes": 375876,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/baseline/generated/add-asm.json",
+      "bytes": 9344,
+      "sha256": "81ab7aae5bc73080f351d601ea405971113ad3485d49d109f5dc10cc42c1b5d9",
+      "source": "../../pavb-ci-1029/baseline/generated/add-asm.json",
+      "source_sha256": "81ab7aae5bc73080f351d601ea405971113ad3485d49d109f5dc10cc42c1b5d9",
+      "source_bytes": 9344,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/baseline/generated/add-check.json",
+      "bytes": 3298,
+      "sha256": "4389fca255150d32c77f222337687cb9df52b97e6a1842725f8432e2d219d9d0",
+      "source": "../../pavb-ci-1029/baseline/generated/add-check.json",
+      "source_sha256": "4389fca255150d32c77f222337687cb9df52b97e6a1842725f8432e2d219d9d0",
+      "source_bytes": 3298,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/baseline/generated/add.S",
+      "bytes": 216,
+      "sha256": "572c85fdb4c6a8feceb74827b9b3bf2fa4787b97e149ce3483ca64bdcece96bf",
+      "source": "../../pavb-ci-1029/baseline/generated/add.S",
+      "source_sha256": "572c85fdb4c6a8feceb74827b9b3bf2fa4787b97e149ce3483ca64bdcece96bf",
+      "source_bytes": 216,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/baseline/generated/manifest.json",
+      "bytes": 1645,
+      "sha256": "f13ee460fe9c08c4bdaa2ab7aa117760cb46e94f7d1239c95fd0788904898bee",
+      "source": "../../pavb-ci-1029/baseline/generated/manifest.json",
+      "source_sha256": "f13ee460fe9c08c4bdaa2ab7aa117760cb46e94f7d1239c95fd0788904898bee",
+      "source_bytes": 1645,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/baseline/generated/mul-check.json",
+      "bytes": 27152,
+      "sha256": "7c2fc8d913bc6907637c09b38777f2fc6c7ac9033ad6e976fde472c5117a8b65",
+      "source": "../../pavb-ci-1029/baseline/generated/mul-check.json",
+      "source_sha256": "7c2fc8d913bc6907637c09b38777f2fc6c7ac9033ad6e976fde472c5117a8b65",
+      "source_bytes": 27152,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/baseline/generated/mul.S",
+      "bytes": 2482,
+      "sha256": "3fb0498c1cf0e2c852f3391422d41d6f6430956f700e6ca413103ee09b7b8f84",
+      "source": "../../pavb-ci-1029/baseline/generated/mul.S",
+      "source_sha256": "3fb0498c1cf0e2c852f3391422d41d6f6430956f700e6ca413103ee09b7b8f84",
+      "source_bytes": 2482,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/build-provenance/charon-build-record.json",
+      "bytes": 745,
+      "sha256": "d7e5783b78bf2323fbcd54d7ba44a5dc7083dd814557c29cc922da5c5c8113b5",
+      "source": "../../pavb-ci-1029/workspace/work/charon-build-record.json",
+      "source_sha256": "d7e5783b78bf2323fbcd54d7ba44a5dc7083dd814557c29cc922da5c5c8113b5",
+      "source_bytes": 745,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/build-provenance/kraken-compat/COMPATIBILITY.json",
+      "bytes": 12939,
+      "sha256": "ce242a7c7e959c6677c8be4bcd46a390fd26b1cf98b2bfc485fa877d2d95430f",
+      "source": "../../pavb-ci-1029/workspace/work/kraken-compat/COMPATIBILITY.json",
+      "source_sha256": "ce242a7c7e959c6677c8be4bcd46a390fd26b1cf98b2bfc485fa877d2d95430f",
+      "source_bytes": 12939,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/logs/bootstrap-extraction.log",
+      "bytes": 12692,
+      "sha256": "802d8afcbfaec4dbf006baa2a7268e0946295cf821bcc4178c5081a2b3fdd4f7",
+      "source": "../../pavb-ci-1029/logs/bootstrap-extraction.log",
+      "source_sha256": "802d8afcbfaec4dbf006baa2a7268e0946295cf821bcc4178c5081a2b3fdd4f7",
+      "source_bytes": 12692,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/logs/bootstrap-proofs.log",
+      "bytes": 39499,
+      "sha256": "095fe569fdfd89dc59929f883990df3322f64d33bc3724a247122681dffa04cc",
+      "source": "../../pavb-ci-1029/logs/bootstrap-proofs.log",
+      "source_sha256": "095fe569fdfd89dc59929f883990df3322f64d33bc3724a247122681dffa04cc",
+      "source_bytes": 39499,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/logs/fresh-binary-extraction.log",
+      "bytes": 471,
+      "sha256": "a26417701a8da45a97e0b2eed14ab3131fd4ffe5a9e26baa5700ac907e9096f8",
+      "source": "../../pavb-ci-1029/logs/fresh-binary-extraction.log",
+      "source_sha256": "a26417701a8da45a97e0b2eed14ab3131fd4ffe5a9e26baa5700ac907e9096f8",
+      "source_bytes": 471,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/logs/install-lean.log",
+      "bytes": 261,
+      "sha256": "bca9276a5f92554ca39c566516d59c3db7ec51ee6f018e366318fa0e7332f716",
+      "source": "../../pavb-ci-1029/logs/install-lean.log",
+      "source_sha256": "bca9276a5f92554ca39c566516d59c3db7ec51ee6f018e366318fa0e7332f716",
+      "source_bytes": 261,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/logs/regenerate-adapter.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/logs/regenerate-adapter.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/logs/verify-clean.log",
+      "bytes": 3895,
+      "sha256": "05332412dd1835770b04f49c9e832a9861fa63700eb787914bb664185525d6d8",
+      "source": "../../pavb-ci-1029/logs/verify-clean.log",
+      "source_sha256": "05332412dd1835770b04f49c9e832a9861fa63700eb787914bb664185525d6d8",
+      "source_bytes": 3895,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/negative-attempt-sources/addition/broken-carry.lean.txt",
+      "bytes": 129,
+      "sha256": "d1930861dfd6171bfb7a6556227cd13de87fe0702840365e94c3e9d4354d4e5a",
+      "source": "../../pavb-ci-1029/workspace/work/formal-addition-negative-sources/broken-carry.lean",
+      "source_sha256": "d1930861dfd6171bfb7a6556227cd13de87fe0702840365e94c3e9d4354d4e5a",
+      "source_bytes": 129,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "negative-attempt-sources",
+      "source_scope": "Intended false-equality rejection source, retained as .lean.txt"
+    },
+    {
+      "path": "short-full/negative-attempt-sources/addition/wrong-binding.lean.txt",
+      "bytes": 131,
+      "sha256": "afe46b3a5ae8324217683cc196d5a81520874826894698a1168603e7c4fa6a89",
+      "source": "../../pavb-ci-1029/workspace/work/formal-addition-negative-sources/wrong-binding.lean",
+      "source_sha256": "afe46b3a5ae8324217683cc196d5a81520874826894698a1168603e7c4fa6a89",
+      "source_bytes": 131,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "negative-attempt-sources",
+      "source_scope": "Intended false-equality rejection source, retained as .lean.txt"
+    },
+    {
+      "path": "short-full/negative-attempt-sources/multiplication/broken-carry.lean.txt",
+      "bytes": 124,
+      "sha256": "22237dc23333c36c390ebd9675cc2f8ec97ed8e99b6ec188f72597e8a1b6ced2",
+      "source": "../../pavb-ci-1029/workspace/work/formal-mul-negative-sources/broken-carry.lean",
+      "source_sha256": "22237dc23333c36c390ebd9675cc2f8ec97ed8e99b6ec188f72597e8a1b6ced2",
+      "source_bytes": 124,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "negative-attempt-sources",
+      "source_scope": "Intended false-equality rejection source, retained as .lean.txt"
+    },
+    {
+      "path": "short-full/negative-attempt-sources/multiplication/wrong-binding.lean.txt",
+      "bytes": 128,
+      "sha256": "1af27c985807a7cc4da2c7704ef435e4efe5a0628b1e10bcd5e44d5c861bf116",
+      "source": "../../pavb-ci-1029/workspace/work/formal-mul-negative-sources/wrong-binding.lean",
+      "source_sha256": "1af27c985807a7cc4da2c7704ef435e4efe5a0628b1e10bcd5e44d5c861bf116",
+      "source_bytes": 128,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "negative-attempt-sources",
+      "source_scope": "Intended false-equality rejection source, retained as .lean.txt"
+    },
+    {
+      "path": "short-full/runner/ci-full.json",
+      "bytes": 6741,
+      "sha256": "12c3acc2ca3b47c6bfae56932589a853705e3a123ea2d01664096670ceeef1e2",
+      "source": "../../pavb-ci-1029/ci-full.json",
+      "source_sha256": "12c3acc2ca3b47c6bfae56932589a853705e3a123ea2d01664096670ceeef1e2",
+      "source_bytes": 6741,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runner/extraction-provenance-comparison.json",
+      "bytes": 4946,
+      "sha256": "46c74f2e70dfe9eda7031311278fb4fbe1a5fe05f684b8ece9b6d27f212269a5",
+      "source": "../../pavb-ci-1029/extraction-provenance-comparison.json",
+      "source_sha256": "46c74f2e70dfe9eda7031311278fb4fbe1a5fe05f684b8ece9b6d27f212269a5",
+      "source_bytes": 4946,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runner/measurements.json",
+      "bytes": 82905,
+      "sha256": "f3cd5717aae21a87a7b467c56c2e5c544cc5b016d196803e7fd2a73346ba30a0",
+      "source": "../../pavb-ci-1029/measurements.json",
+      "source_sha256": "f3cd5717aae21a87a7b467c56c2e5c544cc5b016d196803e7fd2a73346ba30a0",
+      "source_bytes": 82905,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runner/source-inputs.json",
+      "bytes": 92770,
+      "sha256": "adeb9faa6899774c1fb01337962ce52363972bcee776d1ed7d041073a25d4429",
+      "source": "../../pavb-ci-1029/source-inputs.json",
+      "source_sha256": "adeb9faa6899774c1fb01337962ce52363972bcee776d1ed7d041073a25d4429",
+      "source_bytes": 92770,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runner/tool-identities.json",
+      "bytes": 952,
+      "sha256": "b867c02d37dc0b7416792ddda3c0fb89c4fe5384c5ce1d26a4bb14e9048acf9a",
+      "source": "../../pavb-ci-1029/tool-identities.json",
+      "source_sha256": "b867c02d37dc0b7416792ddda3c0fb89c4fe5384c5ce1d26a4bb14e9048acf9a",
+      "source_bytes": 952,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runner/verification-input-seal.json",
+      "bytes": 102,
+      "sha256": "17f9cceb067f803aee9c13fe039489c9ca63faffd4c05d7491f46e58bea9828b",
+      "source": "../../pavb-ci-1029/verification-input-seal.json",
+      "source_sha256": "17f9cceb067f803aee9c13fe039489c9ca63faffd4c05d7491f46e58bea9828b",
+      "source_bytes": 102,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runner/verification-inputs.json",
+      "bytes": 29262,
+      "sha256": "82fd4423ddf1268de6c9217b967bd37f4f76db37addeee7f6153ac8d356d66f5",
+      "source": "../../pavb-ci-1029/verification-inputs.json",
+      "source_sha256": "82fd4423ddf1268de6c9217b967bd37f4f76db37addeee7f6153ac8d356d66f5",
+      "source_bytes": 29262,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/artifacts/charon-asm.json",
+      "bytes": 260759,
+      "sha256": "2bea8d7ce1f1ff4374d6670cd8a33d5b661c48220f982cb1bc4a474c21820887",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/artifacts/charon-asm.json",
+      "source_sha256": "2bea8d7ce1f1ff4374d6670cd8a33d5b661c48220f982cb1bc4a474c21820887",
+      "source_bytes": 260759,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/artifacts/extraction-provenance.json",
+      "bytes": 2561,
+      "sha256": "fcefc22f0dba11c1b67b6b9fda9fa9c023d05fe106ba928101c96b7a9a676483",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/artifacts/extraction-provenance.json",
+      "source_sha256": "fcefc22f0dba11c1b67b6b9fda9fa9c023d05fe106ba928101c96b7a9a676483",
+      "source_bytes": 2561,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/artifacts/pasta_curves.llbc",
+      "bytes": 375855,
+      "sha256": "c4091a183c88cc12c7586e00d82c5a3f8effd8558ecf4dff83e1f8da1ab169aa",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/artifacts/pasta_curves.llbc",
+      "source_sha256": "c4091a183c88cc12c7586e00d82c5a3f8effd8558ecf4dff83e1f8da1ab169aa",
+      "source_bytes": 375855,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/addition-formal-negatives.log",
+      "bytes": 4970,
+      "sha256": "2b823fe8958b98f2b3e2e1ab772667825d6e23c1d7844b326eca16acafc46ff4",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/addition-formal-negatives.log",
+      "source_sha256": "2b823fe8958b98f2b3e2e1ab772667825d6e23c1d7844b326eca16acafc46ff4",
+      "source_bytes": 4970,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/addition-runtime.json",
+      "bytes": 6482,
+      "sha256": "290d98f0276403a58edd98879e988491aa9789a30df1c0397cb505007699639a",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/addition-runtime.json",
+      "source_sha256": "290d98f0276403a58edd98879e988491aa9789a30df1c0397cb505007699639a",
+      "source_bytes": 6482,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/addition-semantics.log",
+      "bytes": 167,
+      "sha256": "447030ea41b72a13c8fd748ccc98b881ecf4ba6a4519f7e065c401f32c7f9c76",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/addition-semantics.log",
+      "source_sha256": "447030ea41b72a13c8fd748ccc98b881ecf4ba6a4519f7e065c401f32c7f9c76",
+      "source_bytes": 167,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additioncorrectness.log",
+      "bytes": 1091,
+      "sha256": "fd374540b7403da3bb2e6645fbb5274e314221bad94f917376f6dbab6c87a497",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additioncorrectness.log",
+      "source_sha256": "fd374540b7403da3bb2e6645fbb5274e314221bad94f917376f6dbab6c87a497",
+      "source_bytes": 1091,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionmachine.log",
+      "bytes": 1621,
+      "sha256": "72482c103827745f3b9217a33fdeb37c409495c1079ed0bc7751345c2fc0b5df",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionmachine.log",
+      "source_sha256": "72482c103827745f3b9217a33fdeb37c409495c1079ed0bc7751345c2fc0b5df",
+      "source_bytes": 1621,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionnat.log",
+      "bytes": 259,
+      "sha256": "c136804e5c026028e825cd0a0c136fed53ab369e828d5a1ad62cc7a1244e9a74",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionnat.log",
+      "source_sha256": "c136804e5c026028e825cd0a0c136fed53ab369e828d5a1ad62cc7a1244e9a74",
+      "source_bytes": 259,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionnatdata.log",
+      "bytes": 234,
+      "sha256": "04f8131ef4c74a7969054c51136252948be81594712758346a0a015b18ec0e75",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionnatdata.log",
+      "source_sha256": "04f8131ef4c74a7969054c51136252948be81594712758346a0a015b18ec0e75",
+      "source_bytes": 234,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionnatdatamodel.log",
+      "bytes": 79,
+      "sha256": "7f74e39382156ce20c4c5b785978cd121bffa60dbf423547e8e37c57ea3efdbb",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionnatdatamodel.log",
+      "source_sha256": "7f74e39382156ce20c4c5b785978cd121bffa60dbf423547e8e37c57ea3efdbb",
+      "source_bytes": 79,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionnatlift.log",
+      "bytes": 104,
+      "sha256": "76f5a74c8165ea04e46aa18d65400dfff1eb807e83809f26d8a6bbcb244b7eca",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionnatlift.log",
+      "source_sha256": "76f5a74c8165ea04e46aa18d65400dfff1eb807e83809f26d8a6bbcb244b7eca",
+      "source_bytes": 104,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionnatliftbase.log",
+      "bytes": 172,
+      "sha256": "661e9b9d00bb0c9e07179245d0cc5161e5783a4464d6d0887d7a9fdd080cde02",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionnatliftbase.log",
+      "source_sha256": "661e9b9d00bb0c9e07179245d0cc5161e5783a4464d6d0887d7a9fdd080cde02",
+      "source_bytes": 172,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionnatmodel.log",
+      "bytes": 77,
+      "sha256": "c772524af29a566f82fc37679738a9fd51e029578b1b906eca915f4698f63462",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionnatmodel.log",
+      "source_sha256": "c772524af29a566f82fc37679738a9fd51e029578b1b906eca915f4698f63462",
+      "source_bytes": 77,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionnatobservation.log",
+      "bytes": 602,
+      "sha256": "e8ab7fa6311c5f46e2d24aa14ee36f9146b9fe5e23f104acda9d6be16e11bc43",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionnatobservation.log",
+      "source_sha256": "e8ab7fa6311c5f46e2d24aa14ee36f9146b9fe5e23f104acda9d6be16e11bc43",
+      "source_bytes": 602,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionnatsequence.log",
+      "bytes": 384,
+      "sha256": "d81fea21393de0e3a19db46fca7961d1f7728a4ca0eed8ad7bcf87f288862020",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionnatsequence.log",
+      "source_sha256": "d81fea21393de0e3a19db46fca7961d1f7728a4ca0eed8ad7bcf87f288862020",
+      "source_bytes": 384,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionparametricbase.log",
+      "bytes": 411,
+      "sha256": "6831f701159ae5f64c0a18b2aa8577ba414c67a2026ebbd41eef975fdfb4d362",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionparametricbase.log",
+      "source_sha256": "6831f701159ae5f64c0a18b2aa8577ba414c67a2026ebbd41eef975fdfb4d362",
+      "source_bytes": 411,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionparametricmodel.log",
+      "bytes": 409,
+      "sha256": "b66142dc7b8d7307dd7d2db87fde198c8290633325212db674c8b03020d624aa",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionparametricmodel.log",
+      "source_sha256": "b66142dc7b8d7307dd7d2db87fde198c8290633325212db674c8b03020d624aa",
+      "source_bytes": 409,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/additionstep.log",
+      "bytes": 784,
+      "sha256": "6bb33c7832eab01ce0143399d31d0c1bb56b47b36a1e5207ebd02ea939bf2771",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/additionstep.log",
+      "source_sha256": "6bb33c7832eab01ce0143399d31d0c1bb56b47b36a1e5207ebd02ea939bf2771",
+      "source_bytes": 784,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-build.log",
+      "bytes": 491,
+      "sha256": "2c1dde34dc03d3f9eb50c17414e6d392e70f659af4800222e60fb91005f40e5c",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-build.log",
+      "source_sha256": "2c1dde34dc03d3f9eb50c17414e6d392e70f659af4800222e60fb91005f40e5c",
+      "source_bytes": 491,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/ArithmeticAudit.log",
+      "bytes": 208,
+      "sha256": "5622956bac57ece8fe0a8d65ba7299a84a875b6f88a262dadf16a669b2aa8079",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/ArithmeticAudit.log",
+      "source_sha256": "5622956bac57ece8fe0a8d65ba7299a84a875b6f88a262dadf16a669b2aa8079",
+      "source_bytes": 208,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.AArch64.Compositions.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.AArch64.Compositions.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.AArch64.Semantics.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.AArch64.Semantics.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.AArch64.Spec.Add.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.AArch64.Spec.Add.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.AArch64.Spec.Mul.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.AArch64.Spec.Mul.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.AArch64.Transcription.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.AArch64.Transcription.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.Compositions.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.Compositions.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.Fields.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.Fields.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.Pratt.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.Pratt.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.Primality.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.Primality.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.Semantics.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.Semantics.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.Spec.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.Spec.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-modules/PastaCurves.Tactic.WordStep.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-modules/PastaCurves.Tactic.WordStep.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-proof.log",
+      "bytes": 208,
+      "sha256": "5622956bac57ece8fe0a8d65ba7299a84a875b6f88a262dadf16a669b2aa8079",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-proof.log",
+      "source_sha256": "5622956bac57ece8fe0a8d65ba7299a84a875b6f88a262dadf16a669b2aa8079",
+      "source_bytes": 208,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/arithmetic-serial-build.json",
+      "bytes": 13380,
+      "sha256": "63c0b6ba470eb521ae75c7bd196f2ceaefd0362d93f35366eb55cd377b84e785",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/arithmetic-serial-build.json",
+      "source_sha256": "63c0b6ba470eb521ae75c7bd196f2ceaefd0362d93f35366eb55cd377b84e785",
+      "source_bytes": 13380,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/artifact-link.log",
+      "bytes": 509,
+      "sha256": "01620690fbe5c23c9ccf37b9fb1207c4b009fd4b120064daa2f102e5f5d68bd0",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/artifact-link.log",
+      "source_sha256": "01620690fbe5c23c9ccf37b9fb1207c4b009fd4b120064daa2f102e5f5d68bd0",
+      "source_bytes": 509,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/artifact.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/artifact.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/bindingartifact.log",
+      "bytes": 240,
+      "sha256": "f257dfd18cc80ba94bd4aacf960f22caf4b218c83cf9521c32b3696bf28b475a",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/bindingartifact.log",
+      "source_sha256": "f257dfd18cc80ba94bd4aacf960f22caf4b218c83cf9521c32b3696bf28b475a",
+      "source_bytes": 240,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-addition-negatives/broken-carry.lean.txt",
+      "bytes": 129,
+      "sha256": "d1930861dfd6171bfb7a6556227cd13de87fe0702840365e94c3e9d4354d4e5a",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-addition-negatives/broken-carry.lean.txt",
+      "source_sha256": "d1930861dfd6171bfb7a6556227cd13de87fe0702840365e94c3e9d4354d4e5a",
+      "source_bytes": 129,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-addition-negatives/broken-carry.log",
+      "bytes": 204,
+      "sha256": "8a5851237ef4c594fd016eeeee86c61968c9cc9b76d48d5cdaa86126ddbfa1dc",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-addition-negatives/broken-carry.log",
+      "source_sha256": "8a5851237ef4c594fd016eeeee86c61968c9cc9b76d48d5cdaa86126ddbfa1dc",
+      "source_bytes": 204,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-addition-negatives/counterexamples.log",
+      "bytes": 967,
+      "sha256": "7b79cb5bd37391d46c967a3f692f2c52b399b90219b99a508d3ef7818fe4665b",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-addition-negatives/counterexamples.log",
+      "source_sha256": "7b79cb5bd37391d46c967a3f692f2c52b399b90219b99a508d3ef7818fe4665b",
+      "source_bytes": 967,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-addition-negatives/report.json",
+      "bytes": 4970,
+      "sha256": "2b823fe8958b98f2b3e2e1ab772667825d6e23c1d7844b326eca16acafc46ff4",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-addition-negatives/report.json",
+      "source_sha256": "2b823fe8958b98f2b3e2e1ab772667825d6e23c1d7844b326eca16acafc46ff4",
+      "source_bytes": 4970,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-addition-negatives/wrong-binding.lean.txt",
+      "bytes": 131,
+      "sha256": "afe46b3a5ae8324217683cc196d5a81520874826894698a1168603e7c4fa6a89",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-addition-negatives/wrong-binding.lean.txt",
+      "source_sha256": "afe46b3a5ae8324217683cc196d5a81520874826894698a1168603e7c4fa6a89",
+      "source_bytes": 131,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-addition-negatives/wrong-binding.log",
+      "bytes": 207,
+      "sha256": "8beed2a8a23b07e8daf836f6f5646dd3499fd89ff43c19dba148ae2be5116b8b",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-addition-negatives/wrong-binding.log",
+      "source_sha256": "8beed2a8a23b07e8daf836f6f5646dd3499fd89ff43c19dba148ae2be5116b8b",
+      "source_bytes": 207,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-multiplication-negatives/broken-carry.lean.txt",
+      "bytes": 124,
+      "sha256": "22237dc23333c36c390ebd9675cc2f8ec97ed8e99b6ec188f72597e8a1b6ced2",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-multiplication-negatives/broken-carry.lean.txt",
+      "source_sha256": "22237dc23333c36c390ebd9675cc2f8ec97ed8e99b6ec188f72597e8a1b6ced2",
+      "source_bytes": 124,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-multiplication-negatives/broken-carry.log",
+      "bytes": 204,
+      "sha256": "8e6c22b752872d8273b00a1043f8e7e753faae864e466d0c1d85b8c7abe1ea31",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-multiplication-negatives/broken-carry.log",
+      "source_sha256": "8e6c22b752872d8273b00a1043f8e7e753faae864e466d0c1d85b8c7abe1ea31",
+      "source_bytes": 204,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-multiplication-negatives/counterexamples.log",
+      "bytes": 1042,
+      "sha256": "2605c6e68c5e7cb554fc8a17aa0bbd88c9511d815ca931865f7f588c9857b39f",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-multiplication-negatives/counterexamples.log",
+      "source_sha256": "2605c6e68c5e7cb554fc8a17aa0bbd88c9511d815ca931865f7f588c9857b39f",
+      "source_bytes": 1042,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-multiplication-negatives/report.json",
+      "bytes": 5115,
+      "sha256": "e9e0355abb184e7f8b3dcb3fe593b7a7d9a67c098e2816be5b046220a4e35085",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-multiplication-negatives/report.json",
+      "source_sha256": "e9e0355abb184e7f8b3dcb3fe593b7a7d9a67c098e2816be5b046220a4e35085",
+      "source_bytes": 5115,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-multiplication-negatives/wrong-binding.lean.txt",
+      "bytes": 128,
+      "sha256": "1af27c985807a7cc4da2c7704ef435e4efe5a0628b1e10bcd5e44d5c861bf116",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-multiplication-negatives/wrong-binding.lean.txt",
+      "source_sha256": "1af27c985807a7cc4da2c7704ef435e4efe5a0628b1e10bcd5e44d5c861bf116",
+      "source_bytes": 128,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/formal-multiplication-negatives/wrong-binding.log",
+      "bytes": 209,
+      "sha256": "46efca82bc1a8e71cd9843c2365d27c66edd82f4d3cd3665f4d4f04b35e80023",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/formal-multiplication-negatives/wrong-binding.log",
+      "source_sha256": "46efca82bc1a8e71cd9843c2365d27c66edd82f4d3cd3665f4d4f04b35e80023",
+      "source_bytes": 209,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/fresh-extraction.log",
+      "bytes": 506,
+      "sha256": "b79fff86fec882747bbe382efbde4e78654556bec9a5efc8ec73f22e92240255",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/fresh-extraction.log",
+      "source_sha256": "b79fff86fec882747bbe382efbde4e78654556bec9a5efc8ec73f22e92240255",
+      "source_bytes": 506,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/generated-current.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/generated-current.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/kerneljson.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/kerneljson.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/kraken-binding.log",
+      "bytes": 368,
+      "sha256": "06ecba1f7cf6823885784ab02de09f75d478879530c58c3bfd2f30faffa11715",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/kraken-binding.log",
+      "source_sha256": "06ecba1f7cf6823885784ab02de09f75d478879530c58c3bfd2f30faffa11715",
+      "source_bytes": 368,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/kraken-build.log",
+      "bytes": 400,
+      "sha256": "36c48e5c24c930d7dc8364f65c4deeed8831d20945331cd995697b4f6cdb8373",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/kraken-build.log",
+      "source_sha256": "36c48e5c24c930d7dc8364f65c4deeed8831d20945331cd995697b4f6cdb8373",
+      "source_bytes": 400,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/kraken-word.log",
+      "bytes": 527,
+      "sha256": "c539a4905b8655b93b629ddebaf6b5a0b36e5fec637f5759bf2565f606080d9c",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/kraken-word.log",
+      "source_sha256": "c539a4905b8655b93b629ddebaf6b5a0b36e5fec637f5759bf2565f606080d9c",
+      "source_bytes": 527,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/krakenrun.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/krakenrun.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mul-formal-negatives.log",
+      "bytes": 5115,
+      "sha256": "e9e0355abb184e7f8b3dcb3fe593b7a7d9a67c098e2816be5b046220a4e35085",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mul-formal-negatives.log",
+      "source_sha256": "e9e0355abb184e7f8b3dcb3fe593b7a7d9a67c098e2816be5b046220a4e35085",
+      "source_bytes": 5115,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mul-json-certificate-current.log",
+      "bytes": 61,
+      "sha256": "7028816dabdb4508fcbcc6c80c1421ff4e6ff5ad7f49eb07d3bebdff4b950ac7",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mul-json-certificate-current.log",
+      "source_sha256": "7028816dabdb4508fcbcc6c80c1421ff4e6ff5ad7f49eb07d3bebdff4b950ac7",
+      "source_bytes": 61,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mul-proof-inventory.log",
+      "bytes": 7730,
+      "sha256": "612cf3d598db4bf1123b178191e16cbc30e7fb6c8f407b2f31db939cce956d93",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mul-proof-inventory.log",
+      "source_sha256": "612cf3d598db4bf1123b178191e16cbc30e7fb6c8f407b2f31db939cce956d93",
+      "source_bytes": 7730,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulartifact.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulartifact.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulbindingartifact.log",
+      "bytes": 402,
+      "sha256": "334bf07d5edc4ec1f6a0ae0ffc06e8ecce9615e7add9bb684fca2265bce08a25",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulbindingartifact.log",
+      "source_sha256": "334bf07d5edc4ec1f6a0ae0ffc06e8ecce9615e7add9bb684fca2265bce08a25",
+      "source_bytes": 402,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulcertificate.log",
+      "bytes": 335,
+      "sha256": "ac644880e3b4d8257c5f1507ae49481b51bfa06fbfbe2524791116864234db50",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulcertificate.log",
+      "source_sha256": "ac644880e3b4d8257c5f1507ae49481b51bfa06fbfbe2524791116864234db50",
+      "source_bytes": 335,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulcorrectness.log",
+      "bytes": 961,
+      "sha256": "0d569a9b55e753575cc4c7b10226635f7408d68fbfcedaf1d9a44c326bc280dd",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulcorrectness.log",
+      "source_sha256": "0d569a9b55e753575cc4c7b10226635f7408d68fbfcedaf1d9a44c326bc280dd",
+      "source_bytes": 961,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulformatting.log",
+      "bytes": 254,
+      "sha256": "3eb26e31ad1c24573f3470baed0afbb5b78ace3b268b5fa0cc76ff4826af7b35",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulformatting.log",
+      "source_sha256": "3eb26e31ad1c24573f3470baed0afbb5b78ace3b268b5fa0cc76ff4826af7b35",
+      "source_bytes": 254,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/muljsoncertificate.log",
+      "bytes": 232,
+      "sha256": "0c4a5be482ec354f2d487d878789898aeba7bfd6881f005cf41a80a0b3c2752c",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/muljsoncertificate.log",
+      "source_sha256": "0c4a5be482ec354f2d487d878789898aeba7bfd6881f005cf41a80a0b3c2752c",
+      "source_bytes": 232,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/muljsontextdagbase.log",
+      "bytes": 100,
+      "sha256": "f1499afa30853960140a0335e9f7d84e10e088ab559dcef85f26857dde10bd59",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/muljsontextdagbase.log",
+      "source_sha256": "f1499afa30853960140a0335e9f7d84e10e088ab559dcef85f26857dde10bd59",
+      "source_bytes": 100,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/muljsontextdagfinal.log",
+      "bytes": 283,
+      "sha256": "5223c3601ca8e58de6dc77f74227a8dc15073c129d37191c87b3574eff19e50c",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/muljsontextdagfinal.log",
+      "source_sha256": "5223c3601ca8e58de6dc77f74227a8dc15073c129d37191c87b3574eff19e50c",
+      "source_bytes": 283,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulmachine.log",
+      "bytes": 956,
+      "sha256": "f40e3f1362b23b1a0c9a6d5d864bb3b2ec629527dd54761ac259d2d935cf5409",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulmachine.log",
+      "source_sha256": "f40e3f1362b23b1a0c9a6d5d864bb3b2ec629527dd54761ac259d2d935cf5409",
+      "source_bytes": 956,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulmetadata.log",
+      "bytes": 169,
+      "sha256": "9069f020c807bcfbc9c9643658d7c052307bf4543e77ae4eba2873b0724dee66",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulmetadata.log",
+      "source_sha256": "9069f020c807bcfbc9c9643658d7c052307bf4543e77ae4eba2873b0724dee66",
+      "source_bytes": 169,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulnat.log",
+      "bytes": 323,
+      "sha256": "94ba6bf525f7ce24b8fc1a88f353678944f88ac7b64bdcc538007f59b036e3cc",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulnat.log",
+      "source_sha256": "94ba6bf525f7ce24b8fc1a88f353678944f88ac7b64bdcc538007f59b036e3cc",
+      "source_bytes": 323,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulnatlift.log",
+      "bytes": 183,
+      "sha256": "71ce04d24d7fdfd9c9b7ed76d1fbc3263b3ca12841234beff3f264be197fe26e",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulnatlift.log",
+      "source_sha256": "71ce04d24d7fdfd9c9b7ed76d1fbc3263b3ca12841234beff3f264be197fe26e",
+      "source_bytes": 183,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulnatsequence.log",
+      "bytes": 405,
+      "sha256": "113dae6c7244c5387b1d5c31ddf8f26cfa04f5836d1580076b738f3073a356f5",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulnatsequence.log",
+      "source_sha256": "113dae6c7244c5387b1d5c31ddf8f26cfa04f5836d1580076b738f3073a356f5",
+      "source_bytes": 405,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulparametricbase.log",
+      "bytes": 686,
+      "sha256": "3c7f11814e5a7b93b54c6d0ff316fae3ca8021075a120b7223e4c981b7c817a0",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulparametricbase.log",
+      "source_sha256": "3c7f11814e5a7b93b54c6d0ff316fae3ca8021075a120b7223e4c981b7c817a0",
+      "source_bytes": 686,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulparametricmodel.log",
+      "bytes": 265,
+      "sha256": "4ef5401c4ba213d6766f3ed2f30e269217e75306cf98120f275655882c2741ed",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulparametricmodel.log",
+      "source_sha256": "4ef5401c4ba213d6766f3ed2f30e269217e75306cf98120f275655882c2741ed",
+      "source_bytes": 265,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulparametricrounds.log",
+      "bytes": 223,
+      "sha256": "28a780695ff7229b99a9e22ade7ec48efa6b1ae83d4729e982be537ecd5e0159",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulparametricrounds.log",
+      "source_sha256": "28a780695ff7229b99a9e22ade7ec48efa6b1ae83d4729e982be537ecd5e0159",
+      "source_bytes": 223,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulpieceformatting.log",
+      "bytes": 309,
+      "sha256": "646f093ad5314124ab7a12ac79dcda3a1b195a6daebb405b1e8e79f90a4cde38",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulpieceformatting.log",
+      "source_sha256": "646f093ad5314124ab7a12ac79dcda3a1b195a6daebb405b1e8e79f90a4cde38",
+      "source_bytes": 309,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulprogramdata.log",
+      "bytes": 101,
+      "sha256": "d7018e267e9051ef6de23c49993f4c94106cfe71297eb72f3ef56f7f9de29642",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulprogramdata.log",
+      "source_sha256": "d7018e267e9051ef6de23c49993f4c94106cfe71297eb72f3ef56f7f9de29642",
+      "source_bytes": 101,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulretained.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulretained.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulsequenceframe.log",
+      "bytes": 70,
+      "sha256": "741650b9055399440d554c746d23be0b3f9ab1fd3e665c74fb1b542b4db764b1",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulsequenceframe.log",
+      "source_sha256": "741650b9055399440d554c746d23be0b3f9ab1fd3e665c74fb1b542b4db764b1",
+      "source_bytes": 70,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulstep.log",
+      "bytes": 475,
+      "sha256": "ec848eb4dc8e922511646e58208cf17de9501a84dd383a7f787086522a461e4a",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulstep.log",
+      "source_sha256": "ec848eb4dc8e922511646e58208cf17de9501a84dd383a7f787086522a461e4a",
+      "source_bytes": 475,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/multiplication-parser.json",
+      "bytes": 851,
+      "sha256": "5c077d973426eb4227c936464f5d16f95acb5f31be20cffb0170851949b6e6c9",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/multiplication-parser.json",
+      "source_sha256": "5c077d973426eb4227c936464f5d16f95acb5f31be20cffb0170851949b6e6c9",
+      "source_bytes": 851,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/multiplication-parser.log",
+      "bytes": 57,
+      "sha256": "3c45128599ddb497ddfdac3e6d96f1fbe54b0d81dfcd37347c68efaa86f9d908",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/multiplication-parser.log",
+      "source_sha256": "3c45128599ddb497ddfdac3e6d96f1fbe54b0d81dfcd37347c68efaa86f9d908",
+      "source_bytes": 57,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/multiplication-runtime.json",
+      "bytes": 6968,
+      "sha256": "3c08779bc3cdb12a596993b25d8dfa537e8559111717a3344fa107b4ad2ce69f",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/multiplication-runtime.json",
+      "source_sha256": "3c08779bc3cdb12a596993b25d8dfa537e8559111717a3344fa107b4ad2ce69f",
+      "source_bytes": 6968,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/multiplication-semantics.log",
+      "bytes": 145,
+      "sha256": "adeeb17a8fabd066b7274a6ad2bb2ab971ad4e5f3787b0f098cc1df60d176a6e",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/multiplication-semantics.log",
+      "source_sha256": "adeeb17a8fabd066b7274a6ad2bb2ab971ad4e5f3787b0f098cc1df60d176a6e",
+      "source_bytes": 145,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/mulword.log",
+      "bytes": 474,
+      "sha256": "1636aea8a6dc77957fe1a14dc09580f28082ea7962080134c748bd9b4cc9f46b",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/mulword.log",
+      "source_sha256": "1636aea8a6dc77957fe1a14dc09580f28082ea7962080134c748bd9b4cc9f46b",
+      "source_bytes": 474,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/negative-policy-tests.log",
+      "bytes": 19244,
+      "sha256": "0918a000e32191e60342f8df7cc0101846bb2a23b9a40d5bd82ac7fb0991fad9",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/negative-policy-tests.log",
+      "source_sha256": "0918a000e32191e60342f8df7cc0101846bb2a23b9a40d5bd82ac7fb0991fad9",
+      "source_bytes": 19244,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/parser-boundaries.json",
+      "bytes": 805,
+      "sha256": "edb74340189988728820914c36f3577d84b2475749792dac3749d06f30246a9d",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/parser-boundaries.json",
+      "source_sha256": "edb74340189988728820914c36f3577d84b2475749792dac3749d06f30246a9d",
+      "source_bytes": 805,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/parser-boundaries.log",
+      "bytes": 805,
+      "sha256": "edb74340189988728820914c36f3577d84b2475749792dac3749d06f30246a9d",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/parser-boundaries.log",
+      "source_sha256": "edb74340189988728820914c36f3577d84b2475749792dac3749d06f30246a9d",
+      "source_bytes": 805,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/proof-dependencies.log",
+      "bytes": 2305,
+      "sha256": "7d85619966116acd1627724b34407ed2134dc9c9119738671a56e35687300121",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/proof-dependencies.log",
+      "source_sha256": "7d85619966116acd1627724b34407ed2134dc9c9119738671a56e35687300121",
+      "source_bytes": 2305,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/proof-inventory.log",
+      "bytes": 11175,
+      "sha256": "ba70977344efc1f1423c585c0afc8324a433daa8699e7692316972b948d90817",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/proof-inventory.log",
+      "source_sha256": "ba70977344efc1f1423c585c0afc8324a433daa8699e7692316972b948d90817",
+      "source_bytes": 11175,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/retained.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/retained.log",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/stringbytes.log",
+      "bytes": 278,
+      "sha256": "7ac42dfd0fe27f07a2d03c1954d12393fc785046a9c5f9c3a3e8d154207a541d",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/stringbytes.log",
+      "source_sha256": "7ac42dfd0fe27f07a2d03c1954d12393fc785046a9c5f9c3a3e8d154207a541d",
+      "source_bytes": 278,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/verification-exit.json",
+      "bytes": 652,
+      "sha256": "bd9044894cb25764ec8248ba72ffef8aa8df98c4a220c8f90153320700e1d830",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/verification-exit.json",
+      "source_sha256": "bd9044894cb25764ec8248ba72ffef8aa8df98c4a220c8f90153320700e1d830",
+      "source_bytes": 652,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/verification.json",
+      "bytes": 71978,
+      "sha256": "35579e4f82be72f4acefaef277a3e89ffc7fff5fd9d524472c98e14db6f14196",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/verification.json",
+      "source_sha256": "35579e4f82be72f4acefaef277a3e89ffc7fff5fd9d524472c98e14db6f14196",
+      "source_bytes": 71978,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/evidence/wordcorrespondence.log",
+      "bytes": 228,
+      "sha256": "aef5b537e1ce7a66bfb14d66f71cde57c411d9d863892f50349d00d0acd30cb4",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/evidence/wordcorrespondence.log",
+      "source_sha256": "aef5b537e1ce7a66bfb14d66f71cde57c411d9d863892f50349d00d0acd30cb4",
+      "source_bytes": 228,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/generated/add-asm.json",
+      "bytes": 9344,
+      "sha256": "81ab7aae5bc73080f351d601ea405971113ad3485d49d109f5dc10cc42c1b5d9",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/generated/add-asm.json",
+      "source_sha256": "81ab7aae5bc73080f351d601ea405971113ad3485d49d109f5dc10cc42c1b5d9",
+      "source_bytes": 9344,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/generated/add-check.json",
+      "bytes": 3298,
+      "sha256": "4389fca255150d32c77f222337687cb9df52b97e6a1842725f8432e2d219d9d0",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/generated/add-check.json",
+      "source_sha256": "4389fca255150d32c77f222337687cb9df52b97e6a1842725f8432e2d219d9d0",
+      "source_bytes": 3298,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/generated/add.S",
+      "bytes": 216,
+      "sha256": "572c85fdb4c6a8feceb74827b9b3bf2fa4787b97e149ce3483ca64bdcece96bf",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/generated/add.S",
+      "source_sha256": "572c85fdb4c6a8feceb74827b9b3bf2fa4787b97e149ce3483ca64bdcece96bf",
+      "source_bytes": 216,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/generated/manifest.json",
+      "bytes": 1645,
+      "sha256": "05ae193e851a694aef89b49c912a8a5ea42c5b6977d7f4f4b88f19bd02091375",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/generated/manifest.json",
+      "source_sha256": "05ae193e851a694aef89b49c912a8a5ea42c5b6977d7f4f4b88f19bd02091375",
+      "source_bytes": 1645,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/generated/mul-check.json",
+      "bytes": 27152,
+      "sha256": "7c2fc8d913bc6907637c09b38777f2fc6c7ac9033ad6e976fde472c5117a8b65",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/generated/mul-check.json",
+      "source_sha256": "7c2fc8d913bc6907637c09b38777f2fc6c7ac9033ad6e976fde472c5117a8b65",
+      "source_bytes": 27152,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/generated/mul.S",
+      "bytes": 2482,
+      "sha256": "3fb0498c1cf0e2c852f3391422d41d6f6430956f700e6ca413103ee09b7b8f84",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/generated/mul.S",
+      "source_sha256": "3fb0498c1cf0e2c852f3391422d41d6f6430956f700e6ca413103ee09b7b8f84",
+      "source_bytes": 2482,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/logs/bootstrap.log",
+      "bytes": 12571,
+      "sha256": "250235955ba630ca2332df2bae4561efbda28c914d65790eb3f2cb77889806ec",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/logs/bootstrap.log",
+      "source_sha256": "250235955ba630ca2332df2bae4561efbda28c914d65790eb3f2cb77889806ec",
+      "source_bytes": 12571,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "short-full/runtime/logs/charon-extraction.log",
+      "bytes": 5579,
+      "sha256": "5d9757d870fa33ea84122eb6a4c5c2251af46608d7f9269a8f4cf7cfb9adc06e",
+      "source": "../../pavb-ci-1029/workspace/outputs/pasta-assembly-verification-bridge/logs/charon-extraction.log",
+      "source_sha256": "5d9757d870fa33ea84122eb6a4c5c2251af46608d7f9269a8f4cf7cfb9adc06e",
+      "source_bytes": 5579,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "short-full",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "snapshots/git-blob-comparison.json",
+      "bytes": 65715,
+      "sha256": "b9527672865b4d6b04db5a5f54e5b6df1f422e141f653edd73ef379240dd0443",
+      "source": "work/git-blob-ci/snapshot-audit/git-blob-comparison.json",
+      "source_sha256": "b9527672865b4d6b04db5a5f54e5b6df1f422e141f653edd73ef379240dd0443",
+      "source_bytes": 65715,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "snapshots",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "snapshots/kraken-original-UPSTREAM.json",
+      "bytes": 12327,
+      "sha256": "826ac09d20ed58b2bd7197178c2a95886b3a171d5e22c7b7c67ae1d017cb1cb6",
+      "source": "work/git-blob-ci/snapshot-audit/kraken-original-UPSTREAM.json",
+      "source_sha256": "826ac09d20ed58b2bd7197178c2a95886b3a171d5e22c7b7c67ae1d017cb1cb6",
+      "source_bytes": 12327,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "snapshots",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "snapshots/pasta-original-UPSTREAM.json",
+      "bytes": 1837,
+      "sha256": "8ab7fe6a81ab0de505cb6c99d7224df8dc5e2c461f4a4105a8867b0620fd0bd3",
+      "source": "work/git-blob-ci/snapshot-audit/pasta-original-UPSTREAM.json",
+      "source_sha256": "8ab7fe6a81ab0de505cb6c99d7224df8dc5e2c461f4a4105a8867b0620fd0bd3",
+      "source_bytes": 1837,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "snapshots",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "snapshots/post-rewrite-git-blob-check.json",
+      "bytes": 31768,
+      "sha256": "cc7551f108f92dd474c193e3dad8fb1708426e74ea0f08f7e534307c2caccec6",
+      "source": "work/git-blob-ci/snapshot-audit/post-rewrite-git-blob-check.json",
+      "source_sha256": "cc7551f108f92dd474c193e3dad8fb1708426e74ea0f08f7e534307c2caccec6",
+      "source_bytes": 31768,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "snapshots",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "snapshots/snapshot-tool-check.json",
+      "bytes": 1760,
+      "sha256": "a3f8ef5b9aaddeaa3232ad72b15f4143df88a0cb6866f1159e4aaba45f2427ce",
+      "source": "work/git-blob-ci/snapshot-audit/snapshot-tool-check.json",
+      "source_sha256": "a3f8ef5b9aaddeaa3232ad72b15f4143df88a0cb6866f1159e4aaba45f2427ce",
+      "source_bytes": 1760,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "snapshots",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "snapshots/snapshot-tool-check.log",
+      "bytes": 1213,
+      "sha256": "07048598c6186ba481df9f1e39951dc40d5deba3d414398f4fdade115ec2c410",
+      "source": "work/git-blob-ci/snapshot-audit/snapshot-tool-check.log",
+      "source_sha256": "07048598c6186ba481df9f1e39951dc40d5deba3d414398f4fdade115ec2c410",
+      "source_bytes": 1213,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "snapshots",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "source-checks/fresh-checkout-byte-audit.json",
+      "bytes": 68461,
+      "sha256": "a257322bfc66764fb86ffef29611f0c5bbe49c165226a94f0f349f6785757ead",
+      "source": "work/git-blob-ci/fresh-checkout-byte-audit.json",
+      "source_sha256": "a257322bfc66764fb86ffef29611f0c5bbe49c165226a94f0f349f6785757ead",
+      "source_bytes": 68461,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": true
+      },
+      "group": "source-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    },
+    {
+      "path": "source-checks/live-source-package-audit.json",
+      "bytes": 4152,
+      "sha256": "c50e2c279f5bca04c47b2098f7659ceb9733680ccf2447ff39e909a775b2d067",
+      "source": "work/git-blob-ci/live-source-package-audit.json",
+      "source_sha256": "c50e2c279f5bca04c47b2098f7659ceb9733680ccf2447ff39e909a775b2d067",
+      "source_bytes": 4152,
+      "redactions": {},
+      "privacy": {
+        "credential_patterns": {},
+        "absolute_profile_paths": false
+      },
+      "group": "source-checks",
+      "source_scope": "Actual report, log, provenance or retained input"
+    }
+  ],
+  "excluded": "No workspace/work tree traversal; only two explicit build-provenance JSON reports and four named false-equality source files. No .lake, toolchains, target directories, binaries or archives",
+  "privacy": "Hosted credential matches are redacted in new copies with original hashes retained; absolute local/runner command paths remain visible. Historical source bytes are never rewritten.",
+  "generated_files": [
+    {
+      "path": "source-baseline-preservation.json",
+      "bytes": 1462,
+      "sha256": "1ac2c8244e7efa39348f298274430bf42d74c9a4c972a47e9fe2dab82c80f5c3",
+      "derivation": "Selected fields of retained actual runner reports and input-record hashes"
+    }
+  ],
+  "hash_list_excludes": [
+    "evidence-index.json",
+    "SHA256SUMS"
+  ]
+}

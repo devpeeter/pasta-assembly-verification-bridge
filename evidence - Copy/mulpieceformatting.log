@@ -1,0 +1,3 @@
+'PastaBridge.MulPieceFormatting.render_instruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.MulPieceFormatting.render_program' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.MulPieceFormatting.render_normalize' depends on axioms: [propext, Quot.sound]

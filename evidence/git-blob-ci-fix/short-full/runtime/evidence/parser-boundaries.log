@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-DautoImplicit=false",
+    "--run",
+    "ParserChecks.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+  "exit_code": 0,
+  "wall_seconds": 4.664411,
+  "peak_rss_bytes": 853397504,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\parser-boundaries.log",
+  "status": "PASS",
+  "scope": "Synthetic parser checks, including range-before-conversion and width boundaries; no arithmetic correctness claim."
+}

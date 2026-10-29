@@ -1,0 +1,2 @@
+'PastaBridge.multiplication_artifact_chars_readback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.multiplication_value_encodes_retained_artifact' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,101 @@
+Interpreter expanded
+Output/input projections, word wrappers and instances normalized
+CSEL normalized
+Subtraction projections normalized before addition carries
+Word normalization completed
+AdditionCanonical10.lean:33:68: error: unsolved goals
+s : MachineData
+hzero : (Int64.toInt 0).toNat = 0
+hsubplain : ∀ (a b : BitVec 64), (a - b).toNat = (a.toNat + 2 ^ 64 - b.toNat) % 2 ^ 64
+⊢ Except.ok
+      {
+        l0 :=
+          if
+              (((s.regs.X3.toNat + s.regs.X7.toNat) % 2 ^ 64 +
+                            (BitVec.ofNat 64
+                                ((s.regs.X2.toNat + s.regs.X6.toNat +
+                                    ((s.regs.X1.toBitVec + s.regs.X5.toBitVec +
+                                            BitVec.ofNat 64 ((s.regs.X0.toNat + s.regs.X4.toNat) / 2 ^ 64)).unsigned !=
+                                        s.regs.X1.toBitVec.unsigned + s.regs.X5.toBitVec.unsigned +
+                                          if
+                                              (StatusFlags.adds (s.regs.X0.toBitVec + s.regs.X4.toBitVec)
+                                                    s.regs.X0.toBitVec s.regs.X4.toBitVec).c =
+                                                true then
+                                            1
+                                          else 0).toNat) /
+                                  2 ^ 64)).toNat) %
+                          2 ^ 64 +
+                        2 ^ 64 -
+                      s.regs.X10.toNat -
+                    (1 -
+                      (((s.regs.X2.toNat + s.regs.X6.toNat) % 2 ^ 64 +
+                                  (BitVec.ofNat 64
+                                      ((s.regs.X1.toBitVec + s.regs.X5.toBitVec +
+                                              BitVec.ofNat 64
+                                                ((s.regs.X0.toNat + s.regs.X4.toNat) / 2 ^ 64)).unsigned !=
+                                          s.regs.X1.toBitVec.unsigned + s.regs.X5.toBitVec.unsigned +
+                                            if
+                                                (StatusFlags.adds (s.regs.X0.toBitVec + s.regs.X4.toBitVec)
+                                                      s.regs.X0.toBitVec s.regs.X4.toBitVec).c =
+                                                  true then
+                                              1
+                                            else 0).toNat).toNat) %
+                                2 ^ 64 +
+                              2 ^ 64 -
+                            UInt64.toNat 0 -
+                          (1 -
+                            (((s.regs.X1.toNat + s.regs.X5.toNat) % 2 ^ 64 +
+                                        (BitVec.ofNat 64 ((s.regs.X0.toNat + s.regs.X4.toNat) / 2 ^ 64)).toNat) %
+                                      2 ^ 64 +
+                                    2 ^ 64 -
+                                  s.regs.X9.toNat -
+                                (1 -
+                                  ((s.regs.X0.toNat + s.regs.X4.toNat) % 2 ^ 64 + 2 ^ 64 - s.regs.X8.toNat) / 2 ^ 64)) /
+                              2 ^ 64)) /
+                        2 ^ 64)) /
+                  2 ^ 64 =
+                0 then
+            (s.regs.X0.toNat + s.regs.X4.toNat) % 2 ^ 64
+          else ((s.regs.X0.toNat + s.regs.X4.toNat) % 2 ^ 64 + 2 ^ 64 - s.regs.X8.toNat) % 2 ^ 64,
+        l1 :=
+          if
+              (((s.regs.X3.toNat + s.regs.X7.toNat) % 2 ^ 64 +
+                            (BitVec.ofNat 64
+                                ((s.regs.X2.toNat + s.regs.X6.toNat +
+                                    ((s.regs.X1.toBitVec + s.regs.X5.toBitVec +
+                                            BitVec.ofNat 64 ((s.regs.X0.toNat + s.regs.X4.toNat) / 2 ^ 64)).unsigned !=
+                                        s.regs.X1.toBitVec.unsigned + s.regs.X5.toBitVec.unsigned +
+                                          if
+                                              (StatusFlags.adds (s.regs.X0.toBitVec + s.regs.X4.toBitVec)
+                                                    s.regs.X0.toBitVec s.regs.X4.toBitVec).c =
+                                                true then
+                                            1
+                                          else 0).toNat) /
+                                  2 ^ 64)).toNat) %
+                          2 ^ 64 +
+                        2 ^ 64 -
+                      s.regs.X10.toNat -
+                    (1 -
+                      (((s.regs.X2.toNat + s.regs.X6.toNat) % 2 ^ 64 +
+                                  (BitVec.ofNat 64
+                                      ((s.regs.X1.toBitVec + s.regs.X5.toBitVec +
+                                              BitVec.ofNat 64
+                                                ((s.regs.X0.toNat + s.regs.X4.toNat) / 2 ^ 64)).unsigned !=
+                                          ⋯).toNat).toNat) %
+                                ⋯ +
+                              ⋯ -
+                            ⋯ -
+                          ⋯) /
+                        ⋯)) /
+                  ⋯ =
+                ⋯ then
+            ⋯
+          else ⋯,
+        l2 := ⋯, l3 := ⋯ } =
+    ⋯
+Interpreter expanded
+Output/input projections, word wrappers and instances normalized
+CSEL normalized
+Subtraction projections normalized before addition carries
+Word normalization completed
+'PastaBridge.addition_canonical_model' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

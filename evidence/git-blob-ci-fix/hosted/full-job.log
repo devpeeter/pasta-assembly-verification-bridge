@@ -1,0 +1,421 @@
+﻿2026-10-29T16:05:55.1832214Z Current runner version: '2.338.0'
+2026-10-29T16:05:55.1850399Z ##[group]Runner Image Provisioner
+2026-10-29T16:05:55.1850977Z Hosted Compute Agent
+2026-10-29T16:05:55.1851301Z Version: 20261021.618
+2026-10-29T16:05:55.1851645Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-29T16:05:55.1852071Z Build Date: 2026-10-21T00:45:21Z
+2026-10-29T16:05:55.1852445Z Worker ID: {831704a7-8cc4-49fe-8bee-a54a677a1db9}
+2026-10-29T16:05:55.1853244Z Region: southcentralus
+2026-10-29T16:05:55.1853566Z Cloud: Azure
+2026-10-29T16:05:55.1853858Z ##[endgroup]
+2026-10-29T16:05:55.1854630Z ##[group]Operating System
+2026-10-29T16:05:55.1854974Z Microsoft Windows Server 2025
+2026-10-29T16:05:55.1855314Z 10.0.26100
+2026-10-29T16:05:55.1855599Z Datacenter
+2026-10-29T16:05:55.1855881Z ##[endgroup]
+2026-10-29T16:05:55.1856211Z ##[group]Runner Image
+2026-10-29T16:05:55.1856534Z Image: windows-2025-vs2026
+2026-10-29T16:05:55.1856869Z Version: 20261021.278.1
+2026-10-29T16:05:55.1857768Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261021.278/images/windows/Windows2025-VS2026-Readme.md
+2026-10-29T16:05:55.1858669Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261021.278
+2026-10-29T16:05:55.1859205Z ##[endgroup]
+2026-10-29T16:05:55.1859809Z ##[group]GITHUB_TOKEN Permissions
+2026-10-29T16:05:55.1860979Z Contents: read
+2026-10-29T16:05:55.1861303Z Metadata: read
+2026-10-29T16:05:55.1861625Z ##[endgroup]
+2026-10-29T16:05:55.1862884Z Secret source: Actions
+2026-10-29T16:05:55.1863397Z Cache mode: write
+2026-10-29T16:05:55.1863792Z Prepare workflow directory
+2026-10-29T16:05:55.2145679Z Prepare all required actions
+2026-10-29T16:05:55.2185016Z Getting action download info
+2026-10-29T16:05:55.4894330Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-29T16:05:55.5704301Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-29T16:05:55.6621213Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-10-29T16:05:56.6489975Z Complete job name: full-verification
+2026-10-29T16:05:56.7528596Z ##[group]Run git config --global core.autocrlf false
+2026-10-29T16:05:56.7529525Z [36;1mgit config --global core.autocrlf false[0m
+2026-10-29T16:05:56.7530262Z [36;1mif ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }[0m
+2026-10-29T16:05:56.7531190Z [36;1m$artifactRoot = Join-Path $env:RUNNER_TEMP "pasta-full-verification"[0m
+2026-10-29T16:05:56.7532198Z [36;1mNew-Item -ItemType Directory -Path $artifactRoot -Force | Out-Null[0m
+2026-10-29T16:05:56.7532973Z [36;1m[ordered]@{[0m
+2026-10-29T16:05:56.7533567Z [36;1m  run_id = $env:GITHUB_RUN_ID[0m
+2026-10-29T16:05:56.7534177Z [36;1m  run_attempt = $env:GITHUB_RUN_ATTEMPT[0m
+2026-10-29T16:05:56.7534947Z [36;1m  commit = $env:GITHUB_SHA[0m
+2026-10-29T16:05:56.7535539Z [36;1m  event = $env:GITHUB_EVENT_NAME[0m
+2026-10-29T16:05:56.7536103Z [36;1m  image = $env:ImageOS[0m
+2026-10-29T16:05:56.7536646Z [36;1m  image_version = $env:ImageVersion[0m
+2026-10-29T16:05:56.7537572Z [36;1m} | ConvertTo-Json | Set-Content (Join-Path $artifactRoot "context.json") -Encoding utf8[0m
+2026-10-29T16:05:56.8130318Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-29T16:05:56.8131268Z env:
+2026-10-29T16:05:56.8131797Z   PYTHONUTF8: 1
+2026-10-29T16:05:56.8132224Z   PYTHONUNBUFFERED: 1
+2026-10-29T16:05:56.8132655Z ##[endgroup]
+2026-10-29T16:05:57.5302820Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-29T16:05:57.5303806Z with:
+2026-10-29T16:05:57.5304274Z   path: outputs/pasta-assembly-verification-bridge
+2026-10-29T16:05:57.5304858Z   persist-credentials: false
+2026-10-29T16:05:57.5305422Z   repository: devpeeter/pasta-assembly-verification-bridge
+2026-10-29T16:05:57.5310552Z   token: ***
+2026-10-29T16:05:57.5310917Z   ssh-strict: true
+2026-10-29T16:05:57.5311299Z   ssh-user: git
+2026-10-29T16:05:57.5311665Z   clean: true
+2026-10-29T16:05:57.5312065Z   sparse-checkout-cone-mode: true
+2026-10-29T16:05:57.5312780Z   fetch-depth: 1
+2026-10-29T16:05:57.5313179Z   fetch-tags: false
+2026-10-29T16:05:57.5313570Z   show-progress: true
+2026-10-29T16:05:57.5313957Z   lfs: false
+2026-10-29T16:05:57.5314310Z   submodules: false
+2026-10-29T16:05:57.5314704Z   set-safe-directory: true
+2026-10-29T16:05:57.5315149Z   allow-unsafe-pr-checkout: false
+2026-10-29T16:05:57.5315596Z env:
+2026-10-29T16:05:57.5315956Z   PYTHONUTF8: 1
+2026-10-29T16:05:57.5316329Z   PYTHONUNBUFFERED: 1
+2026-10-29T16:05:57.5316721Z ##[endgroup]
+2026-10-29T16:05:57.6323319Z Syncing repository: devpeeter/pasta-assembly-verification-bridge
+2026-10-29T16:05:57.6324976Z ##[group]Getting Git version info
+2026-10-29T16:05:57.6326280Z Working directory is 'D:\a\pasta-assembly-verification-bridge\pasta-assembly-verification-bridge\outputs\pasta-assembly-verification-bridge'
+2026-10-29T16:05:57.6716330Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-29T16:05:57.6969838Z git version 2.56.0.windows.2
+2026-10-29T16:05:57.7005284Z ##[endgroup]
+2026-10-29T16:05:57.7013636Z Copying 'C:\Users\runneradmin\.gitconfig' to 'D:\a\_temp\ddb0e968-6c28-418b-b00a-cb60d6cbb05f\.gitconfig'
+2026-10-29T16:05:57.7030678Z Temporarily overriding HOME='D:\a\_temp\ddb0e968-6c28-418b-b00a-cb60d6cbb05f' before making global git config changes
+2026-10-29T16:05:57.7031969Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-29T16:05:57.7037836Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\pasta-assembly-verification-bridge\pasta-assembly-verification-bridge\outputs\pasta-assembly-verification-bridge
+2026-10-29T16:05:57.7297532Z ##[group]Determining repository object format
+2026-10-29T16:05:57.7299152Z ##[endgroup]
+2026-10-29T16:05:57.7299852Z ##[group]Initializing the repository
+2026-10-29T16:05:57.7305932Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\pasta-assembly-verification-bridge\pasta-assembly-verification-bridge\outputs\pasta-assembly-verification-bridge
+2026-10-29T16:05:57.8120177Z Initialized empty Git repository in D:/a/pasta-assembly-verification-bridge/pasta-assembly-verification-bridge/outputs/pasta-assembly-verification-bridge/.git/
+2026-10-29T16:05:57.8159302Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/devpeeter/pasta-assembly-verification-bridge
+2026-10-29T16:05:57.8732534Z ##[endgroup]
+2026-10-29T16:05:57.8733359Z ##[group]Disabling automatic garbage collection
+2026-10-29T16:05:57.8738764Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-10-29T16:05:57.8995383Z ##[endgroup]
+2026-10-29T16:05:57.8996140Z ##[group]Setting up auth
+2026-10-29T16:05:57.8996809Z Removing SSH command configuration
+2026-10-29T16:05:57.9003672Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T16:05:57.9273332Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-29T16:05:59.1853661Z Removing HTTP extra header
+2026-10-29T16:05:59.1862231Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T16:05:59.2135309Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-29T16:05:59.6148647Z Removing includeIf entries pointing to credentials config files
+2026-10-29T16:05:59.6157138Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T16:05:59.6428094Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-29T16:06:00.0909491Z [command]"C:\Program Files\Git\bin\git.exe" config --file D:\a\_temp\git-credentials-bb1e68d8-4fca-40c1-9331-ca4c52151e6e.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-10-29T16:06:00.1217806Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/pasta-assembly-verification-bridge/pasta-assembly-verification-bridge/outputs/pasta-assembly-verification-bridge/.git.path D:\a\_temp\git-credentials-bb1e68d8-4fca-40c1-9331-ca4c52151e6e.config
+2026-10-29T16:06:00.1508318Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/pasta-assembly-verification-bridge/pasta-assembly-verification-bridge/outputs/pasta-assembly-verification-bridge/.git/worktrees/*.path D:\a\_temp\git-credentials-bb1e68d8-4fca-40c1-9331-ca4c52151e6e.config
+2026-10-29T16:06:00.1849989Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/outputs/pasta-assembly-verification-bridge/.git.path /github/runner_temp/git-credentials-bb1e68d8-4fca-40c1-9331-ca4c52151e6e.config
+2026-10-29T16:06:00.2136145Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/outputs/pasta-assembly-verification-bridge/.git/worktrees/*.path /github/runner_temp/git-credentials-bb1e68d8-4fca-40c1-9331-ca4c52151e6e.config
+2026-10-29T16:06:00.2512250Z ##[endgroup]
+2026-10-29T16:06:00.2512729Z ##[group]Fetching the repository
+2026-10-29T16:06:00.2526099Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +225d6a7ee9ad8e6e4b3f92155f4df6a18a172a08:refs/remotes/origin/main
+2026-10-29T16:06:01.5223407Z From https://github.com/devpeeter/pasta-assembly-verification-bridge
+2026-10-29T16:06:01.5224052Z  * [new ref]         225d6a7ee9ad8e6e4b3f92155f4df6a18a172a08 -> origin/main
+2026-10-29T16:06:01.5272202Z [command]"C:\Program Files\Git\bin\git.exe" branch --list --remote origin/main
+2026-10-29T16:06:01.5609952Z   origin/main
+2026-10-29T16:06:01.5649660Z [command]"C:\Program Files\Git\bin\git.exe" rev-parse refs/remotes/origin/main
+2026-10-29T16:06:01.5928296Z 225d6a7ee9ad8e6e4b3f92155f4df6a18a172a08
+2026-10-29T16:06:01.5954334Z ##[endgroup]
+2026-10-29T16:06:01.5954570Z ##[group]Determining the checkout info
+2026-10-29T16:06:01.5955475Z ##[endgroup]
+2026-10-29T16:06:01.5961645Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-10-29T16:06:01.6351253Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-10-29T16:06:01.6719071Z ##[group]Checking out the ref
+2026-10-29T16:06:01.6726321Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+2026-10-29T16:06:01.8346625Z Switched to a new branch 'main'
+2026-10-29T16:06:01.8362181Z branch 'main' set up to track 'origin/main'.
+2026-10-29T16:06:01.8401965Z ##[endgroup]
+2026-10-29T16:06:01.8771927Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-10-29T16:06:01.9025026Z 225d6a7ee9ad8e6e4b3f92155f4df6a18a172a08
+2026-10-29T16:06:01.9059600Z ##[group]Removing auth
+2026-10-29T16:06:01.9059921Z Removing SSH command configuration
+2026-10-29T16:06:01.9066186Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T16:06:01.9346782Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-29T16:06:02.3774553Z Removing HTTP extra header
+2026-10-29T16:06:02.3781236Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T16:06:02.4124968Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-29T16:06:02.8200458Z Removing includeIf entries pointing to credentials config files
+2026-10-29T16:06:02.8206462Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T16:06:02.8449496Z includeif.gitdir:D:/a/pasta-assembly-verification-bridge/pasta-assembly-verification-bridge/outputs/pasta-assembly-verification-bridge/.git.path
+2026-10-29T16:06:02.8450544Z includeif.gitdir:D:/a/pasta-assembly-verification-bridge/pasta-assembly-verification-bridge/outputs/pasta-assembly-verification-bridge/.git/worktrees/*.path
+2026-10-29T16:06:02.8451337Z includeif.gitdir:/github/workspace/outputs/pasta-assembly-verification-bridge/.git.path
+2026-10-29T16:06:02.8451893Z includeif.gitdir:/github/workspace/outputs/pasta-assembly-verification-bridge/.git/worktrees/*.path
+2026-10-29T16:06:02.8485237Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/pasta-assembly-verification-bridge/pasta-assembly-verification-bridge/outputs/pasta-assembly-verification-bridge/.git.path
+2026-10-29T16:06:02.8735917Z D:\a\_temp\git-credentials-bb1e68d8-4fca-40c1-9331-ca4c52151e6e.config
+2026-10-29T16:06:02.8776380Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/pasta-assembly-verification-bridge/pasta-assembly-verification-bridge/outputs/pasta-assembly-verification-bridge/.git.path D\:\\a\\_temp\\git\-credentials\-bb1e68d8\-4fca\-40c1\-9331\-ca4c52151e6e\.config
+2026-10-29T16:06:02.9083215Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/pasta-assembly-verification-bridge/pasta-assembly-verification-bridge/outputs/pasta-assembly-verification-bridge/.git/worktrees/*.path
+2026-10-29T16:06:02.9323804Z D:\a\_temp\git-credentials-bb1e68d8-4fca-40c1-9331-ca4c52151e6e.config
+2026-10-29T16:06:02.9362715Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/pasta-assembly-verification-bridge/pasta-assembly-verification-bridge/outputs/pasta-assembly-verification-bridge/.git/worktrees/*.path D\:\\a\\_temp\\git\-credentials\-bb1e68d8\-4fca\-40c1\-9331\-ca4c52151e6e\.config
+2026-10-29T16:06:02.9644979Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/outputs/pasta-assembly-verification-bridge/.git.path
+2026-10-29T16:06:02.9897982Z /github/runner_temp/git-credentials-bb1e68d8-4fca-40c1-9331-ca4c52151e6e.config
+2026-10-29T16:06:02.9937520Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/outputs/pasta-assembly-verification-bridge/.git.path \/github\/runner_temp\/git\-credentials\-bb1e68d8\-4fca\-40c1\-9331\-ca4c52151e6e\.config
+2026-10-29T16:06:03.0229457Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/outputs/pasta-assembly-verification-bridge/.git/worktrees/*.path
+2026-10-29T16:06:03.0472496Z /github/runner_temp/git-credentials-bb1e68d8-4fca-40c1-9331-ca4c52151e6e.config
+2026-10-29T16:06:03.0510426Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/outputs/pasta-assembly-verification-bridge/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-bb1e68d8\-4fca\-40c1\-9331\-ca4c52151e6e\.config
+2026-10-29T16:06:03.0796317Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-29T16:06:03.5125537Z Removing credentials config 'D:\a\_temp\git-credentials-bb1e68d8-4fca-40c1-9331-ca4c52151e6e.config'
+2026-10-29T16:06:03.5135200Z ##[endgroup]
+2026-10-29T16:06:03.5419348Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-10-29T16:06:03.5419786Z with:
+2026-10-29T16:06:03.5419904Z   python-version: 3.11.9
+2026-10-29T16:06:03.5420025Z   architecture: x64
+2026-10-29T16:06:03.5420135Z   check-latest: false
+2026-10-29T16:06:03.5421579Z   token: ***
+2026-10-29T16:06:03.5421689Z   update-environment: true
+2026-10-29T16:06:03.5421815Z   allow-prereleases: false
+2026-10-29T16:06:03.5421932Z   freethreaded: false
+2026-10-29T16:06:03.5422037Z env:
+2026-10-29T16:06:03.5422136Z   PYTHONUTF8: 1
+2026-10-29T16:06:03.5422242Z   PYTHONUNBUFFERED: 1
+2026-10-29T16:06:03.5422354Z ##[endgroup]
+2026-10-29T16:06:03.6456321Z ##[group]Installed versions
+2026-10-29T16:06:03.6489252Z Successfully set up CPython (3.11.9)
+2026-10-29T16:06:03.6489627Z ##[endgroup]
+2026-10-29T16:06:03.6707686Z ##[group]Run python scripts/ci_unit.py --output "$env:RUNNER_TEMP/pasta-full-verification/unit"
+2026-10-29T16:06:03.6708139Z [36;1mpython scripts/ci_unit.py --output "$env:RUNNER_TEMP/pasta-full-verification/unit"[0m
+2026-10-29T16:06:03.6708381Z [36;1mexit $LASTEXITCODE[0m
+2026-10-29T16:06:03.6809294Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-29T16:06:03.6809502Z env:
+2026-10-29T16:06:03.6809618Z   PYTHONUTF8: 1
+2026-10-29T16:06:03.6809737Z   PYTHONUNBUFFERED: 1
+2026-10-29T16:06:03.6809907Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:06:03.6810181Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.11.9\x64/lib/pkgconfig
+2026-10-29T16:06:03.6810432Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:06:03.6810653Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:06:03.6810873Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:06:03.6811083Z ##[endgroup]
+2026-10-29T16:06:13.6330389Z PASS: unit-tests
+2026-10-29T16:06:13.6728842Z PASS: source-integrity
+2026-10-29T16:06:13.7314119Z PASS: generated-current
+2026-10-29T16:06:13.7793885Z PASS: mul-json-certificate-current
+2026-10-29T16:06:13.8414847Z PASS: source-manifest
+2026-10-29T16:06:13.8419226Z PASS: CI unit/artifact checks; D:\a\_temp\pasta-full-verification\unit\report.json
+2026-10-29T16:06:13.8954841Z ##[group]Run python scripts/ci_full.py --output "$env:RUNNER_TEMP/pasta-full-verification/full"
+2026-10-29T16:06:13.8955276Z [36;1mpython scripts/ci_full.py --output "$env:RUNNER_TEMP/pasta-full-verification/full"[0m
+2026-10-29T16:06:13.8955511Z [36;1mexit $LASTEXITCODE[0m
+2026-10-29T16:06:13.9005697Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-29T16:06:13.9005903Z env:
+2026-10-29T16:06:13.9006015Z   PYTHONUTF8: 1
+2026-10-29T16:06:13.9006129Z   PYTHONUNBUFFERED: 1
+2026-10-29T16:06:13.9006295Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:06:13.9006545Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.11.9\x64/lib/pkgconfig
+2026-10-29T16:06:13.9006791Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:06:13.9007017Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:06:13.9007252Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:06:13.9007478Z ##[endgroup]
+2026-10-29T16:06:14.9571231Z Checking bootstrap-extraction...
+2026-10-29T16:10:13.4162698Z Checking install-lean...
+2026-10-29T16:10:45.1074696Z Checking bootstrap-proofs...
+2026-10-29T16:11:34.1244920Z Checking fresh-binary-extraction...
+2026-10-29T16:11:41.6229948Z Checking regenerate-adapter...
+2026-10-29T16:11:58.6407502Z {
+2026-10-29T16:11:58.6407811Z   "status": "FAIL",
+2026-10-29T16:11:58.6408271Z   "technical_status": "FAIL",
+2026-10-29T16:11:58.6408570Z   "acceptance_status": "FAIL",
+2026-10-29T16:11:58.6408874Z   "started_utc": "2026-10-29T16:06:14.642681+00:00",
+2026-10-29T16:11:58.6409583Z   "source": "D:\\a\\pasta-assembly-verification-bridge\\pasta-assembly-verification-bridge\\outputs\\pasta-assembly-verification-bridge",
+2026-10-29T16:11:58.6410359Z   "runtime_project": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+2026-10-29T16:11:58.6412141Z   "stages": [
+2026-10-29T16:11:58.6412595Z     {
+2026-10-29T16:11:58.6412800Z       "command": [
+2026-10-29T16:11:58.6413130Z         "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+2026-10-29T16:11:58.6413518Z         "scripts/bootstrap.py"
+2026-10-29T16:11:58.6413767Z       ],
+2026-10-29T16:11:58.6414206Z       "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+2026-10-29T16:11:58.6414731Z       "exit_code": 0,
+2026-10-29T16:11:58.6414964Z       "wall_seconds": 238.453684,
+2026-10-29T16:11:58.6415217Z       "peak_rss_bytes": 29851648,
+2026-10-29T16:11:58.6415545Z       "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+2026-10-29T16:11:58.6416033Z       "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\bootstrap-extraction.log",
+2026-10-29T16:11:58.6416443Z       "name": "bootstrap-extraction",
+2026-10-29T16:11:58.6416731Z       "status": "PASS"
+2026-10-29T16:11:58.6416973Z     },
+2026-10-29T16:11:58.6417167Z     {
+2026-10-29T16:11:58.6417391Z       "command": [
+2026-10-29T16:11:58.6417707Z         "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+2026-10-29T16:11:58.6418070Z         "scripts/install_lean.py"
+2026-10-29T16:11:58.6418329Z       ],
+2026-10-29T16:11:58.6418756Z       "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+2026-10-29T16:11:58.6419242Z       "exit_code": 0,
+2026-10-29T16:11:58.6419473Z       "wall_seconds": 31.688002,
+2026-10-29T16:11:58.6419744Z       "peak_rss_bytes": 48517120,
+2026-10-29T16:11:58.6420092Z       "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+2026-10-29T16:11:58.6420617Z       "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\install-lean.log",
+2026-10-29T16:11:58.6421109Z       "name": "install-lean",
+2026-10-29T16:11:58.6421443Z       "status": "PASS"
+2026-10-29T16:11:58.6421678Z     },
+2026-10-29T16:11:58.6421867Z     {
+2026-10-29T16:11:58.6422137Z       "command": [
+2026-10-29T16:11:58.6429091Z         "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+2026-10-29T16:11:58.6429631Z         "proofs/bootstrap.py",
+2026-10-29T16:11:58.6429911Z         "--lean-bin",
+2026-10-29T16:11:58.6430364Z         "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin"
+2026-10-29T16:11:58.6430825Z       ],
+2026-10-29T16:11:58.6431240Z       "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+2026-10-29T16:11:58.6431717Z       "exit_code": 0,
+2026-10-29T16:11:58.6431948Z       "wall_seconds": 49.015265,
+2026-10-29T16:11:58.6432202Z       "peak_rss_bytes": 15204352,
+2026-10-29T16:11:58.6498721Z       "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+2026-10-29T16:11:58.6499513Z       "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\bootstrap-proofs.log",
+2026-10-29T16:11:58.6499955Z       "name": "bootstrap-proofs",
+2026-10-29T16:11:58.6500218Z       "status": "PASS"
+2026-10-29T16:11:58.6500437Z     },
+2026-10-29T16:11:58.6500624Z     {
+2026-10-29T16:11:58.6500821Z       "command": [
+2026-10-29T16:11:58.6501097Z         "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+2026-10-29T16:11:58.6501431Z         "scripts/extract.py"
+2026-10-29T16:11:58.6501664Z       ],
+2026-10-29T16:11:58.6502105Z       "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+2026-10-29T16:11:58.6502584Z       "exit_code": 0,
+2026-10-29T16:11:58.6502809Z       "wall_seconds": 7.497488,
+2026-10-29T16:11:58.6503055Z       "peak_rss_bytes": 32239616,
+2026-10-29T16:11:58.6503376Z       "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+2026-10-29T16:11:58.6503841Z       "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\fresh-binary-extraction.log",
+2026-10-29T16:11:58.6504564Z       "name": "fresh-binary-extraction",
+2026-10-29T16:11:58.6504846Z       "status": "PASS"
+2026-10-29T16:11:58.6505054Z     },
+2026-10-29T16:11:58.6505233Z     {
+2026-10-29T16:11:58.6505421Z       "command": [
+2026-10-29T16:11:58.6505721Z         "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+2026-10-29T16:11:58.6506055Z         "bridge/kraken_adapter.py",
+2026-10-29T16:11:58.6506300Z         "--artifact",
+2026-10-29T16:11:58.6506530Z         "artifacts/charon-asm.json",
+2026-10-29T16:11:58.6506783Z         "--output",
+2026-10-29T16:11:58.6506985Z         "generated"
+2026-10-29T16:11:58.6507188Z       ],
+2026-10-29T16:11:58.6507573Z       "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+2026-10-29T16:11:58.6508021Z       "exit_code": 0,
+2026-10-29T16:11:58.6508242Z       "wall_seconds": 0.063267,
+2026-10-29T16:11:58.6508516Z       "peak_rss_bytes": 19636224,
+2026-10-29T16:11:58.6508841Z       "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+2026-10-29T16:11:58.6509295Z       "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\regenerate-adapter.log",
+2026-10-29T16:11:58.6509673Z       "name": "regenerate-adapter",
+2026-10-29T16:11:58.6509929Z       "status": "PASS"
+2026-10-29T16:11:58.6510151Z     },
+2026-10-29T16:11:58.6510336Z     {
+2026-10-29T16:11:58.6510518Z       "command": [
+2026-10-29T16:11:58.6510793Z         "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+2026-10-29T16:11:58.6511128Z         "scripts/verify.py",
+2026-10-29T16:11:58.6511386Z         "--clean"
+2026-10-29T16:11:58.6511581Z       ],
+2026-10-29T16:11:58.6511965Z       "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+2026-10-29T16:11:58.6512408Z       "exit_code": 1,
+2026-10-29T16:11:58.6512627Z       "wall_seconds": 16.219564,
+2026-10-29T16:11:58.6512875Z       "peak_rss_bytes": 20520960,
+2026-10-29T16:11:58.6514390Z       "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+2026-10-29T16:11:58.6515571Z       "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\verify-clean.log",
+2026-10-29T16:11:58.6515941Z       "name": "verify-clean",
+2026-10-29T16:11:58.6516233Z       "status": "FAIL"
+2026-10-29T16:11:58.6516441Z     }
+2026-10-29T16:11:58.6516622Z   ],
+2026-10-29T16:11:58.6516809Z   "environment": {
+2026-10-29T16:11:58.6517030Z     "platform": "Windows-10-10.0.26100-SP0",
+2026-10-29T16:11:58.6517416Z     "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+2026-10-29T16:11:58.6517852Z     "ImageOS": "win25-vs2026",
+2026-10-29T16:11:58.6518122Z     "ImageVersion": "20261021.278.1",
+2026-10-29T16:11:58.6555447Z     "GITHUB_SHA": "225d6a7ee9ad8e6e4b3f92155f4df6a18a172a08",
+2026-10-29T16:11:58.6555821Z     "GITHUB_RUN_ID": "40908170419",
+2026-10-29T16:11:58.6556089Z     "GITHUB_RUN_ATTEMPT": "1",
+2026-10-29T16:11:58.6556367Z     "GITHUB_EVENT_NAME": "workflow_dispatch"
+2026-10-29T16:11:58.6556650Z   },
+2026-10-29T16:11:58.6556849Z   "resources_before": {
+2026-10-29T16:11:58.6557098Z     "disk_total_bytes": 236205371392,
+2026-10-29T16:11:58.6557405Z     "disk_free_bytes": 236068429824,
+2026-10-29T16:11:58.6557670Z     "memory_total_bytes": 17174360064,
+2026-10-29T16:11:58.6557952Z     "memory_available_bytes": 14453444608
+2026-10-29T16:11:58.6558233Z   },
+2026-10-29T16:11:58.6558771Z   "scope": "Automated technical verification of register-entry Kraken models; no Rust wrapper load/store or ARM hardware-vector claim.",
+2026-10-29T16:11:58.6559260Z   "tools": {
+2026-10-29T16:11:58.6559434Z     "git": {
+2026-10-29T16:11:58.6559641Z       "path": "C:\\Program Files\\Git\\bin\\git.exe",
+2026-10-29T16:11:58.6559993Z       "sha256": "54bda91c773c6bba2b970424423cfcb80552d92dc6967d766f98931fe1251a54"
+2026-10-29T16:11:58.6560315Z     },
+2026-10-29T16:11:58.6560471Z     "rustup": {
+2026-10-29T16:11:58.6560679Z       "path": "C:\\Users\\runneradmin\\.cargo\\bin\\rustup.exe",
+2026-10-29T16:11:58.6561231Z       "sha256": "00f139da614dced87d3c3d4121c43eebdac3c1bf8a5ee86b9d80dfd71c8d70fd"
+2026-10-29T16:11:58.6561529Z     },
+2026-10-29T16:11:58.6561692Z     "cargo": {
+2026-10-29T16:11:58.6561905Z       "path": "C:\\Users\\runneradmin\\.cargo\\bin\\cargo.exe",
+2026-10-29T16:11:58.6562225Z       "sha256": "00f139da614dced87d3c3d4121c43eebdac3c1bf8a5ee86b9d80dfd71c8d70fd"
+2026-10-29T16:11:58.6562515Z     },
+2026-10-29T16:11:58.6562662Z     "lean": {
+2026-10-29T16:11:58.6563000Z       "path": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+2026-10-29T16:11:58.6563429Z       "sha256": "9b216deb50d37c32c829d1efaaa5bafd5560417d382df35a815489e31a31593f"
+2026-10-29T16:11:58.6563704Z     },
+2026-10-29T16:11:58.6563851Z     "lake": {
+2026-10-29T16:11:58.6564147Z       "path": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lake.exe",
+2026-10-29T16:11:58.6564569Z       "sha256": "a5be0113af1c08ba678c1fad07594e1c5de6b871fe0c4144da2998488eba88a1"
+2026-10-29T16:11:58.6564838Z     }
+2026-10-29T16:11:58.6564986Z   },
+2026-10-29T16:11:58.6565156Z   "private_toolchain_directories": {
+2026-10-29T16:11:58.6565481Z     "CARGO_HOME": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\cargo-home",
+2026-10-29T16:11:58.6565856Z     "RUSTUP_HOME": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\rustup-home"
+2026-10-29T16:11:58.6566142Z   },
+2026-10-29T16:11:58.6566428Z   "lean_bin": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin",
+2026-10-29T16:11:58.6566837Z   "reason": "complete verification did not PASS with actual exit 0",
+2026-10-29T16:11:58.6567090Z   "original_checkout_unchanged": true,
+2026-10-29T16:11:58.6567298Z   "finished_utc": "2026-10-29T16:11:58.639647+00:00",
+2026-10-29T16:11:58.6567504Z   "resources_after": {
+2026-10-29T16:11:58.6567662Z     "disk_total_bytes": 236205371392,
+2026-10-29T16:11:58.6567853Z     "disk_free_bytes": 227462057984,
+2026-10-29T16:11:58.6568309Z     "memory_total_bytes": 17174360064,
+2026-10-29T16:11:58.6568508Z     "memory_available_bytes": 13721899008
+2026-10-29T16:11:58.6568693Z   }
+2026-10-29T16:11:58.6568824Z }
+2026-10-29T16:11:58.6895647Z ##[error]Process completed with exit code 1.
+2026-10-29T16:11:58.7072925Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-10-29T16:11:58.7073273Z with:
+2026-10-29T16:11:58.7073449Z   name: full-verification-40908170419-1
+2026-10-29T16:11:58.7074239Z   path: D:\a\_temp/pasta-full-verification/
+!D:\a\_temp/pasta-full-verification/**/workspace/work/**
+!D:\a\_temp/pasta-full-verification/**/.lake/**
+!D:\a\_temp/pasta-full-verification/**/__pycache__/**
+!D:\a\_temp/pasta-full-verification/**/*.olean
+!D:\a\_temp/pasta-full-verification/**/*.ilean
+!D:\a\_temp/pasta-full-verification/**/*.pyc
+
+2026-10-29T16:11:58.7075004Z   if-no-files-found: error
+2026-10-29T16:11:58.7075205Z   retention-days: 30
+2026-10-29T16:11:58.7075363Z   compression-level: 6
+2026-10-29T16:11:58.7075531Z   include-hidden-files: true
+2026-10-29T16:11:58.7075731Z   overwrite: false
+2026-10-29T16:11:58.7075870Z   archive: true
+2026-10-29T16:11:58.7076021Z env:
+2026-10-29T16:11:58.7076159Z   PYTHONUTF8: 1
+2026-10-29T16:11:58.7076382Z   PYTHONUNBUFFERED: 1
+2026-10-29T16:11:58.7076588Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:11:58.7076893Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.11.9\x64/lib/pkgconfig
+2026-10-29T16:11:58.7077194Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:11:58.7077462Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:11:58.7077728Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.11.9\x64
+2026-10-29T16:11:58.7077957Z ##[endgroup]
+2026-10-29T16:12:06.6769165Z With the provided path, there will be 300 files uploaded
+2026-10-29T16:12:06.6773776Z Artifact name is valid!
+2026-10-29T16:12:06.6774884Z Root directory input is valid!
+2026-10-29T16:12:06.9677089Z Uploading artifact: full-verification-40908170419-1.zip
+2026-10-29T16:12:06.9716949Z Beginning upload of artifact content to blob storage
+2026-10-29T16:12:07.6285536Z Uploaded bytes 644966
+2026-10-29T16:12:07.6730630Z Finished uploading artifact content to blob storage!
+2026-10-29T16:12:07.6733090Z SHA256 digest of uploaded artifact is 25df814dd7f350e1af35a783ee0fc9ca412697bb225a0c6e77f8015182357134
+2026-10-29T16:12:07.6733589Z Finalizing artifact upload
+2026-10-29T16:12:08.2772176Z Artifact full-verification-40908170419-1 successfully finalized. Artifact ID 12912787632
+2026-10-29T16:12:08.2772739Z Artifact full-verification-40908170419-1 has been successfully uploaded! Final size is 644966 bytes. Artifact ID is 12912787632
+2026-10-29T16:12:08.2790466Z Artifact download URL: https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40908170419/artifacts/12912787632
+2026-10-29T16:12:08.3310370Z Post job cleanup.
+2026-10-29T16:12:08.4676729Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-29T16:12:08.4949742Z git version 2.56.0.windows.2
+2026-10-29T16:12:08.4998699Z Copying 'C:\Users\runneradmin\.gitconfig' to 'D:\a\_temp\43ca035f-ac16-426a-be37-b434d89a0383\.gitconfig'
+2026-10-29T16:12:08.5015220Z Temporarily overriding HOME='D:\a\_temp\43ca035f-ac16-426a-be37-b434d89a0383' before making global git config changes
+2026-10-29T16:12:08.5015975Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-29T16:12:08.5023756Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\pasta-assembly-verification-bridge\pasta-assembly-verification-bridge\outputs\pasta-assembly-verification-bridge
+2026-10-29T16:12:08.5353280Z Removing SSH command configuration
+2026-10-29T16:12:08.5363839Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T16:12:08.5695347Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-29T16:12:09.1019994Z Removing HTTP extra header
+2026-10-29T16:12:09.1029656Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T16:12:09.1365996Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-29T16:12:09.6057492Z Removing includeIf entries pointing to credentials config files
+2026-10-29T16:12:09.6067404Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T16:12:09.6375381Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-29T16:12:10.1304901Z Cleaning up orphan processes
+2026-10-29T16:12:10.1727507Z Terminate orphan process: pid (9840) (vctip)

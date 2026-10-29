@@ -1,0 +1,171 @@
+{
+  "started_utc": "2026-10-29T16:11:42.049940+00:00",
+  "status": "BLOCKED",
+  "stages": [
+    {
+      "name": "upstream-snapshot",
+      "status": "PASS",
+      "checked_files": 16,
+      "commit": "e3c0f0246f56d351f1a94ff0a74c8d201dbf87d9"
+    },
+    {
+      "name": "kraken-snapshot",
+      "status": "PASS",
+      "checked_files": 112,
+      "commit": "811ff7ce1dae0b9cae761585d33959f5302a2cc1"
+    },
+    {
+      "name": "fresh-extraction",
+      "command": [
+        "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+        "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge\\scripts\\extract.py",
+        "--check"
+      ],
+      "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 6.302199,
+      "peak_rss_bytes": 31940608,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\fresh-extraction.log",
+      "status": "PASS"
+    },
+    {
+      "name": "generated-current",
+      "command": [
+        "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+        "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge\\kraken_adapter.py",
+        "--artifact",
+        "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge\\artifacts\\charon-asm.json",
+        "--output",
+        "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge\\generated",
+        "--check"
+      ],
+      "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 0.063064,
+      "peak_rss_bytes": 19292160,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\generated-current.log",
+      "status": "PASS"
+    },
+    {
+      "name": "negative-policy-tests",
+      "command": [
+        "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 7.993365,
+      "peak_rss_bytes": 35688448,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\negative-policy-tests.log",
+      "status": "PASS"
+    },
+    {
+      "name": "proof-dependencies",
+      "command": [
+        "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+        "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge\\scripts\\check_proof_dependencies.py"
+      ],
+      "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 1.632142,
+      "peak_rss_bytes": 16543744,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\proof-dependencies.log",
+      "status": "PASS"
+    },
+    {
+      "name": "used-kraken-source",
+      "status": "FAIL",
+      "reason": "Kraken build source differs from snapshot: .github/workflows/lean_action_ci.yml"
+    },
+    {
+      "name": "addition-target-correctness",
+      "status": "INCOMPLETE",
+      "missing_checks": [
+        "addition-formal-negatives",
+        "addition-semantics",
+        "additioncorrectness",
+        "additionmachine",
+        "additionnat",
+        "additionnatdata",
+        "additionnatdatamodel",
+        "additionnatlift",
+        "additionnatliftbase",
+        "additionnatmodel",
+        "additionnatobservation",
+        "additionnatsequence",
+        "additionparametricbase",
+        "additionparametricmodel",
+        "additionstep",
+        "arithmetic-build",
+        "arithmetic-proof",
+        "artifact",
+        "artifact-link",
+        "bindingartifact",
+        "kerneljson",
+        "kraken-binding",
+        "kraken-build",
+        "kraken-compatibility-overlay",
+        "kraken-word",
+        "krakenrun",
+        "proof-inventory",
+        "retained",
+        "used-kraken-source",
+        "wordcorrespondence"
+      ],
+      "theorem": "PastaBridge.AdditionCorrectness.addition_correct"
+    },
+    {
+      "name": "multiplication-target-correctness",
+      "status": "INCOMPLETE",
+      "missing_checks": [
+        "mul-formal-negatives",
+        "mul-json-certificate-current",
+        "mul-proof-inventory",
+        "mulartifact",
+        "mulbindingartifact",
+        "mulcertificate",
+        "mulcorrectness",
+        "mulformatting",
+        "muljsoncertificate",
+        "muljsontextdagbase",
+        "muljsontextdagfinal",
+        "mulmachine",
+        "mulmetadata",
+        "mulnat",
+        "mulnatlift",
+        "mulnatsequence",
+        "mulparametricbase",
+        "mulparametricmodel",
+        "mulparametricrounds",
+        "mulpieceformatting",
+        "mulprogramdata",
+        "mulretained",
+        "mulsequenceframe",
+        "mulstep",
+        "multiplication-parser",
+        "multiplication-semantics",
+        "mulword",
+        "parser-boundaries",
+        "stringbytes"
+      ],
+      "theorem": "PastaBridge.MulCorrectness.multiplication_correct",
+      "reason": "Deferred until addition target correctness is complete."
+    }
+  ],
+  "unresolved": [
+    "Addition target verification is incomplete in this invocation; see its missing_checks.",
+    "Multiplication target verification is incomplete. Arithmetic-model proofs and test vectors do not replace it."
+  ],
+  "wall_seconds": 16.148427,
+  "lean_version": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+  "checks_failed": true
+}

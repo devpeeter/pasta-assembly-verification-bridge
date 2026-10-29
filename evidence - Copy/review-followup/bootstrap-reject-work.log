@@ -1,0 +1,2 @@
+usage: bootstrap.py [-h] [--sources-only]
+bootstrap.py: error: unrecognized arguments: --work unused-review-location

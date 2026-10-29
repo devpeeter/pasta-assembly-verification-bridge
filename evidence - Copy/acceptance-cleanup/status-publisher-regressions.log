@@ -1,0 +1,15 @@
+test_changed_or_narrowed_policy_is_rejected (test_publish_verified_results.PublicationGuardTests.test_changed_or_narrowed_policy_is_rejected) ... ok
+test_complete_fixture_is_eligible (test_publish_verified_results.PublicationGuardTests.test_complete_fixture_is_eligible) ... ok
+test_missing_peak_measurement_is_rejected (test_publish_verified_results.PublicationGuardTests.test_missing_peak_measurement_is_rejected) ... ok
+test_missing_target_stage_is_rejected (test_publish_verified_results.PublicationGuardTests.test_missing_target_stage_is_rejected) ... ok
+test_partial_and_interrupted_exit_are_rejected (test_publish_verified_results.PublicationGuardTests.test_partial_and_interrupted_exit_are_rejected) ... ok
+test_publication_acceptance_tracks_repeated_technical_passes (test_publish_verified_results.PublicationGuardTests.test_publication_acceptance_tracks_repeated_technical_passes) ... ok
+test_publish_refreshes_current_templates_in_temporary_fixture (test_publish_verified_results.PublicationGuardTests.test_publish_refreshes_current_templates_in_temporary_fixture) ... ok
+test_stale_runtime_report_is_rejected (test_publish_verified_results.PublicationGuardTests.test_stale_runtime_report_is_rejected) ... ok
+test_unrelated_formal_failure_is_rejected (test_publish_verified_results.PublicationGuardTests.test_unrelated_formal_failure_is_rejected) ... ok
+test_x19_coverage_and_semantic_rejection_required (test_publish_verified_results.PublicationGuardTests.test_x19_coverage_and_semantic_rejection_required) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.903s
+
+OK

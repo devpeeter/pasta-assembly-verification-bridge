@@ -1,0 +1,62 @@
+{
+  "reviewed_utc": "2026-10-23T17:10:37.422764+00:00",
+  "scope": "Independent source review of addition closure gates; this is not the final verification result.",
+  "source_sha256": {
+    "scripts/verify.py": "eb5151e92de465a6c5a6fe6c007a7504d9929907df89ebe32735bc3526e12002",
+    "scripts/axiom_audit.py": "ce9c50a64a5f6b8003c9ddd35eb2f835463d48927732028830ab4935b6ee8822",
+    "scripts/check_proof_dependencies.py": "74c4fc28a8ffb065b2658bd6eb8cace6f3a374725d8ed3ba22a1cc9d13ce86af",
+    "tests/test_proof_dependencies.py": "7a463f30692431e0dd332f6e197fc3ae4179de0ec47e2cfa2dd3eee876210581",
+    "proofs/Audit.lean": "1bc25fec8510ae692052e96c52265a1e045e5c9c6f9e5fbdab21b87005257e0b"
+  },
+  "dependency_check": {
+    "status": "PASS",
+    "command": "python scripts/check_proof_dependencies.py",
+    "checked_packages": 9
+  },
+  "focused_tests": {
+    "status": "PASS",
+    "command": "python -m unittest discover -s tests -p test_proof_dependencies.py -v",
+    "tests": 9,
+    "wall_seconds_reported_by_unittest": 32.497
+  },
+  "findings": [
+    {
+      "issue": "Ordinary verification previously lacked a current locked proof-dependency source gate.",
+      "resolution": "check_proof_dependencies.py checks immutable revisions, source cleanliness, repository identities and Mathlib pin; root integrated proof-dependencies into the addition required stages."
+    },
+    {
+      "issue": "A requested declaration name and standard axiom census alone do not constrain its theorem type.",
+      "resolution": "Audit.addition_target_type explicitly assigns addition_correct to the required type without a correspondence premise; its census is required."
+    },
+    {
+      "issue": "New parametric model imports require their own ordered compilation stages.",
+      "resolution": "Root added AdditionParametricBase/Model before AdditionNatDataModel and required their specialization/model censuses."
+    },
+    {
+      "issue": "The work-only formal-negative harness initially classified rejection by loose decide/false substring matching.",
+      "resolution": "Reported to root; exact pinned semantic diagnostic and intended equality should be required. Consult the delivered harness and current verification result for final status."
+    }
+  ],
+  "target_contract_review": {
+    "source": "work/AdditionCorrectnessFinal.lean",
+    "status": "REVIEWED source plan; no independent main compilation claimed here",
+    "source_sha256": "2de301a5ccc7777efa9df733e5d3c2e09af2a833b01ef899632baf8c541b8a8c",
+    "hypotheses": [
+      "field : PastaField",
+      "binding : AdditionMachine.Binding",
+      "arbitrary state : MachineData",
+      "Admissible binding",
+      "modulus equality and lhs/rhs < field modulus"
+    ],
+    "conclusion": [
+      "successful actual runWithBinding",
+      "exact existing addition model output",
+      "bounded canonical modular sum",
+      "memory/SP/protected/readonly/X19/X29 preservation",
+      "bound retained-template correspondence",
+      "actual operand metadata"
+    ],
+    "extra_correspondence_premise": false
+  },
+  "trust_limit": "Dependency .lake caches remain imported build artifacts. This source gate does not prove their source-to-binary correspondence; upstream integrity manifests and extraction provenance are not authenticated against a compromised host."
+}

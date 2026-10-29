@@ -1,0 +1,1 @@
+PASS: 3232 addition executions through Kraken, both fields, all16 NZCV patterns; carry and operand-binding mutants rejected by semantic checks

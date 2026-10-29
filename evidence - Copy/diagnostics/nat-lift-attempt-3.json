@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\nat-proof-build\\AdditionNatLift.olean",
+    "AdditionNatLift.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work",
+  "exit_code": 4294967295,
+  "wall_seconds": 340.595763,
+  "peak_rss_bytes": 3811028992,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "nat-lift-attempt-3.log",
+  "status": "INTERRUPTED",
+  "reason": "Controlled interruption after expensive reflexivity normalization; no semantic counterexample and no delivered target theorem.",
+  "source_snapshot": "nat-lift-attempt-3-source.lean.txt",
+  "source_sha256": "d93d58c53bd1587b6a6e4db6ed6271f6b56ffd94760cbbed98fee85166d33e35"
+}

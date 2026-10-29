@@ -1,0 +1,3 @@
+C:\Users\NewOwner\Documents\Codex\2026-10-22\build-a-working-technical-mvp-of\work\formal-addition-negative-sources\broken-carry.lean:3:39: error: Tactic `decide` proved that the proposition
+  carryResult = expected
+is false

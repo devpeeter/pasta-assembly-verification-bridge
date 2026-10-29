@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-29T04:34:07.619343+00:00",
+  "scope": "Python/source/artifact integrity CI; no bootstrap, fresh extraction, Lean proof rebuild or ARM hardware execution",
+  "source_root": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge",
+  "stages": [
+    {
+      "name": "unit-tests",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge",
+      "log": "unit-tests.log",
+      "exit_code": 0,
+      "details": {
+        "tests": 97,
+        "reported_seconds": 85.529,
+        "skips": 0
+      },
+      "status": "PASS",
+      "wall_seconds": 87.079485
+    },
+    {
+      "name": "source-integrity",
+      "log": "source-integrity.log",
+      "details": {
+        "pasta": {
+          "status": "PASS",
+          "checked_files": 16,
+          "commit": "e3c0f0246f56d351f1a94ff0a74c8d201dbf87d9"
+        },
+        "kraken": {
+          "status": "PASS",
+          "checked_files": 112,
+          "commit": "811ff7ce1dae0b9cae761585d33959f5302a2cc1"
+        },
+        "extraction": {
+          "raw_sha256": "35fb92a65645e1159f70b8dff3e50c5b6ab05e1e805e06dbd2c33d6b0829d027",
+          "routines": [
+            "add",
+            "mul"
+          ],
+          "raw_has_errors": false,
+          "scope": "Retained identity and JSON-pointer checks; no fresh extraction or compiler rebuild"
+        },
+        "locked_git_package_count": 9,
+        "locked_git_packages": [
+          {
+            "name": "mathlib",
+            "revision": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+            "repository": "https://github.com/leanprover-community/mathlib4"
+          },
+          {
+            "name": "plausible",
+            "revision": "63045536fe95024e6c18fc7b48e03f506701c5bc",
+            "repository": "https://github.com/leanprover-community/plausible"
+          },
+          {
+            "name": "LeanSearchClient",
+            "revision": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+            "repository": "https://github.com/leanprover-community/LeanSearchClient"
+          },
+          {
+            "name": "importGraph",
+            "revision": "5c7542ed018c78194f1e2b903eaf6a792b74c03d",
+            "repository": "https://github.com/leanprover-community/import-graph"
+          },
+          {
+            "name": "proofwidgets",
+            "revision": "24b0d9dc081c5423f8eec7e866c441e5184f29d9",
+            "repository": "https://github.com/leanprover-community/ProofWidgets4"
+          },
+          {
+            "name": "aesop",
+            "revision": "e3cb2f741431ce31bf73549fb52316a57368b06f",
+            "repository": "https://github.com/leanprover-community/aesop"
+          },
+          {
+            "name": "Qq",
+            "revision": "f46324995fca5f0483b742e4eb4daec7f4ee50d2",
+            "repository": "https://github.com/leanprover-community/quote4"
+          },
+          {
+            "name": "batteries",
+            "revision": "fa08db58b30eb033edcdab331bba000827f9f785",
+            "repository": "https://github.com/leanprover-community/batteries"
+          },
+          {
+            "name": "Cli",
+            "revision": "92564e5770e4d09f2d86dfbf8ada1e9c715b384c",
+            "repository": "https://github.com/leanprover/lean4-cli"
+          }
+        ],
+        "dependency_check_scope": "Pure lock/schema/pin validation; no dependency checkout, Git invocation or cache verification"
+      },
+      "status": "PASS",
+      "wall_seconds": 0.171413
+    },
+    {
+      "name": "generated-current",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\bridge\\kraken_adapter.py",
+        "--artifact",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\artifacts\\charon-asm.json",
+        "--output",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\generated",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge",
+      "log": "generated-current.log",
+      "exit_code": 0,
+      "status": "PASS",
+      "wall_seconds": 0.207692
+    },
+    {
+      "name": "mul-json-certificate-current",
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\scripts\\generate_mul_json_certificate.py",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge",
+      "log": "mul-json-certificate-current.log",
+      "exit_code": 0,
+      "status": "PASS",
+      "wall_seconds": 0.164494
+    },
+    {
+      "name": "source-manifest",
+      "log": "source-manifest.log",
+      "details": {
+        "checked_files": 757,
+        "manifest_sha256": "4ede38ce5e370a408baca1c64fb2d6bc760e6b845d4d5f48064e54c1543db86a"
+      },
+      "status": "PASS",
+      "wall_seconds": 0.422732
+    }
+  ],
+  "missing_or_failed_checks": [],
+  "finished_utc": "2026-10-29T04:35:35.673500+00:00"
+}

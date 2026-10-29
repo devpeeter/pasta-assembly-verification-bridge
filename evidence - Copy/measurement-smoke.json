@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "-c",
+    "data=bytearray(8388608); print('measurement smoke:',len(data))"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge",
+  "exit_code": 0,
+  "wall_seconds": 0.467853,
+  "peak_rss_bytes": 19312640,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\measurement-smoke.log"
+}

@@ -1,0 +1,3 @@
+C:\Users\NewOwner\Documents\Codex\pavb-ci-1029\workspace\work\formal-mul-negative-sources\wrong-binding.lean:3:48: error: Tactic `decide` proved that the proposition
+  bindingResult = bindingExpected
+is false

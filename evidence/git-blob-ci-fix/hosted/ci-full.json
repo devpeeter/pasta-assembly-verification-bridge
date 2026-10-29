@@ -1,0 +1,154 @@
+{
+  "status": "FAIL",
+  "technical_status": "FAIL",
+  "acceptance_status": "FAIL",
+  "started_utc": "2026-10-29T16:06:14.642681+00:00",
+  "source": "D:\\a\\pasta-assembly-verification-bridge\\pasta-assembly-verification-bridge\\outputs\\pasta-assembly-verification-bridge",
+  "runtime_project": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+  "stages": [
+    {
+      "command": [
+        "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+        "scripts/bootstrap.py"
+      ],
+      "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 238.453684,
+      "peak_rss_bytes": 29851648,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\bootstrap-extraction.log",
+      "name": "bootstrap-extraction",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+        "scripts/install_lean.py"
+      ],
+      "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 31.688002,
+      "peak_rss_bytes": 48517120,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\install-lean.log",
+      "name": "install-lean",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+        "proofs/bootstrap.py",
+        "--lean-bin",
+        "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin"
+      ],
+      "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 49.015265,
+      "peak_rss_bytes": 15204352,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\bootstrap-proofs.log",
+      "name": "bootstrap-proofs",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+        "scripts/extract.py"
+      ],
+      "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 7.497488,
+      "peak_rss_bytes": 32239616,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\fresh-binary-extraction.log",
+      "name": "fresh-binary-extraction",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+        "bridge/kraken_adapter.py",
+        "--artifact",
+        "artifacts/charon-asm.json",
+        "--output",
+        "generated"
+      ],
+      "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 0.063267,
+      "peak_rss_bytes": 19636224,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\regenerate-adapter.log",
+      "name": "regenerate-adapter",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+        "scripts/verify.py",
+        "--clean"
+      ],
+      "cwd": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 1,
+      "wall_seconds": 16.219564,
+      "peak_rss_bytes": 20520960,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "D:\\a\\_temp\\pasta-full-verification\\full\\logs\\verify-clean.log",
+      "name": "verify-clean",
+      "status": "FAIL"
+    }
+  ],
+  "environment": {
+    "platform": "Windows-10-10.0.26100-SP0",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "ImageOS": "win25-vs2026",
+    "ImageVersion": "20261021.278.1",
+    "GITHUB_SHA": "225d6a7ee9ad8e6e4b3f92155f4df6a18a172a08",
+    "GITHUB_RUN_ID": "40908170419",
+    "GITHUB_RUN_ATTEMPT": "1",
+    "GITHUB_EVENT_NAME": "workflow_dispatch"
+  },
+  "resources_before": {
+    "disk_total_bytes": 236205371392,
+    "disk_free_bytes": 236068429824,
+    "memory_total_bytes": 17174360064,
+    "memory_available_bytes": 14453444608
+  },
+  "scope": "Automated technical verification of register-entry Kraken models; no Rust wrapper load/store or ARM hardware-vector claim.",
+  "tools": {
+    "git": {
+      "path": "C:\\Program Files\\Git\\bin\\git.exe",
+      "sha256": "54bda91c773c6bba2b970424423cfcb80552d92dc6967d766f98931fe1251a54"
+    },
+    "rustup": {
+      "path": "C:\\Users\\runneradmin\\.cargo\\bin\\rustup.exe",
+      "sha256": "00f139da614dced87d3c3d4121c43eebdac3c1bf8a5ee86b9d80dfd71c8d70fd"
+    },
+    "cargo": {
+      "path": "C:\\Users\\runneradmin\\.cargo\\bin\\cargo.exe",
+      "sha256": "00f139da614dced87d3c3d4121c43eebdac3c1bf8a5ee86b9d80dfd71c8d70fd"
+    },
+    "lean": {
+      "path": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+      "sha256": "9b216deb50d37c32c829d1efaaa5bafd5560417d382df35a815489e31a31593f"
+    },
+    "lake": {
+      "path": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lake.exe",
+      "sha256": "a5be0113af1c08ba678c1fad07594e1c5de6b871fe0c4144da2998488eba88a1"
+    }
+  },
+  "private_toolchain_directories": {
+    "CARGO_HOME": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\cargo-home",
+    "RUSTUP_HOME": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\rustup-home"
+  },
+  "lean_bin": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin",
+  "reason": "complete verification did not PASS with actual exit 0",
+  "original_checkout_unchanged": true,
+  "finished_utc": "2026-10-29T16:11:58.639647+00:00",
+  "resources_after": {
+    "disk_total_bytes": 236205371392,
+    "disk_free_bytes": 227462057984,
+    "memory_total_bytes": 17174360064,
+    "memory_available_bytes": 13721899008
+  }
+}

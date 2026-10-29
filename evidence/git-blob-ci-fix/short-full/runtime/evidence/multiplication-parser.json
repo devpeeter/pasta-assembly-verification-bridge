@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "--run",
+    "KrakenRun.lean",
+    "../generated/mul.S",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\multiplication-parser-cases.json"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+  "exit_code": 0,
+  "wall_seconds": 5.614882,
+  "peak_rss_bytes": 863924224,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\multiplication-parser.log",
+  "status": "PASS",
+  "scope": "parser only; no multiplication execution or proof"
+}

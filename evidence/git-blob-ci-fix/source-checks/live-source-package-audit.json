@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "scope": "Internal source/package integrity audit only; no proof execution or CI-success inference",
+  "source_manifest_files": 776,
+  "non_vendor_lean_modules_unchanged": 51,
+  "historical_files_unchanged_except_live_acceptance": 511,
+  "snapshots": {
+    "kraken": {
+      "files": 112,
+      "revision": "811ff7ce1dae0b9cae761585d33959f5302a2cc1",
+      "exact_git_blobs_and_metadata": true
+    },
+    "pasta": {
+      "files": 16,
+      "revision": "e3c0f0246f56d351f1a94ff0a74c8d201dbf87d9",
+      "exact_git_blobs_and_metadata": true
+    }
+  },
+  "patch_sha256": {
+    "compatibility/kraken-list-name.patch": "11f8b62f5baadc185ca2223448def6843027641a4178c466ae973f53e41d41b2",
+    "compatibility/kraken-immediate-shifts.patch": "d96e3395b5911a52482a7f3e8b791d7facc65ae9cf19d8e7e261a73ff5b30241",
+    "compatibility/kraken-zero-destination.patch": "f7b5dc938df9ec81d14aab8ebfe151968c62ef1e450dbfc0661b234e59e0eb7d"
+  },
+  "hidden_workflows": [
+    ".github/workflows/full-verification.yml",
+    ".github/workflows/unit-integrity.yml"
+  ],
+  "local_links": 65,
+  "current_acceptance_record": {
+    "schema_version": 2,
+    "status": "NOT_RUN",
+    "status_scope": "Full automated verification for the current revision",
+    "acceptance_criteria": {
+      "command": "python scripts/verify.py --clean",
+      "ci_entrypoint": "python scripts/ci_full.py --output <new-external-directory>",
+      "required": [
+        "Actual exit code 0 and fresh complete PASS verification reports",
+        "Every required stage and both addition/multiplication target gates complete",
+        "Exact theorem types, standard-axiom censuses and measured proof checks",
+        "Source/tool/pin integrity, retained extraction links and generated-file freshness",
+        "Successful Kraken model vectors, detected semantic mutants and exact formal-negative rejections",
+        "Unchanged source/artifact input seals and original checkout"
+      ],
+      "failure_policy": "Missing tools, omitted checks, failed or PARTIAL verification, stale reports, changed inputs or unintended negative failures cannot pass."
+    },
+    "local_validation": {
+      "status": "PASS",
+      "record": "evidence/windows-path-ci-fix/summary.json",
+      "python_tests": 97,
+      "unit_integrity_stages": 5
+    },
+    "current_revision_full_clean_run": "NOT_RUN",
+    "github_workflows": {
+      "unit_integrity": "NOT_RUN",
+      "full_verification": "NOT_RUN",
+      "scope": "Corrected local revision; prior hosted attempts failed the path-alias unit test and are recorded separately."
+    },
+    "historical_implementer_run": {
+      "date": "2026-10-23",
+      "host": "implementer Windows environment",
+      "technical_status": "PASS",
+      "exit_code": 0,
+      "automated_stages": 67,
+      "record": "evidence/verification.json",
+      "source_input_seal": "evidence/final-clean-inputs.json",
+      "applies_to": "the exact script/source bytes sealed by that run; not a full rerun of the CLI follow-up"
+    },
+    "proof_boundary": "Assembly blocks from their register-entry MachineData states under InputContract; no proof of surrounding Rust wrapper operand loads or result stores.",
+    "compact_representation_omits": [
+      "MIR operand-value expressions",
+      "MIR destination places"
+    ],
+    "vectors": "Kraken model execution vectors through Lean on the host; no original assembly execution on ARM hardware.",
+    "historical_record_policy": "Dated reports and logs retain their original results and terminology; current acceptance is based on the automated technical criteria here.",
+    "prior_hosted_attempts": {
+      "source_commit": "f5b61dbf85d646f15eb01f2c50ae0e977a703fec",
+      "unit": {
+        "status": "FAIL",
+        "url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40814585440"
+      },
+      "full": {
+        "status": "FAIL",
+        "proof_execution": "NOT_RUN",
+        "url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40815070636"
+      }
+    }
+  }
+}

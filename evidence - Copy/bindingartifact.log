@@ -1,0 +1,2 @@
+'PastaBridge.BindingArtifact.retained_pieces_match_artifact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.BindingArtifact.bound_program_matches_template' depends on axioms: [propext, Classical.choice, Quot.sound]

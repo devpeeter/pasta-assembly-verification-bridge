@@ -1,0 +1,67 @@
+{
+  "target": "aarch64-unknown-linux-gnu",
+  "rust_commit": "923c95cdf5ba65cea505aa2ea829f578e1506ed8",
+  "llvm_submodule_commit": "1b9c0d5ff9bbe7634aead059efe6b11a7eeba145",
+  "register_class": "reg",
+  "allowed": "x0 through x30, excluding x29; thirty potential generic allocation registers",
+  "generic_vs_explicit": "Rust explicit-name rejection of x19 does not restrict generic in(reg)/out(reg) allocation. Generic reg lowers to LLVM constraint r.",
+  "x19": "Included in LLVM GPR64common. Reserved only when the function needs a base pointer; the proof admits it and preserves it whenever outside the written allocation.",
+  "x29": "Excluded: the fixed Rust target sets FramePointer::NonLeaf; pinned LLVM reserves this policy even in a leaf function.",
+  "x18": "Permitted by the fixed Linux GNU target without reserve-x18; other target policies are outside scope.",
+  "excluded": {
+    "x29": "default target frame-pointer reservation",
+    "sp": "not in the generic GPR64common class",
+    "xzr": "not in the generic GPR64common class"
+  },
+  "canonical_allocation": "x0..x30 skipping x19 and x29, followed by x19; target routines use the unchanged first15/21 entries.",
+  "sources": [
+    {
+      "url": "https://github.com/rust-lang/rust/blob/923c95cdf5ba65cea505aa2ea829f578e1506ed8/compiler/rustc_target/src/asm/aarch64.rs",
+      "git_blob": "83d249262c104461a5648e168d32d507ce4e0ab9",
+      "role": "Explicit-name rejection and platform x18 checks; insufficient by itself for generic allocation coverage."
+    },
+    {
+      "url": "https://github.com/rust-lang/rust/blob/923c95cdf5ba65cea505aa2ea829f578e1506ed8/compiler/rustc_codegen_llvm/src/asm.rs#L817",
+      "git_blob": "46f90aed0fd1d4fdb17d1d0c8978ebd084062bd5",
+      "role": "Generic AArch64 reg lowers to LLVM r, without the explicit-name whitelist."
+    },
+    {
+      "url": "https://api.github.com/repos/rust-lang/rust/contents/src/llvm-project?ref=923c95cdf5ba65cea505aa2ea829f578e1506ed8",
+      "role": "Pinned Rust submodule identity for the LLVM sources below."
+    },
+    {
+      "url": "https://github.com/rust-lang/llvm-project/blob/1b9c0d5ff9bbe7634aead059efe6b11a7eeba145/llvm/lib/Target/AArch64/AArch64ISelLowering.cpp#L14062",
+      "git_blob": "d134e7f911f83b44a36174b785458c8e9632a569",
+      "role": "64-bit r constraint selects GPR64commonRegClass."
+    },
+    {
+      "url": "https://github.com/rust-lang/llvm-project/blob/1b9c0d5ff9bbe7634aead059efe6b11a7eeba145/llvm/lib/Target/AArch64/AArch64RegisterInfo.td#L197",
+      "git_blob": "b9d851cd3498d0bb820ac3b9138a014b24f828b8",
+      "role": "GPR64common contains X0..X28, FP and LR, including X19."
+    },
+    {
+      "url": "https://github.com/rust-lang/llvm-project/blob/1b9c0d5ff9bbe7634aead059efe6b11a7eeba145/llvm/lib/Target/AArch64/AArch64RegisterInfo.cpp#L457",
+      "git_blob": "edca3e94a0afe54bb267ff1e83cbd7a0caeb20d9",
+      "role": "X19 reservation is conditional on hasBasePointer; its definition at line623 returns false without variable-size objects or EH funclets."
+    },
+    {
+      "url": "https://github.com/rust-lang/rust/blob/923c95cdf5ba65cea505aa2ea829f578e1506ed8/compiler/rustc_target/src/spec/targets/aarch64_unknown_linux_gnu.rs#L28",
+      "git_blob": "a4a5ee6f2c9cabf5539a9cc6f5066e654b097bde",
+      "role": "Default FramePointer::NonLeaf target policy."
+    },
+    {
+      "url": "https://github.com/rust-lang/rust/blob/923c95cdf5ba65cea505aa2ea829f578e1506ed8/compiler/rustc_codegen_llvm/src/attributes.rs#L228",
+      "git_blob": "8a7e3ec6b5942faf2904716a5486957eb6c359b9",
+      "role": "NonLeaf becomes LLVM frame-pointer=non-leaf."
+    },
+    {
+      "url": "https://github.com/rust-lang/llvm-project/blob/1b9c0d5ff9bbe7634aead059efe6b11a7eeba145/llvm/lib/CodeGen/TargetOptionsImpl.cpp#L38",
+      "role": "FramePointerIsReserved returns true for NonLeaf, independently of hasCalls."
+    },
+    {
+      "url": "https://github.com/rust-lang/llvm-project/blob/1b9c0d5ff9bbe7634aead059efe6b11a7eeba145/llvm/lib/Target/AArch64/AArch64FrameLowering.cpp#L634",
+      "role": "AArch64 reserves FP when FramePointerIsReserved returns true."
+    }
+  ],
+  "status": "Immutable primary-source review; no compiler or allocator correctness theorem. Fresh complete clean verification passed for all separated bindings in the 30-register pool, including X19 and equal-valued read-only sharing; see evidence/verification.json."
+}

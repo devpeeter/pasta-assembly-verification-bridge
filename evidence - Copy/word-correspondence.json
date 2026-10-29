@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:/Users/NewOwner/Documents/Codex/2026-10-22/build-a-working-technical-mvp-of/work/toolchains/lean-4.31.0-windows/bin/lean.exe",
+    "WordCorrespondence.lean",
+    "-o",
+    "../outputs/pasta-assembly-verification-bridge/proofs/WordCorrespondence.olean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work",
+  "exit_code": 0,
+  "wall_seconds": 60.221,
+  "peak_rss_bytes": 904130560,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\word-correspondence.log"
+}

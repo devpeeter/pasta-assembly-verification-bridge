@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "date": "2026-10-29",
+  "timezone": "America/Toronto",
+  "scope": "Automated technical verification of register-entry Kraken models; no Rust wrapper load/store or ARM hardware-vector claim.",
+  "changes": {
+    "canonical_pinned_git_blob_files": {
+      "kraken": 112,
+      "pasta": 16
+    },
+    "byte_source": "Binary git cat-file objects at unchanged immutable revisions; never normalized by verification",
+    "compatibility_patch_changes": "Exact CRLF-to-LF patch bytes only; reviewed normalized edits unchanged",
+    "source_revisions_tool_versions_and_public_theorems_unchanged": true,
+    "strict_sha256_and_git_blob_checks": true
+  },
+  "regressions": [
+    "CRLF snapshot drift rejected",
+    "Actual source edits rejected",
+    "SHA-256 refresh cannot bypass pinned Git blob identity",
+    "Binary and genuine CRLF Git blobs preserved exactly",
+    "Fresh clones persist LF configuration despite a global CRLF setting",
+    "Unsupported features and stale generation remain rejected"
+  ],
+  "local_validation": {
+    "status": "PASS",
+    "python_tests": 108,
+    "python_skips": 0,
+    "unit_integrity_stages": 5,
+    "python_process": "evidence/git-blob-ci-fix/local-checks/python-suite.json",
+    "unit_report": "evidence/git-blob-ci-fix/local-checks/unit/report.json"
+  },
+  "full_verification": {
+    "status": "PASS",
+    "actual_verify_exit_code": 0,
+    "actual_ci_full_exit_code": 0,
+    "verification_stages": 67,
+    "ci_stages": 6,
+    "target_gates": {
+      "addition-target-correctness": {
+        "name": "addition-target-correctness",
+        "status": "PASS",
+        "missing_checks": [],
+        "theorem": "PastaBridge.AdditionCorrectness.addition_correct"
+      },
+      "multiplication-target-correctness": {
+        "name": "multiplication-target-correctness",
+        "status": "PASS",
+        "missing_checks": [],
+        "theorem": "PastaBridge.MulCorrectness.multiplication_correct",
+        "reason": null
+      }
+    },
+    "verification_report": "evidence/git-blob-ci-fix/short-full/runtime/evidence/verification.json",
+    "ci_report": "evidence/git-blob-ci-fix/short-full/runner/ci-full.json",
+    "measurements": "evidence/git-blob-ci-fix/short-full/runner/measurements.json",
+    "strict_validation": "evidence/git-blob-ci-fix/final-full-validation.json",
+    "source_seals": {
+      "verification_input_seal": {
+        "status": "PASS",
+        "changed_inputs": [],
+        "actual_exit_code": 0,
+        "checked_files": 265
+      },
+      "verification_map_rechecked": true,
+      "verification_sealed_input_files": 265,
+      "original_checkout_unchanged_during_run": true,
+      "original_source_map_files": 777,
+      "original_source_manifest_sha256": "16177a3e5f593c7a8ba5861c3ebbab74859b7e4b30928d1ae9c25efaf49a5bbe"
+    },
+    "axioms": {
+      "PastaBridge.AdditionCorrectness.addition_correct": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "addition_target_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PastaBridge.MulCorrectness.multiplication_correct": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "multiplication_target_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  },
+  "prior_failed_local_attempt": {
+    "output": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\git-blob-ci\\full-attempt",
+    "status": "FAIL",
+    "ci_full_exit_code": 1,
+    "verify_clean_invoked": false,
+    "reason": "MSVC LNK1104 opening a 264-character ordinary private Rust sysroot path; exact same runner succeeded at the shorter output path."
+  },
+  "github": {
+    "repository": "https://github.com/devpeeter/pasta-assembly-verification-bridge",
+    "permissions": {
+      "pull": true,
+      "push": false
+    },
+    "corrected_unit_workflow": "NOT_RUN",
+    "corrected_full_workflow": "NOT_RUN",
+    "push_or_dispatch_performed": false,
+    "preceding_failure": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40908170419"
+  },
+  "limitations": [
+    "Theorems begin at assembly register-entry state; Rust wrapper operand loads and result stores are not proved.",
+    "Compact representation omits MIR operand-value expressions and destination places.",
+    "Kraken model execution vectors run through Lean on the host; original assembly is not executed on ARM hardware.",
+    "Extraction, file inclusion, tool builds and imported dependency caches retain their documented trust boundaries."
+  ],
+  "historical_evidence": "All baseline dated evidence and logs remain byte-identical; prior live acceptance is saved separately.",
+  "finalization": "Docs, live acceptance and new evidence are updated after the successful sealed run. Tested production/proof inputs are unchanged."
+}

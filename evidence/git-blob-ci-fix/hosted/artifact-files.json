@@ -1,0 +1,1202 @@
+[
+  {
+    "path": "context.json",
+    "bytes": 212
+  },
+  {
+    "path": "full/baseline/artifacts/charon-asm.json",
+    "bytes": 260759
+  },
+  {
+    "path": "full/baseline/artifacts/extraction-provenance.json",
+    "bytes": 2624
+  },
+  {
+    "path": "full/baseline/artifacts/pasta_curves.llbc",
+    "bytes": 375876
+  },
+  {
+    "path": "full/baseline/generated/add-asm.json",
+    "bytes": 9344
+  },
+  {
+    "path": "full/baseline/generated/add-check.json",
+    "bytes": 3298
+  },
+  {
+    "path": "full/baseline/generated/add.S",
+    "bytes": 216
+  },
+  {
+    "path": "full/baseline/generated/manifest.json",
+    "bytes": 1645
+  },
+  {
+    "path": "full/baseline/generated/mul-check.json",
+    "bytes": 27152
+  },
+  {
+    "path": "full/baseline/generated/mul.S",
+    "bytes": 2482
+  },
+  {
+    "path": "full/ci-full.json",
+    "bytes": 6651
+  },
+  {
+    "path": "full/extraction-provenance-comparison.json",
+    "bytes": 4922
+  },
+  {
+    "path": "full/logs/bootstrap-extraction.log",
+    "bytes": 12493
+  },
+  {
+    "path": "full/logs/bootstrap-proofs.log",
+    "bytes": 6406
+  },
+  {
+    "path": "full/logs/fresh-binary-extraction.log",
+    "bytes": 456
+  },
+  {
+    "path": "full/logs/install-lean.log",
+    "bytes": 254
+  },
+  {
+    "path": "full/logs/regenerate-adapter.log",
+    "bytes": 0
+  },
+  {
+    "path": "full/source-inputs.json",
+    "bytes": 92668
+  },
+  {
+    "path": "full/logs/verify-clean.log",
+    "bytes": 349
+  },
+  {
+    "path": "full/tool-identities.json",
+    "bytes": 942
+  },
+  {
+    "path": "full/verification-input-seal.json",
+    "bytes": 102
+  },
+  {
+    "path": "full/verification-inputs.json",
+    "bytes": 29160
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/.gitattributes",
+    "bytes": 91
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/.github/actions.lock.json",
+    "bytes": 745
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/.github/README.md",
+    "bytes": 6130
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/.github/workflows/full-verification.yml",
+    "bytes": 2916
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/.github/workflows/unit-integrity.yml",
+    "bytes": 2239
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/.gitignore",
+    "bytes": 63
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/ACCEPTANCE.md",
+    "bytes": 6164
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/artifacts/charon-asm.json",
+    "bytes": 260759
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/artifacts/extraction-provenance.json",
+    "bytes": 2537
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/artifacts/pasta_curves.llbc",
+    "bytes": 375847
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/Artifact.lean",
+    "bytes": 6453
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/CheckAddition.lean",
+    "bytes": 1531
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/JSON_ENCODING.md",
+    "bytes": 2549
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/KernelJson.lean",
+    "bytes": 5350
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/KrakenRun.lean",
+    "bytes": 3855
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/kraken_adapter.py",
+    "bytes": 13470
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/lakefile.toml",
+    "bytes": 615
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/lean-toolchain",
+    "bytes": 25
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/MulArtifact.lean",
+    "bytes": 7438
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/MulJsonCertificate.lean",
+    "bytes": 771
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/MulJsonTextDagBase.lean",
+    "bytes": 94067
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/MulJsonTextDagFinal.lean",
+    "bytes": 5055
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/MulMetadata.lean",
+    "bytes": 1031
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/MulRetained.lean",
+    "bytes": 669
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/MUL_THEOREMS.md",
+    "bytes": 3956
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/ParserChecks.lean",
+    "bytes": 2993
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/Retained.lean",
+    "bytes": 412
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/StringBytes.lean",
+    "bytes": 1455
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/bridge/THEOREMS.md",
+    "bytes": 5514
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/compatibility/kraken-immediate-shifts.patch",
+    "bytes": 1666
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/compatibility/kraken-list-name.patch",
+    "bytes": 663
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/compatibility/kraken-zero-destination.patch",
+    "bytes": 383
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/evidence/fresh-extraction.log",
+    "bytes": 491
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/evidence/generated-current.log",
+    "bytes": 0
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/evidence/negative-policy-tests.log",
+    "bytes": 16747
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/evidence/proof-dependencies.log",
+    "bytes": 2305
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/evidence/verification-exit.json",
+    "bytes": 619
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/evidence/verification.json",
+    "bytes": 6524
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/generated/add-asm.json",
+    "bytes": 9344
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/generated/add-check.json",
+    "bytes": 3298
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/generated/add.S",
+    "bytes": 216
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/generated/manifest.json",
+    "bytes": 1645
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/generated/mul-check.json",
+    "bytes": 27152
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/generated/mul.S",
+    "bytes": 2482
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/lean-release.lock.json",
+    "bytes": 1461
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/LICENSE-APACHE",
+    "bytes": 11050
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/LICENSE-MIT",
+    "bytes": 1173
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/logs/bootstrap.log",
+    "bytes": 12379
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/logs/charon-extraction.log",
+    "bytes": 5571
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/pins.json",
+    "bytes": 2279
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionCorrectness.lean",
+    "bytes": 9725
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionMachine.lean",
+    "bytes": 19805
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionNat.lean",
+    "bytes": 5227
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionNatData.lean",
+    "bytes": 2085
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionNatLift.lean",
+    "bytes": 833
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionNatDataModel.lean",
+    "bytes": 965
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionNatLiftBase.lean",
+    "bytes": 2882
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionNatModel.lean",
+    "bytes": 859
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionNatObservation.lean",
+    "bytes": 3251
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionNatSequence.lean",
+    "bytes": 2895
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionParametricBase.lean",
+    "bytes": 6695
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionParametricModel.lean",
+    "bytes": 2050
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/AdditionStep.lean",
+    "bytes": 10172
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/ADDITION_CORRECTNESS_THEOREM.md",
+    "bytes": 7779
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/ArithmeticAudit.lean",
+    "bytes": 1666
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/Audit.lean",
+    "bytes": 2870
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/BindingArtifact.lean",
+    "bytes": 4651
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/BINDING_ARTIFACT_THEOREMS.md",
+    "bytes": 3353
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/bootstrap.py",
+    "bytes": 3268
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/build_arithmetic.py",
+    "bytes": 3774
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/FormalAdditionNegatives.lean",
+    "bytes": 2998
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/FormalMulNegatives.lean",
+    "bytes": 4619
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/KrakenBinding.lean",
+    "bytes": 2811
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/KrakenWord.lean",
+    "bytes": 3738
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/lake-manifest.json",
+    "bytes": 4391
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/lakefile.toml",
+    "bytes": 1840
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/lean-toolchain",
+    "bytes": 26
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulAudit.lean",
+    "bytes": 1012
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulBindingArtifact.lean",
+    "bytes": 2579
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulCertificate.lean",
+    "bytes": 2098
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulCorrectness.lean",
+    "bytes": 9832
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulFormatting.lean",
+    "bytes": 6344
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulMachine.lean",
+    "bytes": 11636
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulNat.lean",
+    "bytes": 7596
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulNatLift.lean",
+    "bytes": 3055
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulNatSequence.lean",
+    "bytes": 2600
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulParametricBase.lean",
+    "bytes": 10513
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulParametricModel.lean",
+    "bytes": 30657
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulParametricRounds.lean",
+    "bytes": 2337
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulPieceFormatting.lean",
+    "bytes": 5140
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulProgramData.lean",
+    "bytes": 728
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulSequenceFrame.lean",
+    "bytes": 1292
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulStep.lean",
+    "bytes": 7118
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MulWord.lean",
+    "bytes": 2117
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MUL_CORRECTNESS_THEOREM.md",
+    "bytes": 10424
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MUL_NAT_THEOREMS.md",
+    "bytes": 10720
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MUL_NEGATIVE_THEOREMS.md",
+    "bytes": 4702
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/MUL_THEOREMS.md",
+    "bytes": 6660
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/PARAMETRIC_THEOREMS.md",
+    "bytes": 6857
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/NAT_THEOREMS.md",
+    "bytes": 13779
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/STEP_THEOREMS.md",
+    "bytes": 7380
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/THEOREMS.md",
+    "bytes": 20477
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/proofs/WordCorrespondence.lean",
+    "bytes": 1361
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/README.md",
+    "bytes": 19591
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/RESULTS.md",
+    "bytes": 23500
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/axiom_audit.py",
+    "bytes": 1182
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/bootstrap.py",
+    "bytes": 4406
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/check_formal_negatives.py",
+    "bytes": 6895
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/check_mul_formal_negatives.py",
+    "bytes": 6070
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/check_proof_dependencies.py",
+    "bytes": 8327
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/ci_full.py",
+    "bytes": 24333
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/ci_unit.py",
+    "bytes": 13835
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/extract.py",
+    "bytes": 14877
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/generate_mul_json_certificate.py",
+    "bytes": 10599
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/install_lean.py",
+    "bytes": 3257
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/integrity.py",
+    "bytes": 3212
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/kraken_compat.py",
+    "bytes": 7843
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/measure.py",
+    "bytes": 3497
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/multiplication_runtime_checks.py",
+    "bytes": 9513
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/parser_checks.py",
+    "bytes": 1603
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/probe_multiplication.py",
+    "bytes": 2572
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/reproduce_canonical_failure.py",
+    "bytes": 2291
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/runtime_checks.py",
+    "bytes": 17899
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/source_manifest.py",
+    "bytes": 1551
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/scripts/verify.py",
+    "bytes": 27027
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/SOURCE-MANIFEST.json",
+    "bytes": 93444
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_adapter.py",
+    "bytes": 10351
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_axiom_audit.py",
+    "bytes": 1644
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_ci_full.py",
+    "bytes": 19252
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_ci_unit.py",
+    "bytes": 13770
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_cli_paths.py",
+    "bytes": 11000
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_extraction_provenance.py",
+    "bytes": 1561
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_formal_negatives.py",
+    "bytes": 3437
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_integrity.py",
+    "bytes": 2499
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_kraken_compat.py",
+    "bytes": 10236
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_mul_formal_negatives.py",
+    "bytes": 2289
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_mul_json_certificate_generator.py",
+    "bytes": 2313
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_proof_dependencies.py",
+    "bytes": 7534
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_runtime_register_policy.py",
+    "bytes": 2326
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/tests/test_source_manifest.py",
+    "bytes": 2067
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/.github/workflows/lean_action_ci.yml",
+    "bytes": 924
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/.gitignore",
+    "bytes": 98
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Att2Intel.lean",
+    "bytes": 613
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/CONTRIBUTING.md",
+    "bytes": 1512
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/DEVELOPER.md",
+    "bytes": 974
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Parser.lean",
+    "bytes": 54780
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/ParserTests.lean",
+    "bytes": 36929
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Semantics.lean",
+    "bytes": 33377
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Syntax.lean",
+    "bytes": 22380
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_adc.S",
+    "bytes": 232
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_add.S",
+    "bytes": 203
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_adds.S",
+    "bytes": 56
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_and.S",
+    "bytes": 69
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_ands_imm.S",
+    "bytes": 71
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_and_imm.S",
+    "bytes": 113
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_asr.S",
+    "bytes": 64
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_bic.S",
+    "bytes": 47
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_b_cond.S",
+    "bytes": 654
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_cbz.S",
+    "bytes": 522
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_csinc.S",
+    "bytes": 219
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_csel.S",
+    "bytes": 169
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_csinv.S",
+    "bytes": 222
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_csneg.S",
+    "bytes": 197
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_eor.S",
+    "bytes": 47
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_eor_imm.S",
+    "bytes": 86
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_ldp_stp.S",
+    "bytes": 481
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_ldr_str.S",
+    "bytes": 527
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_ldur_stur.S",
+    "bytes": 497
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_lsl.S",
+    "bytes": 64
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_lsr.S",
+    "bytes": 64
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_movk.S",
+    "bytes": 457
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_movn.S",
+    "bytes": 234
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_movz.S",
+    "bytes": 212
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_mov_reg.S",
+    "bytes": 172
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_mul.S",
+    "bytes": 89
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_msub.S",
+    "bytes": 69
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_mvn.S",
+    "bytes": 75
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_neg.S",
+    "bytes": 25
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_nop.S",
+    "bytes": 36
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_orn.S",
+    "bytes": 47
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_orr.S",
+    "bytes": 135
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_orr_imm.S",
+    "bytes": 86
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_sbc.S",
+    "bytes": 234
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_ror.S",
+    "bytes": 64
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_sub.S",
+    "bytes": 103
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_smulh.S",
+    "bytes": 49
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_subs.S",
+    "bytes": 41
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_tbz.S",
+    "bytes": 550
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm/test_umulh.S",
+    "bytes": 49
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/asm_tests.py",
+    "bytes": 13796
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/AArch64/Test/README.md",
+    "bytes": 802
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/Eval.lean",
+    "bytes": 412
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/Mem.lean",
+    "bytes": 5949
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/Separation.lean",
+    "bytes": 3624
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/SeparationMem.lean",
+    "bytes": 5496
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/ToBytes.lean",
+    "bytes": 14229
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Examples/Examples.lean",
+    "bytes": 20970
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Examples/IncrementDMA.lean",
+    "bytes": 2771
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Examples/IncrementMMIO.lean",
+    "bytes": 4907
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/OmniSemantics.lean",
+    "bytes": 3432
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Parser.lean",
+    "bytes": 41248
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/PrintIntel.lean",
+    "bytes": 8498
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/ParserTests.lean",
+    "bytes": 6410
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Semantics.lean",
+    "bytes": 34537
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Sep.lean",
+    "bytes": 1114
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Syntax.lean",
+    "bytes": 13847
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Tactics.lean",
+    "bytes": 10917
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/cmp_flags.S",
+    "bytes": 32
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/stack/test_push_pop.S",
+    "bytes": 81
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_32bit_ops.S",
+    "bytes": 1651
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_8bit_16bit.S",
+    "bytes": 1135
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_adc_carry.S",
+    "bytes": 105
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_arithmetic.S",
+    "bytes": 1312
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_avx_mov.S",
+    "bytes": 1108
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_bswap.S",
+    "bytes": 815
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_conditionals.S",
+    "bytes": 915
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_displacement_whitespace.S",
+    "bytes": 1402
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_double_label.S",
+    "bytes": 77
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_flags.S",
+    "bytes": 1120
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_imul_variants.S",
+    "bytes": 1618
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_jmp.S",
+    "bytes": 77
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_jmp2.S",
+    "bytes": 77
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_lea_addr32.S",
+    "bytes": 316
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_logic.S",
+    "bytes": 569
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_memory.S",
+    "bytes": 734
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_memory_whitespace.S",
+    "bytes": 1342
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_move.S",
+    "bytes": 719
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_movsx_bug.S",
+    "bytes": 96
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_multiply.S",
+    "bytes": 699
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_mul_suffixed.S",
+    "bytes": 1914
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_nop.S",
+    "bytes": 48
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_pop_mem_rsp.S",
+    "bytes": 218
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_pop_add_bug.S",
+    "bytes": 299
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_pop_rsp.S",
+    "bytes": 131
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_sbb_wrap.S",
+    "bytes": 46
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_shifts.S",
+    "bytes": 1746
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_shr_mask_imm.S",
+    "bytes": 75
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_single_arg_shift.S",
+    "bytes": 2346
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm/test_zero_extend.S",
+    "bytes": 1171
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/asm_tests.py",
+    "bytes": 11928
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken/X64/Test/README.md",
+    "bytes": 1944
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Kraken.lean",
+    "bytes": 346
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/KrakenAArch64.lean",
+    "bytes": 186
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/KrakenRunnerX64.lean",
+    "bytes": 3087
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/KrakenRunnerAArch64.lean",
+    "bytes": 4019
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/lake-manifest.json",
+    "bytes": 117
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/lakefile.toml",
+    "bytes": 544
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/lean-toolchain",
+    "bytes": 37
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/LICENSE",
+    "bytes": 1089
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/NOTES.md",
+    "bytes": 2732
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/Main.lean",
+    "bytes": 65
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/README.md",
+    "bytes": 1723
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/kraken/UPSTREAM.json",
+    "bytes": 12327
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/lakefile.toml",
+    "bytes": 269
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/COPYING.md",
+    "bytes": 512
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/lean-toolchain",
+    "bytes": 26
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/AArch64/Compositions.lean",
+    "bytes": 1133
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/AArch64/Semantics.lean",
+    "bytes": 5402
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/AArch64/Spec/Add.lean",
+    "bytes": 9621
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/AArch64/Spec/Mul.lean",
+    "bytes": 46705
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/AArch64/Transcription.lean",
+    "bytes": 50525
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/Compositions.lean",
+    "bytes": 5259
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/Fields.lean",
+    "bytes": 2952
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/Primality.lean",
+    "bytes": 6109
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/Pratt.lean",
+    "bytes": 5560
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/Semantics.lean",
+    "bytes": 4882
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/Spec.lean",
+    "bytes": 6252
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/lean/PastaCurves/Tactic/WordStep.lean",
+    "bytes": 3869
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/LICENSE-APACHE",
+    "bytes": 11050
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/LICENSE-MIT",
+    "bytes": 1173
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/src/asm/README.md",
+    "bytes": 7735
+  },
+  {
+    "path": "full/workspace/outputs/pasta-assembly-verification-bridge/vendor/pasta/UPSTREAM.json",
+    "bytes": 1837
+  },
+  {
+    "path": "unit/mul-json-certificate-current.log",
+    "bytes": 61
+  },
+  {
+    "path": "unit/report.json",
+    "bytes": 5881
+  },
+  {
+    "path": "unit/generated-current.log",
+    "bytes": 0
+  },
+  {
+    "path": "unit/source-integrity.log",
+    "bytes": 2349
+  },
+  {
+    "path": "unit/source-manifest.log",
+    "bytes": 120
+  },
+  {
+    "path": "unit/unit-tests.log",
+    "bytes": 16747
+  }
+]

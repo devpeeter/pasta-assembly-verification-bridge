@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "complete_templates_operands_options_unchanged": true,
+  "compact_projections_and_assembly_bytes_unchanged": true,
+  "raw_artifact_sha256": {
+    "original": "35fb92a65645e1159f70b8dff3e50c5b6ab05e1e805e06dbd2c33d6b0829d027",
+    "fresh": "c4091a183c88cc12c7586e00d82c5a3f8effd8558ecf4dff83e1f8da1ab169aa"
+  },
+  "provenance_field_changes": {
+    "build_record": {
+      "original": {
+        "charon_revision": "53388d8887d106e46b4b1a24abe23498a38613e1",
+        "rustc": "rustc 1.100.0-nightly (923c95cdf 2026-09-16)\nbinary: rustc\ncommit-hash: 923c95cdf5ba65cea505aa2ea829f578e1506ed8\ncommit-date: 2026-09-16\nhost: x86_64-pc-windows-msvc\nrelease: 1.100.0-nightly\nLLVM version: 23.1.1",
+        "binaries": {
+          "charon": "4bf95ee3d330f9fbb0244a6fdfc7c78d98a53b578d506dc4df551bb579a84e23",
+          "charon-driver": "599ed2e1aa221d090aa0d7ee592c5e5e2c66b9db0c1b5bc1293f5ab3f35099fb"
+        },
+        "build_command": [
+          "cargo",
+          "+nightly-2026-09-17",
+          "build",
+          "--locked",
+          "--release",
+          "--no-default-features",
+          "--features",
+          "rustc",
+          "--bin",
+          "charon",
+          "--bin",
+          "charon-driver"
+        ]
+      },
+      "fresh": {
+        "charon_revision": "53388d8887d106e46b4b1a24abe23498a38613e1",
+        "rustc": "rustc 1.100.0-nightly (923c95cdf 2026-09-16)\nbinary: rustc\ncommit-hash: 923c95cdf5ba65cea505aa2ea829f578e1506ed8\ncommit-date: 2026-09-16\nhost: x86_64-pc-windows-msvc\nrelease: 1.100.0-nightly\nLLVM version: 23.1.1",
+        "binaries": {
+          "charon": "bc53d58b1608095deae631aa0f599b36cc0609091cc629aeafc16949651640d2",
+          "charon-driver": "152a404a8b7ae3b63c629835c7bb34c5f9ec4a7caa4fe80e2f97734dbbd1f02c"
+        },
+        "build_command": [
+          "cargo",
+          "+nightly-2026-09-17",
+          "build",
+          "--locked",
+          "--release",
+          "--no-default-features",
+          "--features",
+          "rustc",
+          "--bin",
+          "charon",
+          "--bin",
+          "charon-driver"
+        ]
+      }
+    },
+    "charon_binary_sha256": {
+      "original": "4bf95ee3d330f9fbb0244a6fdfc7c78d98a53b578d506dc4df551bb579a84e23",
+      "fresh": "bc53d58b1608095deae631aa0f599b36cc0609091cc629aeafc16949651640d2"
+    },
+    "command": {
+      "original": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\charon\\charon\\target\\release\\charon.exe",
+        "cargo",
+        "--no-dedup-serialized-ast",
+        "--start-from",
+        "crate::asm::aarch64::add",
+        "--start-from",
+        "crate::asm::aarch64::mul",
+        "--dest-file",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\charon-extract-6g6qtb_y\\pasta_curves.llbc",
+        "--",
+        "--lib",
+        "--locked",
+        "--target",
+        "aarch64-unknown-linux-gnu",
+        "--features",
+        "asm"
+      ],
+      "fresh": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\charon\\charon\\target\\release\\charon.exe",
+        "cargo",
+        "--no-dedup-serialized-ast",
+        "--start-from",
+        "crate::asm::aarch64::add",
+        "--start-from",
+        "crate::asm::aarch64::mul",
+        "--dest-file",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\charon-extract-cc_3aqjp\\pasta_curves.llbc",
+        "--",
+        "--lib",
+        "--locked",
+        "--target",
+        "aarch64-unknown-linux-gnu",
+        "--features",
+        "asm"
+      ]
+    },
+    "cwd": {
+      "original": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\pasta_curves",
+      "fresh": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\pasta_curves"
+    },
+    "driver_binary_sha256": {
+      "original": "599ed2e1aa221d090aa0d7ee592c5e5e2c66b9db0c1b5bc1293f5ab3f35099fb",
+      "fresh": "152a404a8b7ae3b63c629835c7bb34c5f9ec4a7caa4fe80e2f97734dbbd1f02c"
+    },
+    "extraction_seconds": {
+      "original": 25.91159609996248,
+      "fresh": 58.46803029999137
+    },
+    "source_cargo_lock_sha256": {
+      "original": "ece440abcfa350f86d8c86239778efa3a24389161767278830e18df7640594d7",
+      "fresh": "4f191ee7c7affbd7f07521144b7b270b024b8ee35b15d09da475f81b057a91a7"
+    },
+    "source_worktree_sha256": {
+      "original": "fe9a00a52c2cddd9aa0f9284530396dbcdeaf5288792fec42844ad9be5d9aa39",
+      "fresh": "5c69fadf8594f173eec8c38c9c5e329bf0dc58de088768a4ac92fdec1c41b34f"
+    }
+  },
+  "metadata_policy": "Fresh raw metadata, command paths, binary hashes and extraction timings may differ. Differences are retained as provenance; source pins, complete routines and checked program bytes must match."
+}

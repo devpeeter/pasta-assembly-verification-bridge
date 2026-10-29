@@ -1,0 +1,52 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\charon\\charon\\target\\release\\charon.exe",
+    "cargo",
+    "--no-dedup-serialized-ast",
+    "--start-from",
+    "crate::asm::aarch64::add",
+    "--start-from",
+    "crate::asm::aarch64::mul",
+    "--dest-file",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\charon-extract-6g6qtb_y\\pasta_curves.llbc",
+    "--",
+    "--lib",
+    "--locked",
+    "--target",
+    "aarch64-unknown-linux-gnu",
+    "--features",
+    "asm"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\pasta_curves",
+  "rustc": "rustc 1.100.0-nightly (923c95cdf 2026-09-16)\nbinary: rustc\ncommit-hash: 923c95cdf5ba65cea505aa2ea829f578e1506ed8\ncommit-date: 2026-09-16\nhost: x86_64-pc-windows-msvc\nrelease: 1.100.0-nightly\nLLVM version: 23.1.1",
+  "charon_version_output": "0.1.282 (53388d8887d106e46b4b1a24abe23498a38613e1)",
+  "charon_binary_sha256": "4bf95ee3d330f9fbb0244a6fdfc7c78d98a53b578d506dc4df551bb579a84e23",
+  "driver_binary_sha256": "599ed2e1aa221d090aa0d7ee592c5e5e2c66b9db0c1b5bc1293f5ab3f35099fb",
+  "build_record": {
+    "charon_revision": "53388d8887d106e46b4b1a24abe23498a38613e1",
+    "rustc": "rustc 1.100.0-nightly (923c95cdf 2026-09-16)\nbinary: rustc\ncommit-hash: 923c95cdf5ba65cea505aa2ea829f578e1506ed8\ncommit-date: 2026-09-16\nhost: x86_64-pc-windows-msvc\nrelease: 1.100.0-nightly\nLLVM version: 23.1.1",
+    "binaries": {
+      "charon": "4bf95ee3d330f9fbb0244a6fdfc7c78d98a53b578d506dc4df551bb579a84e23",
+      "charon-driver": "599ed2e1aa221d090aa0d7ee592c5e5e2c66b9db0c1b5bc1293f5ab3f35099fb"
+    },
+    "build_command": [
+      "cargo",
+      "+nightly-2026-09-17",
+      "build",
+      "--locked",
+      "--release",
+      "--no-default-features",
+      "--features",
+      "rustc",
+      "--bin",
+      "charon",
+      "--bin",
+      "charon-driver"
+    ]
+  },
+  "source_cargo_lock_sha256": "ece440abcfa350f86d8c86239778efa3a24389161767278830e18df7640594d7",
+  "source_worktree_sha256": "fe9a00a52c2cddd9aa0f9284530396dbcdeaf5288792fec42844ad9be5d9aa39",
+  "source_hash_convention": "source.sha256 hashes the immutable Git blob, independent of platform line endings; source_worktree_sha256 hashes the exact file Charon read.",
+  "extraction_seconds": 25.91159609996248,
+  "trust": "The extraction script, compiler, Charon implementation, local build, Git checkout and artifact hashes are trusted provenance. SHA-256 is an integrity link, not proof that a compiler faithfully extracted Rust."
+}

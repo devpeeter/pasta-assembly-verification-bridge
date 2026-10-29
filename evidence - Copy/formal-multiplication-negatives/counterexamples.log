@@ -1,0 +1,13 @@
+'PastaBridge.FormalMulNegatives.witness_words_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.FormalMulNegatives.witness_field_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.FormalMulNegatives.witness_input_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.FormalMulNegatives.unmodified_models' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.FormalMulNegatives.expected_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.FormalMulNegatives.broken_carry_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.FormalMulNegatives.broken_binding_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.FormalMulNegatives.broken_carry_is_semantically_wrong' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PastaBridge.FormalMulNegatives.broken_binding_is_semantically_wrong' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

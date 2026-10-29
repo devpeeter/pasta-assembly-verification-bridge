@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "scripts/verify.py",
+    "--clean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge",
+  "exit_code": 0,
+  "wall_seconds": 3274.327961,
+  "observed_utc": "2026-10-23T23:08:29.897752+00:00",
+  "method": "Python subprocess.run returncode"
+}

@@ -1,0 +1,30 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-DautoImplicit=false",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\mul-build\\MulJsonCertificate.olean",
+    "MulJsonCertificate.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\bridge",
+  "exit_code": 0,
+  "wall_seconds": 15.96801,
+  "peak_rss_bytes": 860585984,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "evidence/mul-muljsoncertificate.log",
+  "axiom_census": {
+    "PastaBridge.multiplication_artifact_chars_readback": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PastaBridge.multiplication_value_encodes_retained_artifact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "status": "PASS",
+  "source": "bridge/MulJsonCertificate.lean",
+  "source_sha256": "d6cdd6c093305d925902028bf8e70d63422ca7a74a9c0a5e05599fce6f0eeffc"
+}

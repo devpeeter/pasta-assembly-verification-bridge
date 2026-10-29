@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "upstream_revision": "811ff7ce1dae0b9cae761585d33959f5302a2cc1",
+  "binary_git_blob_ids": {
+    "Kraken/Mem.lean": "9d600b647821360250b09dff2d0890a5121f7017",
+    "Kraken/AArch64/Parser.lean": "a2dd460d9bc5a5fe0ac3a15b6fcab2552149d5aa"
+  },
+  "patch_changes": {
+    "kraken-list-name.patch": {
+      "pin_field": "compatibility_patch_sha256",
+      "before_sha256": "7808946aee8db4c743b0af1e4904fbf942363a0305a27e003c6140306a400f4a",
+      "after_sha256": "11f8b62f5baadc185ca2223448def6843027641a4178c466ae973f53e41d41b2",
+      "normalized_patch_bytes_identical": true
+    },
+    "kraken-immediate-shifts.patch": {
+      "pin_field": "immediate_shift_patch_sha256",
+      "before_sha256": "9d21eea5b9768404e3faa91938c3e8ba613654ba93f055bb268f9393cf228f3a",
+      "after_sha256": "d96e3395b5911a52482a7f3e8b791d7facc65ae9cf19d8e7e261a73ff5b30241",
+      "normalized_patch_bytes_identical": true
+    },
+    "kraken-zero-destination.patch": {
+      "pin_field": "zero_destination_patch_sha256",
+      "before_sha256": "19baac52a9fc44440c29a29c235dca3035233253c3b9c7bca4aa80c149e4cb59",
+      "after_sha256": "f7b5dc938df9ec81d14aab8ebfe151968c62ef1e450dbfc0661b234e59e0eb7d",
+      "normalized_patch_bytes_identical": true
+    }
+  },
+  "normalized_overlay_mem_identical": true,
+  "normalized_overlay_parser_identical": true,
+  "scope": "Exact-byte derivation and normalized source comparison; not a fresh Lean proof compilation.",
+  "allowed_pin_changes_only": [
+    "compatibility_patch_sha256",
+    "immediate_shift_patch_sha256",
+    "zero_destination_patch_sha256"
+  ],
+  "pins_layout_preserved": true,
+  "before_pins_sha256": "540e21809d37b87cfd4fa174218b92419ae492d27644f32c9b307ea814ad31ae",
+  "after_pins_sha256": "8d2a3268f41d18fcd875ad4fb95fe1a402fcfff28538efb36fc3110279c1e7f2"
+}

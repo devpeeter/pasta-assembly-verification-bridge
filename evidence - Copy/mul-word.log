@@ -1,0 +1,7 @@
+'PastaBridge.MulWord.mul_value' depends on axioms: [propext]
+'PastaBridge.MulWord.umulh_value' depends on axioms: [propext, Quot.sound]
+'PastaBridge.MulWord.lsl_value' depends on axioms: [propext]
+'PastaBridge.MulWord.lsr_value' depends on axioms: [propext]
+'PastaBridge.MulWord.csel_lo_value' does not depend on any axioms
+'PastaBridge.MulWord.shift_amount' depends on axioms: [propext, Quot.sound]
+'PastaBridge.MulWord.mask_value' depends on axioms: [propext, Quot.sound]

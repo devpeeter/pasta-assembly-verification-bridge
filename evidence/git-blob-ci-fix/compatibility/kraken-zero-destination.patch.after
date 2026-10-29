@@ -1,0 +1,11 @@
+--- a/Kraken/AArch64/Parser.lean
++++ b/Kraken/AArch64/Parser.lean
+@@ -826,7 +826,7 @@
+     let src1Sp ← op2.toRegOrSp
+     let op3 ← parseExtOrImmReg w
+     pure ⟨w, mkE dstZr src1Sp op3⟩
+-  else if op1W.2.isXzr || op2.isXzr then
++  else if op2.isXzr then
+     let dstZr ← op1W.2.toRegOrZr
+     let src1Zr ← op2.toRegOrZr
+     let shiftOp ← parseShiftRegExpr w

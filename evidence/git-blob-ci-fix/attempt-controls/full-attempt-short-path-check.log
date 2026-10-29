@@ -1,0 +1,9 @@
+{
+  "failed_path": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\git-blob-ci\\full-attempt\\workspace\\work\\rustup-home\\toolchains\\nightly-2026-09-17-x86_64-pc-windows-msvc\\lib\\rustlib\\x86_64-pc-windows-msvc\\lib\\libpanic_unwind-f52ee9165a409470.rlib",
+  "characters": 264,
+  "exists": false,
+  "extended_exists": true,
+  "short_archive_path_characters": 203,
+  "host_library_paths_checked": 44,
+  "maximum_short_host_library_path_characters": 216
+}

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-DautoImplicit=false",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\mul-build\\MulArtifact.olean",
+    "MulArtifact.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\bridge",
+  "exit_code": 0,
+  "wall_seconds": 14.327194,
+  "peak_rss_bytes": 892375040,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "evidence/mul-mulartifact.log",
+  "status": "PASS",
+  "source": "bridge/MulArtifact.lean",
+  "source_sha256": "8e199891bd2844b60c7680de0e438a67c11c0a9f45f7ce841b6d824cd3d6f116"
+}

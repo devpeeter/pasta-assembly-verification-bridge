@@ -1,0 +1,74 @@
+import Retained
+import KrakenRun
+import KrakenWord
+import PastaCurves.AArch64.Transcription
+import Mathlib.Tactic.SimpRw
+
+set_option maxRecDepth 20000
+set_option maxHeartbeats 0
+set_option pp.maxSteps 500
+set_option linter.unusedSimpArgs false
+
+elab "proof_stage " label:str : tactic => do
+  Lean.logInfo label.getString
+  let stream ← IO.getStderr
+  stream.putStrLn label.getString
+  stream.flush
+
+namespace PastaBridge
+open PastaCurves
+
+def canonicalAddition_lhs (s : MachineData) : Limbs :=
+  ⟨s.regs.X0.toNat, s.regs.X1.toNat, s.regs.X2.toNat, s.regs.X3.toNat⟩
+
+def canonicalAddition_rhs (s : MachineData) : Limbs :=
+  ⟨s.regs.X4.toNat, s.regs.X5.toNat, s.regs.X6.toNat, s.regs.X7.toNat⟩
+
+def canonicalAddition_modulus (s : MachineData) : Limbs :=
+  ⟨s.regs.X8.toNat, s.regs.X9.toNat, 0, s.regs.X10.toNat⟩
+
+theorem addition_canonical_model (s : MachineData) :
+    (run retainedAdditionProgram s).map canonicalAddition_lhs =
+      .ok (PastaCurves.AArch64.addMod (canonicalAddition_lhs s)
+        (canonicalAddition_rhs s) (canonicalAddition_modulus s)) := by
+  have hzero : (Int64.toInt (0 : Int64)).toNat = 0 := by decide +kernel
+  have hsubplain (a b : BitVec 64) :
+      (a - b).toNat = (a.toNat + 2^64 - b.toNat) % 2^64 := by
+    simpa using KrakenWord.sub_value a b true
+  simp only [run, retainedAdditionProgram, List.map_cons, List.map_nil,
+    List.length_cons, List.length_nil, Directives.interp, Directive.interp,
+    Instr.interp, Operation.interp, finishEffects, MachineData.setRegOrZr,
+    Reg64s.setRegOrZr, Reg64s.setRegOrZr64, Reg64s.setXReg,
+    Reg64s.getRegOrZr, Reg64s.getRegOrZr64, Reg64s.getXReg,
+    RegOrZr.base, ShiftRegExpr.interp, Width.bits, BitVec.take]
+  proof_stage "Interpreter expanded"
+  dsimp only [Except.map, canonicalAddition_lhs, canonicalAddition_rhs,
+    canonicalAddition_modulus, UInt64.toNat]
+  dsimp (instances := true) only [Width.type, Width.bits]
+  proof_stage "Output/input projections and width-indexed instances normalized"
+  simp only [hzero, BitVec.extractLsb'_eq_self, BitVec.shiftLeft_zero]
+  repeat rw [KrakenWord.csel_cs_value]
+  proof_stage "CSEL normalized"
+  simp only [StatusFlags.from_result]
+  repeat rw [KrakenWord.sub_value]
+  repeat rw [hsubplain]
+  repeat rw [KrakenWord.sub_carry]
+  repeat rw [KrakenWord.subs_carry]
+  proof_stage "Subtraction projections normalized before addition carries"
+  repeat rw [KrakenWord.add_value]
+  repeat rw [KrakenWord.add_carry]
+  repeat rw [KrakenWord.adds_carry]
+  proof_stage "Word normalization completed"
+  simp only [PastaCurves.AArch64.addMod, PastaCurves.addc, PastaCurves.AArch64.subc,
+    PastaCurves.AArch64.cselCs, Except.map, UInt64.toNat_ofBitVec,
+    UInt64.toNat_toBitVec, BitVec.extractLsb'_eq_self, hzero,
+    BitVec.shiftLeft_zero, StatusFlags.from_result, KrakenWord.csel_cs_value,
+    KrakenWord.add_value, KrakenWord.add_carry, KrakenWord.adds_carry,
+    KrakenWord.sub_value, KrakenWord.sub_carry, KrakenWord.subs_carry,
+    hsubplain, BitVec.toNat_add, Nat.add_zero, Nat.sub_zero, Nat.sub_self,
+    Nat.mod_mod]
+
+
+
+#print axioms addition_canonical_model
+end PastaBridge

@@ -1,0 +1,839 @@
+{
+  "status": "PASS",
+  "observed_utc": "2026-10-29T17:55:18.678163+00:00",
+  "scope": "Automated technical verification of register-entry Kraken models; no Rust wrapper load/store or ARM hardware-vector claim.",
+  "source_project": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge",
+  "full_run_output": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029",
+  "commands": {
+    "outer_measure": [
+      "python",
+      "scripts/ci_full.py",
+      "--output",
+      "C:/Users/NewOwner/Documents/Codex/pavb-ci-1029"
+    ],
+    "verification": [
+      "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "scripts/verify.py",
+      "--clean"
+    ]
+  },
+  "exits": {
+    "outer_measure_process": 0,
+    "ci_full_process": 0,
+    "verify_clean_process": 0
+  },
+  "runner_statuses": {
+    "status": "PASS",
+    "technical_status": "PASS",
+    "acceptance_status": "PASS"
+  },
+  "stage_counts": {
+    "ci_stages": 6,
+    "ci_statuses": {
+      "PASS": 6
+    },
+    "verification_stages": 67,
+    "verification_statuses": {
+      "PASS": 67
+    },
+    "required_stages": 67,
+    "all_required_stages_pass": true,
+    "arithmetic_source_modules": 13,
+    "measured_direct_lean_checks": 67
+  },
+  "target_gates": {
+    "addition-target-correctness": {
+      "name": "addition-target-correctness",
+      "status": "PASS",
+      "missing_checks": [],
+      "theorem": "PastaBridge.AdditionCorrectness.addition_correct"
+    },
+    "multiplication-target-correctness": {
+      "name": "multiplication-target-correctness",
+      "status": "PASS",
+      "missing_checks": [],
+      "theorem": "PastaBridge.MulCorrectness.multiplication_correct",
+      "reason": null
+    }
+  },
+  "axiom_audit": {
+    "strict_ci_report_validation_reexecuted": true,
+    "census_stage_count": 42,
+    "all_censuses_within_standard_axioms": true,
+    "allowed_standard_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "main_and_exact_type_censuses": {
+      "PastaBridge.AdditionCorrectness.addition_correct": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "addition_target_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "PastaBridge.MulCorrectness.multiplication_correct": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "multiplication_target_type": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "all_reported_stage_censuses": {
+      "kraken-word": {
+        "PastaBridge.KrakenWord.sub_value": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.sub_carry": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.subs_carry": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.adds_carry": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.add_value": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.add_carry": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.KrakenWord.csel_cs_value": []
+      },
+      "kraken-binding": {
+        "PastaBridge.KrakenBinding.get_set_binding": [
+          "propext"
+        ],
+        "PastaBridge.KrakenBinding.get_set": [],
+        "PastaBridge.KrakenBinding.set_sp": [],
+        "PastaBridge.KrakenBinding.shared_input_values": [],
+        "PastaBridge.KrakenBinding.readonly_sharing_admissible": []
+      },
+      "artifact-link": {
+        "PastaBridge.addition_template_matches_retained_assembly": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.addition_program_serializes_to_retained_assembly": [
+          "propext"
+        ],
+        "PastaBridge.addition_artifact_matches_retained_program": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.addition_operand_metadata_matches": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.retained_artifact_chars_readback": []
+      },
+      "arithmetic-proof": {
+        "PastaAssemblyBridge.Arithmetic.addition": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaAssemblyBridge.Arithmetic.multiplication": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "wordcorrespondence": {
+        "PastaBridge.WordCorrespondence.addc": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.WordCorrespondence.subc": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.WordCorrespondence.cselCs": []
+      },
+      "additionstep": {
+        "PastaBridge.AdditionStep.adds_initial": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.preserve": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.memory_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.stack_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.register_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.readonly_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.related_results_exist": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionStep.interp_of_step": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "additionmachine": {
+        "PastaBridge.AdditionMachine.instantiation_certificate": [
+          "propext"
+        ],
+        "PastaBridge.AdditionMachine.canonical_identity": [
+          "propext"
+        ],
+        "PastaBridge.AdditionMachine.canonical_inverse": [
+          "propext"
+        ],
+        "PastaBridge.AdditionMachine.canonical_separated": [
+          "propext"
+        ],
+        "PastaBridge.AdditionMachine.binding_memory_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionMachine.written_matches_checked_modes": [
+          "propext"
+        ],
+        "PastaBridge.AdditionMachine.retained_written_mask": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.decoding_certificate": [
+          "propext"
+        ],
+        "PastaBridge.AdditionLift.encoding_certificate": [
+          "propext"
+        ],
+        "PastaBridge.AdditionLift.full_run_is_sequence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.sequence_preserves": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.initial_relation": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.all_bindings_simulation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.sequence_observation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.binding_stack_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.binding_register_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionLift.binding_readonly_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "additionnat": {
+        "PastaBridge.AdditionNat.step_project": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "additionnatsequence": {
+        "PastaBridge.AdditionNat.sequence_project": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "additionnatdata": {
+        "PastaBridge.AdditionNatData.retained_data_readback": [
+          "propext"
+        ]
+      },
+      "additionnatobservation": {
+        "PastaBridge.AdditionNat.words_transition": [],
+        "PastaBridge.AdditionNatData.words_sequence_cons": []
+      },
+      "additionparametricbase": {
+        "PastaBridge.AdditionParametric.model_specializes": [],
+        "PastaBridge.AdditionParametric.sequence_specializes": [],
+        "PastaBridge.AdditionParametric.transition_specializes": []
+      },
+      "additionparametricmodel": {
+        "PastaBridge.AdditionParametric.generic_model": [
+          "propext"
+        ],
+        "PastaBridge.AdditionParametric.retained_data_model": [
+          "propext"
+        ]
+      },
+      "additionnatdatamodel": {
+        "PastaBridge.AdditionNatData.retained_data_model": [
+          "propext"
+        ]
+      },
+      "additionnatliftbase": {
+        "PastaBridge.AdditionNat.all_bindings_model_of": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionNat.map_comp": []
+      },
+      "additionnatmodel": {
+        "PastaBridge.AdditionNat.decoded_program_model": [
+          "propext"
+        ]
+      },
+      "additionnatlift": {
+        "PastaBridge.AdditionNat.all_bindings_model": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "bindingartifact": {
+        "PastaBridge.BindingArtifact.bound_program_matches_template": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "additioncorrectness": {
+        "PastaBridge.AdditionCorrectness.addition_correct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "proof-inventory": {
+        "PastaBridge.AdditionCorrectness.addition_correct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.AdditionNat.all_bindings_model": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.BindingArtifact.bound_program_matches_template": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "addition_target_type": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "stringbytes": {
+        "PastaBridge.StringBytes.append": [
+          "propext"
+        ],
+        "PastaBridge.StringBytes.injective": [
+          "propext"
+        ],
+        "PastaBridge.StringBytes.intercalate": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "mulmetadata": {
+        "PastaBridge.multiplication_operand_metadata_matches": [
+          "propext"
+        ],
+        "PastaBridge.multiplication_pieces_match_retained_value": [
+          "propext"
+        ]
+      },
+      "muljsontextdagbase": {
+        "PastaBridge.MulJsonTextDag.encoded_124": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "muljsontextdagfinal": {
+        "PastaBridge.MulJsonTextDag.retained_bytes_readback": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulJsonTextDag.retained_encoding": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulJsonTextDag.retained_value_readback": []
+      },
+      "muljsoncertificate": {
+        "PastaBridge.multiplication_artifact_chars_readback": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.multiplication_value_encodes_retained_artifact": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "mulword": {
+        "PastaBridge.MulWord.mul_value": [
+          "propext"
+        ],
+        "PastaBridge.MulWord.umulh_value": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulWord.lsl_value": [
+          "propext"
+        ],
+        "PastaBridge.MulWord.lsr_value": [
+          "propext"
+        ],
+        "PastaBridge.MulWord.shift_amount": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulWord.mask_value": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulWord.csel_lo_value": []
+      },
+      "mulstep": {
+        "PastaBridge.MulStep.memory_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulStep.stack_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulStep.register_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulStep.readonly_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulStep.interp_of_step": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "mulmachine": {
+        "PastaBridge.MulMachine.decoding_certificate": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.instantiation_certificate": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.canonical_identity": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.valid_certificate": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.decoded_valid": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.full_run_is_sequence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.binding_memory_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.binding_stack_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.binding_register_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulMachine.binding_readonly_frame": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "mulprogramdata": {
+        "PastaBridge.MulProgramData.retained_instructions_readback": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "mulsequenceframe": {
+        "PastaBridge.MulSequenceFrame.readonly": []
+      },
+      "mulnat": {
+        "PastaBridge.MulNat.step_project": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "mulnatsequence": {
+        "PastaBridge.MulNat.sequence_project": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "mulparametricbase": {
+        "PastaBridge.MulParametric.carry_transition": [
+          "propext"
+        ],
+        "PastaBridge.MulParametric.program_partition": [
+          "propext"
+        ],
+        "PastaBridge.MulParametric.transition_specializes": [],
+        "PastaBridge.MulParametric.round_specializes": [],
+        "PastaBridge.MulParametric.model_specializes": [],
+        "PastaBridge.MulParametric.sequence_specializes": [],
+        "PastaBridge.MulParametric.words_transition": [],
+        "PastaBridge.MulParametric.sequence_readonly": [],
+        "PastaBridge.MulParametric.sequence_append": []
+      },
+      "mulparametricrounds": {
+        "PastaBridge.MulParametric.firstRound_model": [
+          "propext"
+        ],
+        "PastaBridge.MulParametric.secondRound_model": [
+          "propext"
+        ],
+        "PastaBridge.MulParametric.thirdRound_model": [
+          "propext"
+        ]
+      },
+      "mulparametricmodel": {
+        "PastaBridge.MulParametric.retained_data_model": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "mulnatlift": {
+        "PastaBridge.MulNat.all_bindings_model": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "mulformatting": {
+        "PastaBridge.MulFormatting.serialize_instruction": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulFormatting.serialize_program": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "mulpieceformatting": {
+        "PastaBridge.MulPieceFormatting.render_normalize": [
+          "propext",
+          "Quot.sound"
+        ],
+        "PastaBridge.MulPieceFormatting.render_program": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "mulbindingartifact": {
+        "PastaBridge.MulBindingArtifact.bound_program_matches_template": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "mulcertificate": {
+        "PastaBridge.multiplication_artifact_matches_retained_program": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PastaBridge.multiplication_retained_representation_certificate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "mulcorrectness": {
+        "PastaBridge.MulCorrectness.multiplication_correct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "mul-proof-inventory": {
+        "PastaBridge.MulCorrectness.multiplication_correct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "multiplication_target_type": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  },
+  "timing": {
+    "outer_ci_full_wall_seconds": 3638.4434,
+    "verify_clean_process_wall_seconds": 1641.189238,
+    "verification_report_wall_seconds": 1640.6108,
+    "summed_direct_lean_wall_seconds": 1247.484909
+  },
+  "maximum_direct_lean_check": {
+    "name": "muljsontextdagfinal",
+    "command": [
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+      "-DautoImplicit=false",
+      "-o",
+      "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\bridge-build\\MulJsonTextDagFinal.olean",
+      "MulJsonTextDagFinal.lean"
+    ],
+    "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\bridge",
+    "exit_code": 0,
+    "wall_seconds": 23.891959,
+    "peak_rss_bytes": 1824825344,
+    "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+    "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge\\evidence\\muljsontextdagfinal.log"
+  },
+  "runtime_checks": {
+    "addition": {
+      "status": "PASS",
+      "scope": "Kraken addition model execution on the Lean host; no ARM hardware execution; separate universal proofs required",
+      "positive_cases": 3232,
+      "program_allocations": 5,
+      "incoming_flag_patterns": 16,
+      "register_coverage": {
+        "x19_written": {
+          "positive_cases": 32,
+          "incoming_flag_patterns": 16,
+          "fields": [
+            "pallasBase",
+            "vestaBase"
+          ],
+          "flag_patterns_by_field": {
+            "pallasBase": 16,
+            "vestaBase": 16
+          }
+        },
+        "x19_shared_readonly": {
+          "positive_cases": 32,
+          "incoming_flag_patterns": 16,
+          "fields": [
+            "pallasBase",
+            "vestaBase"
+          ],
+          "flag_patterns_by_field": {
+            "pallasBase": 16,
+            "vestaBase": 16
+          }
+        }
+      },
+      "protected_register_policy": "every register outside the written allocation, including x19 when not written",
+      "mutant_mismatches": {
+        "broken-carry": 32,
+        "wrong-operand-binding": 32
+      }
+    },
+    "multiplication": {
+      "status": "PASS",
+      "scope": "Kraken multiplication model execution on the Lean host; no ARM hardware execution; separate universal proofs required",
+      "positive_cases": 4064,
+      "program_allocations": 5,
+      "incoming_flag_patterns": 16,
+      "register_coverage": {
+        "x19_written": {
+          "positive_cases": 32,
+          "incoming_flag_patterns": 16,
+          "fields": [
+            "pallasBase",
+            "vestaBase"
+          ],
+          "flag_patterns_by_field": {
+            "pallasBase": 16,
+            "vestaBase": 16
+          }
+        },
+        "x19_shared_readonly": {
+          "positive_cases": 32,
+          "incoming_flag_patterns": 16,
+          "fields": [
+            "pallasBase",
+            "vestaBase"
+          ],
+          "flag_patterns_by_field": {
+            "pallasBase": 16,
+            "vestaBase": 16
+          }
+        }
+      },
+      "protected_register_policy": "every register outside the written allocation, including x19 when not written",
+      "mutant_mismatches": {
+        "broken-carry": 192,
+        "wrong-operand-binding": 928
+      }
+    }
+  },
+  "formal_negatives": {
+    "addition": {
+      "status": "PASS",
+      "stages": [
+        {
+          "name": "kernel-counterexample-certificates",
+          "status": "PASS",
+          "exit_code": 0,
+          "wall_seconds": 14.581169,
+          "peak_rss_bytes": 1468624896,
+          "strict_axiom_census_passed": true
+        },
+        {
+          "name": "broken-carry",
+          "status": "PASS",
+          "exit_code": 1,
+          "wall_seconds": 20.55314,
+          "peak_rss_bytes": 1378844672,
+          "semantic_rejection_confirmed": true,
+          "intended_false_equality": "carryResult = expected"
+        },
+        {
+          "name": "wrong-binding",
+          "status": "PASS",
+          "exit_code": 1,
+          "wall_seconds": 45.357432,
+          "peak_rss_bytes": 1397743616,
+          "semantic_rejection_confirmed": true,
+          "intended_false_equality": "bindingResult = expected"
+        }
+      ]
+    },
+    "multiplication": {
+      "status": "PASS",
+      "stages": [
+        {
+          "name": "kernel-counterexample-certificates",
+          "status": "PASS",
+          "exit_code": 0,
+          "wall_seconds": 18.282859,
+          "peak_rss_bytes": 1573408768,
+          "strict_axiom_census_passed": true
+        },
+        {
+          "name": "broken-carry",
+          "status": "PASS",
+          "exit_code": 1,
+          "wall_seconds": 14.885224,
+          "peak_rss_bytes": 1436000256,
+          "semantic_rejection_confirmed": true,
+          "intended_false_equality": "carryResult = carryExpected"
+        },
+        {
+          "name": "wrong-binding",
+          "status": "PASS",
+          "exit_code": 1,
+          "wall_seconds": 15.675613,
+          "peak_rss_bytes": 1435549696,
+          "semantic_rejection_confirmed": true,
+          "intended_false_equality": "bindingResult = bindingExpected"
+        }
+      ]
+    }
+  },
+  "source_seals": {
+    "verification_input_seal": {
+      "status": "PASS",
+      "changed_inputs": [],
+      "actual_exit_code": 0,
+      "checked_files": 265
+    },
+    "verification_map_rechecked": true,
+    "verification_sealed_input_files": 265,
+    "original_checkout_unchanged_during_run": true,
+    "original_source_map_files": 777,
+    "original_source_manifest_sha256": "16177a3e5f593c7a8ba5861c3ebbab74859b7e4b30928d1ae9c25efaf49a5bbe"
+  },
+  "prior_failed_attempt": {
+    "output": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\git-blob-ci\\full-attempt",
+    "status": "FAIL",
+    "ci_full_exit_code": 1,
+    "verify_clean_invoked": false,
+    "reason": "MSVC LNK1104 opening a 264-character ordinary private Rust sysroot path; exact same runner succeeded at the shorter output path."
+  },
+  "source_edits_during_run": false,
+  "independent_reproduction_claim": false
+}

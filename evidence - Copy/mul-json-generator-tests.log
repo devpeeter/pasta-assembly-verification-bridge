@@ -1,0 +1,9 @@
+test_duplicate_key_rejected (test_mul_json_certificate_generator.CertificateGeneratorTests.test_duplicate_key_rejected) ... ok
+test_fresh_candidate_and_stale_candidate (test_mul_json_certificate_generator.CertificateGeneratorTests.test_fresh_candidate_and_stale_candidate) ... ok
+test_missing_final_lf_rejected (test_mul_json_certificate_generator.CertificateGeneratorTests.test_missing_final_lf_rejected) ... ok
+test_unicode_escape_rejected_explicitly (test_mul_json_certificate_generator.CertificateGeneratorTests.test_unicode_escape_rejected_explicitly) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.902s
+
+OK

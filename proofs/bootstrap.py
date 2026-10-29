@@ -43,6 +43,8 @@ def fetch_locked_dependencies() -> None:
         target.mkdir(exist_ok=True)
         if not (target / ".git").is_dir():
             checked(["git", "init", str(target)])
+            checked(["git", "-C", str(target), "config", "--local", "core.autocrlf", "false"])
+            checked(["git", "-C", str(target), "config", "--local", "core.eol", "lf"])
             checked(["git", "-C", str(target), "remote", "add", "origin", url])
         head = subprocess.run(["git", "-C", str(target), "rev-parse", "HEAD"],
                               capture_output=True, text=True)

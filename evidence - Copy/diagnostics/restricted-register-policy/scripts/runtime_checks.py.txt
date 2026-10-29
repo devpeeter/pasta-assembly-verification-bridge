@@ -1,0 +1,328 @@
+"""Addition vectors and semantic mutations through the real Kraken interpreter.
+
+The small MIR prefix/suffix evaluator derives operand roles from retained Charon
+data. It is test infrastructure, not a formal proof of Rust wrapper behavior.
+No Pasta instruction list or substitute instruction semantics is embedded here.
+"""
+from __future__ import annotations
+
+import argparse
+import copy
+import hashlib
+import json
+import os
+from pathlib import Path
+import random
+import re
+import subprocess
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "bridge"))
+import kraken_adapter as adapter
+import extract
+from verify import lean_environment
+
+WORD = 1 << 64
+
+
+class PrefixError(ValueError):
+    pass
+
+
+def variant(value):
+    if isinstance(value, str):
+        return value, None
+    if not isinstance(value, dict) or len(value) != 1:
+        raise PrefixError(f"unsupported MIR variant: {value!r}")
+    return next(iter(value.items()))
+
+
+def constant(value):
+    if not isinstance(value, dict) or set(value) != {"Untagged"}:
+        raise PrefixError("only non-deduplicated MIR constants are supported")
+    payload = value["Untagged"]
+    if not isinstance(payload, list) or len(payload) != 2:
+        raise PrefixError("unsupported constant encoding")
+    kind, data = variant(payload[0])
+    if kind == "Integer":
+        sign, integer = variant(data)
+        if sign != "Unsigned" or integer[0] not in ("Usize", "U64"):
+            raise PrefixError("unsupported integer constant")
+        return int(integer[1])
+    if kind == "Bool":
+        return data
+    raise PrefixError(f"unsupported MIR constant: {kind}")
+
+
+def operand(value, locals_):
+    kind, payload = variant(value)
+    if kind in ("Copy", "Move"):
+        return place(payload, locals_)
+    if kind == "Const":
+        return constant(payload)
+    raise PrefixError(f"unsupported MIR operand: {kind}")
+
+
+def place(value, locals_):
+    kind, payload = variant(value["kind"])
+    if kind == "Local":
+        if payload not in locals_:
+            raise PrefixError(f"uninitialized MIR local {payload}")
+        return locals_[payload]
+    if kind == "Projection":
+        parent, projection = payload
+        base = place(parent, locals_)
+        tag, data = variant(projection)
+        if tag == "Deref":
+            return base
+        if tag == "Index":
+            if data["from_end"]:
+                raise PrefixError("from-end indexing is unsupported")
+            index = operand(data["offset"], locals_)
+            if type(index) is not int or not 0 <= index < len(base):
+                raise PrefixError("MIR array index outside bounds")
+            return base[index]
+        if tag == "Field" and data[0] is None:
+            return base[data[1]]
+        raise PrefixError(f"unsupported MIR projection: {tag}")
+    raise PrefixError(f"unsupported MIR place: {kind}")
+
+
+def assign(dest, value, locals_):
+    kind, index = variant(dest["kind"])
+    if kind != "Local":
+        raise PrefixError("only direct-local assignments are supported")
+    locals_[index] = value
+
+
+def rvalue(value, locals_):
+    kind, payload = variant(value)
+    if kind == "Use" and len(payload) == 2 and payload[1] in ("Yes", "No"):
+        return operand(payload[0], locals_)
+    if kind == "BinaryOp" and payload[0] == "Lt":
+        return operand(payload[1], locals_) < operand(payload[2], locals_)
+    if kind == "Aggregate" and isinstance(payload, list) and len(payload) == 2:
+        aggregate_kind, _ = variant(payload[0])
+        if aggregate_kind != "Array":
+            raise PrefixError("only array aggregates are supported")
+        return [operand(v, locals_) for v in payload[1]]
+    raise PrefixError(f"unsupported MIR expression: {kind}")
+
+
+def evaluate_statements(statements, locals_):
+    for statement in statements:
+        kind, payload = variant(statement["kind"])
+        if kind == "Assign":
+            assign(payload[0], rvalue(payload[1], locals_), locals_)
+        elif kind == "StorageLive":
+            locals_.pop(payload, None)
+        elif kind == "StorageDead":
+            locals_.pop(payload, None)
+        elif kind == "PlaceMention":
+            place(payload, locals_)
+        elif kind == "Borrowck":
+            borrow_kind, borrowed = variant(payload)
+            if borrow_kind != "FakeRead":
+                raise PrefixError("unsupported borrow-check statement")
+            place(borrowed, locals_)
+        elif kind == "Assert":
+            check = payload["assert"]
+            if operand(check["cond"], locals_) is not check["expected"]:
+                raise PrefixError("MIR assertion failed")
+        elif kind == "InlineAsm":
+            if payload["labels"] or payload["fallthrough"] is None:
+                raise PrefixError("unsupported assembly control flow")
+            return payload
+        elif kind == "Return":
+            return locals_[0]
+        elif kind != "Nop":
+            raise PrefixError(f"unsupported MIR statement: {kind}")
+    raise PrefixError("MIR block has no supported endpoint")
+
+
+def operand_roles(raw, block, routine="add"):
+    function = extract.json_pointer(raw, block["function_json_pointer"])
+    body = function["body"]["Structured"]
+    local_info = body["locals"]
+    arg_count = local_info["arg_count"]
+    names = [local_info["locals"][i]["name"] for i in range(1, arg_count + 1)]
+    expected_names = ["lhs", "rhs", "modulus"] + (["inv"] if routine == "mul" else [])
+    if routine not in ("add", "mul") or names != expected_names:
+        raise PrefixError(f"unsupported {routine} argument contract: {names}")
+    locals_ = {i: (name, 0) if name == "inv" else [(name, j) for j in range(4)]
+               for i, name in enumerate(names, 1)}
+    asm = evaluate_statements(body["body"]["statements"], locals_)
+    if asm["asm"] != {k: block[k] for k in ("kind", "template", "operands", "options")}:
+        raise PrefixError("MIR endpoint differs from retained assembly subtree")
+    roles = {}
+    for index, op in enumerate(adapter.operands(block)):
+        kind = adapter.operand_kind(op)
+        if kind in ("In", "InOut"):
+            roles[index] = operand(op[kind]["value" if kind == "In" else "in_value"], locals_)
+        dest = op[kind].get("place" if kind == "Out" else "out_place") if kind != "In" else None
+        if dest is not None:
+            assign(dest, ("output", index), locals_)
+    returned = evaluate_statements(asm["fallthrough"]["statements"], locals_)
+    if not isinstance(returned, list) or len(returned) != 4 or any(v[0] != "output" for v in returned):
+        raise PrefixError("return value is not exactly four declared assembly outputs")
+    return roles, [v[1] for v in returned]
+
+
+def fields():
+    source = (ROOT / "vendor/pasta/lean/PastaCurves/Fields.lean").read_text(encoding="utf-8")
+    pattern = r"def (pallasBase|vestaBase) : PastaField where\s+modulus := ⟨([^⟩]+)⟩\s+inv := (0x[0-9a-f]+)"
+    result = []
+    for name, limbs, inverse in re.findall(pattern, source):
+        limbs = [int(v.strip(), 0) for v in limbs.split(",")]
+        modulus = sum(v << (64 * i) for i, v in enumerate(limbs))
+        if len(limbs) != 4 or limbs[2:] != [0, 1 << 62]:
+            raise PrefixError("unsupported Pasta modulus shape")
+        if int(inverse, 0) != -pow(limbs[0], -1, WORD) % WORD:
+            raise PrefixError("upstream Montgomery constant is inconsistent")
+        result.append((name, limbs, modulus))
+    if [f[0] for f in result] != ["pallasBase", "vestaBase"]:
+        raise PrefixError("did not recover exactly both upstream Pasta fields")
+    return result
+
+
+def limbs(value):
+    return [(value >> (64 * i)) % WORD for i in range(4)]
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--lean", type=Path, required=True)
+    ap.add_argument("--lake", type=Path, required=True)
+    ap.add_argument("--kraken", type=Path, required=True)
+    args = ap.parse_args()
+    artifact_path = ROOT / "artifacts/charon-asm.json"
+    artifact = adapter.load_artifact(artifact_path)
+    raw = extract.verify_retained(artifact, artifact_path.parent)
+    block = artifact["routines"]["add"]
+    roles, outputs = operand_roles(raw, block)
+    canonical = adapter.canonical_binding(block)
+    random_ = random.Random(0x5041535441)
+    shuffled = list(adapter.REGISTERS)
+    random_.shuffle(shuffled)
+    alternate = dict(enumerate(shuffled[:len(canonical)]))
+    groups = {}
+
+    def add_case(field, modulus_limbs, modulus, lhs, rhs, flag_bits, allocation, merge=False):
+        source = {"lhs": limbs(lhs), "rhs": limbs(rhs), "modulus": modulus_limbs}
+        values = {i: source[name][j] for i, (name, j) in roles.items()}
+        binding = allocation.copy()
+        if merge:
+            representatives = {}
+            for i, op in enumerate(adapter.operands(block)):
+                if adapter.operand_kind(op) == "In":
+                    key = values[i]
+                    binding[i] = representatives.setdefault(key, binding[i])
+        assembly = adapter.render(block, binding, values)
+        initial = {f"x{i}": random_.getrandbits(64) for i in range(31)}
+        initial["sp"] = random_.getrandbits(64)
+        for i, value in values.items():
+            initial[binding[i]] = value
+        flags = dict(zip(("n", "z", "c", "v"), [bool(flag_bits & (1 << i)) for i in range(4)]))
+        case = {"regs": initial, "flags": flags}
+        expected = {"field": field, "lhs": lhs, "rhs": rhs, "modulus": modulus,
+                    "value": (lhs + rhs) % modulus, "binding": binding,
+                    "initial": initial, "flags": flags, "shared_read_only_inputs": merge}
+        groups.setdefault(assembly, []).append((case, expected))
+
+    for name, p_limbs, p in fields():
+        singles = [0, 1, WORD - 1, WORD, (1 << 128) - 1, (1 << 192) - 1, p - 1]
+        for lhs in singles:
+            for rhs in singles:
+                for flags in range(16):
+                    add_case(name, p_limbs, p, lhs, rhs, flags, canonical)
+                    add_case(name, p_limbs, p, lhs, rhs, flags, alternate)
+        for flags in range(16):
+            add_case(name, p_limbs, p, p - 1, 0, flags, canonical, merge=True)
+
+    work = ROOT.parent.parent / "work/runtime-checks"
+    work.mkdir(parents=True, exist_ok=True)
+    env = lean_environment(args.lake.resolve(), args.kraken.resolve(), os.environ.copy())
+    runner = ROOT / "bridge/KrakenRun.lean"
+    commands = []
+
+    def execute(assembly, rows, label):
+        asm_file = work / (label + ".S")
+        cases_file = work / (label + ".json")
+        asm_file.write_text(assembly, encoding="utf-8", newline="")
+        cases_file.write_text(json.dumps([r[0] for r in rows]), encoding="utf-8")
+        command = [str(args.lean.resolve()), "--run", str(runner), str(asm_file), str(cases_file)]
+        commands.append(command)
+        proc = subprocess.run(command, cwd=ROOT, env=env, capture_output=True, text=True, encoding="utf-8")
+        (work / (label + ".stdout")).write_text(proc.stdout, encoding="utf-8")
+        (work / (label + ".stderr")).write_text(proc.stderr, encoding="utf-8")
+        if proc.returncode:
+            raise RuntimeError(f"Kraken execution failed ({label}): {proc.stderr or proc.stdout}")
+        results = json.loads(proc.stdout)
+        if len(results) != len(rows):
+            raise RuntimeError("Kraken returned the wrong number of execution results")
+        return results
+
+    def mismatch(result, expected):
+        binding = expected["binding"]
+        value = sum(result["regs"][binding[i]] << (64 * j) for j, i in enumerate(outputs))
+        writes = {binding[i] for i, op in enumerate(adapter.operands(block))
+                  if adapter.operand_kind(op) in ("Out", "InOut")}
+        frames = (result["memory_preserved"] and result["sp_preserved"] and
+                  all(result["regs"][r] == v for r, v in expected["initial"].items() if r not in writes))
+        if value != expected["value"] or value >= expected["modulus"] or not frames:
+            return {"field": expected["field"], "lhs": expected["lhs"], "rhs": expected["rhs"],
+                    "flags": expected["flags"], "expected": expected["value"], "actual": value,
+                    "frame_preserved": frames}
+        return None
+
+    checked = 0
+    for index, (assembly, rows) in enumerate(groups.items()):
+        results = execute(assembly, rows, f"positive-{index}")
+        for result, (_, expected) in zip(results, rows):
+            problem = mismatch(result, expected)
+            if problem:
+                raise AssertionError(f"addition vector failed: {problem}")
+        checked += len(rows)
+
+    canonical_assembly = adapter.render(block, canonical)
+    rows = [(case, expected) for case, expected in groups[canonical_assembly]
+            if expected["lhs"] == WORD - 1 and expected["rhs"] == 1]
+    changed = copy.deepcopy(block)
+    for piece in changed["template"]:
+        if "Text" in piece and re.search(r"\badcs\b", piece["Text"]):
+            piece["Text"] = re.sub(r"\badcs\b", "adds", piece["Text"], count=1)
+            break
+    else:
+        raise AssertionError("carry mutation found no extracted adcs instruction")
+    mutants = {"broken-carry": adapter.render(changed, canonical)}
+    b0 = next(i for i, role in roles.items() if role == ("rhs", 0))
+    b1 = next(i for i, role in roles.items() if role == ("rhs", 1))
+    wrong_binding = canonical.copy()
+    wrong_binding[b0], wrong_binding[b1] = wrong_binding[b1], wrong_binding[b0]
+    mutants["wrong-operand-binding"] = adapter.render(block, wrong_binding)
+    negative = {}
+    for name, assembly in mutants.items():
+        failures = [mismatch(result, expected)
+                    for result, (_, expected) in zip(execute(assembly, rows, name), rows)]
+        failures = [failure for failure in failures if failure]
+        if not failures:
+            raise AssertionError(f"semantic mutation escaped the vector checker: {name}")
+        negative[name] = {"status": "PASS: semantic mismatch detected", "mismatches": len(failures),
+                          "counterexample": failures[0]}
+    report = {"status": "PASS", "scope": "executable addition checks; not universal formal correctness",
+              "positive_cases": checked, "program_allocations": len(groups), "incoming_flag_patterns": 16,
+              "operand_roles_from_mir": {str(i): role for i, role in roles.items()},
+              "output_operand_indices_from_mir": outputs,
+              "field_constants": "read from retained upstream Fields.lean",
+              "artifact_sha256": hashlib.sha256(artifact_path.read_bytes()).hexdigest(),
+              "negative_semantic_checks": negative, "commands": commands,
+              "memory_test": "one nonempty sentinel memory; no universal memory claim",
+              "multiplication": "separate target and executable harness"}
+    (ROOT / "evidence/addition-runtime.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(f"PASS: {checked} addition executions through Kraken, both fields, all16 NZCV patterns; "
+          "carry and operand-binding mutants rejected by semantic checks")
+
+
+if __name__ == "__main__":
+    main()

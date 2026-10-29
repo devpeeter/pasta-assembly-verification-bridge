@@ -1,0 +1,18 @@
+'PastaBridge.AdditionCorrectness.lhs_bounded' depends on axioms: [propext, Quot.sound]
+'PastaBridge.AdditionCorrectness.rhs_bounded' depends on axioms: [propext, Quot.sound]
+'PastaBridge.AdditionCorrectness.execution_frames' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.AdditionCorrectness.addition_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+addition_correct
+  PastaCurves.pallasBase : ∀ (binding : Binding) (state : MachineData),
+  AdditionMachine.Admissible binding →
+    InputContract PastaCurves.pallasBase binding state →
+      ∃ after,
+        AdditionMachine.runWithBinding binding state = Except.ok after ∧
+          Postcondition PastaCurves.pallasBase binding state after
+addition_correct
+  PastaCurves.vestaBase : ∀ (binding : Binding) (state : MachineData),
+  AdditionMachine.Admissible binding →
+    InputContract PastaCurves.vestaBase binding state →
+      ∃ after,
+        AdditionMachine.runWithBinding binding state = Except.ok after ∧
+          Postcondition PastaCurves.vestaBase binding state after

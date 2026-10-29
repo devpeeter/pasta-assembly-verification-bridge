@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-o",
+    "CheckAddition.olean",
+    "CheckAddition.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\bridge",
+  "exit_code": 4294967295,
+  "wall_seconds": 298.074229,
+  "peak_rss_bytes": 4023742464,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\string-decoding-kernel-interrupted.log",
+  "experiment_note": "evidence/EXPERIMENTS.md"
+}

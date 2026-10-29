@@ -1,0 +1,290 @@
+"""Fail-closed adapter from Charon's structured inline assembly to Kraken input.
+
+No instruction stream is stored here. Every emitted instruction comes from the
+retained Charon template; substitution only replaces operand placeholders.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import re
+from pathlib import Path
+from typing import Any
+
+
+class BridgeError(ValueError):
+    pass
+
+
+REGISTERS = tuple(f"x{i}" for i in range(31) if i != 29)
+# Preserve the retained allocation while allowing all thirty generic registers.
+CANONICAL_REGISTERS = tuple(r for r in REGISTERS if r != "x19") + ("x19",)
+OPTION_NAMES = frozenset(("pure", "nomem", "readonly", "preserves_flags",
+                          "noreturn", "nostack", "att_syntax", "may_unwind"))
+SUPPORTED = frozenset(("adds", "adcs", "adc", "subs", "sbcs", "csel",
+                       "mul", "umulh", "lsl", "lsr", "mov"))
+
+
+def digest(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def load_artifact(path: Path | str) -> dict:
+    artifact = json.loads(Path(path).read_text(encoding="utf-8"))
+    if artifact.get("schema_version") != 1:
+        raise BridgeError("unsupported artifact schema")
+    if set(artifact.get("routines", {})) != {"add", "mul"}:
+        raise BridgeError("artifact must contain exactly addition and multiplication")
+    for block in artifact["routines"].values():
+        validate(block)
+    return artifact
+
+
+def _variant(value: Any) -> tuple[str, Any]:
+    if not isinstance(value, dict) or len(value) != 1:
+        raise BridgeError(f"unsupported Charon enum encoding: {value!r}")
+    return next(iter(value.items()))
+
+
+def operands(block: dict) -> list:
+    result = block.get("operands")
+    if isinstance(result, dict) and set(result) == {"vector"}:
+        result = result["vector"]
+    if not isinstance(result, list) or not result:
+        raise BridgeError("unsupported or empty structured operand vector")
+    if any(item is None for item in result):
+        raise BridgeError("operand vector contains a missing entry")
+    return result
+
+
+def operand_kind(operand: dict) -> str:
+    kind, payload = _variant(operand)
+    if kind not in ("In", "Out", "InOut"):
+        raise BridgeError(f"unsupported operand form: {kind}")
+    if not isinstance(payload, dict):
+        raise BridgeError("malformed register operand")
+    if payload.get("reg") != {"Class": "reg"}:
+        raise BridgeError("only the AArch64 reg register class is supported")
+    if kind in ("Out", "InOut") and payload.get("late") is not False:
+        raise BridgeError("lateout and inlateout operands are unsupported")
+    required = {"In": {"reg", "value"},
+                "Out": {"reg", "late", "place"},
+                "InOut": {"reg", "late", "in_value", "out_place"}}[kind]
+    if set(payload) != required:
+        raise BridgeError(f"unexpected fields in {kind} operand")
+    return kind
+
+
+def canonical_binding(block: dict) -> dict[int, str]:
+    count = len(operands(block))
+    if count > len(CANONICAL_REGISTERS):
+        raise BridgeError("too many operands for supported allocation")
+    return dict(enumerate(CANONICAL_REGISTERS[:count]))
+
+
+def validate_binding(block: dict, binding: dict[int, str],
+                     values: dict[int, int] | None = None) -> None:
+    ops = operands(block)
+    if set(binding) != set(range(len(ops))):
+        raise BridgeError("binding must cover exactly every structured operand")
+    for index, register in binding.items():
+        if register not in REGISTERS:
+            raise BridgeError(f"inadmissible AArch64 reg binding: {register}")
+        if values is not None and index in values:
+            if type(values[index]) is not int or not 0 <= values[index] < 2**64:
+                raise BridgeError("input value is not a 64-bit word")
+    for i in range(len(ops)):
+        for j in range(i):
+            if binding[i] != binding[j]:
+                continue
+            if operand_kind(ops[i]) != "In" or operand_kind(ops[j]) != "In":
+                raise BridgeError("early output registers must be pairwise disjoint from all other operands")
+            pi, pj = ops[i]["In"]["value"], ops[j]["In"]["value"]
+            structurally_equal = pi == pj
+            concretely_equal = (values is not None and i in values and j in values
+                                and values[i] == values[j])
+            contradictory = (values is not None and i in values and j in values
+                             and values[i] != values[j])
+            if contradictory or (not structurally_equal and not concretely_equal):
+                raise BridgeError("shared read-only registers require equal input values")
+
+
+def _render(block: dict, binding: dict[int, str]) -> str:
+    pieces = block.get("template")
+    if not isinstance(pieces, list) or not pieces:
+        raise BridgeError("missing Charon assembly template")
+    text = []
+    seen = set()
+    for piece in pieces:
+        kind, payload = _variant(piece)
+        if kind == "Text" and isinstance(payload, str):
+            if re.search(r"\b(?:[xw][0-9]+|sp|wsp|wzr)\b", payload):
+                raise BridgeError("hardcoded physical registers are unsupported except xzr")
+            text.append(payload)
+        elif kind == "Placeholder" and isinstance(payload, dict):
+            if set(payload) != {"operand_id", "modifier", "span"}:
+                raise BridgeError("unsupported placeholder fields")
+            if payload["modifier"] is not None:
+                raise BridgeError("register modifiers are unsupported")
+            index = payload["operand_id"]
+            if type(index) is not int or index not in binding:
+                raise BridgeError("placeholder references a missing operand")
+            seen.add(index)
+            text.append(binding[index])
+        else:
+            raise BridgeError(f"unsupported template piece: {kind}")
+    if seen != set(binding):
+        raise BridgeError("every supported register operand must occur in the template")
+    return "".join(text)
+
+
+def _instruction(line: str, number: int) -> tuple[str, list[str]]:
+    line = line.strip()
+    if not line:
+        return "", []
+    if any(char in line for char in (";", ":", "[", "]", "{", "}", "\x00")):
+        raise BridgeError(f"unsupported instruction syntax at line {number}")
+    match = re.fullmatch(r"([a-z]+)\s+(.+)", line)
+    if match is None or match[1] not in SUPPORTED:
+        raise BridgeError(f"unsupported instruction at line {number}: {line}")
+    opcode = match[1]
+    args = [s.strip() for s in match[2].split(",")]
+    arity = 4 if opcode == "csel" else 2 if opcode == "mov" else 3
+    if len(args) != arity:
+        raise BridgeError(f"unsupported operand count at line {number}")
+    register = lambda x: x == "xzr" or x in REGISTERS
+    if not register(args[0]):
+        raise BridgeError(f"unsupported destination at line {number}")
+    if opcode == "csel":
+        if not all(map(register, args[1:3])) or args[3] not in ("cs", "lo"):
+            raise BridgeError(f"unsupported conditional-select operands at line {number}")
+    elif opcode in ("lsl", "lsr"):
+        if not register(args[1]) or not re.fullmatch(r"#[0-9]+", args[2]):
+            raise BridgeError(f"only #decimal immediate shifts are supported at line {number}")
+        if not 0 <= _immediate(args[2]) < 64:
+            raise BridgeError(f"shift outside 0..63 at line {number}")
+    elif opcode == "mov":
+        if not re.fullmatch(r"#(?:[0-9]+|0x[0-9a-f]+)", args[1]):
+            raise BridgeError(f"only immediate mov is supported at line {number}")
+        if not 0 <= _immediate(args[1]) < 2**64:
+            raise BridgeError(f"mov immediate outside 64 bits at line {number}")
+    else:
+        if not register(args[1]):
+            raise BridgeError(f"unsupported first source at line {number}")
+        if not register(args[2]):
+            if opcode != "subs" or args[2] != "#1":
+                raise BridgeError(f"unsupported second source at line {number}")
+    return opcode, args
+
+
+def _immediate(text: str) -> int:
+    return int(text[1:], 16 if text[1:].startswith("0x") else 10)
+
+
+def validate(block: dict) -> None:
+    if block.get("kind") != "Asm":
+        raise BridgeError("only asm! blocks are supported")
+    options = block.get("options")
+    if not isinstance(options, dict) or set(options) != OPTION_NAMES:
+        raise BridgeError("unknown or missing assembly option")
+    if any(type(value) is not bool for value in options.values()):
+        raise BridgeError("assembly options must be booleans")
+    if {key for key, value in options.items() if value} != {"pure", "nomem", "nostack"}:
+        raise BridgeError("only options(pure, nomem, nostack) are supported")
+    ops = operands(block)
+    kinds = [operand_kind(op) for op in ops]
+    binding = canonical_binding(block)
+    initialized = {binding[i] for i, kind in enumerate(kinds) if kind in ("In", "InOut")}
+    initialized.add("xzr")
+    writable = {binding[i] for i, kind in enumerate(kinds) if kind in ("Out", "InOut")}
+    carry_initialized = False
+    for number, line in enumerate(_render(block, binding).splitlines(), 1):
+        opcode, args = _instruction(line, number)
+        if not opcode:
+            continue
+        if args[0] != "xzr" and args[0] not in writable:
+            raise BridgeError(f"instruction writes a read-only operand at line {number}")
+        if opcode in ("adcs", "adc", "sbcs", "csel") and not carry_initialized:
+            raise BridgeError(f"incoming carry read before initialization at line {number}")
+        sources = args[1:3] if opcode != "mov" else []
+        for source in sources:
+            if not source.startswith("#") and source not in initialized:
+                raise BridgeError(f"uninitialized scratch register read at line {number}")
+        if opcode in ("adds", "adcs", "subs", "sbcs"):
+            carry_initialized = True
+        initialized.add(args[0])
+
+
+def render(block: dict, binding: dict[int, str], values: dict[int, int] | None = None) -> str:
+    validate(block)
+    validate_binding(block, binding, values)
+    return _render(block, binding)
+
+
+def check_projection(name: str, block: dict) -> bytes:
+    """Retain every semantic template/operand field without source spans or MIR values."""
+    template = []
+    for piece in block["template"]:
+        kind, payload = _variant(piece)
+        template.append(piece if kind == "Text" else {"Placeholder": {
+            "operand_id": payload["operand_id"], "modifier": payload["modifier"]}})
+    metadata = []
+    for operand in operands(block):
+        kind, payload = _variant(operand)
+        item = {"reg": payload["reg"]}
+        if kind in ("Out", "InOut"):
+            item["late"] = payload["late"]
+        metadata.append({kind: item})
+    check_view = {"schema_version": 1, "routines": {name: {
+        "kind": block["kind"], "template": template,
+        "operands": metadata, "options": block["options"]}}}
+    return (json.dumps(check_view, separators=(",", ":"), ensure_ascii=False) + "\n").encode("utf-8")
+
+
+def generate(artifact_path: Path) -> dict[str, bytes]:
+    artifact = load_artifact(artifact_path)
+    addition_view = {"schema_version": 1, "routines": {"add": artifact["routines"]["add"]}}
+    addition_bytes = (json.dumps(addition_view, separators=(",", ":"), ensure_ascii=False) + "\n").encode("utf-8")
+    result = {"add-asm.json": addition_bytes}
+    check_bytes = check_projection("add", artifact["routines"]["add"])
+    result["add-check.json"] = check_bytes
+    mul_check_bytes = check_projection("mul", artifact["routines"]["mul"])
+    result["mul-check.json"] = mul_check_bytes
+    manifest = {"schema_version": 1, "artifact_sha256": digest(artifact_path.read_bytes()),
+                "addition_subtree_sha256": digest(addition_bytes),
+                "addition_check_projection_sha256": digest(check_bytes),
+                "multiplication_check_projection_sha256": digest(mul_check_bytes),
+                "addition_check_projection_omits": ["placeholder spans", "MIR operand values and places", "source names and pointers"],
+                "routines": {}}
+    for name, block in artifact["routines"].items():
+        binding = canonical_binding(block)
+        assembly = render(block, binding)
+        encoded = assembly.encode("utf-8")
+        result[f"{name}.S"] = encoded
+        manifest["routines"][name] = {"binding": binding, "assembly_sha256": digest(encoded),
+                                     "instruction_count": len([s for s in assembly.splitlines() if s.strip()])}
+    result["manifest.json"] = (json.dumps(manifest, indent=2, sort_keys=True) + "\n").encode()
+    return result
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--artifact", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args()
+    expected = generate(args.artifact)
+    if args.check:
+        actual = {p.relative_to(args.output).as_posix(): p.read_bytes()
+                  for p in args.output.rglob("*") if p.is_file()}
+        if actual != expected:
+            raise BridgeError("stale generated Kraken input artifacts")
+    else:
+        args.output.mkdir(parents=True, exist_ok=True)
+        for relative, content in expected.items():
+            (args.output / relative).write_bytes(content)
+
+
+if __name__ == "__main__":
+    main()

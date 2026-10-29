@@ -1,0 +1,62 @@
+{
+  "artifact-files.json": {
+    "bytes": 40026,
+    "sha256": "48fb19bc198a8d5219480d32d44fd318115e59c9b597d4725c2dc0f0387fb671"
+  },
+  "artifact.zip": {
+    "bytes": 644966,
+    "sha256": "25df814dd7f350e1af35a783ee0fc9ca412697bb225a0c6e77f8015182357134"
+  },
+  "ci-full.json": {
+    "bytes": 6651,
+    "sha256": "b9f4930d8f91ce67b0a3583c6175f4c31b1ab2b2041a60e0fc6abf610a29f710"
+  },
+  "extraction-provenance-comparison.json": {
+    "bytes": 4922,
+    "sha256": "a83b6e6728cc5e36759ca392661985c8cb6b2a7a48e99163ba48d2e8cba824df"
+  },
+  "full-job.log": {
+    "bytes": 36140,
+    "sha256": "d12fee3e80a7a5af0ac813fce944f924904b545f8e7d9f0e03a1980d316f60cf"
+  },
+  "initial-unit-report.json": {
+    "bytes": 5881,
+    "sha256": "f4dca59ba69cb3c1dd8a696d6d37a463d0f96e922a7b9545a5e63414d7b49a3e"
+  },
+  "metadata.json": {
+    "bytes": 2454,
+    "sha256": "9529d911918ce15dfd1eb213e4e6668002fd587b3ef074cd135cd4c78b3d438c"
+  },
+  "runner-context.json": {
+    "bytes": 212,
+    "sha256": "6f52f3e4d393f0512ab3b1cb4873b9b461674de2b61a72956599c406236e0d20"
+  },
+  "runtime-kraken-UPSTREAM.json": {
+    "bytes": 12327,
+    "sha256": "826ac09d20ed58b2bd7197178c2a95886b3a171d5e22c7b7c67ae1d017cb1cb6"
+  },
+  "runtime-pasta-UPSTREAM.json": {
+    "bytes": 1837,
+    "sha256": "8ab7fe6a81ab0de505cb6c99d7224df8dc5e2c461f4a4105a8867b0620fd0bd3"
+  },
+  "tool-identities.json": {
+    "bytes": 942,
+    "sha256": "88b87b047f0b48ddb98ef4e02ecce792f7564ba9ef857acd19d8a77ad10f11c3"
+  },
+  "verification-exit.json": {
+    "bytes": 619,
+    "sha256": "4b17ce7a1225506f4a913437c461ca7fdfcb549e8793ccff1737e565ef14f098"
+  },
+  "verification-input-seal.json": {
+    "bytes": 102,
+    "sha256": "ef15aaaa41e63d4a83246fd3bca13622265e737d4c4317d166d3e2b746e296ec"
+  },
+  "verification.json": {
+    "bytes": 6524,
+    "sha256": "08a9ba10fed8847d874738b9a9219143ed447b20019dd50b71542be46b63cb07"
+  },
+  "verify-clean.log": {
+    "bytes": 349,
+    "sha256": "d5830931c6f63684cb6d1acb615d4641d17b7f2c1a8db2227a05c0647f387238"
+  }
+}

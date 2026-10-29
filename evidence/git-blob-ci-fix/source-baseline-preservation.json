@@ -1,0 +1,44 @@
+{
+  "scope": "Actual ci_full source-preservation flags and retained input-record hashes; no new proof claim",
+  "runs": {
+    "hosted-full": {
+      "status": "FAIL",
+      "technical_status": "FAIL",
+      "finished_utc": "2026-10-29T16:11:58.639647+00:00",
+      "original_checkout_unchanged": true,
+      "verification_invocation": "INVOKED",
+      "verification_stage_exit_codes": [
+        1
+      ],
+      "source_baseline_record": {
+        "status": "NOT_PRESENT_IN_SELECTED_DIAGNOSTICS"
+      }
+    },
+    "first-full": {
+      "status": "FAIL",
+      "technical_status": "FAIL",
+      "finished_utc": "2026-10-29T16:49:25.110916+00:00",
+      "original_checkout_unchanged": true,
+      "verification_invocation": "NOT_INVOKED",
+      "verification_stage_exit_codes": [],
+      "source_baseline_record": {
+        "path": "work/git-blob-ci/full-attempt/source-inputs.json",
+        "sha256": "adeb9faa6899774c1fb01337962ce52363972bcee776d1ed7d041073a25d4429"
+      }
+    },
+    "short-full": {
+      "status": "PASS",
+      "technical_status": "PASS",
+      "finished_utc": "2026-10-29T17:52:42.412256+00:00",
+      "original_checkout_unchanged": true,
+      "verification_invocation": "INVOKED",
+      "verification_stage_exit_codes": [
+        0
+      ],
+      "source_baseline_record": {
+        "path": "../../pavb-ci-1029/source-inputs.json",
+        "sha256": "adeb9faa6899774c1fb01337962ce52363972bcee776d1ed7d041073a25d4429"
+      }
+    }
+  }
+}

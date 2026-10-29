@@ -1,0 +1,153 @@
+{
+  "status": "PASS",
+  "technical_status": "PASS",
+  "acceptance_status": "PASS",
+  "started_utc": "2026-10-29T16:52:09.068658+00:00",
+  "source": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge",
+  "runtime_project": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+  "stages": [
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/bootstrap.py"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 778.07045,
+      "peak_rss_bytes": 21401600,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\logs\\bootstrap-extraction.log",
+      "name": "bootstrap-extraction",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/install_lean.py"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 543.681706,
+      "peak_rss_bytes": 44572672,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\logs\\install-lean.log",
+      "name": "install-lean",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "proofs/bootstrap.py",
+        "--lean-bin",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 572.442041,
+      "peak_rss_bytes": 15941632,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\logs\\bootstrap-proofs.log",
+      "name": "bootstrap-proofs",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/extract.py"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 82.558426,
+      "peak_rss_bytes": 32948224,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\logs\\fresh-binary-extraction.log",
+      "name": "fresh-binary-extraction",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "bridge/kraken_adapter.py",
+        "--artifact",
+        "artifacts/charon-asm.json",
+        "--output",
+        "generated"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 0.532982,
+      "peak_rss_bytes": 20824064,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\logs\\regenerate-adapter.log",
+      "name": "regenerate-adapter",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/verify.py",
+        "--clean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\outputs\\pasta-assembly-verification-bridge",
+      "exit_code": 0,
+      "wall_seconds": 1641.189238,
+      "peak_rss_bytes": 22958080,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\logs\\verify-clean.log",
+      "name": "verify-clean",
+      "status": "PASS"
+    }
+  ],
+  "environment": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "ImageOS": null,
+    "ImageVersion": null,
+    "GITHUB_SHA": null,
+    "GITHUB_RUN_ID": null,
+    "GITHUB_RUN_ATTEMPT": null,
+    "GITHUB_EVENT_NAME": null
+  },
+  "resources_before": {
+    "disk_total_bytes": 999148220416,
+    "disk_free_bytes": 675240988672,
+    "memory_total_bytes": 16844550144,
+    "memory_available_bytes": 799797248
+  },
+  "scope": "Automated technical verification of register-entry Kraken models; no Rust wrapper load/store or ARM hardware-vector claim.",
+  "tools": {
+    "git": {
+      "path": "C:\\Program Files\\Git\\cmd\\git.exe",
+      "sha256": "37c5725818d602e951ba2563b870d62763322956b73373da4c33a0b566a80bc9"
+    },
+    "rustup": {
+      "path": "C:\\Users\\NewOwner\\.cargo\\bin\\rustup.exe",
+      "sha256": "00f139da614dced87d3c3d4121c43eebdac3c1bf8a5ee86b9d80dfd71c8d70fd"
+    },
+    "cargo": {
+      "path": "C:\\Users\\NewOwner\\.cargo\\bin\\cargo.exe",
+      "sha256": "00f139da614dced87d3c3d4121c43eebdac3c1bf8a5ee86b9d80dfd71c8d70fd"
+    },
+    "lean": {
+      "path": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+      "sha256": "9b216deb50d37c32c829d1efaaa5bafd5560417d382df35a815489e31a31593f"
+    },
+    "lake": {
+      "path": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lake.exe",
+      "sha256": "a5be0113af1c08ba678c1fad07594e1c5de6b871fe0c4144da2998488eba88a1"
+    }
+  },
+  "private_toolchain_directories": {
+    "CARGO_HOME": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\cargo-home",
+    "RUSTUP_HOME": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\rustup-home"
+  },
+  "lean_bin": "C:\\Users\\NewOwner\\Documents\\Codex\\pavb-ci-1029\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin",
+  "original_checkout_unchanged": true,
+  "finished_utc": "2026-10-29T17:52:42.412256+00:00",
+  "resources_after": {
+    "disk_total_bytes": 999148220416,
+    "disk_free_bytes": 667802189824,
+    "memory_total_bytes": 16844550144,
+    "memory_available_bytes": 2095001600
+  }
+}

@@ -1,0 +1,3 @@
+'PastaBridge.WordCorrespondence.addc' depends on axioms: [propext, Quot.sound]
+'PastaBridge.WordCorrespondence.subc' depends on axioms: [propext, Quot.sound]
+'PastaBridge.WordCorrespondence.cselCs' does not depend on any axioms

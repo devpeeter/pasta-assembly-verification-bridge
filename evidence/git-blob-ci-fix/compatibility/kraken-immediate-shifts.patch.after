@@ -1,0 +1,43 @@
+--- a/Kraken/AArch64/Parser.lean
++++ b/Kraken/AArch64/Parser.lean
+@@ -880,6 +880,29 @@
+   let src2 ← parseRegOrZr w
+   pure ⟨w, mk dstW.reg src1 src2⟩
+ 
++/-- Bounded 64-bit immediate aliases use the existing shifted logical operand. -/
++def parseShiftAlias (shift : ShiftType)
++    (mkVariable : {w : Width} → RegOrZr w → RegOrZr w → RegOrZr w → Operation w) :
++    Parser Instr := do
++  let dstW ← parseRegOrZrW
++  let w := dstW.w
++  parseComma
++  let src ← parseRegOrZr w
++  parseComma
++  skipHWs
++  if (← peek!) == '#' then
++    let dst ← checkWidth .W64 w dstW.reg
++    let src ← checkWidth .W64 w src
++    let _ ← pchar '#'
++    let amount ← parseDec
++    if amount < 0 || amount >= 64 then
++      fail "64-bit immediate logical shift must be in [0, 63]"
++    pure ⟨.W64, .ORR_s dst .XZR
++      { reg := src, amount := Int64.ofInt amount, shift := shift }⟩
++  else
++    let amountReg ← parseRegOrZr w
++    pure ⟨w, mkVariable dstW.reg src amountReg⟩
++
+ def parseFourRegs
+     (mk : {w : Width} → RegOrZr w → RegOrZr w → RegOrZr w → RegOrZr w → Operation w) : Parser Instr := do
+   let dstW ← parseRegOrZrW
+@@ -1212,8 +1235,8 @@
+       let src2 ← parseShiftRegExpr w true
+       pure ⟨w, .ANDS_s (.low .XZR w) src1W.reg src2⟩
+ 
+-  | "lsl"   => parseThreeRegs .LSLV -- Alias of LSLV
+-  | "lsr"   => parseThreeRegs .LSRV -- Alias of LSRV
++  | "lsl"   => parseShiftAlias .LSL .LSLV
++  | "lsr"   => parseShiftAlias .LSR .LSRV
+   | "asr"   => parseThreeRegs .ASRV -- Alias of ASRV
+   | "ror"   => parseThreeRegs .RORV -- Alias of RORV
+   | "lslv"  => parseThreeRegs .LSLV

@@ -1,0 +1,5 @@
+'PastaBridge.MulStep.memory_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.MulStep.stack_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.MulStep.register_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.MulStep.readonly_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.MulStep.interp_of_step' depends on axioms: [propext, Classical.choice, Quot.sound]

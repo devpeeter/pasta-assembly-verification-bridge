@@ -1,0 +1,9 @@
+test_overlay_changes_only_two_identifier_occurrences_and_preserves_snapshot (test_kraken_compat.KrakenCompatibilityTests.test_overlay_changes_only_two_identifier_occurrences_and_preserves_snapshot) ... ok
+test_tampered_pinned_patch_hash_rejected (test_kraken_compat.KrakenCompatibilityTests.test_tampered_pinned_patch_hash_rejected) ... ok
+test_tampered_retained_patch_rejected (test_kraken_compat.KrakenCompatibilityTests.test_tampered_retained_patch_rejected) ... ok
+test_unexpected_source_pattern_rejected (test_kraken_compat.KrakenCompatibilityTests.test_unexpected_source_pattern_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 15.277s
+
+OK

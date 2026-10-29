@@ -1,0 +1,22 @@
+{
+  "git": {
+    "path": "C:\\Program Files\\Git\\bin\\git.exe",
+    "sha256": "54bda91c773c6bba2b970424423cfcb80552d92dc6967d766f98931fe1251a54"
+  },
+  "rustup": {
+    "path": "C:\\Users\\runneradmin\\.cargo\\bin\\rustup.exe",
+    "sha256": "00f139da614dced87d3c3d4121c43eebdac3c1bf8a5ee86b9d80dfd71c8d70fd"
+  },
+  "cargo": {
+    "path": "C:\\Users\\runneradmin\\.cargo\\bin\\cargo.exe",
+    "sha256": "00f139da614dced87d3c3d4121c43eebdac3c1bf8a5ee86b9d80dfd71c8d70fd"
+  },
+  "lean": {
+    "path": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "sha256": "9b216deb50d37c32c829d1efaaa5bafd5560417d382df35a815489e31a31593f"
+  },
+  "lake": {
+    "path": "D:\\a\\_temp\\pasta-full-verification\\full\\workspace\\work\\toolchains\\lean-4.31.0-windows\\bin\\lake.exe",
+    "sha256": "a5be0113af1c08ba678c1fad07594e1c5de6b871fe0c4144da2998488eba88a1"
+  }
+}

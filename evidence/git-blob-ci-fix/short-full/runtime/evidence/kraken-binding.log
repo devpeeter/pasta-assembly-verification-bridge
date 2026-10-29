@@ -1,0 +1,5 @@
+'PastaBridge.KrakenBinding.get_set' does not depend on any axioms
+'PastaBridge.KrakenBinding.set_sp' does not depend on any axioms
+'PastaBridge.KrakenBinding.get_set_binding' depends on axioms: [propext]
+'PastaBridge.KrakenBinding.shared_input_values' does not depend on any axioms
+'PastaBridge.KrakenBinding.readonly_sharing_admissible' does not depend on any axioms

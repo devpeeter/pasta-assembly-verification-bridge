@@ -48,8 +48,9 @@ def parseShiftAlias (shift : ShiftType)
 
 def parser_alias_source(before: bytes) -> bytes:
     """Apply only the reviewed helper insertion and two dispatch substitutions."""
-    newline = b"\r\n" if b"\r\n" in before else b"\n"
-    source = before.replace(b"\r\n", b"\n")
+    if b"\r" in before:
+        raise ValueError("Kraken compatibility inputs must use exact LF Git-blob bytes")
+    source = before
     anchor = b"\ndef parseFourRegs\n"
     if source.count(anchor) != 1 or b"parseShiftAlias" in source:
         raise ValueError("unexpected Kraken parser insertion pattern")
@@ -60,11 +61,13 @@ def parser_alias_source(before: bytes) -> bytes:
         if source.count(old) != 1:
             raise ValueError("unexpected Kraken immediate-shift dispatch pattern")
         source = source.replace(old, new)
-    return source.replace(b"\n", newline)
+    return source
 
 
 def zero_destination_source(before: bytes) -> bytes:
     """Permit a zero destination in the existing immediate arithmetic branch."""
+    if b"\r" in before:
+        raise ValueError("Kraken compatibility inputs must use exact LF Git-blob bytes")
     start = before.index(b"def parseArithFlags ")
     end = before.index(b"def parseCompare", start)
     body = before[start:end]
@@ -81,6 +84,8 @@ def expected_sources() -> tuple[dict[str, bytes], dict]:
     manifest = json.loads((vendor / "UPSTREAM.json").read_text(encoding="utf-8"))
     sources = {name: (vendor / name).read_bytes() for name in manifest["files"]}
     before = sources[RELATIVE]
+    if b"\r" in before:
+        raise ValueError("Kraken compatibility inputs must use exact LF Git-blob bytes")
     if before.count(b"allSome") != 2 or b"krakenAllSome" in before:
         raise ValueError("unexpected Kraken helper definition or use; compatibility patch rejected")
     after = before.replace(b"allSome", b"krakenAllSome")

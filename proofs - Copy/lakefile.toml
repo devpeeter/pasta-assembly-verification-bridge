@@ -1,0 +1,126 @@
+name = "PastaAssemblyVerificationBridge"
+version = "0.1.0"
+defaultTargets = ["Audit"]
+
+[leanOptions]
+autoImplicit = false
+
+[[require]]
+name = "PastaBridgeArithmetic"
+path = "../vendor/pasta/lean"
+
+[[require]]
+name = "Kraken"
+path = "../../../work/kraken-compat"
+
+[[require]]
+name = "PastaAssemblyBridge"
+path = "../bridge"
+
+[[lean_lib]]
+name = "ArithmeticAudit"
+
+[[lean_lib]]
+name = "Audit"
+
+[[lean_lib]]
+name = "KrakenWord"
+
+[[lean_lib]]
+name = "KrakenBinding"
+
+[[lean_lib]]
+name = "WordCorrespondence"
+
+[[lean_lib]]
+name = "AdditionMachine"
+
+[[lean_lib]]
+name = "AdditionStep"
+
+[[lean_lib]]
+name = "AdditionNat"
+
+[[lean_lib]]
+name = "AdditionNatSequence"
+
+[[lean_lib]]
+name = "AdditionNatData"
+
+[[lean_lib]]
+name = "AdditionNatObservation"
+
+[[lean_lib]]
+name = "AdditionParametricBase"
+
+[[lean_lib]]
+name = "AdditionParametricModel"
+
+[[lean_lib]]
+name = "AdditionNatDataModel"
+
+[[lean_lib]]
+name = "AdditionNatLiftBase"
+
+[[lean_lib]]
+name = "AdditionNatModel"
+
+[[lean_lib]]
+name = "AdditionNatLift"
+
+[[lean_lib]]
+name = "BindingArtifact"
+
+[[lean_lib]]
+name = "AdditionCorrectness"
+
+[[lean_lib]]
+name = "MulWord"
+
+[[lean_lib]]
+name = "MulStep"
+
+[[lean_lib]]
+name = "MulMachine"
+
+[[lean_lib]]
+name = "MulProgramData"
+
+[[lean_lib]]
+name = "MulSequenceFrame"
+
+[[lean_lib]]
+name = "MulNat"
+
+[[lean_lib]]
+name = "MulNatSequence"
+
+[[lean_lib]]
+name = "MulParametricBase"
+
+[[lean_lib]]
+name = "MulParametricRounds"
+
+[[lean_lib]]
+name = "MulParametricModel"
+
+[[lean_lib]]
+name = "MulNatLift"
+
+[[lean_lib]]
+name = "MulFormatting"
+
+[[lean_lib]]
+name = "MulPieceFormatting"
+
+[[lean_lib]]
+name = "MulBindingArtifact"
+
+[[lean_lib]]
+name = "MulCertificate"
+
+[[lean_lib]]
+name = "MulCorrectness"
+
+[[lean_lib]]
+name = "MulAudit"
