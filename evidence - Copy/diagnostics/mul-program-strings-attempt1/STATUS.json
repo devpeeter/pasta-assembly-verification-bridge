@@ -1,6 +1,0 @@
-{
-  "status": "INTERRUPTED",
-  "accepted": false,
-  "reason": "Controlled interruption of whole-string normalization; replacing with character-list observation laws. No declaration-phase markers in this attempt, so the exact stalled declaration is unknown.",
-  "source_sha256": "8a41d369c29d6de4294f0182a4f8154ecdee5432a74777bd1cfc6ab27c028c61"
-}

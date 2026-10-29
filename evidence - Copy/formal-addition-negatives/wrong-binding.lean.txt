@@ -1,3 +1,0 @@
-import FormalAdditionNegatives
-open PastaBridge.FormalAdditionNegatives
-example : bindingResult = expected := by decide +kernel

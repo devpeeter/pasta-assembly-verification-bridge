@@ -1,3 +1,0 @@
-'PastaBridge.AdditionNatData.retained_data_readback' depends on axioms: [propext]
-'PastaBridge.AdditionNatData.sequence_erase' does not depend on any axioms
-'PastaBridge.AdditionNatData.retained_sequence' depends on axioms: [propext]

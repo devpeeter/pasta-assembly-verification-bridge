@@ -1,2 +1,0 @@
-'PastaAssemblyBridge.Arithmetic.addition' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PastaAssemblyBridge.Arithmetic.multiplication' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,3 +1,0 @@
-C:\Users\NewOwner\Documents\Codex\2026-10-22\build-a-working-technical-mvp-of\work\formal-addition-negative-sources\wrong-binding.lean:3:41: error: Tactic `decide` proved that the proposition
-  bindingResult = expected
-is false

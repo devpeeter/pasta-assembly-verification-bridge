@@ -1,4 +1,0 @@
-'PastaBridge.StringBytes.injective' depends on axioms: [propext]
-'PastaBridge.StringBytes.append' depends on axioms: [propext]
-'PastaBridge.StringBytes.join' depends on axioms: [propext, Quot.sound]
-'PastaBridge.StringBytes.intercalate' depends on axioms: [propext, Quot.sound]

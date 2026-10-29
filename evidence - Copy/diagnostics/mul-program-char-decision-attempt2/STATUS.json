@@ -1,6 +1,0 @@
-{
-  "status": "INTERRUPTED",
-  "accepted": false,
-  "reason": "Controlled interruption of char-list decision strategy with increasing memory; next check uses phase markers and reflexivity. Exact slow declaration is unknown because this attempt had no phase markers.",
-  "source_sha256": "ff3f5080e1fcd7b4f16cbcd796b5a7ec932b81d10f557be999192242182d90f2"
-}

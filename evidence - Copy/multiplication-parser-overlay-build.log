@@ -1,4 +1,0 @@
-⚠ [5/6] Replayed Kraken.AArch64.Semantics
-warning: Kraken/AArch64/Semantics.lean:717:0: Definition `Executable.labels` of class type must be marked with `@[reducible]` or `@[implicit_reducible]`
-✔ [6/6] Built Kraken.AArch64.Parser (21s)
-Build completed successfully (6 jobs).

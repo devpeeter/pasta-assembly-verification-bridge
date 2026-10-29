@@ -1,7 +1,0 @@
-{
-  "process_id": 4284,
-  "command": "python scripts/verify.py --clean",
-  "exit_code": 2,
-  "observed_utc": "2026-10-23T01:13:39.172309+00:00",
-  "method": "Windows OpenProcess + WaitForSingleObject + GetExitCodeProcess"
-}

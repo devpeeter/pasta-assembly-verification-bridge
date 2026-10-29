@@ -1,3 +1,0 @@
-'PastaBridge.MulParametric.generic_model_of_rounds' depends on axioms: [propext, Quot.sound]
-'PastaBridge.MulParametric.generic_model' depends on axioms: [propext, Quot.sound]
-'PastaBridge.MulParametric.retained_data_model' depends on axioms: [propext, Quot.sound]

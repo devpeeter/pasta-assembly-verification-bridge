@@ -1,5 +1,0 @@
-'PastaBridge.AdditionParametric.model_specializes' does not depend on any axioms
-'PastaBridge.AdditionParametric.transition_specializes' does not depend on any axioms
-'PastaBridge.AdditionParametric.sequence_specializes' does not depend on any axioms
-'PastaBridge.AdditionParametric.generic_model' depends on axioms: [propext]
-'PastaBridge.AdditionParametric.retained_data_model' depends on axioms: [propext]

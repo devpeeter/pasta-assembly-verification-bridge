@@ -1,7 +1,0 @@
-'PastaBridge.multiplication_canonical_binding_allowed' does not depend on any axioms
-'PastaBridge.multiplication_artifact_matches_retained_program' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PastaBridge.multiplication_retained_representation_certificate' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

@@ -1,3 +1,0 @@
-'PastaBridge.MulParametric.firstRound_model' depends on axioms: [propext]
-'PastaBridge.MulParametric.secondRound_model' depends on axioms: [propext]
-'PastaBridge.MulParametric.thirdRound_model' depends on axioms: [propext]

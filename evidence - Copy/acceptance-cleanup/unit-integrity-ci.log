@@ -1,6 +1,0 @@
-PASS: unit-tests
-PASS: source-integrity
-PASS: generated-current
-PASS: mul-json-certificate-current
-PASS: source-manifest
-PASS: CI unit/artifact checks; C:\Users\NewOwner\Documents\Codex\2026-10-22\build-a-working-technical-mvp-of\work\cleanup\validation\unit-integrity\report.json

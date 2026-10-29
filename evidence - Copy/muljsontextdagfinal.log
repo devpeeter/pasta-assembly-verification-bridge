@@ -1,3 +1,0 @@
-'PastaBridge.MulJsonTextDag.retained_value_readback' does not depend on any axioms
-'PastaBridge.MulJsonTextDag.retained_bytes_readback' depends on axioms: [propext, Quot.sound]
-'PastaBridge.MulJsonTextDag.retained_encoding' depends on axioms: [propext, Classical.choice, Quot.sound]

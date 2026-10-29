@@ -1,8 +1,0 @@
-NormalizationProbe.lean:30:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
-  ?x <<< 0
-in the target expression
-  s.X4.toBitVec <<< 0 = s.X4.toBitVec
-
-s : Reg64s
-hz : (Int64.toInt 0).toNat = 0
-⊢ s.X4.toBitVec <<< 0 = s.X4.toBitVec

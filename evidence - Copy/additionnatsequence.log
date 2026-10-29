@@ -1,4 +1,0 @@
-'PastaBridge.AdditionNat.bind_project' does not depend on any axioms
-'PastaBridge.AdditionNat.machine_sequence_nil' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PastaBridge.AdditionNat.machine_sequence_cons' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PastaBridge.AdditionNat.sequence_project' depends on axioms: [propext, Classical.choice, Quot.sound]

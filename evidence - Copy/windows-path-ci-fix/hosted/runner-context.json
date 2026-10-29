@@ -1,8 +1,0 @@
-{
-  "run_id": "40814585440",
-  "run_attempt": "1",
-  "commit": "f5b61dbf85d646f15eb01f2c50ae0e977a703fec",
-  "event": "push",
-  "image": "win25-vs2026",
-  "image_version": "20261021.278.1"
-}

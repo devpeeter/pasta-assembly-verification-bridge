@@ -1,2 +1,0 @@
-'PastaBridge.AdditionNat.map_comp' does not depend on any axioms
-'PastaBridge.AdditionNat.all_bindings_model_of' depends on axioms: [propext, Classical.choice, Quot.sound]

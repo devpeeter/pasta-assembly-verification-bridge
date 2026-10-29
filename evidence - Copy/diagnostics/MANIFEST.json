@@ -1,8 +1,0 @@
-{
-  "status": "FAILED_DIAGNOSTIC_NOT_A_TARGET_THEOREM",
-  "files": {
-    "AdditionCanonical.failed.lean.txt": "e8dd448864822001120489931158a7d3304ae8e0aaf15efdd3b96f383599477d",
-    "canonical-attempt-6.log": "9998c146d692a9657fb04998aa816557d8b2dc6c926d25ba94f8202b4967f7b6",
-    "canonical-attempt-6.json": "4d45154c53b6f399a1eb25b1e4455001178f5fbccaceedd5e4cfd1809f47eedd"
-  }
-}

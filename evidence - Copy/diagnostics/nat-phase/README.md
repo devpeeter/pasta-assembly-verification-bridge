@@ -1,9 +1,0 @@
-This is an unfinished diagnostic attempt, not a delivered correctness theorem. Its process was interrupted with exit status 2; no accepted model theorem or object file resulted.
-
-The exact source, process arguments, working directory and measured resource record are retained. The two marker files were written at 2026-10-23 12:13:23.396 and 12:13:23.861 EDT. They establish that `evalTactic` returned after about 0.465 seconds. The probe did not record the remaining-goal count. Therefore these observations do not distinguish unsolved-goal reporting from kernel/declaration conversion after the tactic returned. No after-declaration marker was written before interruption.
-
-The source imports only the checked Data and Observation prefixes plus the retained upstream arithmetic model. Its instruction view is algorithmically quoted from the actual decoded retained program and has a separately checked readback certificate; this file contains no transcribed instruction list. It uses the same pinned Lean 4.31.0 and package environment as the main verification command. To reproduce the exact attempted process, restore the archived source under the filename and working directory recorded in `attempt.json`, after building the checked prefix modules with the main verification command. Stop an uncompleted process without treating it as a successful proof check.
-
-The standalone `MarkerTiny.lean.txt` probe exited zero and established availability of the PP options and direct IO actions used here. Marker writes are instrumentation only. They do not establish theorem validity.
-
-Subsequent work uses arithmetic-function parameters to prevent reduction of numeric primitive implementations during structural model comparison. Consult the current RESULTS.md for the actual endpoint status; this diagnostic does not determine it.

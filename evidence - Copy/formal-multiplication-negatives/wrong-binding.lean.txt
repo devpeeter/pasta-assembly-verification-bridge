@@ -1,3 +1,0 @@
-import FormalMulNegatives
-open PastaBridge.FormalMulNegatives
-example : bindingResult = bindingExpected := by decide +kernel

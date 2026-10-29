@@ -1,7 +1,0 @@
-'PastaBridge.KrakenWord.csel_cs_value' does not depend on any axioms
-'PastaBridge.KrakenWord.sub_value' depends on axioms: [propext, Quot.sound]
-'PastaBridge.KrakenWord.sub_carry' depends on axioms: [propext, Quot.sound]
-'PastaBridge.KrakenWord.subs_carry' depends on axioms: [propext, Quot.sound]
-'PastaBridge.KrakenWord.adds_carry' depends on axioms: [propext, Quot.sound]
-'PastaBridge.KrakenWord.add_value' depends on axioms: [propext, Quot.sound]
-'PastaBridge.KrakenWord.add_carry' depends on axioms: [propext, Quot.sound]

@@ -1,5 +1,0 @@
-'PastaBridge.retained_artifact_chars_readback' does not depend on any axioms
-'PastaBridge.addition_template_matches_retained_assembly' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PastaBridge.addition_program_serializes_to_retained_assembly' depends on axioms: [propext]
-'PastaBridge.addition_artifact_matches_retained_program' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PastaBridge.addition_operand_metadata_matches' depends on axioms: [propext, Classical.choice, Quot.sound]

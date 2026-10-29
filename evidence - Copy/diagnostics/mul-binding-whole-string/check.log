@@ -1,4 +1,0 @@
-MulBindingArtifact.lean:31:2: error: `simp` failed: maximum number of steps exceeded
-'PastaBridge.MulBindingArtifact.bound_program_matches_template' depends on axioms: [propext, sorryAx, Quot.sound]
-'PastaBridge.MulBindingArtifact.written_matches_checked_modes' depends on axioms: [propext]
-'PastaBridge.MulBindingArtifact.retained_written_mask' depends on axioms: [propext, Quot.sound]
