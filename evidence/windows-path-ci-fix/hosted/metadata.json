@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "retrieval_scope": "Read-only public GitHub Actions evidence; no repository mutation, push, or workflow dispatch performed.",
+  "repository": "devpeeter/pasta-assembly-verification-bridge",
+  "head_branch": "main",
+  "head_sha": "f5b61dbf85d646f15eb01f2c50ae0e977a703fec",
+  "tree_sha": "d5985aeca8ce16abb45a04aae770c6ae1dbe2391",
+  "remote_agents_files": [],
+  "unit_run": {
+    "id": 40814585440,
+    "url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40814585440",
+    "event": "push",
+    "conclusion": "failure",
+    "job_id": 123252576310,
+    "artifact_id": 12871757829,
+    "artifact_name": "unit-integrity-40814585440-1",
+    "artifact_sha256": "a8f66290e363c98a4d6feae67417d954760bdf8d6462740834c708ab502c9cbd",
+    "artifact_size_bytes": 6659
+  },
+  "full_run": {
+    "id": 40815070636,
+    "url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40815070636",
+    "event": "workflow_dispatch",
+    "conclusion": "failure",
+    "job_id": 123254111126,
+    "bootstrap_and_full_proofs": "skipped after unit gate failure"
+  },
+  "failure": {
+    "suite_tests": 95,
+    "failed_tests": 1,
+    "test": "test_ci_full.FullCITests.test_complete_isolated_orchestration_and_exact_command",
+    "file": "tests/test_ci_full.py",
+    "line": 162,
+    "assertion": "self.assertEqual(cwd, project)",
+    "actual_path_prefix": "C:/Users/runneradmin/AppData/Local/Temp/",
+    "expected_path_prefix": "C:/Users/RUNNER~1/AppData/Local/Temp/",
+    "diagnosis": "The test compares a resolved path with an unnormalized Windows 8.3 alias. This is a synthetic orchestration test failure; the full toolchain/proof command did not run."
+  },
+  "permissions": {
+    "pull": true,
+    "push": false,
+    "admin": false,
+    "source": "Root agent's GitHub get_repo structured permissions result; collaborator-permission endpoint independently returned 403 Resource not accessible by integration."
+  }
+}

@@ -82,6 +82,9 @@ class FakeExecutor:
         log.parent.mkdir(parents=True, exist_ok=True)
         log.write_text('mock expensive command; no verification claim\n', encoding='utf-8')
         stage = Path(args[1]).name
+        if stage == 'bootstrap.py':
+            for name in ('CARGO_HOME', 'RUSTUP_HOME'):
+                Path(env[name]).mkdir(parents=True, exist_ok=True)
         if stage == 'install_lean.py':
             binary = cwd.parent.parent / 'work/toolchains/lean-4.31.0-test/bin'
             binary.mkdir(parents=True)
@@ -148,6 +151,16 @@ class FullCITests(unittest.TestCase):
         self.assertEqual(ci_full.manifest(self.source), self.original)
         return report, executor
 
+    def assert_runtime_directories(self, cwd, env, project):
+        # The runner may expand a Windows temporary directory's 8.3 spelling.
+        # Compare existing directory identities while preserving each role.
+        self.assertTrue(Path(cwd).samefile(project), 'verification cwd is not the staged project')
+        work = project.parent.parent / 'work'
+        self.assertTrue(Path(env['CARGO_HOME']).samefile(work / 'cargo-home'),
+                        'Cargo home is not the private workspace directory')
+        self.assertTrue(Path(env['RUSTUP_HOME']).samefile(work / 'rustup-home'),
+                        'Rustup home is not the private workspace directory')
+
     def test_complete_isolated_orchestration_and_exact_command(self):
         report, executor = self.run_fixture()
         self.assertEqual(report['technical_status'], 'PASS')
@@ -159,9 +172,7 @@ class FullCITests(unittest.TestCase):
             self.assertFalse((project / name).exists())
         args, cwd, env = executor.calls[-1]
         self.assertEqual(args, [sys.executable, 'scripts/verify.py', '--clean'])
-        self.assertEqual(cwd, project)
-        self.assertEqual(env['CARGO_HOME'], str(self.output / 'workspace/work/cargo-home'))
-        self.assertEqual(env['RUSTUP_HOME'], str(self.output / 'workspace/work/rustup-home'))
+        self.assert_runtime_directories(cwd, env, project)
         proof_bootstrap = executor.calls[2][0]
         self.assertTrue(Path(proof_bootstrap[-1]).is_absolute())
         self.assertEqual(ci_full.read_json(self.output / 'verification-input-seal.json')['status'], 'PASS')
@@ -173,6 +184,35 @@ class FullCITests(unittest.TestCase):
             self.assertFalse({'human_review_status', 'independent_specialist_acceptance',
                               'independent_specialist_review', 'review_required', 'outstanding_acceptance'} & item.keys())
             self.assertNotIn('OUTSTANDING', json.dumps(item))
+
+    def test_directory_identity_accepts_aliases_and_rejects_other_directories(self):
+        report, executor = self.run_fixture()
+        self.assertEqual(report['technical_status'], 'PASS')
+        project = self.output / 'workspace/outputs/pasta-assembly-verification-bridge'
+        _, cwd, env = executor.calls[-1]
+
+        def alternate(directory):
+            # This works without symlink privileges or Windows 8.3 support.
+            # Both spellings exist, differ textually, and identify one directory.
+            child = Path(directory) / 'existing-alias-anchor'
+            child.mkdir()
+            return child / '..'
+
+        equivalent_cwd = alternate(cwd)
+        equivalent_env = {**env, **{name: str(alternate(env[name]))
+                                   for name in ('CARGO_HOME', 'RUSTUP_HOME')}}
+        self.assertNotEqual(equivalent_cwd, Path(cwd))
+        self.assertNotEqual(equivalent_env['CARGO_HOME'], env['CARGO_HOME'])
+        self.assertNotEqual(equivalent_env['RUSTUP_HOME'], env['RUSTUP_HOME'])
+        self.assert_runtime_directories(equivalent_cwd, equivalent_env, project)
+
+        other = self.top / 'different-directory'
+        other.mkdir()
+        with self.assertRaisesRegex(AssertionError, 'staged project'):
+            self.assert_runtime_directories(other, equivalent_env, project)
+        for name in ('CARGO_HOME', 'RUSTUP_HOME'):
+            with self.subTest(role=name), self.assertRaisesRegex(AssertionError, 'private workspace'):
+                self.assert_runtime_directories(equivalent_cwd, {**equivalent_env, name: str(other)}, project)
 
     def test_missing_tools_fail_without_bootstrap(self):
         report = ci_full.run_full(self.source, self.output, executor=lambda *args: self.fail('must not execute'), find_tool=lambda _: None)

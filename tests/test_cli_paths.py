@@ -70,20 +70,21 @@ class CliPathTests(unittest.TestCase):
             with self.subTest(caller=caller):
                 seen = []
                 overlay = self.work / "kraken-compat"
+                overlay.mkdir(exist_ok=True)
 
                 def tool_path(command, cwd):
                     path = Path(command[0])
                     if path.name in (self.lean.name, self.lake.name):
                         self.assertTrue(path.is_absolute(), command)
-                        self.assertEqual(path, self.tools / path.name)
-                        self.assertNotEqual(Path(cwd or caller), caller)
+                        self.assertTrue(path.samefile(self.tools / path.name), command)
+                        self.assertFalse(Path(cwd or caller).samefile(caller))
                         seen.append(path.name)
 
                 def measured(command, *, cwd, log, env=None):
                     if "--lean-bin" in command:
                         forwarded = Path(command[command.index("--lean-bin") + 1])
                         self.assertTrue(forwarded.is_absolute(), command)
-                        self.assertEqual(forwarded, self.tools)
+                        self.assertTrue(forwarded.samefile(self.tools), command)
                         seen.append("forwarded")
                     if Path(command[0]).name == self.lean.name:
                         tool_path(command, cwd)
@@ -96,7 +97,7 @@ class CliPathTests(unittest.TestCase):
 
                 def output(command, **kwargs):
                     if Path(command[0]).name == self.lean.name:
-                        self.assertEqual(Path(command[0]), self.lean)
+                        self.assertTrue(Path(command[0]).samefile(self.lean), command)
                         return f"Lean (version {self.release['version']}, commit {self.release['compiler_commit']})"
                     if command[:3] == ["git", "rev-parse", "HEAD"]:
                         return self.pins["kraken"]["revision"]
@@ -132,9 +133,9 @@ class CliPathTests(unittest.TestCase):
                     child_cwd = self.package / "proofs"
 
                     def output(command, *, cwd, **kwargs):
-                        self.assertEqual(Path(command[0]), self.lake)
+                        self.assertTrue(Path(command[0]).samefile(self.lake), command)
                         self.assertTrue(Path(command[0]).is_absolute())
-                        self.assertEqual(cwd, child_cwd)
+                        self.assertTrue(Path(cwd).samefile(child_cwd))
                         return '{"LEAN_PATH":"fixture"}'
 
                     with patch.object(subprocess, "check_output", side_effect=output):
@@ -153,10 +154,10 @@ class CliPathTests(unittest.TestCase):
 
                     def output(command, **kwargs):
                         expected = self.lean if module is proof_bootstrap else self.lake
-                        self.assertEqual(Path(command[0]), expected)
+                        self.assertTrue(Path(command[0]).samefile(expected), command)
                         self.assertTrue(Path(command[0]).is_absolute())
                         if module is arithmetic_builder:
-                            self.assertEqual(kwargs["cwd"], self.package / "proofs")
+                            self.assertTrue(Path(kwargs["cwd"]).samefile(self.package / "proofs"))
                         raise ReachedToolInvocation
 
                     with patch.object(module, "ROOT", self.package / "proofs"), \
@@ -166,7 +167,7 @@ class CliPathTests(unittest.TestCase):
                             module.main()
 
     def test_bootstrap_has_one_fixed_workspace_and_rejects_work_override(self):
-        self.assertEqual(source_bootstrap.DEFAULT_WORK.resolve(), kraken_compat.WORK.resolve())
+        self.assertTrue(source_bootstrap.DEFAULT_WORK.samefile(kraken_compat.WORK))
         with patch.object(sys, "argv", ["bootstrap.py", "--work", "somewhere-else"]), \
                 redirect_stderr(io.StringIO()) as errors, \
                 patch.object(source_bootstrap, "checkout") as checkout:
@@ -190,8 +191,10 @@ class CliPathTests(unittest.TestCase):
                 patch.object(source_bootstrap, "checkout", side_effect=lambda work, name, pin: work / name) as checkout, \
                 patch.object(kraken_compat, "prepare") as prepare:
             source_bootstrap.main()
-        self.assertEqual([(call.args[0], call.args[1]) for call in checkout.call_args_list],
-                         [(self.work, name) for name in ("pasta_curves", "charon", "aeneas", "kraken")])
+        self.assertEqual([call.args[1] for call in checkout.call_args_list],
+                         ["pasta_curves", "charon", "aeneas", "kraken"])
+        for call in checkout.call_args_list:
+            self.assertTrue(Path(call.args[0]).samefile(self.work))
         prepare.assert_called_once_with()
 
 

@@ -17,14 +17,15 @@
   },
   "local_validation": {
     "status": "PASS",
-    "record": "evidence/acceptance-cleanup/summary.json",
-    "python_tests": 95,
+    "record": "evidence/windows-path-ci-fix/summary.json",
+    "python_tests": 97,
     "unit_integrity_stages": 5
   },
   "current_revision_full_clean_run": "NOT_RUN",
   "github_workflows": {
     "unit_integrity": "NOT_RUN",
-    "full_verification": "NOT_RUN"
+    "full_verification": "NOT_RUN",
+    "scope": "Corrected local revision; prior hosted attempts failed the path-alias unit test and are recorded separately."
   },
   "historical_implementer_run": {
     "date": "2026-10-23",
@@ -42,5 +43,17 @@
     "MIR destination places"
   ],
   "vectors": "Kraken model execution vectors through Lean on the host; no original assembly execution on ARM hardware.",
-  "historical_record_policy": "Dated reports and logs retain their original results and terminology; current acceptance is based on the automated technical criteria here."
+  "historical_record_policy": "Dated reports and logs retain their original results and terminology; current acceptance is based on the automated technical criteria here.",
+  "prior_hosted_attempts": {
+    "source_commit": "f5b61dbf85d646f15eb01f2c50ae0e977a703fec",
+    "unit": {
+      "status": "FAIL",
+      "url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40814585440"
+    },
+    "full": {
+      "status": "FAIL",
+      "proof_execution": "NOT_RUN",
+      "url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40815070636"
+    }
+  }
 }

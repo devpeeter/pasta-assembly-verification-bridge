@@ -1,0 +1,30 @@
+{
+  "full-job.log": {
+    "bytes": 23567,
+    "sha256": "a86c6427413006d70ddae8df153c6e2d57dbffc31ab248878349a1b6502eb3fe"
+  },
+  "metadata.json": {
+    "bytes": 1975,
+    "sha256": "50ee6b8310a843d9b557425b2b6c0a01522063ad2a0c57001f78187a1e76bd77"
+  },
+  "runner-context.json": {
+    "bytes": 199,
+    "sha256": "8cfb5ae9825e88bb146e3da2b646f47a1e7c3ed8ddcdce442502fb5523642c85"
+  },
+  "unit-artifact.zip": {
+    "bytes": 6659,
+    "sha256": "a8f66290e363c98a4d6feae67417d954760bdf8d6462740834c708ab502c9cbd"
+  },
+  "unit-job.log": {
+    "bytes": 23241,
+    "sha256": "99c3a2c08c3d4a57fcc277973ad7ad1d21fe30831614506480cec9aff2834aa2"
+  },
+  "unit-report.json": {
+    "bytes": 5896,
+    "sha256": "61a93010f388d67cf3c7b3badb7fc3c5e5f289050c30974dd71fd50b9963f3d1"
+  },
+  "unit-tests.log": {
+    "bytes": 17003,
+    "sha256": "678111592732b69b3fc2785eda941b7628aed329703aeec1aba8753faba86314"
+  }
+}

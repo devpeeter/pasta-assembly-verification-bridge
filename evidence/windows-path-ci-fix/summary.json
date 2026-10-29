@@ -1,0 +1,67 @@
+{
+  "client_date": "2026-10-29",
+  "local_status": "PASS",
+  "python_suite": {
+    "tests": 97,
+    "reported_seconds": 1618.557,
+    "skips": 0
+  },
+  "actual_unit_integrity_ci": {
+    "status": "PASS",
+    "stages": 5,
+    "report": "local/unit-integrity/report.json"
+  },
+  "fix": "Existing-directory and executable-path assertions compare filesystem identity with Path.samefile; literal command and absolute-path requirements remain enforced.",
+  "regressions": "Alternate existing directory spellings are accepted; genuinely different staged/private-tool directories are rejected; no test is omitted.",
+  "test_files_changed": {
+    "tests/test_ci_full.py": {
+      "before_sha256": "2c35f7ec7047af6bd0f52f1c6f01c79cabd736b57bb48f0ff1cb6db49c2de216",
+      "after_sha256": "ae1b37d50989474d2e69431c1bb53f118f69a38165c63295972b4f91dd63e004"
+    },
+    "tests/test_cli_paths.py": {
+      "before_sha256": "32f632cf8afa4da3a0ee5bd5fe7b5bdb1357774025605d426a4d359cb6eb7442",
+      "after_sha256": "e71e5a450ddaff332fa9a0ada47e063b0b9e59101a1adfcf7312e3fbef70d5ac"
+    },
+    "tests/test_ci_unit.py": {
+      "before_sha256": "1118e79d6ed3ea62ac7f282c61ef3888fac488809614cf0cfd9d7d4a9fef36a9",
+      "after_sha256": "a5cf1ebb53032066c00bfd7884e6379f59e2990c28bd83776568c1d201eab0fa"
+    }
+  },
+  "protected_files_checked": 240,
+  "historical_files_checked": 493,
+  "protected_or_historical_changes": [],
+  "prior_hosted_unit": {
+    "id": 40814585440,
+    "url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40814585440",
+    "event": "push",
+    "conclusion": "failure",
+    "job_id": 123252576310,
+    "artifact_id": 12871757829,
+    "artifact_name": "unit-integrity-40814585440-1",
+    "artifact_sha256": "a8f66290e363c98a4d6feae67417d954760bdf8d6462740834c708ab502c9cbd",
+    "artifact_size_bytes": 6659
+  },
+  "prior_hosted_full": {
+    "id": 40815070636,
+    "url": "https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40815070636",
+    "event": "workflow_dispatch",
+    "conclusion": "failure",
+    "job_id": 123254111126,
+    "bootstrap_and_full_proofs": "skipped after unit gate failure"
+  },
+  "remote_head_sha": "f5b61dbf85d646f15eb01f2c50ae0e977a703fec",
+  "corrected_hosted_unit": "NOT_RUN",
+  "corrected_hosted_full": "NOT_RUN",
+  "current_revision_full_proof_run": "NOT_RUN",
+  "repository": "devpeeter/pasta-assembly-verification-bridge",
+  "permissions": {
+    "pull": true,
+    "push": false,
+    "admin": false,
+    "source": "Root agent's GitHub get_repo structured permissions result; collaborator-permission endpoint independently returned 403 Resource not accessible by integration."
+  },
+  "push": "NOT_PERFORMED: connected GitHub integration reports push=false",
+  "delivery": "Corrected complete source ZIP for upload",
+  "baseline_archive_sha256": "d51f85eaa5110a308719367eba7d7887f476312f4a4b6f78758fc50453efbe3b",
+  "historical_policy": "Dated evidence/log files are unchanged; evidence/acceptance.json is the intentionally updated live status record."
+}

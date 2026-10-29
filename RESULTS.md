@@ -3,8 +3,8 @@
 <!-- verification-status:start -->
 **Historical full automated verification: PASS (2026-10-23). Current revision full verification: NOT RUN.**
 Acceptance follows the required automated technical checks in
-[ACCEPTANCE.md](ACCEPTANCE.md). GitHub Actions unit and full workflow execution
-remain **NOT RUN**.
+[ACCEPTANCE.md](ACCEPTANCE.md). GitHub Actions runs for this corrected local
+revision remain **NOT RUN**. The preceding hosted failure is recorded below.
 
 The Windows run on 2026-10-23 completed all 67 automated stages with exit code 0.
 That result covers the assembly blocks from their register-entry states under
@@ -167,6 +167,48 @@ Current-revision full verification: **NOT RUN**. GitHub unit and full workflows:
 Result documentation, live acceptance status and packaging hashes are refreshed
 after recording these tests; the tested code remains unchanged.
 <!-- acceptance-cleanup-validation:end -->
+
+## Hosted Windows path-alias fix (2026-10-29)
+
+The [unit workflow](https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40814585440)
+failed one of 95 tests at `tests/test_ci_full.py:162` on source commit
+`f5b61dbf85d646f15eb01f2c50ae0e977a703fec`. The same existing temporary directory
+was spelled with `runneradmin` in the actual subprocess cwd and `RUNNER~1` in
+the expected path. The preceding
+[full workflow](https://github.com/devpeeter/pasta-assembly-verification-bridge/actions/runs/40815070636)
+stopped at this initial unit gate; its bootstrap/full-proof step did not run.
+These are observed hosted failures, not failed arithmetic proofs.
+
+The test assertions now use `Path.samefile()` for existing staged directories,
+private tool homes and related subprocess/tool paths. Literal command arguments,
+absolute-tool requirements, proof/integrity checks and failure gates are retained.
+The mock bootstrap creates its private home directories so identity comparisons
+exercise existing filesystem objects. Regressions accept alternate spellings of
+the same directory and reject genuinely different directories; no tests are omitted.
+
+<!-- windows-path-ci-fix:start -->
+Local validation: **PASS (2026-10-29, America/Toronto).** All 97 Python
+tests passed with zero omissions, followed by all five stages of the actual
+unit/integrity CI runner, including its own complete 97-test run. Exact
+commands, exit codes, timings and logs are retained with the prior hosted failure
+artifact in `evidence/windows-path-ci-fix/`.
+
+Only the three affected test files change execution assertions. All 240
+checked production/proof/pin/workflow files and 493 preceding historical
+evidence/log files are byte-identical. No proof or verification failure check was
+removed. Regression cases reject the wrong staged directory and wrong private
+tool homes while accepting aliases of the correct existing directories.
+
+Corrected-revision hosted unit/full workflows: **NOT RUN**. Current-revision full
+proof verification: **NOT RUN**. Push was unavailable (`push: false`), so this
+result is delivered as an updated source ZIP; no remote fix or successful hosted
+rerun is claimed.
+<!-- windows-path-ci-fix:end -->
+
+The connected GitHub integration reports read access and `push: false` for the
+repository. No push or workflow dispatch was attempted. The corrected source ZIP
+is supplied for upload. Previous dated evidence and all production verification,
+proof, pin and workflow sources are preserved.
 
 ## Acceptance and wrapper scope
 

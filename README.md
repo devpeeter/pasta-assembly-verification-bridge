@@ -8,7 +8,9 @@ The recorded Windows clean run checked the assembly blocks from their register-e
 states for both Pasta fields. It does not prove the surrounding Rust wrapper's
 operand loads or result stores. CLI and CI implementation checks have separate
 local results; the historical full-run record does not certify revised scripts.
-GitHub Actions unit and full workflow execution remain **NOT RUN**.
+GitHub Actions runs for this corrected local revision are **NOT RUN**.
+The preceding hosted attempt failed a Windows path-alias test before proofs;
+the confirmed failure and local fix results are recorded in [RESULTS.md](RESULTS.md).
 Acceptance follows the automated technical criteria in [ACCEPTANCE.md](ACCEPTANCE.md).
 See [RESULTS.md](RESULTS.md) for dated results, assumptions and measurements.
 <!-- verification-status:end -->

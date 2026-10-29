@@ -189,7 +189,7 @@ class CiRunnerTests(TemporarySourceTest):
         else:
             self.assertIn("--check", command)
             stdout.write(b"PASS\n")
-        self.assertEqual(kwargs["cwd"], self.root)
+        self.assertTrue(Path(kwargs["cwd"]).samefile(self.root))
         self.assertEqual(kwargs["env"]["PYTHONDONTWRITEBYTECODE"], "1")
         return subprocess.CompletedProcess(command, 0)
 
@@ -209,6 +209,20 @@ class CiRunnerTests(TemporarySourceTest):
         for stage in result["stages"]:
             self.assertTrue((self.output / stage["log"]).is_file())
         self.assertEqual({path.name: path.read_bytes() for path in self.root.iterdir()}, before)
+
+    def test_subprocess_fixture_accepts_directory_alias_and_rejects_other_directory(self):
+        # Existing paths may have different spellings, including Windows 8.3
+        # aliases. Keep the guard about filesystem identity, not string equality.
+        child = self.root / "alias-child"
+        child.mkdir()
+        alias = child / ".."
+        other = self.base / "different-source"
+        other.mkdir()
+        command = [sys.executable, "fixture.py", "--check"]
+        env = {"PYTHONDONTWRITEBYTECODE": "1"}
+        self.assertEqual(self.subprocess(command, stdout=io.BytesIO(), cwd=alias, env=env).returncode, 0)
+        with self.assertRaises(AssertionError):
+            self.subprocess(command, stdout=io.BytesIO(), cwd=other, env=env)
 
     def test_zero_exit_skip_or_empty_suite_never_passes(self):
         outputs = ("Ran 2 tests in 0.001s\n\nOK (skipped=1)\n",
