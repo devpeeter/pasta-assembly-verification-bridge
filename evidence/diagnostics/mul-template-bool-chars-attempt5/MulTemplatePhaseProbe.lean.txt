@@ -1,0 +1,39 @@
+import MulMetadata
+import Init.Data.String.Lemmas.Intercalate
+import Lean
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+
+namespace PastaBridge
+
+attribute [local irreducible] retainedMultiplicationArtifactValue retainedMultiplicationPieces
+  retainedMultiplicationAssembly MultiplicationArtifact.pieces MultiplicationArtifact.renderValue
+  MultiplicationArtifact.renderPieces
+
+run_cmd do IO.FS.writeFile "work/mul-template-phases/start" "before declaration"
+
+theorem template_phase_probe :
+    MultiplicationArtifact.renderValue MultiplicationArtifact.canonicalBinding
+      retainedMultiplicationArtifactValue = .ok retainedMultiplicationAssembly := by
+  run_tac do IO.FS.writeFile "work/mul-template-phases/01-start" "tactic start"
+  rw [MultiplicationArtifact.renderValue, multiplication_pieces_match_retained_value]
+  run_tac do IO.FS.writeFile "work/mul-template-phases/02-rewrite" "after rewrite"
+  change Except.ok (MultiplicationArtifact.renderPieces
+    MultiplicationArtifact.canonicalBinding retainedMultiplicationPieces) = _
+  run_tac do IO.FS.writeFile "work/mul-template-phases/03-change" "after change"
+  apply congrArg Except.ok
+  run_tac do IO.FS.writeFile "work/mul-template-phases/04-congr" "after constructor"
+  apply String.toList_injective
+  run_tac do IO.FS.writeFile "work/mul-template-phases/05-inject" "after toList injection"
+  rw [MultiplicationArtifact.renderPieces, String.toList_join]
+  run_tac do IO.FS.writeFile "work/mul-template-phases/06-list" "after join observation"
+  apply eq_of_beq
+  run_tac do IO.FS.writeFile "work/mul-template-phases/06b-bool" "after Boolean equality"
+  with_unfolding_all rfl
+  run_tac do IO.FS.writeFile "work/mul-template-phases/07-goals" s!"goals={(← Lean.Elab.Tactic.getGoals).length}"
+
+run_cmd do IO.FS.writeFile "work/mul-template-phases/done" "after declaration"
+#print axioms template_phase_probe
+
+end PastaBridge

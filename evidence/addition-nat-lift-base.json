@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\nat-proof-build\\AdditionNatLiftBase.olean",
+    "AdditionNatLiftBase.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work",
+  "exit_code": 0,
+  "wall_seconds": 165.384634,
+  "peak_rss_bytes": 911577088,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "evidence/addition-nat-lift-base.log",
+  "source": "proofs/AdditionNatLiftBase.lean",
+  "source_sha256": "8b1c3642e8d692c03188788726748ae5dd9f3c24290904b9e5fba0e20a8bef04",
+  "scope": "Conditional generic composition helper. The Correspondence premise is not a proved target correctness claim."
+}

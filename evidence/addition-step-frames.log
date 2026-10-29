@@ -1,0 +1,7 @@
+'PastaBridge.AdditionStep.adds_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.AdditionStep.preserve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.AdditionStep.memory_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.AdditionStep.stack_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.AdditionStep.register_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.AdditionStep.readonly_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PastaBridge.AdditionStep.related_results_exist' depends on axioms: [propext, Quot.sound]

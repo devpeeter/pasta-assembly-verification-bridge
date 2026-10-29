@@ -1,0 +1,11 @@
+import Lean
+set_option pp.maxSteps 1000
+set_option pp.deepTerms false
+set_option pp.deepTerms.threshold 30
+example : True := by
+  run_tac do
+    IO.FS.writeFile "marker-tiny-before.txt" "entered"
+    Lean.Elab.Tactic.evalTactic (← `(tactic| exact True.intro))
+    IO.FS.writeFile "marker-tiny-after.txt" "returned"
+run_cmd do
+  IO.FS.writeFile "marker-tiny-declaration.txt" "processed"

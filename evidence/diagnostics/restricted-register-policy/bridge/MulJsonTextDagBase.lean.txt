@@ -1,0 +1,1721 @@
+-- Candidate generated mechanically from generated/mul-check.json; checked readback follows.
+import MulRetained
+import StringBytes
+
+namespace PastaBridge.MulJsonTextDag
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+set_option linter.unusedSimpArgs false
+
+theorem array_encoding (fuel : Nat) (values : List KernelJson.Value) :
+    JsonEncoding.valueText (fuel + 1) (.array values) =
+      (values.mapM (JsonEncoding.valueText fuel)).map
+        (fun pieces => "[" ++ String.intercalate "," pieces ++ "]") := by rfl
+
+theorem object_encoding (fuel : Nat) (fields : List (String × KernelJson.Value)) :
+    JsonEncoding.valueText (fuel + 1) (.object fields) =
+      (fields.mapM (fun (key, value) => do
+        let key ← JsonEncoding.stringText key
+        let value ← JsonEncoding.valueText fuel value
+        pure (key ++ ":" ++ value))).map
+        (fun pieces => "{" ++ String.intercalate "," pieces ++ "}") := by rfl
+
+theorem key_0 : JsonEncoding.stringText "schema_version" =
+    .ok "\"schema_version\"" := by decide +kernel
+
+theorem key_1 : JsonEncoding.stringText "routines" =
+    .ok "\"routines\"" := by decide +kernel
+
+theorem key_2 : JsonEncoding.stringText "mul" =
+    .ok "\"mul\"" := by decide +kernel
+
+theorem key_3 : JsonEncoding.stringText "kind" =
+    .ok "\"kind\"" := by decide +kernel
+
+theorem key_4 : JsonEncoding.stringText "template" =
+    .ok "\"template\"" := by decide +kernel
+
+theorem key_5 : JsonEncoding.stringText "Text" =
+    .ok "\"Text\"" := by decide +kernel
+
+theorem key_6 : JsonEncoding.stringText "Placeholder" =
+    .ok "\"Placeholder\"" := by decide +kernel
+
+theorem key_7 : JsonEncoding.stringText "operand_id" =
+    .ok "\"operand_id\"" := by decide +kernel
+
+theorem key_8 : JsonEncoding.stringText "modifier" =
+    .ok "\"modifier\"" := by decide +kernel
+
+theorem key_9 : JsonEncoding.stringText "operands" =
+    .ok "\"operands\"" := by decide +kernel
+
+theorem key_10 : JsonEncoding.stringText "In" =
+    .ok "\"In\"" := by decide +kernel
+
+theorem key_11 : JsonEncoding.stringText "reg" =
+    .ok "\"reg\"" := by decide +kernel
+
+theorem key_12 : JsonEncoding.stringText "Class" =
+    .ok "\"Class\"" := by decide +kernel
+
+theorem key_13 : JsonEncoding.stringText "Out" =
+    .ok "\"Out\"" := by decide +kernel
+
+theorem key_14 : JsonEncoding.stringText "late" =
+    .ok "\"late\"" := by decide +kernel
+
+theorem key_15 : JsonEncoding.stringText "options" =
+    .ok "\"options\"" := by decide +kernel
+
+theorem key_16 : JsonEncoding.stringText "pure" =
+    .ok "\"pure\"" := by decide +kernel
+
+theorem key_17 : JsonEncoding.stringText "nomem" =
+    .ok "\"nomem\"" := by decide +kernel
+
+theorem key_18 : JsonEncoding.stringText "readonly" =
+    .ok "\"readonly\"" := by decide +kernel
+
+theorem key_19 : JsonEncoding.stringText "preserves_flags" =
+    .ok "\"preserves_flags\"" := by decide +kernel
+
+theorem key_20 : JsonEncoding.stringText "noreturn" =
+    .ok "\"noreturn\"" := by decide +kernel
+
+theorem key_21 : JsonEncoding.stringText "nostack" =
+    .ok "\"nostack\"" := by decide +kernel
+
+theorem key_22 : JsonEncoding.stringText "att_syntax" =
+    .ok "\"att_syntax\"" := by decide +kernel
+
+theorem key_23 : JsonEncoding.stringText "may_unwind" =
+    .ok "\"may_unwind\"" := by decide +kernel
+
+def value_0 : KernelJson.Value := .number (1)
+attribute [local irreducible] value_0
+def text_0 : String := "1"
+attribute [local irreducible] text_0
+
+theorem encoded_0 : JsonEncoding.valueText 63 value_0 =
+    .ok text_0 := by
+  unfold value_0 text_0
+  decide +kernel
+
+
+def value_1 : KernelJson.Value := .string "Asm"
+attribute [local irreducible] value_1
+def text_1 : String := "\"Asm\""
+attribute [local irreducible] text_1
+
+theorem encoded_1 : JsonEncoding.valueText 61 value_1 =
+    .ok text_1 := by
+  unfold value_1 text_1
+  decide +kernel
+
+def value_2 : KernelJson.Value := .string "mul "
+attribute [local irreducible] value_2
+def text_2 : String := "\"mul \""
+attribute [local irreducible] text_2
+
+theorem encoded_2 : JsonEncoding.valueText 59 value_2 =
+    .ok text_2 := by
+  unfold value_2 text_2
+  decide +kernel
+
+def value_3 : KernelJson.Value := .object [("Text", value_2)]
+attribute [local irreducible] value_3
+def text_3 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_2)] ++ "}"
+attribute [local irreducible] text_3
+
+theorem encoded_3 : JsonEncoding.valueText 60 value_3 =
+    .ok text_3 := by
+  unfold value_3 text_3
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_2]
+  all_goals rfl
+
+def value_4 : KernelJson.Value := .number (16)
+attribute [local irreducible] value_4
+def text_4 : String := "16"
+attribute [local irreducible] text_4
+
+theorem encoded_4 : JsonEncoding.valueText 58 value_4 =
+    .ok text_4 := by
+  unfold value_4 text_4
+  decide +kernel
+
+def value_5 : KernelJson.Value := .null
+attribute [local irreducible] value_5
+def text_5 : String := "null"
+attribute [local irreducible] text_5
+
+theorem encoded_5 : JsonEncoding.valueText 58 value_5 =
+    .ok text_5 := by
+  unfold value_5 text_5
+  decide +kernel
+
+def value_6 : KernelJson.Value := .object [("operand_id", value_4), ("modifier", value_5)]
+attribute [local irreducible] value_6
+def text_6 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_4), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_6
+
+theorem encoded_6 : JsonEncoding.valueText 59 value_6 =
+    .ok text_6 := by
+  unfold value_6 text_6
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_4, encoded_5]
+  all_goals rfl
+
+def value_7 : KernelJson.Value := .object [("Placeholder", value_6)]
+attribute [local irreducible] value_7
+def text_7 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_6)] ++ "}"
+attribute [local irreducible] text_7
+
+theorem encoded_7 : JsonEncoding.valueText 60 value_7 =
+    .ok text_7 := by
+  unfold value_7 text_7
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_6]
+  all_goals rfl
+
+def value_8 : KernelJson.Value := .string ", "
+attribute [local irreducible] value_8
+def text_8 : String := "\", \""
+attribute [local irreducible] text_8
+
+theorem encoded_8 : JsonEncoding.valueText 59 value_8 =
+    .ok text_8 := by
+  unfold value_8 text_8
+  decide +kernel
+
+def value_9 : KernelJson.Value := .object [("Text", value_8)]
+attribute [local irreducible] value_9
+def text_9 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_8)] ++ "}"
+attribute [local irreducible] text_9
+
+theorem encoded_9 : JsonEncoding.valueText 60 value_9 =
+    .ok text_9 := by
+  unfold value_9 text_9
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_8]
+  all_goals rfl
+
+def value_10 : KernelJson.Value := .number (0)
+attribute [local irreducible] value_10
+def text_10 : String := "0"
+attribute [local irreducible] text_10
+
+theorem encoded_10 : JsonEncoding.valueText 58 value_10 =
+    .ok text_10 := by
+  unfold value_10 text_10
+  decide +kernel
+
+def value_11 : KernelJson.Value := .object [("operand_id", value_10), ("modifier", value_5)]
+attribute [local irreducible] value_11
+def text_11 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_10), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_11
+
+theorem encoded_11 : JsonEncoding.valueText 59 value_11 =
+    .ok text_11 := by
+  unfold value_11 text_11
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_10, encoded_5]
+  all_goals rfl
+
+def value_12 : KernelJson.Value := .object [("Placeholder", value_11)]
+attribute [local irreducible] value_12
+def text_12 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_11)] ++ "}"
+attribute [local irreducible] text_12
+
+theorem encoded_12 : JsonEncoding.valueText 60 value_12 =
+    .ok text_12 := by
+  unfold value_12 text_12
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_11]
+  all_goals rfl
+
+def value_13 : KernelJson.Value := .number (4)
+attribute [local irreducible] value_13
+def text_13 : String := "4"
+attribute [local irreducible] text_13
+
+theorem encoded_13 : JsonEncoding.valueText 58 value_13 =
+    .ok text_13 := by
+  unfold value_13 text_13
+  decide +kernel
+
+def value_14 : KernelJson.Value := .object [("operand_id", value_13), ("modifier", value_5)]
+attribute [local irreducible] value_14
+def text_14 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_13), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_14
+
+theorem encoded_14 : JsonEncoding.valueText 59 value_14 =
+    .ok text_14 := by
+  unfold value_14 text_14
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_13, encoded_5]
+  all_goals rfl
+
+def value_15 : KernelJson.Value := .object [("Placeholder", value_14)]
+attribute [local irreducible] value_15
+def text_15 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_14)] ++ "}"
+attribute [local irreducible] text_15
+
+theorem encoded_15 : JsonEncoding.valueText 60 value_15 =
+    .ok text_15 := by
+  unfold value_15 text_15
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_14]
+  all_goals rfl
+
+def value_16 : KernelJson.Value := .string "\n"
+attribute [local irreducible] value_16
+def text_16 : String := "\"\\n\""
+attribute [local irreducible] text_16
+
+theorem encoded_16 : JsonEncoding.valueText 59 value_16 =
+    .ok text_16 := by
+  unfold value_16 text_16
+  decide +kernel
+
+
+def value_17 : KernelJson.Value := .object [("Text", value_16)]
+attribute [local irreducible] value_17
+def text_17 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_16)] ++ "}"
+attribute [local irreducible] text_17
+
+theorem encoded_17 : JsonEncoding.valueText 60 value_17 =
+    .ok text_17 := by
+  unfold value_17 text_17
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_16]
+  all_goals rfl
+
+def value_18 : KernelJson.Value := .number (17)
+attribute [local irreducible] value_18
+def text_18 : String := "17"
+attribute [local irreducible] text_18
+
+theorem encoded_18 : JsonEncoding.valueText 58 value_18 =
+    .ok text_18 := by
+  unfold value_18 text_18
+  decide +kernel
+
+def value_19 : KernelJson.Value := .object [("operand_id", value_18), ("modifier", value_5)]
+attribute [local irreducible] value_19
+def text_19 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_18), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_19
+
+theorem encoded_19 : JsonEncoding.valueText 59 value_19 =
+    .ok text_19 := by
+  unfold value_19 text_19
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_18, encoded_5]
+  all_goals rfl
+
+def value_20 : KernelJson.Value := .object [("Placeholder", value_19)]
+attribute [local irreducible] value_20
+def text_20 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_19)] ++ "}"
+attribute [local irreducible] text_20
+
+theorem encoded_20 : JsonEncoding.valueText 60 value_20 =
+    .ok text_20 := by
+  unfold value_20 text_20
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_19]
+  all_goals rfl
+
+def value_21 : KernelJson.Value := .number (1)
+attribute [local irreducible] value_21
+def text_21 : String := "1"
+attribute [local irreducible] text_21
+
+theorem encoded_21 : JsonEncoding.valueText 58 value_21 =
+    .ok text_21 := by
+  unfold value_21 text_21
+  decide +kernel
+
+def value_22 : KernelJson.Value := .object [("operand_id", value_21), ("modifier", value_5)]
+attribute [local irreducible] value_22
+def text_22 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_21), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_22
+
+theorem encoded_22 : JsonEncoding.valueText 59 value_22 =
+    .ok text_22 := by
+  unfold value_22 text_22
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_21, encoded_5]
+  all_goals rfl
+
+def value_23 : KernelJson.Value := .object [("Placeholder", value_22)]
+attribute [local irreducible] value_23
+def text_23 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_22)] ++ "}"
+attribute [local irreducible] text_23
+
+theorem encoded_23 : JsonEncoding.valueText 60 value_23 =
+    .ok text_23 := by
+  unfold value_23 text_23
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_22]
+  all_goals rfl
+
+def value_24 : KernelJson.Value := .number (18)
+attribute [local irreducible] value_24
+def text_24 : String := "18"
+attribute [local irreducible] text_24
+
+theorem encoded_24 : JsonEncoding.valueText 58 value_24 =
+    .ok text_24 := by
+  unfold value_24 text_24
+  decide +kernel
+
+def value_25 : KernelJson.Value := .object [("operand_id", value_24), ("modifier", value_5)]
+attribute [local irreducible] value_25
+def text_25 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_24), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_25
+
+theorem encoded_25 : JsonEncoding.valueText 59 value_25 =
+    .ok text_25 := by
+  unfold value_25 text_25
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_24, encoded_5]
+  all_goals rfl
+
+def value_26 : KernelJson.Value := .object [("Placeholder", value_25)]
+attribute [local irreducible] value_26
+def text_26 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_25)] ++ "}"
+attribute [local irreducible] text_26
+
+theorem encoded_26 : JsonEncoding.valueText 60 value_26 =
+    .ok text_26 := by
+  unfold value_26 text_26
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_25]
+  all_goals rfl
+
+def value_27 : KernelJson.Value := .number (2)
+attribute [local irreducible] value_27
+def text_27 : String := "2"
+attribute [local irreducible] text_27
+
+theorem encoded_27 : JsonEncoding.valueText 58 value_27 =
+    .ok text_27 := by
+  unfold value_27 text_27
+  decide +kernel
+
+def value_28 : KernelJson.Value := .object [("operand_id", value_27), ("modifier", value_5)]
+attribute [local irreducible] value_28
+def text_28 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_27), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_28
+
+theorem encoded_28 : JsonEncoding.valueText 59 value_28 =
+    .ok text_28 := by
+  unfold value_28 text_28
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_27, encoded_5]
+  all_goals rfl
+
+def value_29 : KernelJson.Value := .object [("Placeholder", value_28)]
+attribute [local irreducible] value_29
+def text_29 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_28)] ++ "}"
+attribute [local irreducible] text_29
+
+theorem encoded_29 : JsonEncoding.valueText 60 value_29 =
+    .ok text_29 := by
+  unfold value_29 text_29
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_28]
+  all_goals rfl
+
+def value_30 : KernelJson.Value := .number (19)
+attribute [local irreducible] value_30
+def text_30 : String := "19"
+attribute [local irreducible] text_30
+
+theorem encoded_30 : JsonEncoding.valueText 58 value_30 =
+    .ok text_30 := by
+  unfold value_30 text_30
+  decide +kernel
+
+def value_31 : KernelJson.Value := .object [("operand_id", value_30), ("modifier", value_5)]
+attribute [local irreducible] value_31
+def text_31 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_30), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_31
+
+theorem encoded_31 : JsonEncoding.valueText 59 value_31 =
+    .ok text_31 := by
+  unfold value_31 text_31
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_30, encoded_5]
+  all_goals rfl
+
+def value_32 : KernelJson.Value := .object [("Placeholder", value_31)]
+attribute [local irreducible] value_32
+def text_32 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_31)] ++ "}"
+attribute [local irreducible] text_32
+
+theorem encoded_32 : JsonEncoding.valueText 60 value_32 =
+    .ok text_32 := by
+  unfold value_32 text_32
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_31]
+  all_goals rfl
+
+
+def value_33 : KernelJson.Value := .number (3)
+attribute [local irreducible] value_33
+def text_33 : String := "3"
+attribute [local irreducible] text_33
+
+theorem encoded_33 : JsonEncoding.valueText 58 value_33 =
+    .ok text_33 := by
+  unfold value_33 text_33
+  decide +kernel
+
+def value_34 : KernelJson.Value := .object [("operand_id", value_33), ("modifier", value_5)]
+attribute [local irreducible] value_34
+def text_34 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_33), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_34
+
+theorem encoded_34 : JsonEncoding.valueText 59 value_34 =
+    .ok text_34 := by
+  unfold value_34 text_34
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_33, encoded_5]
+  all_goals rfl
+
+def value_35 : KernelJson.Value := .object [("Placeholder", value_34)]
+attribute [local irreducible] value_35
+def text_35 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_34)] ++ "}"
+attribute [local irreducible] text_35
+
+theorem encoded_35 : JsonEncoding.valueText 60 value_35 =
+    .ok text_35 := by
+  unfold value_35 text_35
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_34]
+  all_goals rfl
+
+def value_36 : KernelJson.Value := .string "umulh "
+attribute [local irreducible] value_36
+def text_36 : String := "\"umulh \""
+attribute [local irreducible] text_36
+
+theorem encoded_36 : JsonEncoding.valueText 59 value_36 =
+    .ok text_36 := by
+  unfold value_36 text_36
+  decide +kernel
+
+def value_37 : KernelJson.Value := .object [("Text", value_36)]
+attribute [local irreducible] value_37
+def text_37 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_36)] ++ "}"
+attribute [local irreducible] text_37
+
+theorem encoded_37 : JsonEncoding.valueText 60 value_37 =
+    .ok text_37 := by
+  unfold value_37 text_37
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_36]
+  all_goals rfl
+
+def value_38 : KernelJson.Value := .number (12)
+attribute [local irreducible] value_38
+def text_38 : String := "12"
+attribute [local irreducible] text_38
+
+theorem encoded_38 : JsonEncoding.valueText 58 value_38 =
+    .ok text_38 := by
+  unfold value_38 text_38
+  decide +kernel
+
+def value_39 : KernelJson.Value := .object [("operand_id", value_38), ("modifier", value_5)]
+attribute [local irreducible] value_39
+def text_39 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_38), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_39
+
+theorem encoded_39 : JsonEncoding.valueText 59 value_39 =
+    .ok text_39 := by
+  unfold value_39 text_39
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_38, encoded_5]
+  all_goals rfl
+
+def value_40 : KernelJson.Value := .object [("Placeholder", value_39)]
+attribute [local irreducible] value_40
+def text_40 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_39)] ++ "}"
+attribute [local irreducible] text_40
+
+theorem encoded_40 : JsonEncoding.valueText 60 value_40 =
+    .ok text_40 := by
+  unfold value_40 text_40
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_39]
+  all_goals rfl
+
+def value_41 : KernelJson.Value := .number (13)
+attribute [local irreducible] value_41
+def text_41 : String := "13"
+attribute [local irreducible] text_41
+
+theorem encoded_41 : JsonEncoding.valueText 58 value_41 =
+    .ok text_41 := by
+  unfold value_41 text_41
+  decide +kernel
+
+def value_42 : KernelJson.Value := .object [("operand_id", value_41), ("modifier", value_5)]
+attribute [local irreducible] value_42
+def text_42 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_41), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_42
+
+theorem encoded_42 : JsonEncoding.valueText 59 value_42 =
+    .ok text_42 := by
+  unfold value_42 text_42
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_41, encoded_5]
+  all_goals rfl
+
+def value_43 : KernelJson.Value := .object [("Placeholder", value_42)]
+attribute [local irreducible] value_43
+def text_43 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_42)] ++ "}"
+attribute [local irreducible] text_43
+
+theorem encoded_43 : JsonEncoding.valueText 60 value_43 =
+    .ok text_43 := by
+  unfold value_43 text_43
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_42]
+  all_goals rfl
+
+def value_44 : KernelJson.Value := .number (11)
+attribute [local irreducible] value_44
+def text_44 : String := "11"
+attribute [local irreducible] text_44
+
+theorem encoded_44 : JsonEncoding.valueText 58 value_44 =
+    .ok text_44 := by
+  unfold value_44 text_44
+  decide +kernel
+
+def value_45 : KernelJson.Value := .object [("operand_id", value_44), ("modifier", value_5)]
+attribute [local irreducible] value_45
+def text_45 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_44), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_45
+
+theorem encoded_45 : JsonEncoding.valueText 59 value_45 =
+    .ok text_45 := by
+  unfold value_45 text_45
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_44, encoded_5]
+  all_goals rfl
+
+def value_46 : KernelJson.Value := .object [("Placeholder", value_45)]
+attribute [local irreducible] value_46
+def text_46 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_45)] ++ "}"
+attribute [local irreducible] text_46
+
+theorem encoded_46 : JsonEncoding.valueText 60 value_46 =
+    .ok text_46 := by
+  unfold value_46 text_46
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_45]
+  all_goals rfl
+
+def value_47 : KernelJson.Value := .number (10)
+attribute [local irreducible] value_47
+def text_47 : String := "10"
+attribute [local irreducible] text_47
+
+theorem encoded_47 : JsonEncoding.valueText 58 value_47 =
+    .ok text_47 := by
+  unfold value_47 text_47
+  decide +kernel
+
+def value_48 : KernelJson.Value := .object [("operand_id", value_47), ("modifier", value_5)]
+attribute [local irreducible] value_48
+def text_48 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_47), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_48
+
+theorem encoded_48 : JsonEncoding.valueText 59 value_48 =
+    .ok text_48 := by
+  unfold value_48 text_48
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_47, encoded_5]
+  all_goals rfl
+
+
+def value_49 : KernelJson.Value := .object [("Placeholder", value_48)]
+attribute [local irreducible] value_49
+def text_49 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_48)] ++ "}"
+attribute [local irreducible] text_49
+
+theorem encoded_49 : JsonEncoding.valueText 60 value_49 =
+    .ok text_49 := by
+  unfold value_49 text_49
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_48]
+  all_goals rfl
+
+def value_50 : KernelJson.Value := .number (14)
+attribute [local irreducible] value_50
+def text_50 : String := "14"
+attribute [local irreducible] text_50
+
+theorem encoded_50 : JsonEncoding.valueText 58 value_50 =
+    .ok text_50 := by
+  unfold value_50 text_50
+  decide +kernel
+
+def value_51 : KernelJson.Value := .object [("operand_id", value_50), ("modifier", value_5)]
+attribute [local irreducible] value_51
+def text_51 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_50), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_51
+
+theorem encoded_51 : JsonEncoding.valueText 59 value_51 =
+    .ok text_51 := by
+  unfold value_51 text_51
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_50, encoded_5]
+  all_goals rfl
+
+def value_52 : KernelJson.Value := .object [("Placeholder", value_51)]
+attribute [local irreducible] value_52
+def text_52 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_51)] ++ "}"
+attribute [local irreducible] text_52
+
+theorem encoded_52 : JsonEncoding.valueText 60 value_52 =
+    .ok text_52 := by
+  unfold value_52 text_52
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_51]
+  all_goals rfl
+
+def value_53 : KernelJson.Value := .number (15)
+attribute [local irreducible] value_53
+def text_53 : String := "15"
+attribute [local irreducible] text_53
+
+theorem encoded_53 : JsonEncoding.valueText 58 value_53 =
+    .ok text_53 := by
+  unfold value_53 text_53
+  decide +kernel
+
+def value_54 : KernelJson.Value := .object [("operand_id", value_53), ("modifier", value_5)]
+attribute [local irreducible] value_54
+def text_54 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_53), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_54
+
+theorem encoded_54 : JsonEncoding.valueText 59 value_54 =
+    .ok text_54 := by
+  unfold value_54 text_54
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_53, encoded_5]
+  all_goals rfl
+
+def value_55 : KernelJson.Value := .object [("Placeholder", value_54)]
+attribute [local irreducible] value_55
+def text_55 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_54)] ++ "}"
+attribute [local irreducible] text_55
+
+theorem encoded_55 : JsonEncoding.valueText 60 value_55 =
+    .ok text_55 := by
+  unfold value_55 text_55
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_54]
+  all_goals rfl
+
+def value_56 : KernelJson.Value := .string "adds "
+attribute [local irreducible] value_56
+def text_56 : String := "\"adds \""
+attribute [local irreducible] text_56
+
+theorem encoded_56 : JsonEncoding.valueText 59 value_56 =
+    .ok text_56 := by
+  unfold value_56 text_56
+  decide +kernel
+
+def value_57 : KernelJson.Value := .object [("Text", value_56)]
+attribute [local irreducible] value_57
+def text_57 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_56)] ++ "}"
+attribute [local irreducible] text_57
+
+theorem encoded_57 : JsonEncoding.valueText 60 value_57 =
+    .ok text_57 := by
+  unfold value_57 text_57
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_56]
+  all_goals rfl
+
+def value_58 : KernelJson.Value := .string "adcs "
+attribute [local irreducible] value_58
+def text_58 : String := "\"adcs \""
+attribute [local irreducible] text_58
+
+theorem encoded_58 : JsonEncoding.valueText 59 value_58 =
+    .ok text_58 := by
+  unfold value_58 text_58
+  decide +kernel
+
+def value_59 : KernelJson.Value := .object [("Text", value_58)]
+attribute [local irreducible] value_59
+def text_59 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_58)] ++ "}"
+attribute [local irreducible] text_59
+
+theorem encoded_59 : JsonEncoding.valueText 60 value_59 =
+    .ok text_59 := by
+  unfold value_59 text_59
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_58]
+  all_goals rfl
+
+def value_60 : KernelJson.Value := .number (9)
+attribute [local irreducible] value_60
+def text_60 : String := "9"
+attribute [local irreducible] text_60
+
+theorem encoded_60 : JsonEncoding.valueText 58 value_60 =
+    .ok text_60 := by
+  unfold value_60 text_60
+  decide +kernel
+
+def value_61 : KernelJson.Value := .object [("operand_id", value_60), ("modifier", value_5)]
+attribute [local irreducible] value_61
+def text_61 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_60), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_61
+
+theorem encoded_61 : JsonEncoding.valueText 59 value_61 =
+    .ok text_61 := by
+  unfold value_61 text_61
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_60, encoded_5]
+  all_goals rfl
+
+def value_62 : KernelJson.Value := .object [("Placeholder", value_61)]
+attribute [local irreducible] value_62
+def text_62 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_61)] ++ "}"
+attribute [local irreducible] text_62
+
+theorem encoded_62 : JsonEncoding.valueText 60 value_62 =
+    .ok text_62 := by
+  unfold value_62 text_62
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_61]
+  all_goals rfl
+
+def value_63 : KernelJson.Value := .string "adc "
+attribute [local irreducible] value_63
+def text_63 : String := "\"adc \""
+attribute [local irreducible] text_63
+
+theorem encoded_63 : JsonEncoding.valueText 59 value_63 =
+    .ok text_63 := by
+  unfold value_63 text_63
+  decide +kernel
+
+def value_64 : KernelJson.Value := .object [("Text", value_63)]
+attribute [local irreducible] value_64
+def text_64 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_63)] ++ "}"
+attribute [local irreducible] text_64
+
+theorem encoded_64 : JsonEncoding.valueText 60 value_64 =
+    .ok text_64 := by
+  unfold value_64 text_64
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_63]
+  all_goals rfl
+
+
+def value_65 : KernelJson.Value := .number (20)
+attribute [local irreducible] value_65
+def text_65 : String := "20"
+attribute [local irreducible] text_65
+
+theorem encoded_65 : JsonEncoding.valueText 58 value_65 =
+    .ok text_65 := by
+  unfold value_65 text_65
+  decide +kernel
+
+def value_66 : KernelJson.Value := .object [("operand_id", value_65), ("modifier", value_5)]
+attribute [local irreducible] value_66
+def text_66 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_65), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_66
+
+theorem encoded_66 : JsonEncoding.valueText 59 value_66 =
+    .ok text_66 := by
+  unfold value_66 text_66
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_65, encoded_5]
+  all_goals rfl
+
+def value_67 : KernelJson.Value := .object [("Placeholder", value_66)]
+attribute [local irreducible] value_67
+def text_67 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_66)] ++ "}"
+attribute [local irreducible] text_67
+
+theorem encoded_67 : JsonEncoding.valueText 60 value_67 =
+    .ok text_67 := by
+  unfold value_67 text_67
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_66]
+  all_goals rfl
+
+def value_68 : KernelJson.Value := .string ", xzr, "
+attribute [local irreducible] value_68
+def text_68 : String := "\", xzr, \""
+attribute [local irreducible] text_68
+
+theorem encoded_68 : JsonEncoding.valueText 59 value_68 =
+    .ok text_68 := by
+  unfold value_68 text_68
+  decide +kernel
+
+def value_69 : KernelJson.Value := .object [("Text", value_68)]
+attribute [local irreducible] value_69
+def text_69 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_68)] ++ "}"
+attribute [local irreducible] text_69
+
+theorem encoded_69 : JsonEncoding.valueText 60 value_69 =
+    .ok text_69 := by
+  unfold value_69 text_69
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_68]
+  all_goals rfl
+
+def value_70 : KernelJson.Value := .string "lsl "
+attribute [local irreducible] value_70
+def text_70 : String := "\"lsl \""
+attribute [local irreducible] text_70
+
+theorem encoded_70 : JsonEncoding.valueText 59 value_70 =
+    .ok text_70 := by
+  unfold value_70 text_70
+  decide +kernel
+
+def value_71 : KernelJson.Value := .object [("Text", value_70)]
+attribute [local irreducible] value_71
+def text_71 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_70)] ++ "}"
+attribute [local irreducible] text_71
+
+theorem encoded_71 : JsonEncoding.valueText 60 value_71 =
+    .ok text_71 := by
+  unfold value_71 text_71
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_70]
+  all_goals rfl
+
+def value_72 : KernelJson.Value := .string ", #62"
+attribute [local irreducible] value_72
+def text_72 : String := "\", #62\""
+attribute [local irreducible] text_72
+
+theorem encoded_72 : JsonEncoding.valueText 59 value_72 =
+    .ok text_72 := by
+  unfold value_72 text_72
+  decide +kernel
+
+def value_73 : KernelJson.Value := .object [("Text", value_72)]
+attribute [local irreducible] value_73
+def text_73 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_72)] ++ "}"
+attribute [local irreducible] text_73
+
+theorem encoded_73 : JsonEncoding.valueText 60 value_73 =
+    .ok text_73 := by
+  unfold value_73 text_73
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_72]
+  all_goals rfl
+
+def value_74 : KernelJson.Value := .string "subs xzr, "
+attribute [local irreducible] value_74
+def text_74 : String := "\"subs xzr, \""
+attribute [local irreducible] text_74
+
+theorem encoded_74 : JsonEncoding.valueText 59 value_74 =
+    .ok text_74 := by
+  unfold value_74 text_74
+  decide +kernel
+
+def value_75 : KernelJson.Value := .object [("Text", value_74)]
+attribute [local irreducible] value_75
+def text_75 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_74)] ++ "}"
+attribute [local irreducible] text_75
+
+theorem encoded_75 : JsonEncoding.valueText 60 value_75 =
+    .ok text_75 := by
+  unfold value_75 text_75
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_74]
+  all_goals rfl
+
+def value_76 : KernelJson.Value := .string ", #1"
+attribute [local irreducible] value_76
+def text_76 : String := "\", #1\""
+attribute [local irreducible] text_76
+
+theorem encoded_76 : JsonEncoding.valueText 59 value_76 =
+    .ok text_76 := by
+  unfold value_76 text_76
+  decide +kernel
+
+def value_77 : KernelJson.Value := .object [("Text", value_76)]
+attribute [local irreducible] value_77
+def text_77 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_76)] ++ "}"
+attribute [local irreducible] text_77
+
+theorem encoded_77 : JsonEncoding.valueText 60 value_77 =
+    .ok text_77 := by
+  unfold value_77 text_77
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_76]
+  all_goals rfl
+
+def value_78 : KernelJson.Value := .number (8)
+attribute [local irreducible] value_78
+def text_78 : String := "8"
+attribute [local irreducible] text_78
+
+theorem encoded_78 : JsonEncoding.valueText 58 value_78 =
+    .ok text_78 := by
+  unfold value_78 text_78
+  decide +kernel
+
+def value_79 : KernelJson.Value := .object [("operand_id", value_78), ("modifier", value_5)]
+attribute [local irreducible] value_79
+def text_79 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_78), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_79
+
+theorem encoded_79 : JsonEncoding.valueText 59 value_79 =
+    .ok text_79 := by
+  unfold value_79 text_79
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_78, encoded_5]
+  all_goals rfl
+
+def value_80 : KernelJson.Value := .object [("Placeholder", value_79)]
+attribute [local irreducible] value_80
+def text_80 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_79)] ++ "}"
+attribute [local irreducible] text_80
+
+theorem encoded_80 : JsonEncoding.valueText 60 value_80 =
+    .ok text_80 := by
+  unfold value_80 text_80
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_79]
+  all_goals rfl
+
+
+def value_81 : KernelJson.Value := .string ", xzr"
+attribute [local irreducible] value_81
+def text_81 : String := "\", xzr\""
+attribute [local irreducible] text_81
+
+theorem encoded_81 : JsonEncoding.valueText 59 value_81 =
+    .ok text_81 := by
+  unfold value_81 text_81
+  decide +kernel
+
+def value_82 : KernelJson.Value := .object [("Text", value_81)]
+attribute [local irreducible] value_82
+def text_82 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_81)] ++ "}"
+attribute [local irreducible] text_82
+
+theorem encoded_82 : JsonEncoding.valueText 60 value_82 =
+    .ok text_82 := by
+  unfold value_82 text_82
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_81]
+  all_goals rfl
+
+def value_83 : KernelJson.Value := .string "lsr "
+attribute [local irreducible] value_83
+def text_83 : String := "\"lsr \""
+attribute [local irreducible] text_83
+
+theorem encoded_83 : JsonEncoding.valueText 59 value_83 =
+    .ok text_83 := by
+  unfold value_83 text_83
+  decide +kernel
+
+def value_84 : KernelJson.Value := .object [("Text", value_83)]
+attribute [local irreducible] value_84
+def text_84 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_83)] ++ "}"
+attribute [local irreducible] text_84
+
+theorem encoded_84 : JsonEncoding.valueText 60 value_84 =
+    .ok text_84 := by
+  unfold value_84 text_84
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_83]
+  all_goals rfl
+
+def value_85 : KernelJson.Value := .string ", #2"
+attribute [local irreducible] value_85
+def text_85 : String := "\", #2\""
+attribute [local irreducible] text_85
+
+theorem encoded_85 : JsonEncoding.valueText 59 value_85 =
+    .ok text_85 := by
+  unfold value_85 text_85
+  decide +kernel
+
+def value_86 : KernelJson.Value := .object [("Text", value_85)]
+attribute [local irreducible] value_86
+def text_86 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_85)] ++ "}"
+attribute [local irreducible] text_86
+
+theorem encoded_86 : JsonEncoding.valueText 60 value_86 =
+    .ok text_86 := by
+  unfold value_86 text_86
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_85]
+  all_goals rfl
+
+def value_87 : KernelJson.Value := .number (5)
+attribute [local irreducible] value_87
+def text_87 : String := "5"
+attribute [local irreducible] text_87
+
+theorem encoded_87 : JsonEncoding.valueText 58 value_87 =
+    .ok text_87 := by
+  unfold value_87 text_87
+  decide +kernel
+
+def value_88 : KernelJson.Value := .object [("operand_id", value_87), ("modifier", value_5)]
+attribute [local irreducible] value_88
+def text_88 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_87), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_88
+
+theorem encoded_88 : JsonEncoding.valueText 59 value_88 =
+    .ok text_88 := by
+  unfold value_88 text_88
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_87, encoded_5]
+  all_goals rfl
+
+def value_89 : KernelJson.Value := .object [("Placeholder", value_88)]
+attribute [local irreducible] value_89
+def text_89 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_88)] ++ "}"
+attribute [local irreducible] text_89
+
+theorem encoded_89 : JsonEncoding.valueText 60 value_89 =
+    .ok text_89 := by
+  unfold value_89 text_89
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_88]
+  all_goals rfl
+
+def value_90 : KernelJson.Value := .string ", xzr, xzr"
+attribute [local irreducible] value_90
+def text_90 : String := "\", xzr, xzr\""
+attribute [local irreducible] text_90
+
+theorem encoded_90 : JsonEncoding.valueText 59 value_90 =
+    .ok text_90 := by
+  unfold value_90 text_90
+  decide +kernel
+
+def value_91 : KernelJson.Value := .object [("Text", value_90)]
+attribute [local irreducible] value_91
+def text_91 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_90)] ++ "}"
+attribute [local irreducible] text_91
+
+theorem encoded_91 : JsonEncoding.valueText 60 value_91 =
+    .ok text_91 := by
+  unfold value_91 text_91
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_90]
+  all_goals rfl
+
+def value_92 : KernelJson.Value := .number (6)
+attribute [local irreducible] value_92
+def text_92 : String := "6"
+attribute [local irreducible] text_92
+
+theorem encoded_92 : JsonEncoding.valueText 58 value_92 =
+    .ok text_92 := by
+  unfold value_92 text_92
+  decide +kernel
+
+def value_93 : KernelJson.Value := .object [("operand_id", value_92), ("modifier", value_5)]
+attribute [local irreducible] value_93
+def text_93 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_92), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_93
+
+theorem encoded_93 : JsonEncoding.valueText 59 value_93 =
+    .ok text_93 := by
+  unfold value_93 text_93
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_92, encoded_5]
+  all_goals rfl
+
+def value_94 : KernelJson.Value := .object [("Placeholder", value_93)]
+attribute [local irreducible] value_94
+def text_94 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_93)] ++ "}"
+attribute [local irreducible] text_94
+
+theorem encoded_94 : JsonEncoding.valueText 60 value_94 =
+    .ok text_94 := by
+  unfold value_94 text_94
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_93]
+  all_goals rfl
+
+def value_95 : KernelJson.Value := .number (7)
+attribute [local irreducible] value_95
+def text_95 : String := "7"
+attribute [local irreducible] text_95
+
+theorem encoded_95 : JsonEncoding.valueText 58 value_95 =
+    .ok text_95 := by
+  unfold value_95 text_95
+  decide +kernel
+
+def value_96 : KernelJson.Value := .object [("operand_id", value_95), ("modifier", value_5)]
+attribute [local irreducible] value_96
+def text_96 : String := "{" ++ String.intercalate "," [("\"operand_id\"" ++ ":" ++ text_95), ("\"modifier\"" ++ ":" ++ text_5)] ++ "}"
+attribute [local irreducible] text_96
+
+theorem encoded_96 : JsonEncoding.valueText 59 value_96 =
+    .ok text_96 := by
+  unfold value_96 text_96
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_7, key_8, encoded_95, encoded_5]
+  all_goals rfl
+
+
+def value_97 : KernelJson.Value := .object [("Placeholder", value_96)]
+attribute [local irreducible] value_97
+def text_97 : String := "{" ++ String.intercalate "," [("\"Placeholder\"" ++ ":" ++ text_96)] ++ "}"
+attribute [local irreducible] text_97
+
+theorem encoded_97 : JsonEncoding.valueText 60 value_97 =
+    .ok text_97 := by
+  unfold value_97 text_97
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_6, encoded_96]
+  all_goals rfl
+
+def value_98 : KernelJson.Value := .string "mov "
+attribute [local irreducible] value_98
+def text_98 : String := "\"mov \""
+attribute [local irreducible] text_98
+
+theorem encoded_98 : JsonEncoding.valueText 59 value_98 =
+    .ok text_98 := by
+  unfold value_98 text_98
+  decide +kernel
+
+def value_99 : KernelJson.Value := .object [("Text", value_98)]
+attribute [local irreducible] value_99
+def text_99 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_98)] ++ "}"
+attribute [local irreducible] text_99
+
+theorem encoded_99 : JsonEncoding.valueText 60 value_99 =
+    .ok text_99 := by
+  unfold value_99 text_99
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_98]
+  all_goals rfl
+
+def value_100 : KernelJson.Value := .string ", #0x4000000000000000"
+attribute [local irreducible] value_100
+def text_100 : String := "\", #0x4000000000000000\""
+attribute [local irreducible] text_100
+
+theorem encoded_100 : JsonEncoding.valueText 59 value_100 =
+    .ok text_100 := by
+  unfold value_100 text_100
+  decide +kernel
+
+def value_101 : KernelJson.Value := .object [("Text", value_100)]
+attribute [local irreducible] value_101
+def text_101 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_100)] ++ "}"
+attribute [local irreducible] text_101
+
+theorem encoded_101 : JsonEncoding.valueText 60 value_101 =
+    .ok text_101 := by
+  unfold value_101 text_101
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_100]
+  all_goals rfl
+
+def value_102 : KernelJson.Value := .string "subs "
+attribute [local irreducible] value_102
+def text_102 : String := "\"subs \""
+attribute [local irreducible] text_102
+
+theorem encoded_102 : JsonEncoding.valueText 59 value_102 =
+    .ok text_102 := by
+  unfold value_102 text_102
+  decide +kernel
+
+def value_103 : KernelJson.Value := .object [("Text", value_102)]
+attribute [local irreducible] value_103
+def text_103 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_102)] ++ "}"
+attribute [local irreducible] text_103
+
+theorem encoded_103 : JsonEncoding.valueText 60 value_103 =
+    .ok text_103 := by
+  unfold value_103 text_103
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_102]
+  all_goals rfl
+
+def value_104 : KernelJson.Value := .string "sbcs "
+attribute [local irreducible] value_104
+def text_104 : String := "\"sbcs \""
+attribute [local irreducible] text_104
+
+theorem encoded_104 : JsonEncoding.valueText 59 value_104 =
+    .ok text_104 := by
+  unfold value_104 text_104
+  decide +kernel
+
+def value_105 : KernelJson.Value := .object [("Text", value_104)]
+attribute [local irreducible] value_105
+def text_105 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_104)] ++ "}"
+attribute [local irreducible] text_105
+
+theorem encoded_105 : JsonEncoding.valueText 60 value_105 =
+    .ok text_105 := by
+  unfold value_105 text_105
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_104]
+  all_goals rfl
+
+def value_106 : KernelJson.Value := .string "csel "
+attribute [local irreducible] value_106
+def text_106 : String := "\"csel \""
+attribute [local irreducible] text_106
+
+theorem encoded_106 : JsonEncoding.valueText 59 value_106 =
+    .ok text_106 := by
+  unfold value_106 text_106
+  decide +kernel
+
+def value_107 : KernelJson.Value := .object [("Text", value_106)]
+attribute [local irreducible] value_107
+def text_107 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_106)] ++ "}"
+attribute [local irreducible] text_107
+
+theorem encoded_107 : JsonEncoding.valueText 60 value_107 =
+    .ok text_107 := by
+  unfold value_107 text_107
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_106]
+  all_goals rfl
+
+def value_108 : KernelJson.Value := .string ", lo"
+attribute [local irreducible] value_108
+def text_108 : String := "\", lo\""
+attribute [local irreducible] text_108
+
+theorem encoded_108 : JsonEncoding.valueText 59 value_108 =
+    .ok text_108 := by
+  unfold value_108 text_108
+  decide +kernel
+
+def value_109 : KernelJson.Value := .object [("Text", value_108)]
+attribute [local irreducible] value_109
+def text_109 : String := "{" ++ String.intercalate "," [("\"Text\"" ++ ":" ++ text_108)] ++ "}"
+attribute [local irreducible] text_109
+
+theorem encoded_109 : JsonEncoding.valueText 60 value_109 =
+    .ok text_109 := by
+  unfold value_109 text_109
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_5, encoded_108]
+  all_goals rfl
+
+def chunk_110_0 : List KernelJson.Value := [value_3, value_7, value_9, value_12, value_9, value_15, value_17, value_3, value_20, value_9, value_23, value_9, value_15, value_17, value_3, value_26, value_9, value_29, value_9, value_15, value_17, value_3, value_32, value_9, value_35, value_9, value_15, value_17, value_37, value_40, value_9, value_12]
+attribute [local irreducible] chunk_110_0
+def texts_chunk_110_0 : List String := [text_3, text_7, text_9, text_12, text_9, text_15, text_17, text_3, text_20, text_9, text_23, text_9, text_15, text_17, text_3, text_26, text_9, text_29, text_9, text_15, text_17, text_3, text_32, text_9, text_35, text_9, text_15, text_17, text_37, text_40, text_9, text_12]
+attribute [local irreducible] texts_chunk_110_0
+theorem mapped_chunk_110_0 : chunk_110_0.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_0 := by
+  unfold chunk_110_0 texts_chunk_110_0
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_3, encoded_7, encoded_9, encoded_12, encoded_15, encoded_17, encoded_20, encoded_23, encoded_26, encoded_29, encoded_32, encoded_35, encoded_37, encoded_40]
+
+
+def chunk_110_1 : List KernelJson.Value := [value_9, value_15, value_17, value_37, value_43, value_9, value_23, value_9, value_15, value_17, value_3, value_46, value_9, value_49, value_9, value_7, value_17, value_37, value_52, value_9, value_29, value_9, value_15, value_17, value_37, value_55, value_9, value_35, value_9, value_15, value_17, value_57]
+attribute [local irreducible] chunk_110_1
+def texts_chunk_110_1 : List String := [text_9, text_15, text_17, text_37, text_43, text_9, text_23, text_9, text_15, text_17, text_3, text_46, text_9, text_49, text_9, text_7, text_17, text_37, text_52, text_9, text_29, text_9, text_15, text_17, text_37, text_55, text_9, text_35, text_9, text_15, text_17, text_57]
+attribute [local irreducible] texts_chunk_110_1
+theorem mapped_chunk_110_1 : chunk_110_1.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_1 := by
+  unfold chunk_110_1 texts_chunk_110_1
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_9, encoded_15, encoded_17, encoded_37, encoded_43, encoded_23, encoded_3, encoded_46, encoded_49, encoded_7, encoded_52, encoded_29, encoded_55, encoded_35, encoded_57]
+
+
+def chunk_110_2 : List KernelJson.Value := [value_20, value_9, value_20, value_9, value_40, value_17, value_59, value_26, value_9, value_26, value_9, value_43, value_17, value_3, value_43, value_9, value_62, value_9, value_46, value_17, value_59, value_32, value_9, value_32, value_9, value_52, value_17, value_64, value_67, value_69, value_55, value_17]
+attribute [local irreducible] chunk_110_2
+def texts_chunk_110_2 : List String := [text_20, text_9, text_20, text_9, text_40, text_17, text_59, text_26, text_9, text_26, text_9, text_43, text_17, text_3, text_43, text_9, text_62, text_9, text_46, text_17, text_59, text_32, text_9, text_32, text_9, text_52, text_17, text_64, text_67, text_69, text_55, text_17]
+attribute [local irreducible] texts_chunk_110_2
+theorem mapped_chunk_110_2 : chunk_110_2.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_2 := by
+  unfold chunk_110_2 texts_chunk_110_2
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_20, encoded_9, encoded_40, encoded_17, encoded_59, encoded_26, encoded_43, encoded_3, encoded_62, encoded_46, encoded_32, encoded_52, encoded_64, encoded_67, encoded_69, encoded_55]
+
+
+def chunk_110_3 : List KernelJson.Value := [value_71, value_55, value_9, value_46, value_73, value_17, value_75, value_7, value_77, value_17, value_37, value_40, value_9, value_80, value_9, value_46, value_17, value_59, value_20, value_9, value_20, value_9, value_43, value_17, value_37, value_43, value_9, value_62, value_9, value_46, value_17, value_59]
+attribute [local irreducible] chunk_110_3
+def texts_chunk_110_3 : List String := [text_71, text_55, text_9, text_46, text_73, text_17, text_75, text_7, text_77, text_17, text_37, text_40, text_9, text_80, text_9, text_46, text_17, text_59, text_20, text_9, text_20, text_9, text_43, text_17, text_37, text_43, text_9, text_62, text_9, text_46, text_17, text_59]
+attribute [local irreducible] texts_chunk_110_3
+theorem mapped_chunk_110_3 : chunk_110_3.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_3 := by
+  unfold chunk_110_3 texts_chunk_110_3
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_71, encoded_55, encoded_9, encoded_46, encoded_73, encoded_17, encoded_75, encoded_7, encoded_77, encoded_37, encoded_40, encoded_80, encoded_59, encoded_20, encoded_43, encoded_62]
+
+
+def chunk_110_4 : List KernelJson.Value := [value_26, value_9, value_26, value_82, value_17, value_59, value_32, value_9, value_32, value_9, value_55, value_17, value_84, value_55, value_9, value_46, value_86, value_17, value_64, value_67, value_9, value_67, value_82, value_17, value_57, value_7, value_9, value_20, value_9, value_40, value_17, value_3]
+attribute [local irreducible] chunk_110_4
+def texts_chunk_110_4 : List String := [text_26, text_9, text_26, text_82, text_17, text_59, text_32, text_9, text_32, text_9, text_55, text_17, text_84, text_55, text_9, text_46, text_86, text_17, text_64, text_67, text_9, text_67, text_82, text_17, text_57, text_7, text_9, text_20, text_9, text_40, text_17, text_3]
+attribute [local irreducible] texts_chunk_110_4
+theorem mapped_chunk_110_4 : chunk_110_4.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_4 := by
+  unfold chunk_110_4 texts_chunk_110_4
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_26, encoded_9, encoded_82, encoded_17, encoded_59, encoded_32, encoded_55, encoded_84, encoded_46, encoded_86, encoded_64, encoded_67, encoded_57, encoded_7, encoded_20, encoded_40, encoded_3]
+
+
+def chunk_110_5 : List KernelJson.Value := [value_40, value_9, value_12, value_9, value_89, value_17, value_59, value_20, value_9, value_26, value_9, value_43, value_17, value_3, value_43, value_9, value_23, value_9, value_89, value_17, value_59, value_26, value_9, value_32, value_82, value_17, value_3, value_52, value_9, value_29, value_9, value_89]
+attribute [local irreducible] chunk_110_5
+def texts_chunk_110_5 : List String := [text_40, text_9, text_12, text_9, text_89, text_17, text_59, text_20, text_9, text_26, text_9, text_43, text_17, text_3, text_43, text_9, text_23, text_9, text_89, text_17, text_59, text_26, text_9, text_32, text_82, text_17, text_3, text_52, text_9, text_29, text_9, text_89]
+attribute [local irreducible] texts_chunk_110_5
+theorem mapped_chunk_110_5 : chunk_110_5.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_5 := by
+  unfold chunk_110_5 texts_chunk_110_5
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_40, encoded_9, encoded_12, encoded_89, encoded_17, encoded_59, encoded_20, encoded_26, encoded_43, encoded_3, encoded_23, encoded_32, encoded_82, encoded_52, encoded_29]
+
+
+def chunk_110_6 : List KernelJson.Value := [value_17, value_59, value_32, value_9, value_67, value_9, value_55, value_17, value_3, value_55, value_9, value_35, value_9, value_89, value_17, value_64, value_67, value_91, value_17, value_57, value_7, value_9, value_7, value_9, value_40, value_17, value_37, value_40, value_9, value_12, value_9, value_89]
+attribute [local irreducible] chunk_110_6
+def texts_chunk_110_6 : List String := [text_17, text_59, text_32, text_9, text_67, text_9, text_55, text_17, text_3, text_55, text_9, text_35, text_9, text_89, text_17, text_64, text_67, text_91, text_17, text_57, text_7, text_9, text_7, text_9, text_40, text_17, text_37, text_40, text_9, text_12, text_9, text_89]
+attribute [local irreducible] texts_chunk_110_6
+theorem mapped_chunk_110_6 : chunk_110_6.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_6 := by
+  unfold chunk_110_6 texts_chunk_110_6
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_17, encoded_59, encoded_32, encoded_9, encoded_67, encoded_55, encoded_3, encoded_35, encoded_89, encoded_64, encoded_91, encoded_57, encoded_7, encoded_40, encoded_37, encoded_12]
+
+
+def chunk_110_7 : List KernelJson.Value := [value_17, value_59, value_20, value_9, value_20, value_9, value_43, value_17, value_37, value_43, value_9, value_23, value_9, value_89, value_17, value_59, value_26, value_9, value_26, value_9, value_52, value_17, value_3, value_46, value_9, value_49, value_9, value_7, value_17, value_37, value_52, value_9]
+attribute [local irreducible] chunk_110_7
+def texts_chunk_110_7 : List String := [text_17, text_59, text_20, text_9, text_20, text_9, text_43, text_17, text_37, text_43, text_9, text_23, text_9, text_89, text_17, text_59, text_26, text_9, text_26, text_9, text_52, text_17, text_3, text_46, text_9, text_49, text_9, text_7, text_17, text_37, text_52, text_9]
+attribute [local irreducible] texts_chunk_110_7
+theorem mapped_chunk_110_7 : chunk_110_7.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_7 := by
+  unfold chunk_110_7 texts_chunk_110_7
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_17, encoded_59, encoded_20, encoded_9, encoded_43, encoded_37, encoded_23, encoded_89, encoded_26, encoded_52, encoded_3, encoded_46, encoded_49, encoded_7]
+
+
+def chunk_110_8 : List KernelJson.Value := [value_29, value_9, value_89, value_17, value_59, value_32, value_9, value_32, value_9, value_55, value_17, value_37, value_55, value_9, value_35, value_9, value_89, value_17, value_64, value_67, value_9, value_67, value_82, value_17, value_57, value_20, value_9, value_20, value_9, value_40, value_17, value_59]
+attribute [local irreducible] chunk_110_8
+def texts_chunk_110_8 : List String := [text_29, text_9, text_89, text_17, text_59, text_32, text_9, text_32, text_9, text_55, text_17, text_37, text_55, text_9, text_35, text_9, text_89, text_17, text_64, text_67, text_9, text_67, text_82, text_17, text_57, text_20, text_9, text_20, text_9, text_40, text_17, text_59]
+attribute [local irreducible] texts_chunk_110_8
+theorem mapped_chunk_110_8 : chunk_110_8.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_8 := by
+  unfold chunk_110_8 texts_chunk_110_8
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_29, encoded_9, encoded_89, encoded_17, encoded_59, encoded_32, encoded_55, encoded_37, encoded_35, encoded_64, encoded_67, encoded_82, encoded_57, encoded_20, encoded_40]
+
+
+def chunk_110_9 : List KernelJson.Value := [value_26, value_9, value_26, value_9, value_43, value_17, value_3, value_43, value_9, value_62, value_9, value_46, value_17, value_59, value_32, value_9, value_32, value_9, value_52, value_17, value_64, value_67, value_9, value_67, value_9, value_55, value_17, value_71, value_55, value_9, value_46, value_73]
+attribute [local irreducible] chunk_110_9
+def texts_chunk_110_9 : List String := [text_26, text_9, text_26, text_9, text_43, text_17, text_3, text_43, text_9, text_62, text_9, text_46, text_17, text_59, text_32, text_9, text_32, text_9, text_52, text_17, text_64, text_67, text_9, text_67, text_9, text_55, text_17, text_71, text_55, text_9, text_46, text_73]
+attribute [local irreducible] texts_chunk_110_9
+theorem mapped_chunk_110_9 : chunk_110_9.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_9 := by
+  unfold chunk_110_9 texts_chunk_110_9
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_26, encoded_9, encoded_43, encoded_17, encoded_3, encoded_62, encoded_46, encoded_59, encoded_32, encoded_52, encoded_64, encoded_67, encoded_55, encoded_71, encoded_73]
+
+
+def chunk_110_10 : List KernelJson.Value := [value_17, value_75, value_7, value_77, value_17, value_37, value_40, value_9, value_80, value_9, value_46, value_17, value_59, value_20, value_9, value_20, value_9, value_43, value_17, value_37, value_43, value_9, value_62, value_9, value_46, value_17, value_59, value_26, value_9, value_26, value_82, value_17]
+attribute [local irreducible] chunk_110_10
+def texts_chunk_110_10 : List String := [text_17, text_75, text_7, text_77, text_17, text_37, text_40, text_9, text_80, text_9, text_46, text_17, text_59, text_20, text_9, text_20, text_9, text_43, text_17, text_37, text_43, text_9, text_62, text_9, text_46, text_17, text_59, text_26, text_9, text_26, text_82, text_17]
+attribute [local irreducible] texts_chunk_110_10
+theorem mapped_chunk_110_10 : chunk_110_10.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_10 := by
+  unfold chunk_110_10 texts_chunk_110_10
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_17, encoded_75, encoded_7, encoded_77, encoded_37, encoded_40, encoded_9, encoded_80, encoded_46, encoded_59, encoded_20, encoded_43, encoded_62, encoded_26, encoded_82]
+
+
+def chunk_110_11 : List KernelJson.Value := [value_59, value_32, value_9, value_32, value_9, value_55, value_17, value_84, value_55, value_9, value_46, value_86, value_17, value_64, value_67, value_9, value_67, value_82, value_17, value_57, value_7, value_9, value_20, value_9, value_40, value_17, value_3, value_40, value_9, value_12, value_9, value_94]
+attribute [local irreducible] chunk_110_11
+def texts_chunk_110_11 : List String := [text_59, text_32, text_9, text_32, text_9, text_55, text_17, text_84, text_55, text_9, text_46, text_86, text_17, text_64, text_67, text_9, text_67, text_82, text_17, text_57, text_7, text_9, text_20, text_9, text_40, text_17, text_3, text_40, text_9, text_12, text_9, text_94]
+attribute [local irreducible] texts_chunk_110_11
+theorem mapped_chunk_110_11 : chunk_110_11.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_11 := by
+  unfold chunk_110_11 texts_chunk_110_11
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_59, encoded_32, encoded_9, encoded_55, encoded_17, encoded_84, encoded_46, encoded_86, encoded_64, encoded_67, encoded_82, encoded_57, encoded_7, encoded_20, encoded_40, encoded_3, encoded_12, encoded_94]
+
+
+def chunk_110_12 : List KernelJson.Value := [value_17, value_59, value_20, value_9, value_26, value_9, value_43, value_17, value_3, value_43, value_9, value_23, value_9, value_94, value_17, value_59, value_26, value_9, value_32, value_82, value_17, value_3, value_52, value_9, value_29, value_9, value_94, value_17, value_59, value_32, value_9, value_67]
+attribute [local irreducible] chunk_110_12
+def texts_chunk_110_12 : List String := [text_17, text_59, text_20, text_9, text_26, text_9, text_43, text_17, text_3, text_43, text_9, text_23, text_9, text_94, text_17, text_59, text_26, text_9, text_32, text_82, text_17, text_3, text_52, text_9, text_29, text_9, text_94, text_17, text_59, text_32, text_9, text_67]
+attribute [local irreducible] texts_chunk_110_12
+theorem mapped_chunk_110_12 : chunk_110_12.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_12 := by
+  unfold chunk_110_12 texts_chunk_110_12
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_17, encoded_59, encoded_20, encoded_9, encoded_26, encoded_43, encoded_3, encoded_23, encoded_94, encoded_32, encoded_82, encoded_52, encoded_29, encoded_67]
+
+
+def chunk_110_13 : List KernelJson.Value := [value_9, value_55, value_17, value_3, value_55, value_9, value_35, value_9, value_94, value_17, value_64, value_67, value_91, value_17, value_57, value_7, value_9, value_7, value_9, value_40, value_17, value_37, value_40, value_9, value_12, value_9, value_94, value_17, value_59, value_20, value_9, value_20]
+attribute [local irreducible] chunk_110_13
+def texts_chunk_110_13 : List String := [text_9, text_55, text_17, text_3, text_55, text_9, text_35, text_9, text_94, text_17, text_64, text_67, text_91, text_17, text_57, text_7, text_9, text_7, text_9, text_40, text_17, text_37, text_40, text_9, text_12, text_9, text_94, text_17, text_59, text_20, text_9, text_20]
+attribute [local irreducible] texts_chunk_110_13
+theorem mapped_chunk_110_13 : chunk_110_13.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_13 := by
+  unfold chunk_110_13 texts_chunk_110_13
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_9, encoded_55, encoded_17, encoded_3, encoded_35, encoded_94, encoded_64, encoded_67, encoded_91, encoded_57, encoded_7, encoded_40, encoded_37, encoded_12, encoded_59, encoded_20]
+
+
+def chunk_110_14 : List KernelJson.Value := [value_9, value_43, value_17, value_37, value_43, value_9, value_23, value_9, value_94, value_17, value_59, value_26, value_9, value_26, value_9, value_52, value_17, value_3, value_46, value_9, value_49, value_9, value_7, value_17, value_37, value_52, value_9, value_29, value_9, value_94, value_17, value_59]
+attribute [local irreducible] chunk_110_14
+def texts_chunk_110_14 : List String := [text_9, text_43, text_17, text_37, text_43, text_9, text_23, text_9, text_94, text_17, text_59, text_26, text_9, text_26, text_9, text_52, text_17, text_3, text_46, text_9, text_49, text_9, text_7, text_17, text_37, text_52, text_9, text_29, text_9, text_94, text_17, text_59]
+attribute [local irreducible] texts_chunk_110_14
+theorem mapped_chunk_110_14 : chunk_110_14.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_14 := by
+  unfold chunk_110_14 texts_chunk_110_14
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_9, encoded_43, encoded_17, encoded_37, encoded_23, encoded_94, encoded_59, encoded_26, encoded_52, encoded_3, encoded_46, encoded_49, encoded_7, encoded_29]
+
+
+def chunk_110_15 : List KernelJson.Value := [value_32, value_9, value_32, value_9, value_55, value_17, value_37, value_55, value_9, value_35, value_9, value_94, value_17, value_64, value_67, value_9, value_67, value_82, value_17, value_57, value_20, value_9, value_20, value_9, value_40, value_17, value_59, value_26, value_9, value_26, value_9, value_43]
+attribute [local irreducible] chunk_110_15
+def texts_chunk_110_15 : List String := [text_32, text_9, text_32, text_9, text_55, text_17, text_37, text_55, text_9, text_35, text_9, text_94, text_17, text_64, text_67, text_9, text_67, text_82, text_17, text_57, text_20, text_9, text_20, text_9, text_40, text_17, text_59, text_26, text_9, text_26, text_9, text_43]
+attribute [local irreducible] texts_chunk_110_15
+theorem mapped_chunk_110_15 : chunk_110_15.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_15 := by
+  unfold chunk_110_15 texts_chunk_110_15
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_32, encoded_9, encoded_55, encoded_17, encoded_37, encoded_35, encoded_94, encoded_64, encoded_67, encoded_82, encoded_57, encoded_20, encoded_40, encoded_59, encoded_26, encoded_43]
+
+
+def chunk_110_16 : List KernelJson.Value := [value_17, value_3, value_43, value_9, value_62, value_9, value_46, value_17, value_59, value_32, value_9, value_32, value_9, value_52, value_17, value_64, value_67, value_9, value_67, value_9, value_55, value_17, value_71, value_55, value_9, value_46, value_73, value_17, value_75, value_7, value_77, value_17]
+attribute [local irreducible] chunk_110_16
+def texts_chunk_110_16 : List String := [text_17, text_3, text_43, text_9, text_62, text_9, text_46, text_17, text_59, text_32, text_9, text_32, text_9, text_52, text_17, text_64, text_67, text_9, text_67, text_9, text_55, text_17, text_71, text_55, text_9, text_46, text_73, text_17, text_75, text_7, text_77, text_17]
+attribute [local irreducible] texts_chunk_110_16
+theorem mapped_chunk_110_16 : chunk_110_16.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_16 := by
+  unfold chunk_110_16 texts_chunk_110_16
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_17, encoded_3, encoded_43, encoded_9, encoded_62, encoded_46, encoded_59, encoded_32, encoded_52, encoded_64, encoded_67, encoded_55, encoded_71, encoded_73, encoded_75, encoded_7, encoded_77]
+
+
+def chunk_110_17 : List KernelJson.Value := [value_37, value_40, value_9, value_80, value_9, value_46, value_17, value_59, value_20, value_9, value_20, value_9, value_43, value_17, value_37, value_43, value_9, value_62, value_9, value_46, value_17, value_59, value_26, value_9, value_26, value_82, value_17, value_59, value_32, value_9, value_32, value_9]
+attribute [local irreducible] chunk_110_17
+def texts_chunk_110_17 : List String := [text_37, text_40, text_9, text_80, text_9, text_46, text_17, text_59, text_20, text_9, text_20, text_9, text_43, text_17, text_37, text_43, text_9, text_62, text_9, text_46, text_17, text_59, text_26, text_9, text_26, text_82, text_17, text_59, text_32, text_9, text_32, text_9]
+attribute [local irreducible] texts_chunk_110_17
+theorem mapped_chunk_110_17 : chunk_110_17.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_17 := by
+  unfold chunk_110_17 texts_chunk_110_17
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_37, encoded_40, encoded_9, encoded_80, encoded_46, encoded_17, encoded_59, encoded_20, encoded_43, encoded_62, encoded_26, encoded_82, encoded_32]
+
+
+def chunk_110_18 : List KernelJson.Value := [value_55, value_17, value_84, value_55, value_9, value_46, value_86, value_17, value_64, value_67, value_9, value_67, value_82, value_17, value_57, value_7, value_9, value_20, value_9, value_40, value_17, value_3, value_40, value_9, value_12, value_9, value_97, value_17, value_59, value_20, value_9, value_26]
+attribute [local irreducible] chunk_110_18
+def texts_chunk_110_18 : List String := [text_55, text_17, text_84, text_55, text_9, text_46, text_86, text_17, text_64, text_67, text_9, text_67, text_82, text_17, text_57, text_7, text_9, text_20, text_9, text_40, text_17, text_3, text_40, text_9, text_12, text_9, text_97, text_17, text_59, text_20, text_9, text_26]
+attribute [local irreducible] texts_chunk_110_18
+theorem mapped_chunk_110_18 : chunk_110_18.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_18 := by
+  unfold chunk_110_18 texts_chunk_110_18
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_55, encoded_17, encoded_84, encoded_9, encoded_46, encoded_86, encoded_64, encoded_67, encoded_82, encoded_57, encoded_7, encoded_20, encoded_40, encoded_3, encoded_12, encoded_97, encoded_59, encoded_26]
+
+
+def chunk_110_19 : List KernelJson.Value := [value_9, value_43, value_17, value_3, value_43, value_9, value_23, value_9, value_97, value_17, value_59, value_26, value_9, value_32, value_82, value_17, value_3, value_52, value_9, value_29, value_9, value_97, value_17, value_59, value_32, value_9, value_67, value_9, value_55, value_17, value_3, value_55]
+attribute [local irreducible] chunk_110_19
+def texts_chunk_110_19 : List String := [text_9, text_43, text_17, text_3, text_43, text_9, text_23, text_9, text_97, text_17, text_59, text_26, text_9, text_32, text_82, text_17, text_3, text_52, text_9, text_29, text_9, text_97, text_17, text_59, text_32, text_9, text_67, text_9, text_55, text_17, text_3, text_55]
+attribute [local irreducible] texts_chunk_110_19
+theorem mapped_chunk_110_19 : chunk_110_19.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_19 := by
+  unfold chunk_110_19 texts_chunk_110_19
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_9, encoded_43, encoded_17, encoded_3, encoded_23, encoded_97, encoded_59, encoded_26, encoded_32, encoded_82, encoded_52, encoded_29, encoded_67, encoded_55]
+
+
+def chunk_110_20 : List KernelJson.Value := [value_9, value_35, value_9, value_97, value_17, value_64, value_67, value_91, value_17, value_57, value_7, value_9, value_7, value_9, value_40, value_17, value_37, value_40, value_9, value_12, value_9, value_97, value_17, value_59, value_20, value_9, value_20, value_9, value_43, value_17, value_37, value_43]
+attribute [local irreducible] chunk_110_20
+def texts_chunk_110_20 : List String := [text_9, text_35, text_9, text_97, text_17, text_64, text_67, text_91, text_17, text_57, text_7, text_9, text_7, text_9, text_40, text_17, text_37, text_40, text_9, text_12, text_9, text_97, text_17, text_59, text_20, text_9, text_20, text_9, text_43, text_17, text_37, text_43]
+attribute [local irreducible] texts_chunk_110_20
+theorem mapped_chunk_110_20 : chunk_110_20.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_20 := by
+  unfold chunk_110_20 texts_chunk_110_20
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_9, encoded_35, encoded_97, encoded_17, encoded_64, encoded_67, encoded_91, encoded_57, encoded_7, encoded_40, encoded_37, encoded_12, encoded_59, encoded_20, encoded_43]
+
+
+def chunk_110_21 : List KernelJson.Value := [value_9, value_23, value_9, value_97, value_17, value_59, value_26, value_9, value_26, value_9, value_52, value_17, value_3, value_46, value_9, value_49, value_9, value_7, value_17, value_37, value_52, value_9, value_29, value_9, value_97, value_17, value_59, value_32, value_9, value_32, value_9, value_55]
+attribute [local irreducible] chunk_110_21
+def texts_chunk_110_21 : List String := [text_9, text_23, text_9, text_97, text_17, text_59, text_26, text_9, text_26, text_9, text_52, text_17, text_3, text_46, text_9, text_49, text_9, text_7, text_17, text_37, text_52, text_9, text_29, text_9, text_97, text_17, text_59, text_32, text_9, text_32, text_9, text_55]
+attribute [local irreducible] texts_chunk_110_21
+theorem mapped_chunk_110_21 : chunk_110_21.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_21 := by
+  unfold chunk_110_21 texts_chunk_110_21
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_9, encoded_23, encoded_97, encoded_17, encoded_59, encoded_26, encoded_52, encoded_3, encoded_46, encoded_49, encoded_7, encoded_37, encoded_29, encoded_32, encoded_55]
+
+
+def chunk_110_22 : List KernelJson.Value := [value_17, value_37, value_55, value_9, value_35, value_9, value_97, value_17, value_64, value_67, value_9, value_67, value_82, value_17, value_57, value_20, value_9, value_20, value_9, value_40, value_17, value_59, value_26, value_9, value_26, value_9, value_43, value_17, value_3, value_43, value_9, value_62]
+attribute [local irreducible] chunk_110_22
+def texts_chunk_110_22 : List String := [text_17, text_37, text_55, text_9, text_35, text_9, text_97, text_17, text_64, text_67, text_9, text_67, text_82, text_17, text_57, text_20, text_9, text_20, text_9, text_40, text_17, text_59, text_26, text_9, text_26, text_9, text_43, text_17, text_3, text_43, text_9, text_62]
+attribute [local irreducible] texts_chunk_110_22
+theorem mapped_chunk_110_22 : chunk_110_22.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_22 := by
+  unfold chunk_110_22 texts_chunk_110_22
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_17, encoded_37, encoded_55, encoded_9, encoded_35, encoded_97, encoded_64, encoded_67, encoded_82, encoded_57, encoded_20, encoded_40, encoded_59, encoded_26, encoded_43, encoded_3, encoded_62]
+
+
+def chunk_110_23 : List KernelJson.Value := [value_9, value_46, value_17, value_59, value_32, value_9, value_32, value_9, value_52, value_17, value_64, value_67, value_9, value_67, value_9, value_55, value_17, value_71, value_55, value_9, value_46, value_73, value_17, value_75, value_7, value_77, value_17, value_37, value_40, value_9, value_80, value_9]
+attribute [local irreducible] chunk_110_23
+def texts_chunk_110_23 : List String := [text_9, text_46, text_17, text_59, text_32, text_9, text_32, text_9, text_52, text_17, text_64, text_67, text_9, text_67, text_9, text_55, text_17, text_71, text_55, text_9, text_46, text_73, text_17, text_75, text_7, text_77, text_17, text_37, text_40, text_9, text_80, text_9]
+attribute [local irreducible] texts_chunk_110_23
+theorem mapped_chunk_110_23 : chunk_110_23.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_23 := by
+  unfold chunk_110_23 texts_chunk_110_23
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_9, encoded_46, encoded_17, encoded_59, encoded_32, encoded_52, encoded_64, encoded_67, encoded_55, encoded_71, encoded_73, encoded_75, encoded_7, encoded_77, encoded_37, encoded_40, encoded_80]
+
+
+def chunk_110_24 : List KernelJson.Value := [value_46, value_17, value_59, value_20, value_9, value_20, value_9, value_43, value_17, value_37, value_43, value_9, value_62, value_9, value_46, value_17, value_59, value_26, value_9, value_26, value_82, value_17, value_59, value_32, value_9, value_32, value_9, value_55, value_17, value_84, value_55, value_9]
+attribute [local irreducible] chunk_110_24
+def texts_chunk_110_24 : List String := [text_46, text_17, text_59, text_20, text_9, text_20, text_9, text_43, text_17, text_37, text_43, text_9, text_62, text_9, text_46, text_17, text_59, text_26, text_9, text_26, text_82, text_17, text_59, text_32, text_9, text_32, text_9, text_55, text_17, text_84, text_55, text_9]
+attribute [local irreducible] texts_chunk_110_24
+theorem mapped_chunk_110_24 : chunk_110_24.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_24 := by
+  unfold chunk_110_24 texts_chunk_110_24
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_46, encoded_17, encoded_59, encoded_20, encoded_9, encoded_43, encoded_37, encoded_62, encoded_26, encoded_82, encoded_32, encoded_55, encoded_84]
+
+
+def chunk_110_25 : List KernelJson.Value := [value_46, value_86, value_17, value_64, value_67, value_9, value_67, value_82, value_17, value_57, value_7, value_9, value_20, value_9, value_40, value_17, value_59, value_20, value_9, value_26, value_9, value_43, value_17, value_59, value_26, value_9, value_32, value_82, value_17, value_59, value_32, value_9]
+attribute [local irreducible] chunk_110_25
+def texts_chunk_110_25 : List String := [text_46, text_86, text_17, text_64, text_67, text_9, text_67, text_82, text_17, text_57, text_7, text_9, text_20, text_9, text_40, text_17, text_59, text_20, text_9, text_26, text_9, text_43, text_17, text_59, text_26, text_9, text_32, text_82, text_17, text_59, text_32, text_9]
+attribute [local irreducible] texts_chunk_110_25
+theorem mapped_chunk_110_25 : chunk_110_25.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_25 := by
+  unfold chunk_110_25 texts_chunk_110_25
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_46, encoded_86, encoded_17, encoded_64, encoded_67, encoded_9, encoded_82, encoded_57, encoded_7, encoded_20, encoded_40, encoded_59, encoded_26, encoded_43, encoded_32]
+
+
+def chunk_110_26 : List KernelJson.Value := [value_67, value_9, value_55, value_17, value_99, value_46, value_101, value_17, value_103, value_40, value_9, value_7, value_9, value_80, value_17, value_105, value_43, value_9, value_20, value_9, value_62, value_17, value_105, value_52, value_9, value_26, value_82, value_17, value_105, value_55, value_9, value_32]
+attribute [local irreducible] chunk_110_26
+def texts_chunk_110_26 : List String := [text_67, text_9, text_55, text_17, text_99, text_46, text_101, text_17, text_103, text_40, text_9, text_7, text_9, text_80, text_17, text_105, text_43, text_9, text_20, text_9, text_62, text_17, text_105, text_52, text_9, text_26, text_82, text_17, text_105, text_55, text_9, text_32]
+attribute [local irreducible] texts_chunk_110_26
+theorem mapped_chunk_110_26 : chunk_110_26.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_26 := by
+  unfold chunk_110_26 texts_chunk_110_26
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_67, encoded_9, encoded_55, encoded_17, encoded_99, encoded_46, encoded_101, encoded_103, encoded_40, encoded_7, encoded_80, encoded_105, encoded_43, encoded_20, encoded_62, encoded_52, encoded_26, encoded_82, encoded_32]
+
+
+def chunk_110_27 : List KernelJson.Value := [value_9, value_46, value_17, value_107, value_7, value_9, value_7, value_9, value_40, value_109, value_17, value_107, value_20, value_9, value_20, value_9, value_43, value_109, value_17, value_107, value_26, value_9, value_26, value_9, value_52, value_109, value_17, value_107, value_32, value_9, value_32, value_9]
+attribute [local irreducible] chunk_110_27
+def texts_chunk_110_27 : List String := [text_9, text_46, text_17, text_107, text_7, text_9, text_7, text_9, text_40, text_109, text_17, text_107, text_20, text_9, text_20, text_9, text_43, text_109, text_17, text_107, text_26, text_9, text_26, text_9, text_52, text_109, text_17, text_107, text_32, text_9, text_32, text_9]
+attribute [local irreducible] texts_chunk_110_27
+theorem mapped_chunk_110_27 : chunk_110_27.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_27 := by
+  unfold chunk_110_27 texts_chunk_110_27
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_9, encoded_46, encoded_17, encoded_107, encoded_7, encoded_40, encoded_109, encoded_20, encoded_43, encoded_26, encoded_52, encoded_32]
+
+
+def chunk_110_28 : List KernelJson.Value := [value_55, value_109]
+attribute [local irreducible] chunk_110_28
+def texts_chunk_110_28 : List String := [text_55, text_109]
+attribute [local irreducible] texts_chunk_110_28
+theorem mapped_chunk_110_28 : chunk_110_28.mapM (JsonEncoding.valueText 60) =
+    .ok texts_chunk_110_28 := by
+  unfold chunk_110_28 texts_chunk_110_28
+  simp only [List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Pure.pure, Bind.bind, encoded_55, encoded_109]
+
+
+def value_110 : KernelJson.Value := .array (chunk_110_0 ++ chunk_110_1 ++ chunk_110_2 ++ chunk_110_3 ++ chunk_110_4 ++ chunk_110_5 ++ chunk_110_6 ++ chunk_110_7 ++ chunk_110_8 ++ chunk_110_9 ++ chunk_110_10 ++ chunk_110_11 ++ chunk_110_12 ++ chunk_110_13 ++ chunk_110_14 ++ chunk_110_15 ++ chunk_110_16 ++ chunk_110_17 ++ chunk_110_18 ++ chunk_110_19 ++ chunk_110_20 ++ chunk_110_21 ++ chunk_110_22 ++ chunk_110_23 ++ chunk_110_24 ++ chunk_110_25 ++ chunk_110_26 ++ chunk_110_27 ++ chunk_110_28)
+attribute [local irreducible] value_110
+def text_110 : String := "[" ++ String.intercalate "," (texts_chunk_110_0 ++ texts_chunk_110_1 ++ texts_chunk_110_2 ++ texts_chunk_110_3 ++ texts_chunk_110_4 ++ texts_chunk_110_5 ++ texts_chunk_110_6 ++ texts_chunk_110_7 ++ texts_chunk_110_8 ++ texts_chunk_110_9 ++ texts_chunk_110_10 ++ texts_chunk_110_11 ++ texts_chunk_110_12 ++ texts_chunk_110_13 ++ texts_chunk_110_14 ++ texts_chunk_110_15 ++ texts_chunk_110_16 ++ texts_chunk_110_17 ++ texts_chunk_110_18 ++ texts_chunk_110_19 ++ texts_chunk_110_20 ++ texts_chunk_110_21 ++ texts_chunk_110_22 ++ texts_chunk_110_23 ++ texts_chunk_110_24 ++ texts_chunk_110_25 ++ texts_chunk_110_26 ++ texts_chunk_110_27 ++ texts_chunk_110_28) ++ "]"
+attribute [local irreducible] text_110
+
+theorem encoded_110 : JsonEncoding.valueText 61 value_110 =
+    .ok text_110 := by
+  unfold value_110 text_110
+  simp only [array_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, List.mapM_append, mapped_chunk_110_0, mapped_chunk_110_1, mapped_chunk_110_2, mapped_chunk_110_3, mapped_chunk_110_4, mapped_chunk_110_5, mapped_chunk_110_6, mapped_chunk_110_7, mapped_chunk_110_8, mapped_chunk_110_9, mapped_chunk_110_10, mapped_chunk_110_11, mapped_chunk_110_12, mapped_chunk_110_13, mapped_chunk_110_14, mapped_chunk_110_15, mapped_chunk_110_16, mapped_chunk_110_17, mapped_chunk_110_18, mapped_chunk_110_19, mapped_chunk_110_20, mapped_chunk_110_21, mapped_chunk_110_22, mapped_chunk_110_23, mapped_chunk_110_24, mapped_chunk_110_25, mapped_chunk_110_26, mapped_chunk_110_27, mapped_chunk_110_28]
+  all_goals rfl
+
+def value_111 : KernelJson.Value := .string "reg"
+attribute [local irreducible] value_111
+def text_111 : String := "\"reg\""
+attribute [local irreducible] text_111
+
+theorem encoded_111 : JsonEncoding.valueText 57 value_111 =
+    .ok text_111 := by
+  unfold value_111 text_111
+  decide +kernel
+
+def value_112 : KernelJson.Value := .object [("Class", value_111)]
+attribute [local irreducible] value_112
+def text_112 : String := "{" ++ String.intercalate "," [("\"Class\"" ++ ":" ++ text_111)] ++ "}"
+attribute [local irreducible] text_112
+
+theorem encoded_112 : JsonEncoding.valueText 58 value_112 =
+    .ok text_112 := by
+  unfold value_112 text_112
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_12, encoded_111]
+  all_goals rfl
+
+
+def value_113 : KernelJson.Value := .object [("reg", value_112)]
+attribute [local irreducible] value_113
+def text_113 : String := "{" ++ String.intercalate "," [("\"reg\"" ++ ":" ++ text_112)] ++ "}"
+attribute [local irreducible] text_113
+
+theorem encoded_113 : JsonEncoding.valueText 59 value_113 =
+    .ok text_113 := by
+  unfold value_113 text_113
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_11, encoded_112]
+  all_goals rfl
+
+def value_114 : KernelJson.Value := .object [("In", value_113)]
+attribute [local irreducible] value_114
+def text_114 : String := "{" ++ String.intercalate "," [("\"In\"" ++ ":" ++ text_113)] ++ "}"
+attribute [local irreducible] text_114
+
+theorem encoded_114 : JsonEncoding.valueText 60 value_114 =
+    .ok text_114 := by
+  unfold value_114 text_114
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_10, encoded_113]
+  all_goals rfl
+
+def value_115 : KernelJson.Value := .bool false
+attribute [local irreducible] value_115
+def text_115 : String := "false"
+attribute [local irreducible] text_115
+
+theorem encoded_115 : JsonEncoding.valueText 58 value_115 =
+    .ok text_115 := by
+  unfold value_115 text_115
+  decide +kernel
+
+def value_116 : KernelJson.Value := .object [("reg", value_112), ("late", value_115)]
+attribute [local irreducible] value_116
+def text_116 : String := "{" ++ String.intercalate "," [("\"reg\"" ++ ":" ++ text_112), ("\"late\"" ++ ":" ++ text_115)] ++ "}"
+attribute [local irreducible] text_116
+
+theorem encoded_116 : JsonEncoding.valueText 59 value_116 =
+    .ok text_116 := by
+  unfold value_116 text_116
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_11, key_14, encoded_112, encoded_115]
+  all_goals rfl
+
+def value_117 : KernelJson.Value := .object [("Out", value_116)]
+attribute [local irreducible] value_117
+def text_117 : String := "{" ++ String.intercalate "," [("\"Out\"" ++ ":" ++ text_116)] ++ "}"
+attribute [local irreducible] text_117
+
+theorem encoded_117 : JsonEncoding.valueText 60 value_117 =
+    .ok text_117 := by
+  unfold value_117 text_117
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_13, encoded_116]
+  all_goals rfl
+
+def value_118 : KernelJson.Value := .array [value_114, value_114, value_114, value_114, value_114, value_114, value_114, value_114, value_114, value_114, value_114, value_117, value_117, value_117, value_117, value_117, value_117, value_117, value_117, value_117, value_117]
+attribute [local irreducible] value_118
+def text_118 : String := "[" ++ String.intercalate "," [text_114, text_114, text_114, text_114, text_114, text_114, text_114, text_114, text_114, text_114, text_114, text_117, text_117, text_117, text_117, text_117, text_117, text_117, text_117, text_117, text_117] ++ "]"
+attribute [local irreducible] text_118
+
+theorem encoded_118 : JsonEncoding.valueText 61 value_118 =
+    .ok text_118 := by
+  unfold value_118 text_118
+  simp only [array_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, encoded_114, encoded_117]
+  all_goals rfl
+
+def value_119 : KernelJson.Value := .bool true
+attribute [local irreducible] value_119
+def text_119 : String := "true"
+attribute [local irreducible] text_119
+
+theorem encoded_119 : JsonEncoding.valueText 60 value_119 =
+    .ok text_119 := by
+  unfold value_119 text_119
+  decide +kernel
+
+def value_120 : KernelJson.Value := .bool false
+attribute [local irreducible] value_120
+def text_120 : String := "false"
+attribute [local irreducible] text_120
+
+theorem encoded_120 : JsonEncoding.valueText 60 value_120 =
+    .ok text_120 := by
+  unfold value_120 text_120
+  decide +kernel
+
+def value_121 : KernelJson.Value := .object [("pure", value_119), ("nomem", value_119), ("readonly", value_120), ("preserves_flags", value_120), ("noreturn", value_120), ("nostack", value_119), ("att_syntax", value_120), ("may_unwind", value_120)]
+attribute [local irreducible] value_121
+def text_121 : String := "{" ++ String.intercalate "," [("\"pure\"" ++ ":" ++ text_119), ("\"nomem\"" ++ ":" ++ text_119), ("\"readonly\"" ++ ":" ++ text_120), ("\"preserves_flags\"" ++ ":" ++ text_120), ("\"noreturn\"" ++ ":" ++ text_120), ("\"nostack\"" ++ ":" ++ text_119), ("\"att_syntax\"" ++ ":" ++ text_120), ("\"may_unwind\"" ++ ":" ++ text_120)] ++ "}"
+attribute [local irreducible] text_121
+
+theorem encoded_121 : JsonEncoding.valueText 61 value_121 =
+    .ok text_121 := by
+  unfold value_121 text_121
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_16, key_17, key_18, key_19, key_20, key_21, key_22, key_23, encoded_119, encoded_120]
+  all_goals rfl
+
+def value_122 : KernelJson.Value := .object [("kind", value_1), ("template", value_110), ("operands", value_118), ("options", value_121)]
+attribute [local irreducible] value_122
+def text_122 : String := "{" ++ String.intercalate "," [("\"kind\"" ++ ":" ++ text_1), ("\"template\"" ++ ":" ++ text_110), ("\"operands\"" ++ ":" ++ text_118), ("\"options\"" ++ ":" ++ text_121)] ++ "}"
+attribute [local irreducible] text_122
+
+theorem encoded_122 : JsonEncoding.valueText 62 value_122 =
+    .ok text_122 := by
+  unfold value_122 text_122
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_3, key_4, key_9, key_15, encoded_1, encoded_110, encoded_118, encoded_121]
+  all_goals rfl
+
+def value_123 : KernelJson.Value := .object [("mul", value_122)]
+attribute [local irreducible] value_123
+def text_123 : String := "{" ++ String.intercalate "," [("\"mul\"" ++ ":" ++ text_122)] ++ "}"
+attribute [local irreducible] text_123
+
+theorem encoded_123 : JsonEncoding.valueText 63 value_123 =
+    .ok text_123 := by
+  unfold value_123 text_123
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_2, encoded_122]
+  all_goals rfl
+
+def value_124 : KernelJson.Value := .object [("schema_version", value_0), ("routines", value_123)]
+attribute [local irreducible] value_124
+def text_124 : String := "{" ++ String.intercalate "," [("\"schema_version\"" ++ ":" ++ text_0), ("\"routines\"" ++ ":" ++ text_123)] ++ "}"
+attribute [local irreducible] text_124
+
+theorem encoded_124 : JsonEncoding.valueText 64 value_124 =
+    .ok text_124 := by
+  unfold value_124 text_124
+  simp only [object_encoding, List.mapM_cons, List.mapM_nil, Except.bind, Except.pure, Except.map, Bind.bind, Pure.pure, key_0, key_1, encoded_0, encoded_123]
+  all_goals rfl
+
+#print axioms encoded_124
+
+end PastaBridge.MulJsonTextDag

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\nat-proof-build\\AdditionNatObservation.olean",
+    "AdditionNatObservation.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work",
+  "exit_code": 0,
+  "wall_seconds": 178.96157,
+  "peak_rss_bytes": 910626816,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "evidence/addition-nat-observation.log",
+  "source": "proofs/AdditionNatObservation.lean",
+  "source_sha256": "96af8ddd3ef80acf40872f6f4ae08922d84c00fa779a151ae04a7f8f8720ecb5"
+}

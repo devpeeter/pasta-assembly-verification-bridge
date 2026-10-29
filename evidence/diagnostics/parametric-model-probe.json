@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\nat-proof-build\\AdditionParametricModelProbe.olean",
+    "AdditionParametricModelProbe.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work",
+  "exit_code": 0,
+  "wall_seconds": 27.788222,
+  "peak_rss_bytes": 930381824,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "evidence/diagnostics/parametric-model-probe.log",
+  "source_sha256": "537515bed809c32c4c4fcffd51ca792abfeb6a2ac906f9890b621e91d7469ee2",
+  "source": "evidence/diagnostics/parametric-model-probe-source.lean.txt",
+  "scope": "Successful instrumented diagnostic. Delivered target modules use marker-free proofs.",
+  "goals_after_simp": "goals=0",
+  "declaration_marker": "declaration checked"
+}

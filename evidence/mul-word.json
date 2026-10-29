@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\nat-proof-build\\MulWord.olean",
+    "MulWord.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work",
+  "exit_code": 0,
+  "wall_seconds": 77.143865,
+  "peak_rss_bytes": 910036992,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "evidence/mul-word.log",
+  "source": "proofs/MulWord.lean",
+  "source_sha256": "b6e02db0922d11fccbce4bace4ee223edcf7db59bd82b1c12aed86372caa06f7"
+}

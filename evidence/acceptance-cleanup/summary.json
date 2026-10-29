@@ -1,0 +1,29 @@
+{
+  "client_date": "2026-10-28",
+  "local_validation_status": "PASS",
+  "python_suite": {
+    "tests": 95,
+    "reported_seconds": 31.492,
+    "skips": 0
+  },
+  "actual_unit_integrity_ci": {
+    "status": "PASS",
+    "stages": 5,
+    "report": "unit-integrity/report.json"
+  },
+  "status_publisher_regressions": {
+    "tests": 10,
+    "reported_seconds": 1.903,
+    "skips": 0
+  },
+  "full_ci_require_calls_unchanged": true,
+  "protected_files_checked": 203,
+  "historical_files_checked": 482,
+  "protected_or_historical_changes": [],
+  "current_revision_full_verification": "NOT_RUN",
+  "github_unit_workflow": "NOT_RUN",
+  "github_full_workflow": "NOT_RUN",
+  "github_delivery": "User selected corrected ZIP. No project Git remote or matching publishing destination was identified; no push or workflow dispatch was attempted.",
+  "acceptance_basis": "Actual automated technical gates, with incomplete runs reported honestly; no separate mandatory-review condition.",
+  "baseline_archive_sha256": "8dbf7ea87f1def7cb76fb521b0cb9f2b3f90d4261663b2f66af8c8dcc81289bd"
+}

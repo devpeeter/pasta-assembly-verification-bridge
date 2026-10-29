@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "scope": "Real CLI/tool path and Lean-host Kraken parser smoke checks in the implementer workspace; not a full proof rerun or independent specialist reproduction.",
+  "checks": [
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "--run",
+        "ParserChecks.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 109.60147,
+      "peak_rss_bytes": 853168128,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\review-followup\\relative-lean-bin-package.log",
+      "name": "relative-lean-bin-package",
+      "caller": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge",
+      "supplied_lean_bin": "..\\..\\work\\toolchains\\lean-4.31.0-windows\\bin",
+      "child_cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "expected_output": "PASS: 15 exact typed parser results; 24 rejected forms",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "--run",
+        "ParserChecks.lean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "exit_code": 0,
+      "wall_seconds": 60.244746,
+      "peak_rss_bytes": 851738624,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\review-followup\\relative-lean-bin-workspace.log",
+      "name": "relative-lean-bin-workspace",
+      "caller": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of",
+      "supplied_lean_bin": "work\\toolchains\\lean-4.31.0-windows\\bin",
+      "child_cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\bridge",
+      "expected_output": "PASS: 15 exact typed parser results; 24 rejected forms",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\scripts\\bootstrap.py",
+        "--help"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of",
+      "exit_code": 0,
+      "wall_seconds": 0.615208,
+      "peak_rss_bytes": 17850368,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\review-followup\\bootstrap-help.log",
+      "name": "bootstrap-help",
+      "expected_exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\scripts\\bootstrap.py",
+        "--work",
+        "unused-review-location"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of",
+      "exit_code": 2,
+      "wall_seconds": 0.278399,
+      "peak_rss_bytes": 18145280,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\review-followup\\bootstrap-reject-work.log",
+      "name": "bootstrap-reject-work",
+      "expected_exit_code": 2,
+      "status": "PASS"
+    }
+  ]
+}

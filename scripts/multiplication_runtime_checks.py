@@ -1,0 +1,177 @@
+"""Multiplication model-execution vectors and semantic mutations through Kraken.
+
+Roles and result positions come from the retained MIR prefix/suffix. Expected
+values use the mathematical Montgomery specification, not substitute instruction
+semantics. These checks supplement the separate universal Lean proof.
+The interpreter runs on the Lean host; these are not ARM hardware executions.
+"""
+from __future__ import annotations
+
+import argparse
+import copy
+import hashlib
+import json
+import os
+from pathlib import Path
+import random
+import re
+import subprocess
+
+import runtime_checks as common
+
+ROOT = common.ROOT
+WORD = common.WORD
+adapter = common.adapter
+
+
+def admissible_inputs(lhs: int, rhs: int, modulus: int) -> bool:
+    return (0 <= lhs < 2**256 and 0 <= rhs < 2**256 and
+            (lhs < modulus or (rhs < modulus and
+             all(limb + 3 <= WORD for limb in common.limbs(rhs)[1:]))))
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--lean", type=Path, required=True)
+    parser.add_argument("--lake", type=Path, required=True)
+    parser.add_argument("--kraken", type=Path, required=True)
+    args = parser.parse_args()
+    artifact_path = ROOT / "artifacts/charon-asm.json"
+    artifact = adapter.load_artifact(artifact_path)
+    raw = common.extract.verify_retained(artifact, artifact_path.parent)
+    block = artifact["routines"]["mul"]
+    roles, outputs = common.operand_roles(raw, block, "mul")
+    canonical = adapter.canonical_binding(block)
+    random_ = random.Random(0x4D554C5041535441)
+    shuffled = list(adapter.REGISTERS)
+    random_.shuffle(shuffled)
+    alternate = dict(enumerate(shuffled[:len(canonical)]))
+    x19_written, x19_readonly = common.x19_allocations(block, outputs)
+    groups = {}
+
+    def add_case(field, modulus_words, modulus, lhs, rhs, flags, allocation, merge=False):
+        if not admissible_inputs(lhs, rhs, modulus):
+            raise ValueError("vector violates the existing mulContract")
+        inv = -pow(modulus_words[0], -1, WORD) % WORD
+        source = {"lhs": common.limbs(lhs), "rhs": common.limbs(rhs),
+                  "modulus": modulus_words, "inv": [inv]}
+        values = {index: source[name][limb] for index, (name, limb) in roles.items()}
+        binding = allocation.copy()
+        if merge:
+            representatives = {}
+            for index, operand in enumerate(adapter.operands(block)):
+                if adapter.operand_kind(operand) == "In":
+                    binding[index] = representatives.setdefault(values[index], binding[index])
+        assembly = adapter.render(block, binding, values)
+        initial = {f"x{index}": random_.getrandbits(64) for index in range(31)}
+        initial["sp"] = random_.getrandbits(64)
+        for index, value in values.items():
+            initial[binding[index]] = value
+        incoming = dict(zip(("n", "z", "c", "v"), [bool(flags & (1 << bit)) for bit in range(4)]))
+        expected = {"field": field, "lhs": lhs, "rhs": rhs, "modulus": modulus,
+                    "value": lhs * rhs * pow(2**256, -1, modulus) % modulus,
+                    "initial": initial, "flags": incoming, "binding": binding,
+                    "shared_read_only_inputs": merge}
+        groups.setdefault(assembly, []).append(({"regs": initial, "flags": incoming}, expected))
+
+    for field, words, modulus in common.fields():
+        singles = [0, 1, WORD - 1, WORD, 2**128 - 1, 2**192 - 1, modulus - 1]
+        pairs = [(lhs, rhs) for lhs in singles for rhs in singles]
+        pairs += [(lhs, rhs) for lhs in (modulus, 2**255, 2**256 - 1)
+                  for rhs in (0, 1, modulus - 1)]
+        pairs += [(lhs, 2**256 - 1) for lhs in (0, 1, modulus - 1)]
+        headroom = ((words[3] - 1) << 192) + ((WORD - 3) << 128) + ((WORD - 3) << 64) + WORD - 1
+        pairs.append((2**256 - 1, headroom))
+        for lhs, rhs in pairs:
+            for flags in range(16):
+                add_case(field, words, modulus, lhs, rhs, flags, canonical)
+                add_case(field, words, modulus, lhs, rhs, flags, alternate)
+        for flags in range(16):
+            add_case(field, words, modulus, 0, 0, flags, canonical, merge=True)
+            add_case(field, words, modulus, modulus - 1, 0, flags, x19_written)
+            add_case(field, words, modulus, 0, 0, flags, x19_readonly, merge=True)
+
+    work = ROOT.parent.parent / "work/multiplication-runtime-checks"
+    work.mkdir(parents=True, exist_ok=True)
+    env = common.lean_environment(args.lake.resolve(), args.kraken.resolve(), os.environ.copy())
+    commands = []
+
+    def execute(assembly, rows, label):
+        asm_path, cases_path = work / (label + ".S"), work / (label + ".json")
+        asm_path.write_text(assembly, encoding="utf-8", newline="")
+        cases_path.write_text(json.dumps([row[0] for row in rows]), encoding="utf-8")
+        command = [str(args.lean.resolve()), "--run", str(ROOT / "bridge/KrakenRun.lean"),
+                   str(asm_path), str(cases_path)]
+        commands.append(command)
+        proc = subprocess.run(command, cwd=ROOT, env=env, capture_output=True, text=True, encoding="utf-8")
+        (work / (label + ".stdout")).write_text(proc.stdout, encoding="utf-8")
+        (work / (label + ".stderr")).write_text(proc.stderr, encoding="utf-8")
+        if proc.returncode:
+            raise RuntimeError(f"Kraken execution failed ({label}): {proc.stderr or proc.stdout}")
+        results = json.loads(proc.stdout)
+        if len(results) != len(rows):
+            raise RuntimeError("Kraken returned an incorrect execution count")
+        return results
+
+    def mismatch(actual, expected):
+        binding = expected["binding"]
+        value = sum(actual["regs"][binding[index]] << (64 * limb) for limb, index in enumerate(outputs))
+        writes = {binding[index] for index, operand in enumerate(adapter.operands(block))
+                  if adapter.operand_kind(operand) in ("Out", "InOut")}
+        frames = common.frames_preserved(actual, expected["initial"], writes)
+        if value != expected["value"] or value >= expected["modulus"] or not frames:
+            return {"field": expected["field"], "lhs": expected["lhs"], "rhs": expected["rhs"],
+                    "flags": expected["flags"], "expected": expected["value"], "actual": value,
+                    "frame_preserved": frames}
+        return None
+
+    checked = 0
+    for index, (assembly, rows) in enumerate(groups.items()):
+        for actual, (_, expected) in zip(execute(assembly, rows, f"positive-{index}"), rows):
+            problem = mismatch(actual, expected)
+            if problem:
+                raise AssertionError(f"multiplication vector failed: {problem}")
+        checked += len(rows)
+    coverage = common.register_coverage(block, [row for rows in groups.values() for row in rows])
+
+    canonical_assembly = adapter.render(block, canonical)
+    rows = groups[canonical_assembly]
+    broken = copy.deepcopy(block)
+    for piece in broken["template"]:
+        if "Text" in piece and re.search(r"\badcs\b", piece["Text"]):
+            piece["Text"] = re.sub(r"\badcs\b", "adds", piece["Text"], count=1)
+            break
+    else:
+        raise AssertionError("no extracted ADCS for the carry mutation")
+    rhs0 = next(index for index, role in roles.items() if role == ("rhs", 0))
+    rhs1 = next(index for index, role in roles.items() if role == ("rhs", 1))
+    wrong_binding = canonical.copy()
+    wrong_binding[rhs0], wrong_binding[rhs1] = wrong_binding[rhs1], wrong_binding[rhs0]
+    mutants = {"broken-carry": adapter.render(broken, canonical),
+               "wrong-operand-binding": adapter.render(block, wrong_binding)}
+    negative = {}
+    for name, assembly in mutants.items():
+        failures = [mismatch(actual, expected) for actual, (_, expected)
+                    in zip(execute(assembly, rows, name), rows)]
+        failures = [failure for failure in failures if failure]
+        if not failures:
+            raise AssertionError("semantic multiplication mutant escaped detection: " + name)
+        negative[name] = {"status": "PASS: semantic mismatch detected", "mismatches": len(failures),
+                          "counterexample": failures[0]}
+    report = {"status": "PASS", "scope": "Kraken multiplication model execution on the Lean host; no ARM hardware execution; separate universal proofs required",
+              "positive_cases": checked, "program_allocations": len(groups), "incoming_flag_patterns": 16,
+              "register_coverage": coverage,
+              "protected_register_policy": "every register outside the written allocation, including x19 when not written",
+              "operand_roles_from_mir": {str(index): role for index, role in roles.items()},
+              "output_operand_indices_from_mir": outputs,
+              "field_constants": "unchanged upstream Fields.lean; verified Montgomery inverse",
+              "artifact_sha256": hashlib.sha256(artifact_path.read_bytes()).hexdigest(),
+              "negative_semantic_checks": negative, "commands": commands,
+              "memory_test": "nonempty sentinel memory; formal frames are checked separately"}
+    (ROOT / "evidence/multiplication-runtime.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(f"PASS: {checked} multiplication model executions through Kraken on the Lean host, both fields and all16 NZCV patterns; both semantic mutants detected")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

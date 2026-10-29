@@ -1,0 +1,80 @@
+"""Fetch the immutable proof dependency lock and only required Mathlib caches.
+
+Run from any directory; packages and caches remain under proofs/.lake.
+Never use `lake update` as part of verification: the retained manifest is the lock.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+
+ROOT = Path(__file__).resolve().parent
+REQUIRED = [
+    "Mathlib.Logic.Function.Iterate",
+    "Mathlib.Data.Nat.ModEq",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.Data.List.Prime",
+    "Mathlib.NumberTheory.LucasPrimality",
+    "Mathlib.Tactic.NormNum",
+]
+
+
+def checked(args: list[str], **kwargs) -> None:
+    subprocess.run(args, check=True, **kwargs)
+
+
+def fetch_locked_dependencies() -> None:
+    lock = json.loads((ROOT / "lake-manifest.json").read_text(encoding="utf-8"))
+    packages = ROOT / ".lake/packages"
+    packages.mkdir(parents=True, exist_ok=True)
+    for pkg in lock["packages"]:
+        if pkg["type"] != "git":
+            continue
+        name, rev, url = pkg["name"], pkg["rev"], pkg["url"]
+        if not re.fullmatch(r"[A-Za-z0-9_]+", name):
+            raise ValueError(f"unsafe package name {name!r}")
+        if not re.fullmatch(r"[a-f0-9]{40}", rev):
+            raise ValueError(f"non-immutable dependency revision {rev!r}")
+        target = packages / name
+        target.mkdir(exist_ok=True)
+        if not (target / ".git").is_dir():
+            checked(["git", "init", str(target)])
+            checked(["git", "-C", str(target), "remote", "add", "origin", url])
+        head = subprocess.run(["git", "-C", str(target), "rev-parse", "HEAD"],
+                              capture_output=True, text=True)
+        if head.returncode != 0 or head.stdout.strip() != rev:
+            checked(["git", "-C", str(target), "-c", "credential.helper=", "fetch",
+                     "--depth=1", url, rev])
+            checked(["git", "-C", str(target), "checkout", "--detach", rev])
+        actual = subprocess.check_output(["git", "-C", str(target), "rev-parse", "HEAD"],
+                                          text=True).strip()
+        if actual != rev:
+            raise ValueError(f"wrong dependency commit: {name}: {actual}")
+        checked(["git", "-C", str(target), "diff", "--quiet", "HEAD", "--"])
+        print(f"{name}: {actual}", flush=True)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--lean-bin", type=Path, required=True)
+    args = parser.parse_args()
+    lean_bin = args.lean_bin.resolve()
+    env = os.environ.copy()
+    env["PATH"] = str(lean_bin) + os.pathsep + env.get("PATH", "")
+    env["MATHLIB_CACHE_DIR"] = str(ROOT / ".lake/mathlib-cache")
+    suffix = ".exe" if os.name == "nt" else ""
+    lean = lean_bin / ("lean" + suffix)
+    version = subprocess.check_output([str(lean), "--version"], env=env, text=True)
+    if "version 4.31.0" not in version:
+        raise ValueError(f"unexpected Lean version: {version.strip()}")
+    fetch_locked_dependencies()
+    checked([str(lean_bin / ("lake" + suffix)), "exe", "cache", "get", *REQUIRED],
+            cwd=ROOT, env=env)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "status": "NOT_RUN",
+  "status_scope": "Full automated verification for the current revision",
+  "acceptance_criteria": {
+    "command": "python scripts/verify.py --clean",
+    "ci_entrypoint": "python scripts/ci_full.py --output <new-external-directory>",
+    "required": [
+      "Actual exit code 0 and fresh complete PASS verification reports",
+      "Every required stage and both addition/multiplication target gates complete",
+      "Exact theorem types, standard-axiom censuses and measured proof checks",
+      "Source/tool/pin integrity, retained extraction links and generated-file freshness",
+      "Successful Kraken model vectors, detected semantic mutants and exact formal-negative rejections",
+      "Unchanged source/artifact input seals and original checkout"
+    ],
+    "failure_policy": "Missing tools, omitted checks, failed or PARTIAL verification, stale reports, changed inputs or unintended negative failures cannot pass."
+  },
+  "local_validation": {
+    "status": "PASS",
+    "record": "evidence/acceptance-cleanup/summary.json",
+    "python_tests": 95,
+    "unit_integrity_stages": 5
+  },
+  "current_revision_full_clean_run": "NOT_RUN",
+  "github_workflows": {
+    "unit_integrity": "NOT_RUN",
+    "full_verification": "NOT_RUN"
+  },
+  "historical_implementer_run": {
+    "date": "2026-10-23",
+    "host": "implementer Windows environment",
+    "technical_status": "PASS",
+    "exit_code": 0,
+    "automated_stages": 67,
+    "record": "evidence/verification.json",
+    "source_input_seal": "evidence/final-clean-inputs.json",
+    "applies_to": "the exact script/source bytes sealed by that run; not a full rerun of the CLI follow-up"
+  },
+  "proof_boundary": "Assembly blocks from their register-entry MachineData states under InputContract; no proof of surrounding Rust wrapper operand loads or result stores.",
+  "compact_representation_omits": [
+    "MIR operand-value expressions",
+    "MIR destination places"
+  ],
+  "vectors": "Kraken model execution vectors through Lean on the host; no original assembly execution on ARM hardware.",
+  "historical_record_policy": "Dated reports and logs retain their original results and terminology; current acceptance is based on the automated technical criteria here."
+}

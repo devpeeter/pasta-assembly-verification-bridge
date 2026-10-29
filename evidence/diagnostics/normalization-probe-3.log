@@ -1,0 +1,13 @@
+s : Reg64s
+hz :
+  @Eq.{1} Nat (Int.toNat (Int64.toInt (@OfNat.ofNat.{0} Int64 (nat_lit 0) (@Int64.instOfNat (nat_lit 0)))))
+    (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))
+⊢ @Eq.{1} (Width.type Width.W64)
+    (@HShiftLeft.hShiftLeft.{0, 0, 0} (Width.type Width.W64) Nat
+      (BitVec (@OfNat.ofNat.{0} Nat (nat_lit 64) (instOfNatNat (nat_lit 64))))
+      (@BitVec.instHShiftLeftNat (Width.bits Width.W64)) (UInt64.toBitVec (Reg64s.X4 s))
+      (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
+    (UInt64.toBitVec (Reg64s.X4 s))
+NormalizationProbe.lean:30:2: warning: 'set_option pp.all true in trace_state' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

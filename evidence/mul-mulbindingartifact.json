@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-DautoImplicit=false",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\mul-build\\MulBindingArtifact.olean",
+    "MulBindingArtifact.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\proofs",
+  "exit_code": 0,
+  "wall_seconds": 11.911521,
+  "peak_rss_bytes": 955236352,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "evidence/mul-mulbindingartifact.log",
+  "source": "proofs/MulBindingArtifact.lean",
+  "source_sha256": "76b209d97bb22fbc2e7485531a6df809018a09b44be54541cddc4606cfb325c0"
+}

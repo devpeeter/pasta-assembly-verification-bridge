@@ -1,0 +1,13 @@
+usage: bootstrap.py [-h] [--sources-only]
+
+Fetch immutable extraction sources and build the real Charon rustc driver. No
+instruction templates are reconstructed or copied by this script. Requires
+Git, Python 3.11+, rustup, and a native Rust linker.
+
+options:
+  -h, --help      show this help message and exit
+  --sources-only
+
+Sources and build records use the fixed workspace directory:
+C:\Users\NewOwner\Documents\Codex\2026-10-22\build-a-working-technical-mvp-
+of\work

@@ -1,0 +1,36 @@
+{
+  "status": "POLICY_AND_GENERATOR_TESTS_PASS_TARGET_PROOFS_REQUIRE_FRESH_REBUILD",
+  "scope": "X19 generic-register coverage fix; no retained instruction/template/operand artifact changes",
+  "register_pool": "X0..X30 exceptX29 (30); canonical old29-prefix unchanged, X19 appended",
+  "checks": [
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "tests": 59,
+      "reported_seconds": 21.016,
+      "skips": 0
+    },
+    {
+      "command": "python bridge/kraken_adapter.py --artifact artifacts/charon-asm.json --output generated --check",
+      "exit_code": 0,
+      "result": "Every generated file and byte remains current."
+    },
+    {
+      "command": "python scripts/generate_mul_json_certificate.py --check",
+      "exit_code": 0,
+      "result": "125 interned JSON nodes match retained projection."
+    }
+  ],
+  "runtime_changes": "Both positive harnesses require X19-written and X19-shared-readonly cases for each field and all16NZCV patterns; frame checks protect exactly registers outside written allocation. Runtime execution is pending the fresh verification command.",
+  "target_proof_status": "Old restricted29-register olean/proof measurements do not certify the widened policy. Complete dependent closure and exact-type/axiom audits must be rebuilt.",
+  "source_sha256": {
+    "proofs/KrakenBinding.lean": "aab26336b598fd59a63fafbdcf088c13884e7972a7d2051ec4c6667777bf2126",
+    "bridge/Artifact.lean": "33c94d2cc8a3a88b2e4d5d15e012ee54f8dd45629e105c7335785620252a630c",
+    "bridge/kraken_adapter.py": "e269bfd2c0e336d378a820a604743f263edc8ff6051c2228466b9630010c3252",
+    "scripts/runtime_checks.py": "3a2e61aa01ab4d49b483d27335d21ebabec669ba22799f85866141f210695498",
+    "scripts/multiplication_runtime_checks.py": "e3a4eced4a3588b20b7a505087fab18d7f5fe9e8d45b86e0c1b6293b60893f66",
+    "tests/test_adapter.py": "e4edf44677ae205d5f0eb26f85c618839ee32d952780a9f5ecabe2c1408a90cc",
+    "tests/test_runtime_register_policy.py": "9163f40bc54472d71f49548cef45166f34c81041bf17b6bda361956d3c3ea4f1",
+    "evidence/register-policy.json": "1fba09f1425d312e8379a6a02d3374b4aae29dc640c28f7168c4caf28a4d7d9f"
+  }
+}

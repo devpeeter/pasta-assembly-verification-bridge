@@ -1,0 +1,8 @@
+{
+  "status": "INTERRUPTED",
+  "accepted": false,
+  "reason": "Only before-first-declaration marker observed; finer tactic-phase instrumentation will distinguish rewriting from final reflexivity conversion.",
+  "markers": [
+    "multiplication_template_matches_retained_assembly.before"
+  ]
+}

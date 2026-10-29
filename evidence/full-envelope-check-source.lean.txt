@@ -1,0 +1,31 @@
+import Artifact
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+
+namespace PastaBridge
+
+def retainedCharonArtifact : String := retainedText("../artifacts/charon-asm.json")
+def retainedAdditionAssembly : String := retainedText("../generated/add.S")
+def retainedAdditionProgram : Program := retainedProgram("../generated/add.S")
+
+theorem addition_template_matches_retained_assembly :
+    renderArtifact retainedCharonArtifact "add" = .ok retainedAdditionAssembly := by
+  decide +kernel
+
+theorem addition_program_serializes_to_retained_assembly :
+    serializeAdditionProgram retainedAdditionProgram = .ok (canonicalAssembly retainedAdditionAssembly) := by
+  decide +kernel
+
+theorem addition_artifact_matches_retained_program :
+    (renderArtifact retainedCharonArtifact "add").map canonicalAssembly =
+      serializeAdditionProgram retainedAdditionProgram := by
+  rw [addition_template_matches_retained_assembly,
+    addition_program_serializes_to_retained_assembly]
+  rfl
+
+#print axioms addition_template_matches_retained_assembly
+#print axioms addition_program_serializes_to_retained_assembly
+#print axioms addition_artifact_matches_retained_program
+
+end PastaBridge

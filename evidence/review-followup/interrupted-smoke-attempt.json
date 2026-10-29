@@ -1,0 +1,9 @@
+{
+  "status": "INTERRUPTED",
+  "accepted_as_check_result": false,
+  "scope": "Initial local CLI/parser smoke attempt, not a proof or independent reproduction result",
+  "command": ["python", "work/check_review_cli.py"],
+  "observed_exit_code": 1,
+  "reason": "The initial sandboxed process was stopped after prolonged low-CPU waiting. Its Python parent and Lean child were identified before termination. The cause of the delay was not established.",
+  "retry": "The same checks completed successfully with the pinned tools; commands, times and output are retained in real-cli-checks.json."
+}

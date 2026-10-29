@@ -1,0 +1,218 @@
+{
+  "status": "PASS",
+  "completed_modules": 13,
+  "expected_modules": 13,
+  "wall_seconds": 237.305528,
+  "peak_rss_bytes": 1770852352,
+  "memory_metric": "maximum direct Lean child memory peak across serial modules; see each module memory_metric; imported dependencies cached",
+  "modules": [
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\Semantics.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\Semantics.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 7.444137,
+      "peak_rss_bytes": 549806080,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.Semantics.log",
+      "module": "PastaCurves.Semantics"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\Pratt.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\Pratt.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 33.648294,
+      "peak_rss_bytes": 1259474944,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.Pratt.log",
+      "module": "PastaCurves.Pratt"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\Primality.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\Primality.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 31.140968,
+      "peak_rss_bytes": 1770852352,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.Primality.log",
+      "module": "PastaCurves.Primality"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\Fields.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\Fields.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 24.223658,
+      "peak_rss_bytes": 1244614656,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.Fields.log",
+      "module": "PastaCurves.Fields"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\Compositions.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\Compositions.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 15.405027,
+      "peak_rss_bytes": 980897792,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.Compositions.log",
+      "module": "PastaCurves.Compositions"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\Tactic\\WordStep.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\Tactic\\WordStep.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 2.37425,
+      "peak_rss_bytes": 298979328,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.Tactic.WordStep.log",
+      "module": "PastaCurves.Tactic.WordStep"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\Spec.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\Spec.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 17.505714,
+      "peak_rss_bytes": 978976768,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.Spec.log",
+      "module": "PastaCurves.Spec"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\AArch64\\Semantics.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\AArch64\\Semantics.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 6.504212,
+      "peak_rss_bytes": 541978624,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.AArch64.Semantics.log",
+      "module": "PastaCurves.AArch64.Semantics"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\AArch64\\Transcription.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\AArch64\\Transcription.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 6.129815,
+      "peak_rss_bytes": 561799168,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.AArch64.Transcription.log",
+      "module": "PastaCurves.AArch64.Transcription"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\AArch64\\Spec\\Add.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\AArch64\\Spec\\Add.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 19.829089,
+      "peak_rss_bytes": 1009967104,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.AArch64.Spec.Add.log",
+      "module": "PastaCurves.AArch64.Spec.Add"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\AArch64\\Compositions.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\AArch64\\Compositions.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 15.940055,
+      "peak_rss_bytes": 923602944,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.AArch64.Compositions.log",
+      "module": "PastaCurves.AArch64.Compositions"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "PastaCurves\\AArch64\\Spec\\Mul.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean\\.lake\\build\\lib\\lean\\PastaCurves\\AArch64\\Spec\\Mul.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\vendor\\pasta\\lean",
+      "exit_code": 0,
+      "wall_seconds": 36.282692,
+      "peak_rss_bytes": 1291456512,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\PastaCurves.AArch64.Spec.Mul.log",
+      "module": "PastaCurves.AArch64.Spec.Mul"
+    },
+    {
+      "command": [
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+        "-DautoImplicit=false",
+        "ArithmeticAudit.lean",
+        "-o",
+        "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\proofs\\.lake\\build\\lib\\lean\\ArithmeticAudit.olean"
+      ],
+      "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\proofs",
+      "exit_code": 0,
+      "wall_seconds": 20.822762,
+      "peak_rss_bytes": 1241669632,
+      "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+      "log": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\outputs\\pasta-assembly-verification-bridge\\evidence\\arithmetic-modules\\ArithmeticAudit.log",
+      "module": "ArithmeticAudit"
+    }
+  ]
+}

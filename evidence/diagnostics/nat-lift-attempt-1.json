@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\toolchains\\lean-4.31.0-windows\\bin\\lean.exe",
+    "-o",
+    "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work\\nat-proof-build\\AdditionNatLift.olean",
+    "AdditionNatLift.lean"
+  ],
+  "cwd": "C:\\Users\\NewOwner\\Documents\\Codex\\2026-10-22\\build-a-working-technical-mvp-of\\work",
+  "exit_code": 4294967295,
+  "wall_seconds": 377.914323,
+  "peak_rss_bytes": 3702849536,
+  "memory_metric": "Windows PeakWorkingSetSize (direct child), bytes",
+  "log": "nat-lift-attempt-1.log",
+  "status": "INTERRUPTED",
+  "reason": "Controlled interruption to locate declaration causing expensive normalization; not a semantic counterexample.",
+  "source_snapshot": "nat-lift-attempt-1-source.lean.txt",
+  "source_sha256": "861442951f14f40ee2f2eb8e02127e94da5a9f15fb447704c7d4edd48dde4ee3"
+}

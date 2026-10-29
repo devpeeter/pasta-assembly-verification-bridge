@@ -1,0 +1,3 @@
+'PastaBridge.MulFormatting.serialize_instruction' depends on axioms: [propext, Quot.sound]
+'PastaBridge.MulFormatting.serialize_program' depends on axioms: [propext, Quot.sound]
+'PastaBridge.MulFormatting.retained_supported' depends on axioms: [propext]

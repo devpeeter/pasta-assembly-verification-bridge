@@ -1,0 +1,52 @@
+import AdditionNatSequence
+import PastaCurves.AArch64.Transcription
+
+namespace PastaBridge.AdditionNat
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+
+open AdditionStep
+
+def output (state : State) : PastaCurves.Limbs :=
+  ⟨state.words 0, state.words 1, state.words 2, state.words 3⟩
+
+def rhs (state : State) : PastaCurves.Limbs :=
+  ⟨state.words 4, state.words 5, state.words 6, state.words 7⟩
+
+def modulus (state : State) : PastaCurves.Limbs :=
+  ⟨state.words 8, state.words 9, 0, state.words 10⟩
+
+attribute [local irreducible] PastaCurves.addc PastaCurves.AArch64.subc PastaCurves.AArch64.cselCs
+
+theorem decoded_program_model (state : State) :
+    output (sequence AdditionLift.decodedProgram state) =
+      PastaCurves.AArch64.addMod (output state) (rhs state) (modulus state) := by rfl
+
+#eval show IO Unit from do
+  let output ← IO.getStdout
+  output.putStrLn "Reached decoded_program_model boundary"
+  output.flush
+
+theorem all_bindings_model (binding : Binding) (state : MachineData)
+    (separated : KrakenBinding.Separated written binding) :
+    (AdditionMachine.runWithBinding binding state).map (fun after => output (project binding after)) =
+      .ok (PastaCurves.AArch64.addMod (output (project binding state))
+        (rhs (project binding state)) (modulus (project binding state))) := by
+  rw [AdditionMachine.run_binding, AdditionLift.full_run_is_sequence]
+  have mapped (execution : Except String MachineData) :
+      execution.map (fun after => output (project binding after)) =
+        (execution.map (project binding)).map output := by cases execution <;> rfl
+  rw [mapped, sequence_project binding AdditionLift.decodedProgram state separated,
+    Except.map, decoded_program_model]
+
+#eval show IO Unit from do
+  let output ← IO.getStdout
+  output.putStrLn "Reached all_bindings_model boundary"
+  output.flush
+
+#print axioms sequence_project
+#print axioms decoded_program_model
+#print axioms all_bindings_model
+
+end PastaBridge.AdditionNat
